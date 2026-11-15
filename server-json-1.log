@@ -1,0 +1,1424 @@
+Downloading Minecraft server
+Installing Fabric Loader 0.19.5(1.21.1) on the server
+Downloading required files
+Downloading library org.ow2.asm:asm:9.10.1
+Downloading library org.ow2.asm:asm-analysis:9.10.1
+Downloading library org.ow2.asm:asm-commons:9.10.1
+Downloading library org.ow2.asm:asm-tree:9.10.1
+Downloading library org.ow2.asm:asm-util:9.10.1
+Downloading library net.fabricmc:sponge-mixin:0.17.4+mixin.0.8.7
+Downloading library net.fabricmc:intermediary:1.21.1
+Downloading library net.fabricmc:fabric-loader:0.19.5
+Generating server launch JAR
+Unpacking 1.21.1/server-1.21.1.jar (versions:1.21.1) to versions/1.21.1/server-1.21.1.jar
+Unpacking com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar (libraries:com.github.oshi:oshi-core:6.4.10) to libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar
+Unpacking com/google/code/gson/gson/2.10.1/gson-2.10.1.jar (libraries:com.google.code.gson:gson:2.10.1) to libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+Unpacking com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar (libraries:com.google.guava:failureaccess:1.0.1) to libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar
+Unpacking com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar (libraries:com.google.guava:guava:32.1.2-jre) to libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar
+Unpacking com/mojang/authlib/6.0.54/authlib-6.0.54.jar (libraries:com.mojang:authlib:6.0.54) to libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar
+Unpacking com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar (libraries:com.mojang:brigadier:1.3.10) to libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar
+Unpacking com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar (libraries:com.mojang:datafixerupper:8.0.16) to libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar
+Unpacking com/mojang/logging/1.2.7/logging-1.2.7.jar (libraries:com.mojang:logging:1.2.7) to libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar
+Unpacking commons-io/commons-io/2.15.1/commons-io-2.15.1.jar (libraries:commons-io:commons-io:2.15.1) to libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar
+Unpacking io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar (libraries:io.netty:netty-buffer:4.1.97.Final) to libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar
+Unpacking io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar (libraries:io.netty:netty-codec:4.1.97.Final) to libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar
+Unpacking io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar (libraries:io.netty:netty-common:4.1.97.Final) to libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar
+Unpacking io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar (libraries:io.netty:netty-handler:4.1.97.Final) to libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar
+Unpacking io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar (libraries:io.netty:netty-resolver:4.1.97.Final) to libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar
+Unpacking io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar (libraries:io.netty:netty-transport:4.1.97.Final) to libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar
+Unpacking io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar (libraries:io.netty:netty-transport-classes-epoll:4.1.97.Final) to libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar
+Unpacking io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar (libraries:io.netty:netty-transport-native-epoll:4.1.97.Final:linux-x86_64) to libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar
+Unpacking io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar (libraries:io.netty:netty-transport-native-epoll:4.1.97.Final:linux-aarch_64) to libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar
+Unpacking io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar (libraries:io.netty:netty-transport-native-unix-common:4.1.97.Final) to libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar
+Unpacking it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar (libraries:it.unimi.dsi:fastutil:8.5.12) to libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar
+Unpacking net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar (libraries:net.java.dev.jna:jna:5.14.0) to libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar
+Unpacking net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar (libraries:net.java.dev.jna:jna-platform:5.14.0) to libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar
+Unpacking net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar (libraries:net.sf.jopt-simple:jopt-simple:5.0.4) to libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+Unpacking org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar (libraries:org.apache.commons:commons-lang3:3.14.0) to libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+Unpacking org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar (libraries:org.apache.logging.log4j:log4j-api:2.22.1) to libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar
+Unpacking org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar (libraries:org.apache.logging.log4j:log4j-core:2.22.1) to libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar
+Unpacking org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar (libraries:org.apache.logging.log4j:log4j-slf4j2-impl:2.22.1) to libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar
+Unpacking org/joml/joml/1.10.5/joml-1.10.5.jar (libraries:org.joml:joml:1.10.5) to libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+Unpacking org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar (libraries:org.lz4:lz4-java:1.8.0) to libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar
+Unpacking org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar (libraries:org.slf4j:slf4j-api:2.0.9) to libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar
+Starting net.fabricmc.loader.impl.game.minecraft.BundlerClassPathCapture
+[09:24:22] [main/INFO]: Loading Minecraft 1.21.1 with Fabric Loader 0.19.5
+[09:24:22] [main/INFO]: Fabric is preparing JARs on first launch, this may take a few seconds...
+[09:24:22] [main/WARN]: Warnings were found!
+ - Mod 'CobblePulse Battletower' (cobblepulse_battletower) 1.0.0 recommends any version of cobblepulse, which is missing!
+	 - You should install any version of cobblepulse for the optimal experience.
+[09:24:22] [main/INFO]: Loading 82 mods:
+	- accessories 1.1.0-beta.54+1.21.1
+	- architectury 13.0.12
+	- cobblemon 1.8.4+1.21.1
+	   |-- com_ibm_icu_icu4j 71.1
+	   |-- org_graalvm_js_js 22.3.0
+	   |-- org_graalvm_regex_regex 22.3.0
+	   |-- org_graalvm_sdk_graal-sdk 22.3.0
+	   |-- org_graalvm_truffle_truffle-api 22.3.0
+	   |-- org_mongodb_mongodb-driver-core 4.10.2
+	   \-- org_mongodb_mongodb-driver-sync 4.10.2
+	- cobblepulse_battletower 1.0.0
+	   |-- com_electronwill_night-config_core 3.6.7
+	   |-- com_electronwill_night-config_toml 3.6.7
+	   |-- com_mysql_mysql-connector-j 8.4.0
+	   |-- com_zaxxer_hikaricp 5.1.0
+	   \-- org_xerial_sqlite-jdbc 3.46.1.3
+	- fabric-api 0.116.18+1.21.1
+	   |-- fabric-api-base 0.4.42+6573ed8c19
+	   |-- fabric-api-lookup-api-v1 1.6.72+7b3d111d19
+	   |-- fabric-biome-api-v1 13.0.31+d527f9fd19
+	   |-- fabric-block-api-v1 1.1.0+0bc3503219
+	   |-- fabric-block-view-api-v2 1.0.11+ebb2264e19
+	   |-- fabric-command-api-v1 1.2.49+f71b366f19
+	   |-- fabric-command-api-v2 2.2.28+6ced4dd919
+	   |-- fabric-commands-v0 0.2.66+df3654b319
+	   |-- fabric-content-registries-v0 8.0.19+b559734419
+	   |-- fabric-convention-tags-v1 2.1.7+7f945d5b19
+	   |-- fabric-convention-tags-v2 2.12.0+c3656daa19
+	   |-- fabric-crash-report-info-v1 0.2.29+0af3f5a719
+	   |-- fabric-data-attachment-api-v1 1.4.7+5b36e0f719
+	   |-- fabric-data-generation-api-v1 20.3.1+7439032a19
+	   |-- fabric-dimensions-v1 4.0.1+65213ef819
+	   |-- fabric-entity-events-v1 1.8.0+2b27e0a419
+	   |-- fabric-events-interaction-v0 0.7.14+ba9dae0619
+	   |-- fabric-game-rule-api-v1 1.0.53+6ced4dd919
+	   |-- fabric-item-api-v1 11.3.0+467044f319
+	   |-- fabric-item-group-api-v1 4.1.7+def88e3a19
+	   |-- fabric-lifecycle-events-v1 2.6.0+0865547519
+	   |-- fabric-loot-api-v2 3.0.15+3f89f5a519
+	   |-- fabric-loot-api-v3 1.0.3+3f89f5a519
+	   |-- fabric-message-api-v1 6.0.14+8aaf3aca19
+	   |-- fabric-networking-api-v1 4.3.1+d30f6a7919
+	   |-- fabric-object-builder-api-v1 15.2.1+40875a9319
+	   |-- fabric-particles-v1 4.0.2+6573ed8c19
+	   |-- fabric-recipe-api-v1 5.0.16+2475392c19
+	   |-- fabric-registry-sync-v0 5.3.2+e3eddc2119
+	   |-- fabric-rendering-data-attachment-v1 0.3.49+73761d2e19
+	   |-- fabric-rendering-fluids-v1 3.1.6+1daea21519
+	   |-- fabric-resource-conditions-api-v1 4.4.0+7439032a19
+	   |-- fabric-resource-loader-v0 1.3.1+5b5275af19
+	   |-- fabric-screen-handler-api-v1 1.3.91+b559734419
+	   |-- fabric-tag-api-v1 1.3.0+1eb36c0719
+	   |-- fabric-transfer-api-v1 5.4.5+9eaf054019
+	   \-- fabric-transitive-access-wideners-v1 6.2.0+45b9699719
+	- fabric-language-kotlin 1.14.2+kotlin.2.4.21
+	   |-- org_jetbrains_kotlin_kotlin-reflect 2.4.21
+	   |-- org_jetbrains_kotlin_kotlin-stdlib 2.4.21
+	   |-- org_jetbrains_kotlin_kotlin-stdlib-jdk7 2.4.21
+	   |-- org_jetbrains_kotlin_kotlin-stdlib-jdk8 2.4.21
+	   |-- org_jetbrains_kotlinx_atomicfu-jvm 0.33.0
+	   |-- org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm 1.11.0
+	   |-- org_jetbrains_kotlinx_kotlinx-coroutines-jdk8 1.11.0
+	   |-- org_jetbrains_kotlinx_kotlinx-datetime-jvm 0.8.0
+	   |-- org_jetbrains_kotlinx_kotlinx-io-bytestring-jvm 0.9.1
+	   |-- org_jetbrains_kotlinx_kotlinx-io-core-jvm 0.9.1
+	   |-- org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm 1.11.0
+	   |-- org_jetbrains_kotlinx_kotlinx-serialization-core-jvm 1.11.0
+	   \-- org_jetbrains_kotlinx_kotlinx-serialization-json-jvm 1.11.0
+	- fabricloader 0.19.5
+	   \-- mixinextras 0.5.5
+	- java 21
+	- luckperms 5.4.140
+	   \-- fabric-permissions-api-v0 0.3.1
+	- mega_showdown 1.3.3+1.8.4+1.21.1-release
+	- minecraft 1.21.1
+	- owo 0.13.0-alpha.15+1.21
+	   |-- blue_endless_jankson 1.2.2
+	   |-- io_wispforest_endec 0.1.5.1
+	   |-- io_wispforest_endec_gson 0.1.3.1
+	   |-- io_wispforest_endec_jankson 0.1.3.1
+	   \-- io_wispforest_endec_netty 0.1.2
+	- placeholder-api 2.4.2+1.21
+[09:24:23] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/runner/work/cobblepulse-battletower/cobblepulse-battletower/run-server/libraries/net/fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+[09:24:23] [main/WARN]: Error loading class: juuxel/adorn/block/variant/BlockVariantSets (java.lang.ClassNotFoundException: juuxel/adorn/block/variant/BlockVariantSets)
+[09:24:23] [main/WARN]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker from mod cobblemon
+[09:24:23] [main/WARN]: Error loading class: net/minecraft/class_1140 (java.lang.ClassNotFoundException: net/minecraft/class_1140)
+[09:24:23] [main/WARN]: @Mixin target net.minecraft.class_1140 was not found mixins.cobblemon-fabric.json:FabricSoundEngineMixin from mod cobblemon
+[09:24:23] [main/WARN]: Error loading class: xyz/nucleoid/server/translations/impl/language/LanguageReader (java.lang.ClassNotFoundException: xyz/nucleoid/server/translations/impl/language/LanguageReader)
+[09:24:23] [main/WARN]: @Mixin target xyz.nucleoid.server.translations.impl.language.LanguageReader was not found owo.mixins.json:extension.json5.LanguageReaderMixin from mod owo
+[09:24:23] [main/WARN]: Error loading class: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage)
+[09:24:23] [main/WARN]: Error loading class: net/minecraft/class_1044 (java.lang.ClassNotFoundException: net/minecraft/class_1044)
+[09:24:23] [main/WARN]: @Mixin target net.minecraft.class_1044 was not found owo.mixins.json:ui.access.AbstractTextureAccessor from mod owo
+[09:24:23] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[09:24:29] [main/INFO]: Registering Listeners!
+[09:24:29] [main/WARN]: Error loading class: net/minecraft/class_1132 (java.lang.ClassNotFoundException: net/minecraft/class_1132)
+[09:24:29] [main/INFO]: Booting LaxPermissionValidator, permissions will be checked using Minecrafts permission level system, see https://minecraft.wiki/w/Permission_level
+[09:24:29] [main/INFO]: Launching Cobblemon 1.8.4 
+[09:24:29] [main/INFO]: Booting FabricPermissionValidator, permissions will be checked using fabric-permissions-api, see https://github.com/lucko/fabric-permissions-api
+[09:24:31] [main/ERROR]: No data fixer registered for cobblemon:pokemon
+[09:24:31] [main/ERROR]: No data fixer registered for cobblemon:empty_pokeball
+[09:24:31] [main/ERROR]: No data fixer registered for cobblemon:boat
+[09:24:31] [main/ERROR]: No data fixer registered for cobblemon:chest_boat
+[09:24:31] [main/ERROR]: No data fixer registered for cobblemon:poke_bobber
+[09:24:31] [main/ERROR]: No data fixer registered for cobblemon:generic_bedrock
+[09:24:31] [main/ERROR]: No data fixer registered for cobblemon:npc
+[09:24:32] [main/INFO]: Starting the Best Spawner...
+[09:24:32] [main/INFO]: Loaded 7 spawning condition types.
+[09:24:32] [main/INFO]: Loaded 6 spawnable position types.
+[09:24:32] [main/INFO]: Loaded 4 spawn detail types.
+[09:24:32] [Cobblemon Showdown/INFO]: Starting showdown service...
+[09:24:32] [Cobblemon Showdown/INFO]: MegaShowdown config not found, creating default.
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/moves.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle-actions.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/pokemon.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/abilities.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/side.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/conditions.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/index.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/items.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/conditions.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/typechart.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/moves.js
+[09:24:32] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/abilities.js
+[09:24:32] [Cobblemon Showdown/INFO]: All files are ready!
+[09:24:34] [Cobblemon Showdown/INFO]: Showdown has been started!
+[09:24:34] [main/INFO]: Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.
+[09:24:34] [main/INFO]: Registered the mega_showdown:mega_showdown/custom_status registry
+[09:24:34] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/moves registry
+[09:24:34] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/ability registry
+[09:24:34] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/conditions registry
+[09:24:34] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/held_items registry
+[09:24:34] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/typecharts registry
+[09:24:34] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+[09:24:34] [main/INFO]: Registered the cobblemon:molang registry
+[09:24:34] [main/INFO]: Registered the cobblemon:species_features registry
+[09:24:34] [main/INFO]: Registered the cobblemon:global_species_features registry
+[09:24:34] [main/INFO]: Registered the cobblemon:species_feature_assignments registry
+[09:24:34] [main/INFO]: Registered the cobblemon:action_effects registry
+[09:24:34] [main/INFO]: Registered the cobblemon:moves registry
+[09:24:34] [main/INFO]: Registered the cobblemon:moveset_builders registry
+[09:24:34] [main/INFO]: Registered the cobblemon:abilities registry
+[09:24:34] [main/INFO]: Registered the cobblemon:behaviours registry
+[09:24:34] [main/INFO]: Registered the cobblemon:marks registry
+[09:24:34] [main/INFO]: Registered the cobblemon:species registry
+[09:24:34] [main/INFO]: Registered the cobblemon:species_additions registry
+[09:24:34] [main/INFO]: Registered the cobblemon:pokeballs registry
+[09:24:34] [main/INFO]: Registered the cobblemon:properties_tab_completion registry
+[09:24:34] [main/INFO]: Registered the cobblemon:party_pools registry
+[09:24:34] [main/INFO]: Registered the cobblemon:party_compositions registry
+[09:24:34] [main/INFO]: Registered the cobblemon:spawn_detail_presets registry
+[09:24:34] [main/INFO]: Registered the cobblemon:spawn_rules registry
+[09:24:34] [main/INFO]: Registered the cobblemon:mechanics registry
+[09:24:34] [main/INFO]: Registered the cobblemon:bag_items registry
+[09:24:34] [main/INFO]: Registered the cobblemon:held_items registry
+[09:24:34] [main/INFO]: Registered the cobblemon:dialogues registry
+[09:24:34] [main/INFO]: Registered the cobblemon:natural_materials registry
+[09:24:34] [main/INFO]: Registered the cobblemon:fossils registry
+[09:24:34] [main/INFO]: Registered the cobblemon:npc_preset registry
+[09:24:34] [main/INFO]: Registered the cobblemon:npc registry
+[09:24:34] [main/INFO]: Registered the cobblemon:dex_entries registry
+[09:24:34] [main/INFO]: Registered the cobblemon:dex_entry_additions registry
+[09:24:34] [main/INFO]: Registered the cobblemon:dexes registry
+[09:24:34] [main/INFO]: Registered the cobblemon:dex_additions registry
+[09:24:34] [main/INFO]: Registered the cobblemon:cosmetic_items registry
+[09:24:34] [main/INFO]: Registered the cobblemon:callbacks registry
+[09:24:34] [main/INFO]: Registered the cobblemon:unlockable_pc_box_wallpapers registry
+[09:24:34] [main/INFO]: Registered the cobblemon:starters registry
+[09:24:34] [main/INFO]: Registered the cobblemon:spawn_pool_world registry
+[09:24:34] [main/INFO]: Registered the cobblemon:pokerods registry
+[09:24:34] [main/INFO]: Registered the cobblemon:berries registry
+[09:24:34] [main/INFO]: Registered the cobblemon:habitat_pools registry
+[09:24:34] [main/INFO]: Registered the cobblemon:seasonings registry
+[09:24:34] [main/INFO]: Registered the cobblemon:pokemon_interactions registry
+[09:24:34] [main/INFO]: Registered the cobblemon:spawn_bait_effects registry
+[09:24:34] [main/INFO]: Registered the cobblemon:ride_settings registry
+[09:24:34] [main/INFO]: Registered the cobblemon:technical_machines registry
+[09:24:34] [main/INFO]: [Battletower] 10 tiers charges depuis config/cobblepulse_battletower/tiers
+[09:24:34] [main/INFO]: [Battletower] Placeholders enregistres (%cobblepulse_bt:top_1_name% ...)
+[09:24:34] [main/INFO]: [Battletower] Initialise
+[09:24:34] [main/INFO]: Registering C2S receiver with id mega_showdown:mega_evo
+[09:24:34] [main/INFO]: Registering C2S receiver with id mega_showdown:primal_evo
+[09:24:34] [main/INFO]: Registering C2S receiver with id mega_showdown:crown
+[09:24:34] [main/INFO]: Registering C2S receiver with id mega_showdown:ultra_burst
+[09:24:34] [main/INFO]: Registering C2S receiver with id mega_showdown:secret_sword_move_swap
+[09:24:34] [main/INFO]: Noaaan: It's surprising how much knowledge is lost by the simple fact that people don't know it
+[09:24:36] [main/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[09:24:36] [main/INFO]: Found new data pack file/btfake, loading it automatically
+[09:24:37] [main/INFO]: No existing world data, creating new world
+[09:24:38] [main/INFO]: Loaded 2360 recipes
+[09:24:38] [main/INFO]: Loaded 2453 advancements
+[09:24:38] [main/INFO]: Loaded custom elemental statuses
+[09:24:40] [main/INFO]: Loaded 11 server scripts and 1 client scripts
+[09:24:41] [main/INFO]: Loaded 936 moves
+[09:24:41] [main/INFO]: Loaded 321 abilities
+[09:24:41] [main/INFO]: Loaded 49 entity behaviours
+[09:24:41] [main/INFO]: Loaded 168 marks
+[09:24:42] [main/INFO]: Finished additions
+[09:24:42] [cobblemon Datafixer Bootstrap/INFO]: 6 Datafixer optimizations took 40 milliseconds
+[09:24:43] [main/INFO]: Loaded 1026 Pokémon species
+[09:24:43] [main/INFO]: Loaded 0 party compositions.
+[09:24:43] [main/INFO]: Loaded 22 spawn detail presets.
+[09:24:43] [main/INFO]: Starting dummy Showdown battle to force it to pre-load data.
+[09:24:43] [main/INFO]: Imported 266 held item IDs from showdown
+[09:24:43] [main/INFO]: Loaded 15 fossils
+[09:24:44] [main/INFO]: Loaded 8 callbacks and 0 client callbacks
+[09:24:46] [main/INFO]: Loaded 70 berries
+[09:24:46] [main/INFO]: Loaded 167 Pokémon interaction sets
+[09:24:48] [main/INFO]: Applied 986 biome modifications to 64 of 64 new biomes in 26.34 ms
+[09:24:48] [Server thread/INFO]:         __    
+[09:24:48] [Server thread/INFO]:   |    |__)   LuckPerms v5.4.140
+[09:24:48] [Server thread/INFO]:   |___ |      Running on Fabric - fabric@0.116.18+1.21.1
+[09:24:48] [Server thread/INFO]: 
+[09:24:48] [Server thread/INFO]: Loading configuration...
+[09:24:48] [Server thread/INFO]: Loading storage provider... [H2]
+[09:24:48] [Server thread/INFO]: Loading internal permission managers...
+[09:24:48] [Server thread/INFO]: Performing initial data load...
+[09:24:48] [Server thread/INFO]: Successfully enabled. (took 550ms)
+[09:24:48] [Server thread/INFO]: Starting minecraft server version 1.21.1
+[09:24:48] [Server thread/INFO]: Loading properties
+[09:24:48] [Server thread/INFO]: Default game type: SURVIVAL
+[09:24:48] [Server thread/INFO]: Generating keypair
+[09:24:48] [Server thread/INFO]: Starting Minecraft server on *:25565
+[09:24:49] [Server thread/INFO]: Using epoll channel type
+[09:24:49] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[09:24:49] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[09:24:49] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[09:24:49] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[09:24:49] [Server thread/INFO]: Preparing level "world"
+[09:24:54] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[09:24:54] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:24:54] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:24:55] [Worker-Main-3/INFO]: Preparing spawn area: 2%
+[09:24:56] [Worker-Main-3/INFO]: Preparing spawn area: 14%
+[09:24:56] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[09:24:56] [Worker-Main-3/INFO]: Preparing spawn area: 18%
+[09:24:57] [Worker-Main-2/INFO]: Preparing spawn area: 20%
+[09:24:57] [Worker-Main-3/INFO]: Preparing spawn area: 51%
+[09:24:58] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[09:24:58] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[09:24:59] [Server thread/INFO]: Time elapsed: 4906 ms
+[09:24:59] [Server thread/INFO]: Done (9.849s)! For help, type "help"
+[09:24:59] [Server thread/INFO]: Optimizing spawn pools...
+[09:24:59] [Server thread/INFO]: [Battletower] Stockage actif : JSON (./config/cobblepulse_battletower/data)
+[09:24:59] [Server thread/INFO]: [Battletower] 0 dossiers joueurs charges
+[09:24:59] [Server thread/INFO]: [Battletower] Pret en 20 ms (50 etages, 10 tiers depuis config/cobblepulse_battletower/tiers)
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS config.tiers - 10 tiers (config/cobblepulse_battletower/tiers)
+[09:25:04] [Server thread/INFO]: PASS config.tiers - 10 tiers (config/cobblepulse_battletower/tiers)
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS config.messages
+[09:25:04] [Server thread/INFO]: PASS config.messages
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS config.floors - 50 etages
+[09:25:04] [Server thread/INFO]: PASS config.floors - 50 etages
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS config.rewards - etage1=2 etage45=8 etage50=15
+[09:25:04] [Server thread/INFO]: PASS config.rewards - etage1=2 etage45=8 etage50=15
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS config.shop - 8 articles
+[09:25:04] [Server thread/INFO]: PASS config.shop - 8 articles
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS config.achievements
+[09:25:04] [Server thread/INFO]: PASS config.achievements
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS skins.builtin - 14 skins embarques
+[09:25:04] [Server thread/INFO]: PASS skins.builtin - 14 skins embarques
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS skins.bytes
+[09:25:04] [Server thread/INFO]: PASS skins.bytes
+[09:25:04] [Server thread/WARN]: [Battletower] Skin serveur introuvable : /home/runner/work/cobblepulse-battletower/cobblepulse-battletower/run-server/config/cobblepulse_battletower/storage.toml
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS skins.server - liste=true lu=3701
+[09:25:04] [Server thread/INFO]: PASS skins.server - liste=true lu=3701
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS storage.backend - JSON (./config/cobblepulse_battletower/data)
+[09:25:04] [Server thread/INFO]: PASS storage.backend - JSON (./config/cobblepulse_battletower/data)
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS integration.placeholders - present
+[09:25:04] [Server thread/INFO]: PASS integration.placeholders - present
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS integration.megashowdown - present
+[09:25:04] [Server thread/INFO]: PASS integration.megashowdown - present
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS showdown.import - garchomp
+[09:25:04] [Server thread/INFO]: PASS showdown.import - garchomp
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS factory.create - [] ivAtk=31
+[09:25:04] [Server thread/INFO]: PASS factory.create - [] ivAtk=31
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS factory.forms - rotom/wash->Wash ninetales/alolan->Alola []
+[09:25:04] [Server thread/INFO]: PASS factory.forms - rotom/wash->Wash ninetales/alolan->Alola []
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS fakemon.lookup - btfake:testmon_ex
+[09:25:04] [Server thread/INFO]: PASS fakemon.lookup - btfake:testmon_ex
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS fakemon.create - btfake:testmon_ex L40 []
+[09:25:04] [Server thread/INFO]: PASS fakemon.create - btfake:testmon_ex L40 []
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS ai.planner.easy - earthquake t-1 (puissance x STAB x efficacite)
+[09:25:04] [Server thread/INFO]: PASS ai.planner.easy - earthquake t-1 (puissance x STAB x efficacite)
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS ai.planner.medium - earthquake t-1 (OHKO)
+[09:25:04] [Server thread/INFO]: PASS ai.planner.medium - earthquake t-1 (OHKO)
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS ai.planner.hard - earthquake t-1 (OHKO)
+[09:25:04] [Server thread/INFO]: PASS ai.planner.hard - earthquake t-1 (OHKO)
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS ai.planner.extreme - earthquake t-1 (OHKO [minimax 1.30])
+[09:25:04] [Server thread/INFO]: PASS ai.planner.extreme - earthquake t-1 (OHKO [minimax 1.30])
+[09:25:04] [Server thread/INFO]: [Battletower][selftest] PASS storage.roundtrip
+[09:25:04] [Server thread/INFO]: PASS storage.roundtrip
+[09:25:11] [Server thread/INFO]: [Tour de Combat] La Tour de Combat est ouverte !
+[09:25:11] [Worker-Main-3/WARN]: Unable to read property: facing with value: up for blockstate: {Name:"mega_showdown:wishing_star_crystal",Properties:{facing:"up",waterlogged:"false"}}
+[09:25:13] [Server thread/INFO]: [Battletower][selftest] zone de test forcee autour de class_2338{x=-256, y=57, z=-112}
+[09:25:13] [Server thread/ERROR]: .old File pokedex for f8abfd0e-7658-3027-ae92-d17dd74fe0c6 is corrupt or missing. Data is lost
+[09:25:13] [Server thread/ERROR]: .old File tm_moves for f8abfd0e-7658-3027-ae92-d17dd74fe0c6 is corrupt or missing. Data is lost
+[09:25:13] [Server thread/ERROR]: .old File cobblemonplayerdata for f8abfd0e-7658-3027-ae92-d17dd74fe0c6 is corrupt or missing. Data is lost
+[09:25:13] [Server thread/ERROR]: .old File pokedex for 0610e65a-d7a6-3965-b871-efabb6045982 is corrupt or missing. Data is lost
+[09:25:13] [Server thread/ERROR]: .old File tm_moves for 0610e65a-d7a6-3965-b871-efabb6045982 is corrupt or missing. Data is lost
+[09:25:13] [Server thread/ERROR]: .old File cobblemonplayerdata for 0610e65a-d7a6-3965-b871-efabb6045982 is corrupt or missing. Data is lost
+[09:25:13] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2787ms or 55 ticks behind
+[09:25:18] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=0 started=false ended=false dispatches=8 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=37 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=1 active=1 | sd=7
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00
+    update / |player|p2|cbdc28cd-f0ca-4138-a865-97e2ae58a00c|| / |teamsize|p1|1 / |teamsize|p2|2 / |gen|9 / |tier| / | / |t:|1794734716 / |start / |split|p1 / |switch|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Pikachu, 2c1ec045-e9b7-42a0-9ec6-add597515edb, L60, F|130/130 / |switch|p1a: 2c1ec045-e9b7-42a0
+    sideupdate / p1 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+[09:25:19] [Server thread/INFO]: [Battletower][selftest] PASS ascension.started - BATTLE etage 1
+[09:25:19] [Server thread/INFO]: PASS ascension.started - BATTLE etage 1
+[09:25:19] [Server thread/INFO]: [Battletower][selftest] PASS queue.waiting - QUEUED
+[09:25:19] [Server thread/INFO]: PASS queue.waiting - QUEUED
+[09:25:20] [Server thread/INFO]: [Battletower][IA EASY] tour 0 : tackle t-1 (puissance x STAB x efficacite)
+[09:25:23] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=1 started=true ended=false dispatches=3 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=137 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Caterpie ticks=96 alive=false ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"wait":true,"side":{"name":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 2c1ec045-e9b7-42a0-9ec6-add597515edb, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":74,"spd":83,"spe":131},"mov
+    sideupdate / p2 / |request|{"forceSwitch":[true],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 724540e5-c925-4c80-9ae2-a654dfef5b16, L5, M","condition":"0 fnt","active":true,"stats":{"atk":9,"def":10,"spa":8,"spd":8,"spe":11},
+    update / | / |t:|1794734720 / |move|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Thunderbolt|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16 / |split|p2 / |-damage|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|0 fnt / |-damage|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|0 fnt / |faint|p2a: 724540e5-c925-4c80-9ae2-
+[09:25:27] [Server thread/INFO]: [Battletower][IA EASY] tour 1 : switch->69dda727-8a66-48a7-bb40-39e2877961b8 (remplacement)
+[09:25:28] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=1 started=true ended=false dispatches=5 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=237 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 | sd=13
+    update / | / |t:|1794734720 / |move|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Thunderbolt|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16 / |split|p2 / |-damage|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|0 fnt / |-damage|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|0 fnt / |faint|p2a: 724540e5-c925-4c80-9ae2-
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Quick Attack","id":"quickattack","pp":30,"maxpp":30,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxligh
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97
+    update / | / |t:|1794734727 / |split|p2 / |switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|20/20 / |switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|100/100 / |turn|2 / |pp_update|p1: 2c1ec045-e9
+[09:25:30] [Server thread/INFO]: [Battletower][IA EASY] tour 1 : poisonsting t-1 (puissance x STAB x efficacite)
+[09:25:33] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=2 started=true ended=false dispatches=8 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Pikachu ticks=337 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Weedle ticks=98 alive=false ticking=true] | sd=15
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97
+    update / | / |t:|1794734727 / |split|p2 / |switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|20/20 / |switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|100/100 / |turn|2 / |pp_update|p1: 2c1ec045-e9
+    update / | / |t:|1794734730 / |move|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Thunderbolt|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8 / |split|p2 / |-damage|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|0 fnt / |-damage|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|0 fnt / |faint|p2a: 69dda727-8a66-48a7-bb40-
+    end / {"winner":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","seed":[40288,64343,5533,37091],"turns":2,"p1":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","p2":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"2c1ec045-e9b7-42a0-9ec6-add597515edb","currentHealth":130,"
+[09:25:38] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=2 started=true ended=false dispatches=6 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Pikachu ticks=437 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 | sd=15
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97
+    update / | / |t:|1794734727 / |split|p2 / |switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|20/20 / |switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|100/100 / |turn|2 / |pp_update|p1: 2c1ec045-e9
+    update / | / |t:|1794734730 / |move|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Thunderbolt|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8 / |split|p2 / |-damage|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|0 fnt / |-damage|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|0 fnt / |faint|p2a: 69dda727-8a66-48a7-bb40-
+    end / {"winner":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","seed":[40288,64343,5533,37091],"turns":2,"p1":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","p2":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"2c1ec045-e9b7-42a0-9ec6-add597515edb","currentHealth":130,"
+[09:25:39] [Server thread/INFO]: [Battletower][selftest] combat BTRunner termine (17 lignes Showdown, IA : poisonsting t-1 (puissance x STAB x efficacite))
+[09:25:43] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=0 started=false ended=false dispatches=8 | PLAYER mustChoose=false request=true sendingOut=1 active=1 [Charmander ticks=17 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=1 active=1 | sd=7
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00
+    update / |player|p2|cbdc28cd-f0ca-4138-a865-97e2ae58a00c|| / |teamsize|p1|1 / |teamsize|p2|2 / |gen|9 / |tier| / | / |t:|1794734742 / |start / |split|p1 / |switch|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Charmander, de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0, L60, M|135/135 / |switch|p1a: de3d08d0-a5d8-4
+    sideupdate / p1 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+[09:25:46] [Server thread/INFO]: [Battletower][IA EASY] tour 0 : tackle t-1 (puissance x STAB x efficacite)
+[09:25:48] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=1 started=true ended=false dispatches=6 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Charmander ticks=117 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Caterpie ticks=75 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"wait":true,"side":{"name":"0610e65a-d7a6-3965-b871-efabb6045982","id":"p1","pokemon":[{"ident":"p1: Charmander","details":"Charmander, de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0, L60, M","condition":"135/135","active":true,"stats":{"atk":86,"def":67,"spa":95,"spd":83,"spe":111
+    sideupdate / p2 / |request|{"forceSwitch":[true],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 72884e04-8273-489e-abd8-0dbbf59530ef, L5, M","condition":"0 fnt","active":true,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},
+    update / | / |t:|1794734746 / |move|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Ember|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef / |-supereffective|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef / |split|p2 / |-damage|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef|0 fnt / |-damage|p2a: 72884e04-8273-489e-abd8-0d
+[09:25:48] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=0 started=false ended=false dispatches=10 | PLAYER mustChoose=false request=true sendingOut=1 active=1 [Pikachu ticks=9 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=1 active=1 | sd=8
+    update / |player|p2|f19bc043-b660-4d73-8d02-e1bda9dd21e4|| / |teamsize|p1|1 / |teamsize|p2|1 / |gen|9 / |tier| / |rule|Inverse Mod: Weaknesses become resistances, while resistances and immunities become weaknesses. / | / |t:|1794734748 / |start / |split|p1 / |switch|p1a: b66febde-633a-4a75-b9c3-f869
+    sideupdate / p1 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / |-weather|RainDance / |-fieldstart|move: Electric Terrain
+[09:25:51] [Server thread/INFO]: [Battletower][IA MEDIUM] tour 0 : tackle t-1 (degats)
+[09:25:53] [Server thread/INFO]: [Battletower][IA EASY] tour 1 : switch->3055f15b-141f-4992-bffd-fc0ca33659c9 (remplacement)
+[09:25:53] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=1 started=true ended=false dispatches=5 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Charmander ticks=217 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 | sd=13
+    update / | / |t:|1794734746 / |move|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Ember|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef / |-supereffective|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef / |split|p2 / |-damage|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef|0 fnt / |-damage|p2a: 72884e04-8273-489e-abd8-0d
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Ember","id":"ember","pp":24,"maxpp":25,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxflare","target":"adjacentFoe"}]},"canTerastallize":"Fire"}],"side":{"name":"0610e65a-d7a6-3965-b871-efabb6045982"
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Poison"}],"side":{"name":"cbdc28cd-f0ca-4138-a865
+    update / | / |t:|1794734753 / |split|p2 / |switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|20/20 / |switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|100/100 / |turn|2 / |pp_update|p1: de3d08d0-a5
+[09:25:53] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=1 started=true ended=false dispatches=13 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Pikachu ticks=109 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Magikarp ticks=67 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / |-weather|RainDance / |-fieldstart|move: Electric Terrain
+    update / | / |t:|1794734752 / |move|p1a: b66febde-633a-4a75-b9c3-f86903edaaaf|Thunderbolt|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448 / |-resisted|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448 / |split|p2 / |-damage|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448|0 fnt / |-damage|p2a: 0245381f-54a0-49a1-8374-3e
+    end / {"winner":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","seed":[11733,56983,38201,58549],"turns":1,"p1":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","p2":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"b66febde-633a-4a75-b9c3-f86903edaaaf","currentHealth":130,
+[09:25:56] [Server thread/INFO]: [Battletower][IA EASY] tour 1 : poisonsting t-1 (puissance x STAB x efficacite)
+[09:25:58] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=2 started=true ended=false dispatches=11 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Charmander ticks=317 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Weedle ticks=72 alive=true ticking=true] | sd=15
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Poison"}],"side":{"name":"cbdc28cd-f0ca-4138-a865
+    update / | / |t:|1794734753 / |split|p2 / |switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|20/20 / |switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|100/100 / |turn|2 / |pp_update|p1: de3d08d0-a5
+    update / | / |t:|1794734756 / |move|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Ember|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9 / |-supereffective|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9 / |split|p2 / |-damage|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|0 fnt / |-damage|p2a: 3055f15b-141f-4992-bffd-fc
+    end / {"winner":"0610e65a-d7a6-3965-b871-efabb6045982","seed":[35629,17002,49852,43814],"turns":2,"p1":"0610e65a-d7a6-3965-b871-efabb6045982","p2":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","p1team":[{"name":"Charmander","species":"charmander","uuid":"de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0","currentHealth
+[09:25:58] [Server thread/INFO]: [Battletower][selftest][diag] BTRunner tour=1 started=true ended=false dispatches=7 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Pikachu ticks=209 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Magikarp ticks=167 alive=false ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / |-weather|RainDance / |-fieldstart|move: Electric Terrain
+    update / | / |t:|1794734752 / |move|p1a: b66febde-633a-4a75-b9c3-f86903edaaaf|Thunderbolt|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448 / |-resisted|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448 / |split|p2 / |-damage|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448|0 fnt / |-damage|p2a: 0245381f-54a0-49a1-8374-3e
+    end / {"winner":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","seed":[11733,56983,38201,58549],"turns":1,"p1":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","p2":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"b66febde-633a-4a75-b9c3-f86903edaaaf","currentHealth":130,
+[09:26:03] [Server thread/INFO]: [Battletower][selftest] combat BTRunner termine (12 lignes Showdown, IA : tackle t-1 (degats))
+[09:26:03] [Server thread/INFO]: [Tour de Combat] Felicitations a BTRunner qui vient de triompher des 50 etages de la Tour de Combat ! (49s)
+[09:26:03] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=2 started=true ended=false dispatches=6 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Charmander ticks=417 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 | sd=15
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Poison"}],"side":{"name":"cbdc28cd-f0ca-4138-a865
+    update / | / |t:|1794734753 / |split|p2 / |switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|20/20 / |switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|100/100 / |turn|2 / |pp_update|p1: de3d08d0-a5
+    update / | / |t:|1794734756 / |move|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Ember|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9 / |-supereffective|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9 / |split|p2 / |-damage|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|0 fnt / |-damage|p2a: 3055f15b-141f-4992-bffd-fc
+    end / {"winner":"0610e65a-d7a6-3965-b871-efabb6045982","seed":[35629,17002,49852,43814],"turns":2,"p1":"0610e65a-d7a6-3965-b871-efabb6045982","p2":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","p1team":[{"name":"Charmander","species":"charmander","uuid":"de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0","currentHealth
+[09:26:05] [Server thread/INFO]: [Battletower][selftest] combat BTQueue termine (17 lignes Showdown, IA : poisonsting t-1 (puissance x STAB x efficacite))
+[09:26:18] [Server thread/INFO]: [Battletower][IA MEDIUM] tour 0 : tackle t-1 (degats)
+[09:26:18] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=1 started=true ended=false dispatches=14 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Charmander ticks=81 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Magikarp ticks=40 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / |-weather|RainDance / |-fieldstart|move: Electric Terrain
+    update / | / |t:|1794734778 / |move|p1a: 673d4722-4b25-4503-adb6-260a1f398354|Ember|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97 / |-supereffective|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97 / |split|p2 / |-damage|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97|0 fnt / |-damage|p2a: b7504f74-4ca0-40db-8d09-47
+    end / {"winner":"0610e65a-d7a6-3965-b871-efabb6045982","seed":[11343,46442,13740,65149],"turns":1,"p1":"0610e65a-d7a6-3965-b871-efabb6045982","p2":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","p1team":[{"name":"Charmander","species":"charmander","uuid":"673d4722-4b25-4503-adb6-260a1f398354","currentHealth
+[09:26:23] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=1 started=true ended=false dispatches=7 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Charmander ticks=181 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Magikarp ticks=140 alive=false ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / |-weather|RainDance / |-fieldstart|move: Electric Terrain
+    update / | / |t:|1794734778 / |move|p1a: 673d4722-4b25-4503-adb6-260a1f398354|Ember|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97 / |-supereffective|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97 / |split|p2 / |-damage|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97|0 fnt / |-damage|p2a: b7504f74-4ca0-40db-8d09-47
+    end / {"winner":"0610e65a-d7a6-3965-b871-efabb6045982","seed":[11343,46442,13740,65149],"turns":1,"p1":"0610e65a-d7a6-3965-b871-efabb6045982","p2":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","p1team":[{"name":"Charmander","species":"charmander","uuid":"673d4722-4b25-4503-adb6-260a1f398354","currentHealth
+[09:26:28] [Server thread/INFO]: [Battletower][selftest][diag] BTQueue tour=1 started=true ended=false dispatches=5 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Charmander ticks=281 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / |-weather|RainDance / |-fieldstart|move: Electric Terrain
+    update / | / |t:|1794734778 / |move|p1a: 673d4722-4b25-4503-adb6-260a1f398354|Ember|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97 / |-supereffective|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97 / |split|p2 / |-damage|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97|0 fnt / |-damage|p2a: b7504f74-4ca0-40db-8d09-47
+    end / {"winner":"0610e65a-d7a6-3965-b871-efabb6045982","seed":[11343,46442,13740,65149],"turns":1,"p1":"0610e65a-d7a6-3965-b871-efabb6045982","p2":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","p1team":[{"name":"Charmander","species":"charmander","uuid":"673d4722-4b25-4503-adb6-260a1f398354","currentHealth
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS ascension.completed - completions=1 record=2
+[09:26:28] [Server thread/INFO]: PASS ascension.completed - completions=1 record=2
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS ascension.bp - bp=54
+[09:26:28] [Server thread/INFO]: PASS ascension.bp - bp=54
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS ascension.best_time - 0:49
+[09:26:28] [Server thread/INFO]: PASS ascension.best_time - 0:49
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS ascension.run_closed
+[09:26:28] [Server thread/INFO]: PASS ascension.run_closed
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS leaderboard.rank - #1
+[09:26:28] [Server thread/INFO]: PASS leaderboard.rank - #1
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS achievements.unlocked - []
+[09:26:28] [Server thread/INFO]: PASS achievements.unlocked - []
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS queue.served - victoires=1
+[09:26:28] [Server thread/INFO]: PASS queue.served - victoires=1
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS modifiers.inverse
+[09:26:28] [Server thread/INFO]: PASS modifiers.inverse
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS modifiers.weather
+[09:26:28] [Server thread/INFO]: PASS modifiers.weather
+[09:26:28] [Server thread/INFO]: [Battletower][selftest] PASS modifiers.terrain
+[09:26:28] [Server thread/INFO]: PASS modifiers.terrain
+[09:26:30] [Server thread/INFO]: [Battletower][selftest] combat BTQueue termine (12 lignes Showdown, IA : tackle t-1 (degats))
+[09:26:30] [Server thread/INFO]: [Tour de Combat] Felicitations a BTQueue qui vient de triompher des 50 etages de la Tour de Combat ! (50s)
+[09:26:38] [Server thread/ERROR]: .old File pokedex for 0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8 is corrupt or missing. Data is lost
+[09:26:38] [Server thread/ERROR]: .old File tm_moves for 0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8 is corrupt or missing. Data is lost
+[09:26:41] [Server thread/ERROR]: .old File cobblemonplayerdata for 0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8 is corrupt or missing. Data is lost
+[09:26:43] [Server thread/INFO]: [Battletower][selftest][diag] BTLoser tour=0 started=false ended=false dispatches=7 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Magikarp ticks=52 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=1 active=1 [Garchomp ticks=12 alive=true ticking=true] | sd=7
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxqua
+    update / |player|p2|590116c1-a491-4f7f-a18e-5d87357b08b7|| / |teamsize|p1|1 / |teamsize|p2|1 / |gen|9 / |tier| / | / |t:|1794734801 / |start / |split|p1 / |switch|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec|Magikarp, a3298437-7bbb-42ed-8795-56c1889fbeec, L5, M|18/18 / |switch|p1a: a3298437-7bbb-42ed-8
+    sideupdate / p1 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+[09:26:44] [Server thread/INFO]: [Battletower][IA HARD] tour 0 : dragonclaw t-1 (OHKO)
+[09:26:48] [Server thread/INFO]: [Battletower][selftest][diag] BTLoser tour=1 started=true ended=false dispatches=7 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Magikarp ticks=152 alive=false ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Garchomp ticks=112 alive=true ticking=true] | sd=9
+    sideupdate / p1 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / | / |t:|1794734804 / |move|p2a: 5cf959a3-aaf7-4a33-8b96-2f75697538aa|Dragon Claw|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec / |split|p1 / |-damage|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec|0 fnt / |-damage|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec|0 fnt / |faint|p1a: a3298437-7bbb-42ed-8795-
+    end / {"winner":"590116c1-a491-4f7f-a18e-5d87357b08b7","seed":[58492,64379,53194,55511],"turns":1,"p1":"0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8","p2":"590116c1-a491-4f7f-a18e-5d87357b08b7","p1team":[{"name":"Magikarp","species":"magikarp","uuid":"a3298437-7bbb-42ed-8795-56c1889fbeec","currentHealth":18
+[09:26:51] [Server thread/INFO]: [Battletower][selftest] combat BTLoser termine (11 lignes Showdown, IA : dragonclaw t-1 (OHKO))
+[09:27:18] [Server thread/INFO]: [Battletower][selftest] PASS defeat.cooldown - 23h 59min
+[09:27:18] [Server thread/INFO]: PASS defeat.cooldown - 23h 59min
+[09:27:18] [Server thread/INFO]: [Battletower][selftest] PASS defeat.losses
+[09:27:18] [Server thread/INFO]: PASS defeat.losses
+[09:27:18] [Server thread/INFO]: [Battletower][selftest] PASS defeat.run_closed
+[09:27:18] [Server thread/INFO]: PASS defeat.run_closed
+[09:27:18] [Server thread/INFO]: [Battletower][selftest] PASS defeat.blocked
+[09:27:18] [Server thread/INFO]: PASS defeat.blocked
+[09:27:18] [Server thread/ERROR]: .old File pokedex for dbfaa2ff-2bfe-3780-8d18-9d9c2b6e18f0 is corrupt or missing. Data is lost
+[09:27:18] [Server thread/ERROR]: .old File tm_moves for dbfaa2ff-2bfe-3780-8d18-9d9c2b6e18f0 is corrupt or missing. Data is lost
+[09:27:18] [Server thread/ERROR]: .old File cobblemonplayerdata for dbfaa2ff-2bfe-3780-8d18-9d9c2b6e18f0 is corrupt or missing. Data is lost
+[09:27:18] [Server thread/INFO]: [Battletower] BTDisq disqualifie par selftest (etage 1)
+[09:27:18] [Server thread/INFO]: [Battletower][selftest] PASS staff.disqualify
+[09:27:18] [Server thread/INFO]: PASS staff.disqualify
+[09:27:18] [Server thread/INFO]: [Battletower][selftest] PASS shop.buy - bp=70
+[09:27:18] [Server thread/INFO]: PASS shop.buy - bp=70
+[09:27:25] [Server thread/ERROR]: .old File pokedex for b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8 is corrupt or missing. Data is lost
+[09:27:25] [Server thread/ERROR]: .old File tm_moves for b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8 is corrupt or missing. Data is lost
+[09:27:25] [Server thread/ERROR]: .old File cobblemonplayerdata for b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8 is corrupt or missing. Data is lost
+[09:27:28] [Server thread/INFO]: [Battletower][selftest][diag] BTDaily tour=0 started=false ended=false dispatches=10 | PLAYER mustChoose=false request=true sendingOut=1 active=1 [Pikachu ticks=12 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=1 active=1 | sd=8
+    update / |player|p2|55ddee01-93f3-45d0-879b-af4ad3f2949c|| / |teamsize|p1|1 / |teamsize|p2|2 / |gen|9 / |tier| / | / |t:|1794734848 / |start / |split|p1 / |switch|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F|130/130 / |switch|p1a: 32ff2e25-6f7d-4bca
+    sideupdate / p1 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    update / |-weather|Fog
+[09:27:31] [Server thread/INFO]: [Battletower][IA EXTREME] tour 0 : tackle t-1 (degats [minimax 0.30])
+[09:27:33] [Server thread/INFO]: [Battletower][selftest][diag] BTDaily tour=1 started=true ended=false dispatches=6 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=112 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Caterpie ticks=72 alive=true ticking=true] | sd=11
+    update / |-weather|Fog
+    sideupdate / p1 / |request|{"wait":true,"side":{"name":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":83,"spd":74,"spe":131},"mov
+    sideupdate / p2 / |request|{"forceSwitch":[true],"side":{"name":"55ddee01-93f3-45d0-879b-af4ad3f2949c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a, L5, F","condition":"0 fnt","active":true,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},
+    update / | / |t:|1794734851 / |move|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Thunderbolt|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a / |-crit|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a / |split|p2 / |-damage|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|0 fnt / |-damage|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b
+[09:27:38] [Server thread/INFO]: [Battletower][selftest][diag] BTDaily tour=1 started=true ended=false dispatches=3 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=212 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 | sd=11
+    update / |-weather|Fog
+    sideupdate / p1 / |request|{"wait":true,"side":{"name":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":83,"spd":74,"spe":131},"mov
+    sideupdate / p2 / |request|{"forceSwitch":[true],"side":{"name":"55ddee01-93f3-45d0-879b-af4ad3f2949c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a, L5, F","condition":"0 fnt","active":true,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},
+    update / | / |t:|1794734851 / |move|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Thunderbolt|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a / |-crit|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a / |split|p2 / |-damage|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|0 fnt / |-damage|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b
+[09:27:39] [Server thread/INFO]: [Battletower][IA EXTREME] tour 1 : switch->9d640e74-07f7-47a3-a433-c00cb5de77e9 (remplacement)
+[09:27:42] [Server thread/INFO]: [Battletower][IA EXTREME] tour 1 : thundershock t-1 (degats [minimax -1.00])
+[09:27:43] [Server thread/INFO]: [Battletower][selftest][diag] BTDaily tour=2 started=true ended=false dispatches=11 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Pikachu ticks=312 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [btfake.species.testmonex.name ticks=49 alive=true ticking=true] | sd=16
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Thunder Shock","id":"thundershock","pp":30,"maxpp":30,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"}]},"canTerastallize":"Psychic"}],"side":{"name":"55ddee01-93f3-4
+    update / | / |t:|1794734859 / |split|p2 / |switch|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F|20/20 / |switch|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F|100/100 / |turn|2 / |pp_
+    update / | / |t:|1794734863 / |move|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Thunderbolt|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9 / |-resisted|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9 / |split|p2 / |-damage|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|0 fnt / |-damage|p2a: 9d640e74-07f7-47a3-a433-c0
+    end / {"winner":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","seed":[36245,41004,1543,2508],"turns":2,"p1":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","p2":"55ddee01-93f3-45d0-879b-af4ad3f2949c","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"32ff2e25-6f7d-4bca-9860-bb0abfc762a6","currentHealth":130,"s
+[09:27:48] [Server thread/INFO]: [Battletower][selftest][diag] BTDaily tour=2 started=true ended=false dispatches=8 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Pikachu ticks=412 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 | sd=16
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Thunder Shock","id":"thundershock","pp":30,"maxpp":30,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"}]},"canTerastallize":"Psychic"}],"side":{"name":"55ddee01-93f3-4
+    update / | / |t:|1794734859 / |split|p2 / |switch|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F|20/20 / |switch|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F|100/100 / |turn|2 / |pp_
+    update / | / |t:|1794734863 / |move|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Thunderbolt|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9 / |-resisted|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9 / |split|p2 / |-damage|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|0 fnt / |-damage|p2a: 9d640e74-07f7-47a3-a433-c0
+    end / {"winner":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","seed":[36245,41004,1543,2508],"turns":2,"p1":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","p2":"55ddee01-93f3-45d0-879b-af4ad3f2949c","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"32ff2e25-6f7d-4bca-9860-bb0abfc762a6","currentHealth":130,"s
+[09:27:51] [Server thread/INFO]: [Battletower][selftest] combat BTDaily termine (18 lignes Showdown, IA : thundershock t-1 (degats [minimax -1.00]))
+[09:27:51] [Server thread/INFO]: [Tour de Combat] BTDaily a vaincu le Boss du Jour Boss Test !
+[09:27:54] [Server thread/INFO]: [Battletower][selftest] PASS daily.won - victoires=1
+[09:27:54] [Server thread/INFO]: PASS daily.won - victoires=1
+[09:27:54] [Server thread/INFO]: [Battletower][selftest] PASS daily.reward - bp=25
+[09:27:54] [Server thread/INFO]: PASS daily.reward - bp=25
+[09:27:54] [Server thread/INFO]: [Battletower][selftest] PASS daily.once_per_day
+[09:27:54] [Server thread/INFO]: PASS daily.once_per_day
+[09:27:54] [Server thread/INFO]: [Battletower][selftest] PASS daily.rotation - boss_exemple
+[09:27:54] [Server thread/INFO]: PASS daily.rotation - boss_exemple
+[09:27:54] [Server thread/INFO]: [Battletower][selftest] PASS modifiers.fog
+[09:27:54] [Server thread/INFO]: PASS modifiers.fog
+[09:27:54] [Server thread/INFO]: [Battletower][selftest] PASS fakemon.battle
+[09:27:54] [Server thread/INFO]: PASS fakemon.battle
+[09:29:07] [Server thread/ERROR]: .old File pokedex for e8d5523f-f8fe-3d44-b818-8cf4aba64cfe is corrupt or missing. Data is lost
+[09:29:07] [Server thread/ERROR]: .old File tm_moves for e8d5523f-f8fe-3d44-b818-8cf4aba64cfe is corrupt or missing. Data is lost
+[09:29:07] [Server thread/ERROR]: .old File cobblemonplayerdata for e8d5523f-f8fe-3d44-b818-8cf4aba64cfe is corrupt or missing. Data is lost
+[09:29:13] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=0 started=false ended=false dispatches=7 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Glaceon ticks=71 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=1 active=1 [Garchomp ticks=29 alive=true ticking=true] | sd=7
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / |player|p2|0cd4efb4-f0db-4ddf-8115-3382a7cafb4c|| / |teamsize|p1|1 / |teamsize|p2|1 / |gen|9 / |tier| / | / |t:|1794734950 / |start / |split|p1 / |switch|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Glaceon, 520eb588-7aeb-4a5c-b8a7-00281d5a4743, L55, M|153/153 / |switch|p1a: 520eb588-7aeb-4a5c
+    sideupdate / p1 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+[09:29:13] [Server thread/INFO]: [Battletower][IA HARD] tour 0 : stoneedge+tera t-1 (degats + Tera defensive (steel))
+[09:29:14] [Server thread/ERROR]: .old File pokedex for 0cd4efb4-f0db-4ddf-8115-3382a7cafb4c is corrupt or missing. Data is lost
+[09:29:18] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=1 started=true ended=false dispatches=15 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Glaceon ticks=171 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Garchomp ticks=129 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":9,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","ta
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734954 / |-terastallize|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Steel / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |split|p1 / |-damage|p1a: 520eb588-7aeb-4
+[09:29:23] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=1 started=true ended=false dispatches=12 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Glaceon ticks=271 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Garchomp ticks=229 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":9,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","ta
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734954 / |-terastallize|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Steel / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |split|p1 / |-damage|p1a: 520eb588-7aeb-4
+[09:29:28] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=1 started=true ended=false dispatches=7 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Glaceon ticks=371 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Garchomp ticks=329 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":9,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","ta
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734954 / |-terastallize|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Steel / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |split|p1 / |-damage|p1a: 520eb588-7aeb-4
+[09:29:31] [Server thread/INFO]: [Battletower][IA HARD] tour 1 : stoneedge t-1 (2HKO)
+[09:29:33] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=2 started=true ended=false dispatches=8 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Glaceon ticks=471 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Garchomp ticks=429 alive=true ticking=true] | sd=13
+    update / | / |t:|1794734954 / |-terastallize|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Steel / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |split|p1 / |-damage|p1a: 520eb588-7aeb-4
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":8,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","ta
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734971 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss] / |-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3
+[09:29:38] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=2 started=true ended=false dispatches=5 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Glaceon ticks=571 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Garchomp ticks=529 alive=true ticking=true] | sd=13
+    update / | / |t:|1794734954 / |-terastallize|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Steel / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |split|p1 / |-damage|p1a: 520eb588-7aeb-4
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":8,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","ta
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734971 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss] / |-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3
+[09:29:39] [Server thread/INFO]: [Battletower][IA HARD] tour 2 : stoneedge t-1 (2HKO)
+[09:29:43] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=3 started=true ended=false dispatches=7 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Glaceon ticks=671 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Garchomp ticks=629 alive=true ticking=true] | sd=16
+    update / | / |t:|1794734971 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss] / |-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":7,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","ta
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734979 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss] / |-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3
+[09:29:48] [Server thread/INFO]: [Battletower][IA HARD] tour 3 : stoneedge t-1 (2HKO)
+[09:29:48] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=4 started=true ended=false dispatches=11 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Glaceon ticks=771 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Garchomp ticks=729 alive=true ticking=true] | sd=18
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734979 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss] / |-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3
+    update / | / |t:|1794734988 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-crit|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |split|p1 / |-damage|p1a: 520eb588-7aeb-4a5c-b8a7-00281
+    end / {"winner":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","seed":[13291,14477,51294,32231],"turns":4,"p1":"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe","p2":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","p1team":[{"name":"Glaceon","species":"glaceon","uuid":"520eb588-7aeb-4a5c-b8a7-00281d5a4743","currentHealth":153,
+[09:29:53] [Server thread/INFO]: [Battletower][selftest][diag] BTTera tour=4 started=true ended=false dispatches=5 | PLAYER mustChoose=false request=false sendingOut=0 active=1 | NPC mustChoose=false request=false sendingOut=0 active=1 [Garchomp ticks=829 alive=true ticking=true] | sd=18
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":
+    update / | / |t:|1794734979 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss] / |-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3
+    update / | / |t:|1794734988 / |move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |-crit|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743 / |split|p1 / |-damage|p1a: 520eb588-7aeb-4a5c-b8a7-00281
+    end / {"winner":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","seed":[13291,14477,51294,32231],"turns":4,"p1":"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe","p2":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","p1team":[{"name":"Glaceon","species":"glaceon","uuid":"520eb588-7aeb-4a5c-b8a7-00281d5a4743","currentHealth":153,
+[09:29:54] [Server thread/INFO]: [Battletower][selftest] combat BTTera termine (20 lignes Showdown, IA : stoneedge t-1 (2HKO))
+[09:29:57] [Server thread/INFO]: [Battletower][selftest] PASS ai.hard.defensive_tera - ##AI## stoneedge t-1 (2HKO)
+[09:29:57] [Server thread/INFO]: PASS ai.hard.defensive_tera - ##AI## stoneedge t-1 (2HKO)
+[09:29:57] [Server thread/ERROR]: .old File pokedex for 0d1197e9-cbe0-386e-ae69-7292863c6643 is corrupt or missing. Data is lost
+[09:29:57] [Server thread/ERROR]: .old File tm_moves for 0d1197e9-cbe0-386e-ae69-7292863c6643 is corrupt or missing. Data is lost
+[09:29:57] [Server thread/ERROR]: .old File cobblemonplayerdata for 0d1197e9-cbe0-386e-ae69-7292863c6643 is corrupt or missing. Data is lost
+[09:30:03] [Server thread/INFO]: [Battletower][IA EXTREME] tour 0 : switch->ff9b349e-27d7-46e9-b62d-101476b16b40 (switch (prediction) [minimax -0.70])
+[09:30:03] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=1 started=true ended=false dispatches=14 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Pikachu ticks=71 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Charizard ticks=31 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning"
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Surf","id":"surf","pp":15,"maxpp":15,"target":"allAdjacent","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":10,"maxpp":10,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxgeyser","target":"adj
+    update / | / |t:|1794735003 / |split|p2 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|154/154 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|100/100 / |move|p1a: e97f3f1f-d9d5-4
+[09:30:08] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=1 started=true ended=false dispatches=11 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=171 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning"
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Surf","id":"surf","pp":15,"maxpp":15,"target":"allAdjacent","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":10,"maxpp":10,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxgeyser","target":"adj
+    update / | / |t:|1794735003 / |split|p2 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|154/154 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|100/100 / |move|p1a: e97f3f1f-d9d5-4
+[09:30:13] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=1 started=true ended=false dispatches=7 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=271 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Blastoise ticks=83 alive=true ticking=true] | sd=10
+    sideupdate / p2 / |error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning"
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Surf","id":"surf","pp":15,"maxpp":15,"target":"allAdjacent","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":10,"maxpp":10,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxgeyser","target":"adj
+    update / | / |t:|1794735003 / |split|p2 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|154/154 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|100/100 / |move|p1a: e97f3f1f-d9d5-4
+[09:30:14] [Server thread/INFO]: [Battletower][IA EXTREME] tour 1 : surf t-1 (degats [minimax -0.70])
+[09:30:18] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=2 started=true ended=false dispatches=3 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=371 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Blastoise ticks=183 alive=false ticking=true] | sd=13
+    update / | / |t:|1794735003 / |split|p2 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|154/154 / |switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|100/100 / |move|p1a: e97f3f1f-d9d5-4
+    sideupdate / p1 / |request|{"wait":true,"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"150/150","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":152},"mo
+    sideupdate / p2 / |request|{"forceSwitch":[true],"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Blastoise","details":"Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":120,"spa":105,"spd":137,
+    update / | / |t:|1794735015 / |move|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|Thunderbolt|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40 / |-supereffective|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40 / |split|p2 / |-damage|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|0 fnt / |-damage|p2a: ff9b349e-27d7-46e9-b
+[09:30:21] [Server thread/INFO]: [Battletower][IA EXTREME] tour 2 : switch->20fb27a7-0523-48ee-a5f5-18679589a98b (remplacement)
+[09:30:23] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=2 started=true ended=false dispatches=6 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=471 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Charizard ticks=8 alive=true ticking=true] | sd=16
+    update / | / |t:|1794735015 / |move|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|Thunderbolt|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40 / |-supereffective|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40 / |split|p2 / |-damage|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|0 fnt / |-damage|p2a: ff9b349e-27d7-46e9-b
+    sideupdate / p1 / |request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":13,"maxpp":15,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning"
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"targ
+    update / | / |t:|1794735021 / |split|p2 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100 / |turn|3 / |pp_update|p1: e
+[09:30:24] [Server thread/INFO]: [Battletower][IA EXTREME] tour 2 : flamethrower+mega t-1 (degats + Mega [minimax -2.02])
+[09:30:28] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=3 started=true ended=false dispatches=15 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=571 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Charizard ticks=108 alive=true ticking=true] | sd=19
+    update / | / |t:|1794735021 / |split|p2 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100 / |turn|3 / |pp_update|p1: e
+    sideupdate / p1 / |request|{"forceSwitch":[true],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":1
+    sideupdate / p2 / |request|{"wait":true,"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"39/153","active":true,"stats":{"atk":124,"def":107,"spa":179,"spd":121,"
+    update / | / |t:|1794735025 / |detailschange|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M / |-mega|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard| / |-weather|SunnyDay|[from] ability: Drought|[of] p2a: 20fb27a7-0523-48ee-a5f5-18679589a
+[09:30:32] [Server thread/ERROR]: .old File pokedex for eb3084fa-1159-4090-8213-522d8765f5b9 is corrupt or missing. Data is lost
+[09:30:33] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=3 started=true ended=false dispatches=15 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=671 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Charizard ticks=208 alive=true ticking=true] | sd=19
+    update / | / |t:|1794735021 / |split|p2 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100 / |turn|3 / |pp_update|p1: e
+    sideupdate / p1 / |request|{"forceSwitch":[true],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":1
+    sideupdate / p2 / |request|{"wait":true,"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"39/153","active":true,"stats":{"atk":124,"def":107,"spa":179,"spd":121,"
+    update / | / |t:|1794735025 / |detailschange|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M / |-mega|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard| / |-weather|SunnyDay|[from] ability: Drought|[of] p2a: 20fb27a7-0523-48ee-a5f5-18679589a
+[09:30:38] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=3 started=true ended=false dispatches=13 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=771 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Charizard ticks=308 alive=true ticking=true] | sd=19
+    update / | / |t:|1794735021 / |split|p2 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100 / |turn|3 / |pp_update|p1: e
+    sideupdate / p1 / |request|{"forceSwitch":[true],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":1
+    sideupdate / p2 / |request|{"wait":true,"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"39/153","active":true,"stats":{"atk":124,"def":107,"spa":179,"spd":121,"
+    update / | / |t:|1794735025 / |detailschange|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M / |-mega|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard| / |-weather|SunnyDay|[from] ability: Drought|[of] p2a: 20fb27a7-0523-48ee-a5f5-18679589a
+[09:30:43] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=3 started=true ended=false dispatches=6 | PLAYER mustChoose=false request=true sendingOut=0 active=1 [Pikachu ticks=871 alive=true ticking=true] | NPC mustChoose=false request=true sendingOut=0 active=1 [Charizard ticks=408 alive=true ticking=true] | sd=19
+    update / | / |t:|1794735021 / |split|p2 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100 / |turn|3 / |pp_update|p1: e
+    sideupdate / p1 / |request|{"forceSwitch":[true],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":1
+    sideupdate / p2 / |request|{"wait":true,"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"39/153","active":true,"stats":{"atk":124,"def":107,"spa":179,"spd":121,"
+    update / | / |t:|1794735025 / |detailschange|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M / |-mega|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard| / |-weather|SunnyDay|[from] ability: Drought|[of] p2a: 20fb27a7-0523-48ee-a5f5-18679589a
+[09:30:48] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=3 started=true ended=false dispatches=3 | PLAYER mustChoose=false request=true sendingOut=0 active=1 | NPC mustChoose=false request=true sendingOut=0 active=1 [Charizard ticks=508 alive=true ticking=true] | sd=19
+    update / | / |t:|1794735021 / |split|p2 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153 / |switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100 / |turn|3 / |pp_update|p1: e
+    sideupdate / p1 / |request|{"forceSwitch":[true],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":1
+    sideupdate / p2 / |request|{"wait":true,"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"39/153","active":true,"stats":{"atk":124,"def":107,"spa":179,"spd":121,"
+    update / | / |t:|1794735025 / |detailschange|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M / |-mega|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard| / |-weather|SunnyDay|[from] ability: Drought|[of] p2a: 20fb27a7-0523-48ee-a5f5-18679589a
+[09:30:52] [Server thread/INFO]: [Battletower][IA EXTREME] tour 3 : flamethrower t-1 (degats [minimax -0.91])
+[09:30:53] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=4 started=true ended=false dispatches=17 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Snorlax ticks=49 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Charizard ticks=608 alive=true ticking=true] | sd=24
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"targ
+    update / | / |t:|1794735051 / |split|p1 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|325/325 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|100/100 / |turn|4 / |pp_update|p1: 1b46d
+    update / | / |t:|1794735053 / |move|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Flamethrower|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351 / |split|p1 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|286/325 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|88/100 / |-status|p1a: 1b46def8-5973-467b
+    end / {"winner":"0d1197e9-cbe0-386e-ae69-7292863c6643","seed":[13431,36653,14022,52405],"turns":4,"p1":"0d1197e9-cbe0-386e-ae69-7292863c6643","p2":"eb3084fa-1159-4090-8213-522d8765f5b9","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4","currentHealth":150,
+[09:30:58] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=4 started=true ended=false dispatches=14 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Snorlax ticks=149 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Charizard ticks=708 alive=true ticking=true] | sd=24
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"targ
+    update / | / |t:|1794735051 / |split|p1 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|325/325 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|100/100 / |turn|4 / |pp_update|p1: 1b46d
+    update / | / |t:|1794735053 / |move|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Flamethrower|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351 / |split|p1 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|286/325 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|88/100 / |-status|p1a: 1b46def8-5973-467b
+    end / {"winner":"0d1197e9-cbe0-386e-ae69-7292863c6643","seed":[13431,36653,14022,52405],"turns":4,"p1":"0d1197e9-cbe0-386e-ae69-7292863c6643","p2":"eb3084fa-1159-4090-8213-522d8765f5b9","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4","currentHealth":150,
+[09:31:03] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=4 started=true ended=false dispatches=9 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Snorlax ticks=249 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 [Charizard ticks=808 alive=false ticking=true] | sd=24
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"targ
+    update / | / |t:|1794735051 / |split|p1 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|325/325 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|100/100 / |turn|4 / |pp_update|p1: 1b46d
+    update / | / |t:|1794735053 / |move|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Flamethrower|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351 / |split|p1 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|286/325 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|88/100 / |-status|p1a: 1b46def8-5973-467b
+    end / {"winner":"0d1197e9-cbe0-386e-ae69-7292863c6643","seed":[13431,36653,14022,52405],"turns":4,"p1":"0d1197e9-cbe0-386e-ae69-7292863c6643","p2":"eb3084fa-1159-4090-8213-522d8765f5b9","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4","currentHealth":150,
+[09:31:08] [Server thread/INFO]: [Battletower][selftest][diag] BTExtreme tour=4 started=true ended=false dispatches=7 | PLAYER mustChoose=false request=false sendingOut=0 active=1 [Snorlax ticks=349 alive=true ticking=true] | NPC mustChoose=false request=false sendingOut=0 active=1 | sd=24
+    sideupdate / p2 / |request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"targ
+    update / | / |t:|1794735051 / |split|p1 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|325/325 / |switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|100/100 / |turn|4 / |pp_update|p1: 1b46d
+    update / | / |t:|1794735053 / |move|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Flamethrower|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351 / |split|p1 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|286/325 / |-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|88/100 / |-status|p1a: 1b46def8-5973-467b
+    end / {"winner":"0d1197e9-cbe0-386e-ae69-7292863c6643","seed":[13431,36653,14022,52405],"turns":4,"p1":"0d1197e9-cbe0-386e-ae69-7292863c6643","p2":"eb3084fa-1159-4090-8213-522d8765f5b9","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4","currentHealth":150,
+[09:31:09] [Server thread/INFO]: [Battletower][selftest] combat BTExtreme termine (26 lignes Showdown, IA : flamethrower t-1 (degats [minimax -0.91]))
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] PASS ai.extreme.battle - ##AI## flamethrower t-1 (degats [minimax -0.91])
+[09:31:12] [Server thread/INFO]: PASS ai.extreme.battle - ##AI## flamethrower t-1 (degats [minimax -0.91])
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] PASS ai.extreme.mega
+[09:31:12] [Server thread/INFO]: PASS ai.extreme.mega
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTRunner#0 :
+update
+|t:|1794734716
+|gametype|singles
+update
+|player|p1|f8abfd0e-7658-3027-ae92-d17dd74fe0c6||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Quick Attack","id":"quickattack","pp":30,"maxpp":30,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Electric"}],"side":{"name":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 2c1ec045-e9b7-42a0-9ec6-add597515edb, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":74,"spd":83,"spe":131},"moves":["thunderbolt","quickattack"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 724540e5-c925-4c80-9ae2-a654dfef5b16, L5, M","condition":"21/21","active":true,"stats":{"atk":9,"def":10,"spa":8,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""},{"ident":"p2: Weedle","details":"Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M","condition":"20/20","active":false,"stats":{"atk":11,"def":9,"spa":7,"spd":8,"spe":11},"moves":["poisonsting"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug","Poison"],"types":["Bug","Poison"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""}]},"noCancel":true}
+update
+|player|p2|cbdc28cd-f0ca-4138-a865-97e2ae58a00c||
+|teamsize|p1|1
+|teamsize|p2|2
+|gen|9
+|tier|
+|
+|t:|1794734716
+|start
+|split|p1
+|switch|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Pikachu, 2c1ec045-e9b7-42a0-9ec6-add597515edb, L60, F|130/130
+|switch|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Pikachu, 2c1ec045-e9b7-42a0-9ec6-add597515edb, L60, F|100/100
+|split|p2
+|switch|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|Caterpie, 724540e5-c925-4c80-9ae2-a654dfef5b16, L5, M|21/21
+|switch|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|Caterpie, 724540e5-c925-4c80-9ae2-a654dfef5b16, L5, M|100/100
+|turn|1
+|pp_update|p1: 2c1ec045-e9b7-42a0-9ec6-add597515edb|thunderbolt: 15, quickattack: 30
+|pp_update|p2: 724540e5-c925-4c80-9ae2-a654dfef5b16|tackle: 35
+|pp_update|p2: 69dda727-8a66-48a7-bb40-39e2877961b8|poisonsting: 35
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p1
+|request|{"wait":true,"side":{"name":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 2c1ec045-e9b7-42a0-9ec6-add597515edb, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":74,"spd":83,"spe":131},"moves":["thunderbolt","quickattack"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""}]}}
+sideupdate
+p2
+|request|{"forceSwitch":[true],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 724540e5-c925-4c80-9ae2-a654dfef5b16, L5, M","condition":"0 fnt","active":true,"stats":{"atk":9,"def":10,"spa":8,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""},{"ident":"p2: Weedle","details":"Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M","condition":"20/20","active":false,"stats":{"atk":11,"def":9,"spa":7,"spd":8,"spe":11},"moves":["poisonsting"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug","Poison"],"types":["Bug","Poison"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794734720
+|move|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Thunderbolt|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16
+|split|p2
+|-damage|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|0 fnt
+|-damage|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16|0 fnt
+|faint|p2a: 724540e5-c925-4c80-9ae2-a654dfef5b16
+|
+|upkeep
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Quick Attack","id":"quickattack","pp":30,"maxpp":30,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Electric"}],"side":{"name":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 2c1ec045-e9b7-42a0-9ec6-add597515edb, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":74,"spd":83,"spe":131},"moves":["thunderbolt","quickattack"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Weedle","details":"Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M","condition":"20/20","active":true,"stats":{"atk":11,"def":9,"spa":7,"spd":8,"spe":11},"moves":["poisonsting"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug","Poison"],"types":["Bug","Poison"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""},{"ident":"p2: Caterpie","details":"Caterpie, 724540e5-c925-4c80-9ae2-a654dfef5b16, L5, M","condition":"0 fnt","active":false,"stats":{"atk":9,"def":10,"spa":8,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794734727
+|split|p2
+|switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|20/20
+|switch|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|Weedle, 69dda727-8a66-48a7-bb40-39e2877961b8, L5, M|100/100
+|turn|2
+|pp_update|p1: 2c1ec045-e9b7-42a0-9ec6-add597515edb|thunderbolt: 14, quickattack: 30
+|pp_update|p2: 69dda727-8a66-48a7-bb40-39e2877961b8|poisonsting: 35
+|pp_update|p2: 724540e5-c925-4c80-9ae2-a654dfef5b16|tackle: 35
+update
+|
+|t:|1794734730
+|move|p1a: 2c1ec045-e9b7-42a0-9ec6-add597515edb|Thunderbolt|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8
+|split|p2
+|-damage|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|0 fnt
+|-damage|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8|0 fnt
+|faint|p2a: 69dda727-8a66-48a7-bb40-39e2877961b8
+|
+|win|f8abfd0e-7658-3027-ae92-d17dd74fe0c6
+|pp_update|p1: 2c1ec045-e9b7-42a0-9ec6-add597515edb|thunderbolt: 13, quickattack: 30
+|pp_update|p2: 69dda727-8a66-48a7-bb40-39e2877961b8|poisonsting: 35
+|pp_update|p2: 724540e5-c925-4c80-9ae2-a654dfef5b16|tackle: 35
+end
+{"winner":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","seed":[40288,64343,5533,37091],"turns":2,"p1":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","p2":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"2c1ec045-e9b7-42a0-9ec6-add597515edb","currentHealth":130,"status":"","statusDuration":-1,"item":"","ability":"Static","moves":["Thunderbolt","Quick Attack"],"movesInfo":[{"pp":15,"maxPp":15},{"pp":30,"maxPp":30}],"nature":"Adamant","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"F","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":60,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Electric"}],"p2team":[{"name":"Caterpie","species":"caterpie","uuid":"724540e5-c925-4c80-9ae2-a654dfef5b16","currentHealth":21,"status":"","statusDuration":-1,"item":"","ability":"Shield Dust","moves":["Tackle"],"movesInfo":[{"pp":35,"maxPp":35}],"nature":"Quirky","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":0,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Bug"},{"name":"Weedle","species":"weedle","uuid":"69dda727-8a66-48a7-bb40-39e2877961b8","currentHealth":20,"status":"","statusDuration":-1,"item":"","ability":"Shield Dust","moves":["Poison Sting"],"movesInfo":[{"pp":35,"maxPp":35}],"nature":"Adamant","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":0,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Bug"}],"score":[1,0],"inputLog":[">start {\"seed\":[40288,64343,5533,37091]}",">player p1 {\"name\":\"f8abfd0e-7658-3027-ae92-d17dd74fe0c6\",\"team\":\"pikachu||2c1ec045-e9b7-42a0-9ec6-add597515edb|130||-1||static|thunderbolt,quickattack|15/15,30/30|adamant|0,0,0,0,0,0|F|31,31,31,31,31,31||60|50,pokeball,,,0,Electric,\"}",">player p2 {\"name\":\"cbdc28cd-f0ca-4138-a865-97e2ae58a00c\",\"team\":\"caterpie||724540e5-c925-4c80-9ae2-a654dfef5b16|21||-1||shielddust|tackle|35/35|quirky|0,0,0,0,0,0|M|31,31,31,31,31,31||5|0,pokeball,,,0,Bug,]weedle||69dda727-8a66-48a7-bb40-39e2877961b8|20||-1||shielddust|poisonsting|35/35|adamant|0,0,0,0,0,0|M|31,31,31,31,31,31||5|0,pokeball,,,0,Bug,\"}",">p1 move thunderbolt",">p2 move tackle",">p2 switch 2",">p1 move thunderbolt",">p2 move poisonsting"]}
+##CHAT## It is now turn 1 | BTRunner's Pikachu used Thunderbolt on Testeur's Caterpie! | Testeur's Caterpie fainted! | It is now turn 2 | BTRunner's Pikachu used Thunderbolt on Testeur's Weedle! | Testeur's Weedle fainted! | BTRunner won!
+##AI## poisonsting t-1 (puissance x STAB x efficacite)
+
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTTera#6 :
+update
+|t:|1794734950
+|gametype|singles
+update
+|player|p1|e8d5523f-f8fe-3d44-b818-8cf4aba64cfe||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":10,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxphantasm","target":"adjacentFoe"}]},"canTerastallize":"Steel"}],"side":{"name":"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe","id":"p1","pokemon":[{"ident":"p1: Glaceon","details":"Glaceon, 520eb588-7aeb-4a5c-b8a7-00281d5a4743, L55, M","condition":"153/153","active":true,"stats":{"atk":88,"def":143,"spa":165,"spd":138,"spe":83},"moves":["icebeam","shadowball"],"baseAbility":"snowcloak","item":"","pokeball":"Poke Ball","baseTypes":["Ice"],"types":["Ice"],"ability":"snowcloak","commanding":false,"reviving":false,"teraType":"Steel","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":20,"target":"self","disabled":false},{"move":"Stone Edge","id":"stoneedge","pp":5,"maxpp":5,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxquake","target":"adjacentFoe"},{"move":"maxwyrmwind","target":"adjacentFoe"},{"move":"maxguard","target":"self"},{"move":"maxrockfall","target":"adjacentFoe"}]},"canTerastallize":"Steel"}],"side":{"name":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","id":"p2","pokemon":[{"ident":"p2: Garchomp","details":"Garchomp, ce6d3761-c1a9-4691-90e0-f8b570d39331, L50, F","condition":"183/183","active":true,"stats":{"atk":150,"def":115,"spa":100,"spd":105,"spe":122},"moves":["earthquake","dragonclaw","swordsdance","stoneedge"],"baseAbility":"sandveil","item":"","pokeball":"Poke Ball","baseTypes":["Dragon","Ground"],"types":["Dragon","Ground"],"ability":"sandveil","commanding":false,"reviving":false,"teraType":"Steel","terastallized":""}]},"noCancel":true}
+update
+|player|p2|0cd4efb4-f0db-4ddf-8115-3382a7cafb4c||
+|teamsize|p1|1
+|teamsize|p2|1
+|gen|9
+|tier|
+|
+|t:|1794734950
+|start
+|split|p1
+|switch|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Glaceon, 520eb588-7aeb-4a5c-b8a7-00281d5a4743, L55, M|153/153
+|switch|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Glaceon, 520eb588-7aeb-4a5c-b8a7-00281d5a4743, L55, M|100/100
+|split|p2
+|switch|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Garchomp, ce6d3761-c1a9-4691-90e0-f8b570d39331, L50, F|183/183
+|switch|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Garchomp, ce6d3761-c1a9-4691-90e0-f8b570d39331, L50, F|100/100
+|turn|1
+|pp_update|p1: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|icebeam: 10, shadowball: 15
+|pp_update|p2: ce6d3761-c1a9-4691-90e0-f8b570d39331|earthquake: 10, dragonclaw: 15, swordsdance: 20, stoneedge: 5
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":9,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxphantasm","target":"adjacentFoe"}]},"canTerastallize":"Steel"}],"side":{"name":"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe","id":"p1","pokemon":[{"ident":"p1: Glaceon","details":"Glaceon, 520eb588-7aeb-4a5c-b8a7-00281d5a4743, L55, M","condition":"67/153","active":true,"stats":{"atk":88,"def":143,"spa":165,"spd":138,"spe":83},"moves":["icebeam","shadowball"],"baseAbility":"snowcloak","item":"","pokeball":"Poke Ball","baseTypes":["Ice"],"types":["Ice"],"ability":"snowcloak","commanding":false,"reviving":false,"teraType":"Steel","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":20,"target":"self","disabled":false},{"move":"Stone Edge","id":"stoneedge","pp":4,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","id":"p2","pokemon":[{"ident":"p2: Garchomp","details":"Garchomp, ce6d3761-c1a9-4691-90e0-f8b570d39331, L50, F","condition":"138/183","active":true,"stats":{"atk":150,"def":115,"spa":100,"spd":105,"spe":122},"moves":["earthquake","dragonclaw","swordsdance","stoneedge"],"baseAbility":"sandveil","item":"","pokeball":"Poke Ball","baseTypes":["Dragon","Ground"],"types":["Dragon","Ground"],"ability":"sandveil","commanding":false,"reviving":false,"teraType":"Steel","terastallized":"Steel"}]},"noCancel":true}
+update
+|
+|t:|1794734954
+|-terastallize|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Steel
+|move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|split|p1
+|-damage|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|67/153
+|-damage|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|44/100
+|move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331
+|-resisted|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331
+|split|p2
+|-damage|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|138/183
+|-damage|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|76/100
+|
+|upkeep
+|turn|2
+|pp_update|p1: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|icebeam: 9, shadowball: 15
+|pp_update|p2: ce6d3761-c1a9-4691-90e0-f8b570d39331|earthquake: 10, dragonclaw: 15, swordsdance: 20, stoneedge: 4
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":8,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxphantasm","target":"adjacentFoe"}]},"canTerastallize":"Steel"}],"side":{"name":"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe","id":"p1","pokemon":[{"ident":"p1: Glaceon","details":"Glaceon, 520eb588-7aeb-4a5c-b8a7-00281d5a4743, L55, M","condition":"67/153","active":true,"stats":{"atk":88,"def":143,"spa":165,"spd":138,"spe":83},"moves":["icebeam","shadowball"],"baseAbility":"snowcloak","item":"","pokeball":"Poke Ball","baseTypes":["Ice"],"types":["Ice"],"ability":"snowcloak","commanding":false,"reviving":false,"teraType":"Steel","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":20,"target":"self","disabled":false},{"move":"Stone Edge","id":"stoneedge","pp":3,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","id":"p2","pokemon":[{"ident":"p2: Garchomp","details":"Garchomp, ce6d3761-c1a9-4691-90e0-f8b570d39331, L50, F","condition":"92/183","active":true,"stats":{"atk":150,"def":115,"spa":100,"spd":105,"spe":122},"moves":["earthquake","dragonclaw","swordsdance","stoneedge"],"baseAbility":"sandveil","item":"","pokeball":"Poke Ball","baseTypes":["Dragon","Ground"],"types":["Dragon","Ground"],"ability":"sandveil","commanding":false,"reviving":false,"teraType":"Steel","terastallized":"Steel"}]},"noCancel":true}
+update
+|
+|t:|1794734971
+|move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss]
+|-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331
+|-resisted|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331
+|split|p2
+|-damage|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|92/183
+|-damage|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|51/100
+|
+|upkeep
+|turn|3
+|pp_update|p1: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|icebeam: 8, shadowball: 15
+|pp_update|p2: ce6d3761-c1a9-4691-90e0-f8b570d39331|earthquake: 10, dragonclaw: 15, swordsdance: 20, stoneedge: 3
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Ice Beam","id":"icebeam","pp":7,"maxpp":10,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxhailstorm","target":"adjacentFoe"},{"move":"maxphantasm","target":"adjacentFoe"}]},"canTerastallize":"Steel"}],"side":{"name":"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe","id":"p1","pokemon":[{"ident":"p1: Glaceon","details":"Glaceon, 520eb588-7aeb-4a5c-b8a7-00281d5a4743, L55, M","condition":"67/153","active":true,"stats":{"atk":88,"def":143,"spa":165,"spd":138,"spe":83},"moves":["icebeam","shadowball"],"baseAbility":"snowcloak","item":"","pokeball":"Poke Ball","baseTypes":["Ice"],"types":["Ice"],"ability":"snowcloak","commanding":false,"reviving":false,"teraType":"Steel","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Swords Dance","id":"swordsdance","pp":20,"maxpp":20,"target":"self","disabled":false},{"move":"Stone Edge","id":"stoneedge","pp":2,"maxpp":5,"target":"normal","disabled":false}]}],"side":{"name":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","id":"p2","pokemon":[{"ident":"p2: Garchomp","details":"Garchomp, ce6d3761-c1a9-4691-90e0-f8b570d39331, L50, F","condition":"42/183","active":true,"stats":{"atk":150,"def":115,"spa":100,"spd":105,"spe":122},"moves":["earthquake","dragonclaw","swordsdance","stoneedge"],"baseAbility":"sandveil","item":"","pokeball":"Poke Ball","baseTypes":["Dragon","Ground"],"types":["Dragon","Ground"],"ability":"sandveil","commanding":false,"reviving":false,"teraType":"Steel","terastallized":"Steel"}]},"noCancel":true}
+update
+|
+|t:|1794734979
+|move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|[miss]
+|-miss|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|move|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|Ice Beam|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331
+|-resisted|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331
+|split|p2
+|-damage|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|42/183
+|-damage|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|23/100
+|
+|upkeep
+|turn|4
+|pp_update|p1: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|icebeam: 7, shadowball: 15
+|pp_update|p2: ce6d3761-c1a9-4691-90e0-f8b570d39331|earthquake: 10, dragonclaw: 15, swordsdance: 20, stoneedge: 2
+update
+|
+|t:|1794734988
+|move|p2a: ce6d3761-c1a9-4691-90e0-f8b570d39331|Stone Edge|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|-supereffective|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|-crit|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|split|p1
+|-damage|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|0 fnt
+|-damage|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|0 fnt
+|faint|p1a: 520eb588-7aeb-4a5c-b8a7-00281d5a4743
+|
+|win|0cd4efb4-f0db-4ddf-8115-3382a7cafb4c
+|pp_update|p1: 520eb588-7aeb-4a5c-b8a7-00281d5a4743|icebeam: 7, shadowball: 15
+|pp_update|p2: ce6d3761-c1a9-4691-90e0-f8b570d39331|earthquake: 10, dragonclaw: 15, swordsdance: 20, stoneedge: 1
+end
+{"winner":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","seed":[13291,14477,51294,32231],"turns":4,"p1":"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe","p2":"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c","p1team":[{"name":"Glaceon","species":"glaceon","uuid":"520eb588-7aeb-4a5c-b8a7-00281d5a4743","currentHealth":153,"status":"","statusDuration":-1,"item":"","ability":"Snow Cloak","moves":["Ice Beam","Shadow Ball"],"movesInfo":[{"pp":10,"maxPp":10},{"pp":15,"maxPp":15}],"nature":"Sassy","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":55,"happiness":35,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Steel"}],"p2team":[{"name":"Garchomp","species":"garchomp","uuid":"ce6d3761-c1a9-4691-90e0-f8b570d39331","currentHealth":183,"status":"","statusDuration":-1,"item":"","ability":"Sand Veil","moves":["Earthquake","Dragon Claw","Swords Dance","Stone Edge"],"movesInfo":[{"pp":10,"maxPp":10},{"pp":15,"maxPp":15},{"pp":20,"maxPp":20},{"pp":5,"maxPp":5}],"nature":"Hardy","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"F","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":50,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Steel"}],"score":[0,1],"inputLog":[">start {\"seed\":[13291,14477,51294,32231]}",">player p1 {\"name\":\"e8d5523f-f8fe-3d44-b818-8cf4aba64cfe\",\"team\":\"glaceon||520eb588-7aeb-4a5c-b8a7-00281d5a4743|153||-1||snowcloak|icebeam,shadowball|10/10,15/15|sassy|0,0,0,0,0,0|M|31,31,31,31,31,31||55|35,pokeball,,,0,Steel,\"}",">player p2 {\"name\":\"0cd4efb4-f0db-4ddf-8115-3382a7cafb4c\",\"team\":\"garchomp||ce6d3761-c1a9-4691-90e0-f8b570d39331|183||-1||sandveil|earthquake,dragonclaw,swordsdance,stoneedge|10/10,15/15,20/20,5/5|hardy|0,0,0,0,0,0|F|31,31,31,31,31,31||50|50,pokeball,,,0,Steel,\"}",">p1 move icebeam",">p2 move stoneedge terastallize",">p1 move icebeam",">p2 move stoneedge",">p1 move icebeam",">p2 move stoneedge",">p1 move icebeam",">p2 move stoneedge"]}
+##CHAT## It is now turn 1 | Tera Test's Garchomp has Terastallized into the Steel-type! | Tera Test's Garchomp used Stone Edge on BTTera's Glaceon! | It was super effective! | BTTera's Glaceon used Ice Beam on Tera Test's Garchomp! | It wasn't very effective.... | It is now turn 2 | Tera Test's Garchomp used Stone Edge on BTTera's Glaceon! | But it missed. | BTTera's Glaceon used Ice Beam on Tera Test's Garchomp! | It wasn't very effective.... | It is now turn 3 | Tera Test's Garchomp used Stone Edge on BTTera's Glaceon! | But it missed. | BTTera's Glaceon used Ice Beam on Tera Test's Garchomp! | It wasn't very effective.... | It is now turn 4 | Tera Test's Garchomp used Stone Edge on BTTera's Glaceon! | It was super effective! | It was a critical hit! | BTTera's Glaceon fainted! | Tera Test won!
+##AI## stoneedge t-1 (2HKO)
+
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTQueue#3 :
+update
+|t:|1794734774
+|gametype|singles
+update
+|player|p1|0610e65a-d7a6-3965-b871-efabb6045982||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Ember","id":"ember","pp":25,"maxpp":25,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxflare","target":"adjacentFoe"}]},"canTerastallize":"Fire"}],"side":{"name":"0610e65a-d7a6-3965-b871-efabb6045982","id":"p1","pokemon":[{"ident":"p1: Charmander","details":"Charmander, 673d4722-4b25-4503-adb6-260a1f398354, L60, M","condition":"135/135","active":true,"stats":{"atk":86,"def":67,"spa":95,"spd":83,"spe":111},"moves":["ember"],"baseAbility":"blaze","item":"","pokeball":"Poke Ball","baseTypes":["Fire"],"types":["Fire"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Water"}],"side":{"name":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","id":"p2","pokemon":[{"ident":"p2: Magikarp","details":"Magikarp, b7504f74-4ca0-40db-8d09-47daaa682e97, L5, F","condition":"18/18","active":true,"stats":{"atk":6,"def":12,"spa":8,"spd":8,"spe":14},"moves":["tackle"],"baseAbility":"swiftswim","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"swiftswim","commanding":false,"reviving":false,"teraType":"Water","terastallized":""}]},"noCancel":true}
+update
+|player|p2|f19bc043-b660-4d73-8d02-e1bda9dd21e4||
+|teamsize|p1|1
+|teamsize|p2|1
+|gen|9
+|tier|
+|rule|Inverse Mod: Weaknesses become resistances, while resistances and immunities become weaknesses.
+|
+|t:|1794734774
+|start
+|split|p1
+|switch|p1a: 673d4722-4b25-4503-adb6-260a1f398354|Charmander, 673d4722-4b25-4503-adb6-260a1f398354, L60, M|135/135
+|switch|p1a: 673d4722-4b25-4503-adb6-260a1f398354|Charmander, 673d4722-4b25-4503-adb6-260a1f398354, L60, M|100/100
+|split|p2
+|switch|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97|Magikarp, b7504f74-4ca0-40db-8d09-47daaa682e97, L5, F|18/18
+|switch|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97|Magikarp, b7504f74-4ca0-40db-8d09-47daaa682e97, L5, F|100/100
+|turn|1
+|pp_update|p1: 673d4722-4b25-4503-adb6-260a1f398354|ember: 25
+|pp_update|p2: b7504f74-4ca0-40db-8d09-47daaa682e97|tackle: 35
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+update
+|-weather|RainDance
+|-fieldstart|move: Electric Terrain
+update
+|
+|t:|1794734778
+|move|p1a: 673d4722-4b25-4503-adb6-260a1f398354|Ember|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97
+|-supereffective|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97
+|split|p2
+|-damage|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97|0 fnt
+|-damage|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97|0 fnt
+|faint|p2a: b7504f74-4ca0-40db-8d09-47daaa682e97
+|
+|win|0610e65a-d7a6-3965-b871-efabb6045982
+|pp_update|p1: 673d4722-4b25-4503-adb6-260a1f398354|ember: 24
+|pp_update|p2: b7504f74-4ca0-40db-8d09-47daaa682e97|tackle: 35
+end
+{"winner":"0610e65a-d7a6-3965-b871-efabb6045982","seed":[11343,46442,13740,65149],"turns":1,"p1":"0610e65a-d7a6-3965-b871-efabb6045982","p2":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","p1team":[{"name":"Charmander","species":"charmander","uuid":"673d4722-4b25-4503-adb6-260a1f398354","currentHealth":135,"status":"","statusDuration":-1,"item":"","ability":"Blaze","moves":["Ember"],"movesInfo":[{"pp":25,"maxPp":25}],"nature":"Hasty","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":60,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Fire"}],"p2team":[{"name":"Magikarp","species":"magikarp","uuid":"b7504f74-4ca0-40db-8d09-47daaa682e97","currentHealth":18,"status":"","statusDuration":-1,"item":"","ability":"Swift Swim","moves":["Tackle"],"movesInfo":[{"pp":35,"maxPp":35}],"nature":"Calm","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"F","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Water"}],"score":[1,0],"inputLog":[">start {\"seed\":[11343,46442,13740,65149]}",">player p1 {\"name\":\"0610e65a-d7a6-3965-b871-efabb6045982\",\"team\":\"charmander||673d4722-4b25-4503-adb6-260a1f398354|135||-1||blaze|ember|25/25|hasty|0,0,0,0,0,0|M|31,31,31,31,31,31||60|50,pokeball,,,0,Fire,\"}",">player p2 {\"name\":\"f19bc043-b660-4d73-8d02-e1bda9dd21e4\",\"team\":\"magikarp||b7504f74-4ca0-40db-8d09-47daaa682e97|18||-1||swiftswim|tackle|35/35|calm|0,0,0,0,0,0|F|31,31,31,31,31,31||5|50,pokeball,,,0,Water,\"}",">p1 move ember",">p2 move tackle"]}
+##CHAT## It is now turn 1 | It started to rain! | An electric current ran across the battlefield! | BTQueue's Charmander used Ember on Testeur Inverse's Magikarp! | It was super effective! | Testeur Inverse's Magikarp fainted! | BTQueue won!
+##AI## tackle t-1 (degats)
+
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTQueue#2 :
+update
+|t:|1794734742
+|gametype|singles
+update
+|player|p1|0610e65a-d7a6-3965-b871-efabb6045982||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Ember","id":"ember","pp":25,"maxpp":25,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxflare","target":"adjacentFoe"}]},"canTerastallize":"Fire"}],"side":{"name":"0610e65a-d7a6-3965-b871-efabb6045982","id":"p1","pokemon":[{"ident":"p1: Charmander","details":"Charmander, de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0, L60, M","condition":"135/135","active":true,"stats":{"atk":86,"def":67,"spa":95,"spd":83,"spe":111},"moves":["ember"],"baseAbility":"blaze","item":"","pokeball":"Poke Ball","baseTypes":["Fire"],"types":["Fire"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 72884e04-8273-489e-abd8-0dbbf59530ef, L5, M","condition":"21/21","active":true,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""},{"ident":"p2: Weedle","details":"Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M","condition":"20/20","active":false,"stats":{"atk":9,"def":9,"spa":8,"spd":8,"spe":11},"moves":["poisonsting"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug","Poison"],"types":["Bug","Poison"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Poison","terastallized":""}]},"noCancel":true}
+update
+|player|p2|cbdc28cd-f0ca-4138-a865-97e2ae58a00c||
+|teamsize|p1|1
+|teamsize|p2|2
+|gen|9
+|tier|
+|
+|t:|1794734742
+|start
+|split|p1
+|switch|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Charmander, de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0, L60, M|135/135
+|switch|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Charmander, de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0, L60, M|100/100
+|split|p2
+|switch|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef|Caterpie, 72884e04-8273-489e-abd8-0dbbf59530ef, L5, M|21/21
+|switch|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef|Caterpie, 72884e04-8273-489e-abd8-0dbbf59530ef, L5, M|100/100
+|turn|1
+|pp_update|p1: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|ember: 25
+|pp_update|p2: 72884e04-8273-489e-abd8-0dbbf59530ef|tackle: 35
+|pp_update|p2: 3055f15b-141f-4992-bffd-fc0ca33659c9|poisonsting: 35
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p1
+|request|{"wait":true,"side":{"name":"0610e65a-d7a6-3965-b871-efabb6045982","id":"p1","pokemon":[{"ident":"p1: Charmander","details":"Charmander, de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0, L60, M","condition":"135/135","active":true,"stats":{"atk":86,"def":67,"spa":95,"spd":83,"spe":111},"moves":["ember"],"baseAbility":"blaze","item":"","pokeball":"Poke Ball","baseTypes":["Fire"],"types":["Fire"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""}]}}
+sideupdate
+p2
+|request|{"forceSwitch":[true],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 72884e04-8273-489e-abd8-0dbbf59530ef, L5, M","condition":"0 fnt","active":true,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""},{"ident":"p2: Weedle","details":"Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M","condition":"20/20","active":false,"stats":{"atk":9,"def":9,"spa":8,"spd":8,"spe":11},"moves":["poisonsting"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug","Poison"],"types":["Bug","Poison"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Poison","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794734746
+|move|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Ember|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef
+|-supereffective|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef
+|split|p2
+|-damage|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef|0 fnt
+|-damage|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef|0 fnt
+|faint|p2a: 72884e04-8273-489e-abd8-0dbbf59530ef
+|
+|upkeep
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Ember","id":"ember","pp":24,"maxpp":25,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxflare","target":"adjacentFoe"}]},"canTerastallize":"Fire"}],"side":{"name":"0610e65a-d7a6-3965-b871-efabb6045982","id":"p1","pokemon":[{"ident":"p1: Charmander","details":"Charmander, de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0, L60, M","condition":"135/135","active":true,"stats":{"atk":86,"def":67,"spa":95,"spd":83,"spe":111},"moves":["ember"],"baseAbility":"blaze","item":"","pokeball":"Poke Ball","baseTypes":["Fire"],"types":["Fire"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Poison Sting","id":"poisonsting","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxooze","target":"adjacentFoe"}]},"canTerastallize":"Poison"}],"side":{"name":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","id":"p2","pokemon":[{"ident":"p2: Weedle","details":"Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M","condition":"20/20","active":true,"stats":{"atk":9,"def":9,"spa":8,"spd":8,"spe":11},"moves":["poisonsting"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug","Poison"],"types":["Bug","Poison"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Poison","terastallized":""},{"ident":"p2: Caterpie","details":"Caterpie, 72884e04-8273-489e-abd8-0dbbf59530ef, L5, M","condition":"0 fnt","active":false,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794734753
+|split|p2
+|switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|20/20
+|switch|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|Weedle, 3055f15b-141f-4992-bffd-fc0ca33659c9, L5, M|100/100
+|turn|2
+|pp_update|p1: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|ember: 24
+|pp_update|p2: 3055f15b-141f-4992-bffd-fc0ca33659c9|poisonsting: 35
+|pp_update|p2: 72884e04-8273-489e-abd8-0dbbf59530ef|tackle: 35
+update
+|
+|t:|1794734756
+|move|p1a: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|Ember|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9
+|-supereffective|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9
+|split|p2
+|-damage|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|0 fnt
+|-damage|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9|0 fnt
+|faint|p2a: 3055f15b-141f-4992-bffd-fc0ca33659c9
+|
+|win|0610e65a-d7a6-3965-b871-efabb6045982
+|pp_update|p1: de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|ember: 23
+|pp_update|p2: 3055f15b-141f-4992-bffd-fc0ca33659c9|poisonsting: 35
+|pp_update|p2: 72884e04-8273-489e-abd8-0dbbf59530ef|tackle: 35
+end
+{"winner":"0610e65a-d7a6-3965-b871-efabb6045982","seed":[35629,17002,49852,43814],"turns":2,"p1":"0610e65a-d7a6-3965-b871-efabb6045982","p2":"cbdc28cd-f0ca-4138-a865-97e2ae58a00c","p1team":[{"name":"Charmander","species":"charmander","uuid":"de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0","currentHealth":135,"status":"","statusDuration":-1,"item":"","ability":"Blaze","moves":["Ember"],"movesInfo":[{"pp":25,"maxPp":25}],"nature":"Hasty","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":60,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Fire"}],"p2team":[{"name":"Caterpie","species":"caterpie","uuid":"72884e04-8273-489e-abd8-0dbbf59530ef","currentHealth":21,"status":"","statusDuration":-1,"item":"","ability":"Shield Dust","moves":["Tackle"],"movesInfo":[{"pp":35,"maxPp":35}],"nature":"Careful","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Bug"},{"name":"Weedle","species":"weedle","uuid":"3055f15b-141f-4992-bffd-fc0ca33659c9","currentHealth":20,"status":"","statusDuration":-1,"item":"","ability":"Shield Dust","moves":["Poison Sting"],"movesInfo":[{"pp":35,"maxPp":35}],"nature":"Modest","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Poison"}],"score":[1,0],"inputLog":[">start {\"seed\":[35629,17002,49852,43814]}",">player p1 {\"name\":\"0610e65a-d7a6-3965-b871-efabb6045982\",\"team\":\"charmander||de3d08d0-a5d8-451c-92b5-b8ba7cae6bc0|135||-1||blaze|ember|25/25|hasty|0,0,0,0,0,0|M|31,31,31,31,31,31||60|50,pokeball,,,0,Fire,\"}",">player p2 {\"name\":\"cbdc28cd-f0ca-4138-a865-97e2ae58a00c\",\"team\":\"caterpie||72884e04-8273-489e-abd8-0dbbf59530ef|21||-1||shielddust|tackle|35/35|careful|0,0,0,0,0,0|M|31,31,31,31,31,31||5|50,pokeball,,,0,Bug,]weedle||3055f15b-141f-4992-bffd-fc0ca33659c9|20||-1||shielddust|poisonsting|35/35|modest|0,0,0,0,0,0|M|31,31,31,31,31,31||5|50,pokeball,,,0,Poison,\"}",">p1 move ember",">p2 move tackle",">p2 switch 2",">p1 move ember",">p2 move poisonsting"]}
+##CHAT## It is now turn 1 | BTQueue's Charmander used Ember on Testeur's Caterpie! | It was super effective! | Testeur's Caterpie fainted! | It is now turn 2 | BTQueue's Charmander used Ember on Testeur's Weedle! | It was super effective! | Testeur's Weedle fainted! | BTQueue won!
+##AI## poisonsting t-1 (puissance x STAB x efficacite)
+
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTLoser#4 :
+update
+|t:|1794734801
+|gametype|singles
+update
+|player|p1|0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Splash","id":"splash","pp":40,"maxpp":40,"target":"self","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxguard","target":"self"}]},"canTerastallize":"Water"}],"side":{"name":"0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8","id":"p1","pokemon":[{"ident":"p1: Magikarp","details":"Magikarp, a3298437-7bbb-42ed-8795-56c1889fbeec, L5, M","condition":"18/18","active":true,"stats":{"atk":7,"def":10,"spa":8,"spd":8,"spe":14},"moves":["splash"],"baseAbility":"swiftswim","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"swiftswim","commanding":false,"reviving":false,"teraType":"Water","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Earthquake","id":"earthquake","pp":10,"maxpp":10,"target":"allAdjacent","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxquake","target":"adjacentFoe"},{"move":"maxwyrmwind","target":"adjacentFoe"}]},"canTerastallize":"Dragon"}],"side":{"name":"590116c1-a491-4f7f-a18e-5d87357b08b7","id":"p2","pokemon":[{"ident":"p2: Garchomp","details":"Garchomp, 5cf959a3-aaf7-4a33-8b96-2f75697538aa, L70, M","condition":"252/252","active":true,"stats":{"atk":208,"def":159,"spa":151,"spd":130,"spe":169},"moves":["earthquake","dragonclaw"],"baseAbility":"sandveil","item":"","pokeball":"Poke Ball","baseTypes":["Dragon","Ground"],"types":["Dragon","Ground"],"ability":"sandveil","commanding":false,"reviving":false,"teraType":"Dragon","terastallized":""}]},"noCancel":true}
+update
+|player|p2|590116c1-a491-4f7f-a18e-5d87357b08b7||
+|teamsize|p1|1
+|teamsize|p2|1
+|gen|9
+|tier|
+|
+|t:|1794734801
+|start
+|split|p1
+|switch|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec|Magikarp, a3298437-7bbb-42ed-8795-56c1889fbeec, L5, M|18/18
+|switch|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec|Magikarp, a3298437-7bbb-42ed-8795-56c1889fbeec, L5, M|100/100
+|split|p2
+|switch|p2a: 5cf959a3-aaf7-4a33-8b96-2f75697538aa|Garchomp, 5cf959a3-aaf7-4a33-8b96-2f75697538aa, L70, M|252/252
+|switch|p2a: 5cf959a3-aaf7-4a33-8b96-2f75697538aa|Garchomp, 5cf959a3-aaf7-4a33-8b96-2f75697538aa, L70, M|100/100
+|turn|1
+|pp_update|p1: a3298437-7bbb-42ed-8795-56c1889fbeec|splash: 40
+|pp_update|p2: 5cf959a3-aaf7-4a33-8b96-2f75697538aa|earthquake: 10, dragonclaw: 15
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+update
+|
+|t:|1794734804
+|move|p2a: 5cf959a3-aaf7-4a33-8b96-2f75697538aa|Dragon Claw|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec
+|split|p1
+|-damage|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec|0 fnt
+|-damage|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec|0 fnt
+|faint|p1a: a3298437-7bbb-42ed-8795-56c1889fbeec
+|
+|win|590116c1-a491-4f7f-a18e-5d87357b08b7
+|pp_update|p1: a3298437-7bbb-42ed-8795-56c1889fbeec|splash: 40
+|pp_update|p2: 5cf959a3-aaf7-4a33-8b96-2f75697538aa|earthquake: 10, dragonclaw: 14
+end
+{"winner":"590116c1-a491-4f7f-a18e-5d87357b08b7","seed":[58492,64379,53194,55511],"turns":1,"p1":"0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8","p2":"590116c1-a491-4f7f-a18e-5d87357b08b7","p1team":[{"name":"Magikarp","species":"magikarp","uuid":"a3298437-7bbb-42ed-8795-56c1889fbeec","currentHealth":18,"status":"","statusDuration":-1,"item":"","ability":"Swift Swim","moves":["Splash"],"movesInfo":[{"pp":40,"maxPp":40}],"nature":"Gentle","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Water"}],"p2team":[{"name":"Garchomp","species":"garchomp","uuid":"5cf959a3-aaf7-4a33-8b96-2f75697538aa","currentHealth":252,"status":"","statusDuration":-1,"item":"","ability":"Sand Veil","moves":["Earthquake","Dragon Claw"],"movesInfo":[{"pp":10,"maxPp":10},{"pp":15,"maxPp":15}],"nature":"Rash","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":70,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Dragon"}],"score":[0,1],"inputLog":[">start {\"seed\":[58492,64379,53194,55511]}",">player p1 {\"name\":\"0b9dfdeb-8c60-3245-ba8d-f1fb33adf1c8\",\"team\":\"magikarp||a3298437-7bbb-42ed-8795-56c1889fbeec|18||-1||swiftswim|splash|40/40|gentle|0,0,0,0,0,0|M|31,31,31,31,31,31||5|50,pokeball,,,0,Water,\"}",">player p2 {\"name\":\"590116c1-a491-4f7f-a18e-5d87357b08b7\",\"team\":\"garchomp||5cf959a3-aaf7-4a33-8b96-2f75697538aa|252||-1||sandveil|earthquake,dragonclaw|10/10,15/15|rash|0,0,0,0,0,0|M|31,31,31,31,31,31||70|50,pokeball,,,0,Dragon,\"}",">p1 move splash",">p2 move dragonclaw"]}
+##CHAT## It is now turn 1 | Mur's Garchomp used Dragon Claw on BTLoser's Magikarp! | BTLoser's Magikarp fainted! | Mur won!
+##AI## dragonclaw t-1 (OHKO)
+
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTExtreme#7 :
+update
+|t:|1794735000
+|gametype|singles
+update
+|player|p1|0d1197e9-cbe0-386e-ae69-7292863c6643||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"},{"move":"maxsteelspike","target":"adjacentFoe"}]},"canTerastallize":"Electric"}],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"150/150","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":152},"moves":["thunderbolt","irontail"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""},{"ident":"p1: Snorlax","details":"Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M","condition":"325/325","active":false,"stats":{"atk":180,"def":117,"spa":128,"spd":180,"spe":61},"moves":["bodyslam"],"baseAbility":"thickfat","item":"","pokeball":"Poke Ball","baseTypes":["Normal"],"types":["Normal"],"ability":"thickfat","commanding":false,"reviving":false,"teraType":"Normal","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"target":"any","disabled":false},{"move":"Roost","id":"roost","pp":5,"maxpp":5,"target":"self","disabled":false}],"canMegaEvo":true}],"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"153/153","active":true,"stats":{"atk":104,"def":107,"spa":129,"spd":94,"spe":120},"moves":["flamethrower","airslash","dragonpulse","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"Poke Ball","baseTypes":["Fire","Flying"],"types":["Fire","Flying"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""},{"ident":"p2: Blastoise","details":"Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M","condition":"154/154","active":false,"stats":{"atk":103,"def":120,"spa":105,"spd":137,"spe":88},"moves":["surf","icebeam"],"baseAbility":"torrent","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"torrent","commanding":false,"reviving":false,"teraType":"Water","terastallized":""}]},"noCancel":true}
+update
+|player|p2|eb3084fa-1159-4090-8213-522d8765f5b9||
+|teamsize|p1|2
+|teamsize|p2|2
+|gen|9
+|tier|
+|
+|t:|1794735000
+|start
+|split|p1
+|switch|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M|150/150
+|switch|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M|100/100
+|split|p2
+|switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153
+|switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100
+|turn|1
+|pp_update|p1: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|thunderbolt: 15, irontail: 15
+|pp_update|p1: 1b46def8-5973-467b-baaf-6fc7e2617351|bodyslam: 15
+|pp_update|p2: 20fb27a7-0523-48ee-a5f5-18679589a98b|flamethrower: 15, airslash: 15, dragonpulse: 10, roost: 5
+|pp_update|p2: ff9b349e-27d7-46e9-b62d-101476b16b40|surf: 15, icebeam: 10
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"},{"move":"maxsteelspike","target":"adjacentFoe"}]},"canTerastallize":"Electric"}],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"150/150","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":152},"moves":["thunderbolt","irontail"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""},{"ident":"p1: Snorlax","details":"Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M","condition":"325/325","active":false,"stats":{"atk":180,"def":117,"spa":128,"spd":180,"spe":61},"moves":["bodyslam"],"baseAbility":"thickfat","item":"","pokeball":"Poke Ball","baseTypes":["Normal"],"types":["Normal"],"ability":"thickfat","commanding":false,"reviving":false,"teraType":"Normal","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Surf","id":"surf","pp":15,"maxpp":15,"target":"allAdjacent","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":10,"maxpp":10,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxgeyser","target":"adjacentFoe"},{"move":"maxhailstorm","target":"adjacentFoe"}]},"canTerastallize":"Water"}],"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Blastoise","details":"Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M","condition":"46/154","active":true,"stats":{"atk":103,"def":120,"spa":105,"spd":137,"spe":88},"moves":["surf","icebeam"],"baseAbility":"torrent","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"torrent","commanding":false,"reviving":false,"teraType":"Water","terastallized":""},{"ident":"p2: Charizard","details":"Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"153/153","active":false,"stats":{"atk":104,"def":107,"spa":129,"spd":94,"spe":120},"moves":["flamethrower","airslash","dragonpulse","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"Poke Ball","baseTypes":["Fire","Flying"],"types":["Fire","Flying"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794735003
+|split|p2
+|switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|154/154
+|switch|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M|100/100
+|move|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|Thunderbolt|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40
+|-supereffective|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40
+|split|p2
+|-damage|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|46/154
+|-damage|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|30/100
+|
+|upkeep
+|turn|2
+|pp_update|p1: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|thunderbolt: 14, irontail: 15
+|pp_update|p1: 1b46def8-5973-467b-baaf-6fc7e2617351|bodyslam: 15
+|pp_update|p2: ff9b349e-27d7-46e9-b62d-101476b16b40|surf: 15, icebeam: 10
+|pp_update|p2: 20fb27a7-0523-48ee-a5f5-18679589a98b|flamethrower: 15, airslash: 15, dragonpulse: 10, roost: 5
+sideupdate
+p1
+|request|{"wait":true,"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"150/150","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":152},"moves":["thunderbolt","irontail"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""},{"ident":"p1: Snorlax","details":"Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M","condition":"325/325","active":false,"stats":{"atk":180,"def":117,"spa":128,"spd":180,"spe":61},"moves":["bodyslam"],"baseAbility":"thickfat","item":"","pokeball":"Poke Ball","baseTypes":["Normal"],"types":["Normal"],"ability":"thickfat","commanding":false,"reviving":false,"teraType":"Normal","terastallized":""}]}}
+sideupdate
+p2
+|request|{"forceSwitch":[true],"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Blastoise","details":"Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":120,"spa":105,"spd":137,"spe":88},"moves":["surf","icebeam"],"baseAbility":"torrent","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"torrent","commanding":false,"reviving":false,"teraType":"Water","terastallized":""},{"ident":"p2: Charizard","details":"Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"153/153","active":false,"stats":{"atk":104,"def":107,"spa":129,"spd":94,"spe":120},"moves":["flamethrower","airslash","dragonpulse","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"Poke Ball","baseTypes":["Fire","Flying"],"types":["Fire","Flying"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794735015
+|move|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|Thunderbolt|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40
+|-supereffective|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40
+|split|p2
+|-damage|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|0 fnt
+|-damage|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40|0 fnt
+|faint|p2a: ff9b349e-27d7-46e9-b62d-101476b16b40
+|
+|upkeep
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":13,"maxpp":15,"target":"normal","disabled":false},{"move":"Iron Tail","id":"irontail","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"},{"move":"maxsteelspike","target":"adjacentFoe"}]},"canTerastallize":"Electric"}],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"150/150","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":152},"moves":["thunderbolt","irontail"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""},{"ident":"p1: Snorlax","details":"Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M","condition":"325/325","active":false,"stats":{"atk":180,"def":117,"spa":128,"spd":180,"spe":61},"moves":["bodyslam"],"baseAbility":"thickfat","item":"","pokeball":"Poke Ball","baseTypes":["Normal"],"types":["Normal"],"ability":"thickfat","commanding":false,"reviving":false,"teraType":"Normal","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"target":"any","disabled":false},{"move":"Roost","id":"roost","pp":5,"maxpp":5,"target":"self","disabled":false}],"canMegaEvo":true}],"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"153/153","active":true,"stats":{"atk":104,"def":107,"spa":129,"spd":94,"spe":120},"moves":["flamethrower","airslash","dragonpulse","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"Poke Ball","baseTypes":["Fire","Flying"],"types":["Fire","Flying"],"ability":"blaze","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""},{"ident":"p2: Blastoise","details":"Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M","condition":"0 fnt","active":false,"stats":{"atk":103,"def":120,"spa":105,"spd":137,"spe":88},"moves":["surf","icebeam"],"baseAbility":"torrent","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"torrent","commanding":false,"reviving":false,"teraType":"Water","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794735021
+|split|p2
+|switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|153/153
+|switch|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M|100/100
+|turn|3
+|pp_update|p1: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|thunderbolt: 13, irontail: 15
+|pp_update|p1: 1b46def8-5973-467b-baaf-6fc7e2617351|bodyslam: 15
+|pp_update|p2: 20fb27a7-0523-48ee-a5f5-18679589a98b|flamethrower: 15, airslash: 15, dragonpulse: 10, roost: 5
+|pp_update|p2: ff9b349e-27d7-46e9-b62d-101476b16b40|surf: 15, icebeam: 10
+sideupdate
+p1
+|request|{"forceSwitch":[true],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"0 fnt","active":true,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":152},"moves":["thunderbolt","irontail"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""},{"ident":"p1: Snorlax","details":"Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M","condition":"325/325","active":false,"stats":{"atk":180,"def":117,"spa":128,"spd":180,"spe":61},"moves":["bodyslam"],"baseAbility":"thickfat","item":"","pokeball":"Poke Ball","baseTypes":["Normal"],"types":["Normal"],"ability":"thickfat","commanding":false,"reviving":false,"teraType":"Normal","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"wait":true,"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"39/153","active":true,"stats":{"atk":124,"def":107,"spa":179,"spd":121,"spe":120},"moves":["flamethrower","airslash","dragonpulse","roost"],"baseAbility":"drought","item":"charizarditey","pokeball":"Poke Ball","baseTypes":["Fire","Flying"],"types":["Fire","Flying"],"ability":"drought","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""},{"ident":"p2: Blastoise","details":"Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M","condition":"0 fnt","active":false,"stats":{"atk":103,"def":120,"spa":105,"spd":137,"spe":88},"moves":["surf","icebeam"],"baseAbility":"torrent","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"torrent","commanding":false,"reviving":false,"teraType":"Water","terastallized":""}]}}
+update
+|
+|t:|1794735025
+|detailschange|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M
+|-mega|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard|
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b
+|move|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|Thunderbolt|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b
+|-supereffective|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b
+|split|p2
+|-damage|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|39/153
+|-damage|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|26/100
+|move|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Flamethrower|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4
+|split|p1
+|-damage|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|0 fnt
+|-damage|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|0 fnt
+|faint|p1a: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Body Slam","id":"bodyslam","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Normal"}],"side":{"name":"0d1197e9-cbe0-386e-ae69-7292863c6643","id":"p1","pokemon":[{"ident":"p1: Snorlax","details":"Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M","condition":"325/325","active":true,"stats":{"atk":180,"def":117,"spa":128,"spd":180,"spe":61},"moves":["bodyslam"],"baseAbility":"thickfat","item":"","pokeball":"Poke Ball","baseTypes":["Normal"],"types":["Normal"],"ability":"thickfat","commanding":false,"reviving":false,"teraType":"Normal","terastallized":""},{"ident":"p1: Pikachu","details":"Pikachu, e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4, L70, M","condition":"0 fnt","active":false,"stats":{"atk":103,"def":90,"spa":96,"spd":86,"spe":152},"moves":["thunderbolt","irontail"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":14,"maxpp":15,"target":"normal","disabled":false},{"move":"Air Slash","id":"airslash","pp":15,"maxpp":15,"target":"any","disabled":false},{"move":"Dragon Pulse","id":"dragonpulse","pp":10,"maxpp":10,"target":"any","disabled":false},{"move":"Roost","id":"roost","pp":5,"maxpp":5,"target":"self","disabled":false}]}],"side":{"name":"eb3084fa-1159-4090-8213-522d8765f5b9","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard-Mega-Y, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M","condition":"39/153","active":true,"stats":{"atk":124,"def":107,"spa":179,"spd":121,"spe":120},"moves":["flamethrower","airslash","dragonpulse","roost"],"baseAbility":"drought","item":"charizarditey","pokeball":"Poke Ball","baseTypes":["Fire","Flying"],"types":["Fire","Flying"],"ability":"drought","commanding":false,"reviving":false,"teraType":"Fire","terastallized":""},{"ident":"p2: Blastoise","details":"Blastoise, ff9b349e-27d7-46e9-b62d-101476b16b40, L50, M","condition":"0 fnt","active":false,"stats":{"atk":103,"def":120,"spa":105,"spd":137,"spe":88},"moves":["surf","icebeam"],"baseAbility":"torrent","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"torrent","commanding":false,"reviving":false,"teraType":"Water","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794735051
+|split|p1
+|switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|325/325
+|switch|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Snorlax, 1b46def8-5973-467b-baaf-6fc7e2617351, L70, M|100/100
+|turn|4
+|pp_update|p1: 1b46def8-5973-467b-baaf-6fc7e2617351|bodyslam: 15
+|pp_update|p1: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|thunderbolt: 12, irontail: 15
+|pp_update|p2: 20fb27a7-0523-48ee-a5f5-18679589a98b|flamethrower: 14, airslash: 15, dragonpulse: 10, roost: 5
+|pp_update|p2: ff9b349e-27d7-46e9-b62d-101476b16b40|surf: 15, icebeam: 10
+update
+|
+|t:|1794735053
+|move|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Flamethrower|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351
+|split|p1
+|-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|286/325
+|-damage|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|88/100
+|-status|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|brn
+|move|p1a: 1b46def8-5973-467b-baaf-6fc7e2617351|Body Slam|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b
+|detailschange|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|Charizard, 20fb27a7-0523-48ee-a5f5-18679589a98b, L50, M
+|split|p2
+|-damage|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|0 fnt
+|-damage|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b|0 fnt
+|faint|p2a: 20fb27a7-0523-48ee-a5f5-18679589a98b
+|
+|win|0d1197e9-cbe0-386e-ae69-7292863c6643
+|pp_update|p1: 1b46def8-5973-467b-baaf-6fc7e2617351|bodyslam: 14
+|pp_update|p1: e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|thunderbolt: 12, irontail: 15
+|pp_update|p2: 20fb27a7-0523-48ee-a5f5-18679589a98b|flamethrower: 13, airslash: 15, dragonpulse: 10, roost: 5
+|pp_update|p2: ff9b349e-27d7-46e9-b62d-101476b16b40|surf: 15, icebeam: 10
+end
+{"winner":"0d1197e9-cbe0-386e-ae69-7292863c6643","seed":[13431,36653,14022,52405],"turns":4,"p1":"0d1197e9-cbe0-386e-ae69-7292863c6643","p2":"eb3084fa-1159-4090-8213-522d8765f5b9","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4","currentHealth":150,"status":"","statusDuration":-1,"item":"","ability":"Static","moves":["Thunderbolt","Iron Tail"],"movesInfo":[{"pp":15,"maxPp":15},{"pp":15,"maxPp":15}],"nature":"Lax","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":70,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Electric"},{"name":"Snorlax","species":"snorlax","uuid":"1b46def8-5973-467b-baaf-6fc7e2617351","currentHealth":325,"status":"","statusDuration":-1,"item":"","ability":"Thick Fat","moves":["Body Slam"],"movesInfo":[{"pp":15,"maxPp":15}],"nature":"Quiet","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":70,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Normal"}],"p2team":[{"name":"Charizard","species":"charizard","uuid":"20fb27a7-0523-48ee-a5f5-18679589a98b","currentHealth":153,"status":"","statusDuration":-1,"item":"Charizardite Y","ability":"Blaze","moves":["Flamethrower","Air Slash","Dragon Pulse","Roost"],"movesInfo":[{"pp":15,"maxPp":15},{"pp":15,"maxPp":15},{"pp":10,"maxPp":10},{"pp":5,"maxPp":5}],"nature":"Lax","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":50,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Fire"},{"name":"Blastoise","species":"blastoise","uuid":"ff9b349e-27d7-46e9-b62d-101476b16b40","currentHealth":154,"status":"","statusDuration":-1,"item":"","ability":"Torrent","moves":["Surf","Ice Beam"],"movesInfo":[{"pp":15,"maxPp":15},{"pp":10,"maxPp":10}],"nature":"Sassy","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":50,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Water"}],"score":[1,0],"inputLog":[">start {\"seed\":[13431,36653,14022,52405]}",">player p1 {\"name\":\"0d1197e9-cbe0-386e-ae69-7292863c6643\",\"team\":\"pikachu||e97f3f1f-d9d5-4f96-af9c-36661ab2b8e4|150||-1||static|thunderbolt,irontail|15/15,15/15|lax|0,0,0,0,0,0|M|31,31,31,31,31,31||70|50,pokeball,,,0,Electric,]snorlax||1b46def8-5973-467b-baaf-6fc7e2617351|325||-1||thickfat|bodyslam|15/15|quiet|0,0,0,0,0,0|M|31,31,31,31,31,31||70|50,pokeball,,,0,Normal,\"}",">player p2 {\"name\":\"eb3084fa-1159-4090-8213-522d8765f5b9\",\"team\":\"charizard||20fb27a7-0523-48ee-a5f5-18679589a98b|153||-1|charizarditey|blaze|flamethrower,airslash,dragonpulse,roost|15/15,15/15,10/10,5/5|lax|0,0,0,0,0,0|M|31,31,31,31,31,31||50|50,pokeball,,,0,Fire,]blastoise||ff9b349e-27d7-46e9-b62d-101476b16b40|154||-1||torrent|surf,icebeam|15/15,10/10|sassy|0,0,0,0,0,0|M|31,31,31,31,31,31||50|50,pokeball,,,0,Water,\"}",">p1 move thunderbolt",">p2 switch 2",">p1 move thunderbolt",">p2 move surf",">p2 switch 2",">p1 move thunderbolt",">p2 move flamethrower mega",">p1 switch 2",">p1 move bodyslam",">p2 move flamethrower"]}
+##CHAT## It is now turn 1 | BTExtreme's Pikachu used Thunderbolt on Extreme Test's Blastoise! | It was super effective! | It is now turn 2 | BTExtreme's Pikachu used Thunderbolt on Extreme Test's Blastoise! | It was super effective! | Extreme Test's Blastoise fainted! | It is now turn 3 | Extreme Test's Charizard transformed into its y form! | Extreme Test's Charizard has Mega Evolved! | Extreme Test's Charizard's Drought activated! | The sunlight turned harsh! | BTExtreme's Pikachu used Thunderbolt on Extreme Test's Charizard! | It was super effective! | Extreme Test's Charizard used Flamethrower on BTExtreme's Pikachu! | BTExtreme's Pikachu fainted! | The sunlight is strong. | It is now turn 4 | Extreme Test's Charizard used Flamethrower on BTExtreme's Snorlax! | BTExtreme's Snorlax was burned! | BTExtreme's Snorlax used Body Slam on Extreme Test's Charizard! | Extreme Test's Charizard reverted! | Extreme Test's Charizard fainted! | BTExtreme won!
+##AI## flamethrower t-1 (degats [minimax -0.91])
+
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTDaily#5 :
+update
+|t:|1794734848
+|gametype|singles
+update
+|player|p1|b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":15,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"}]},"canTerastallize":"Grass"}],"side":{"name":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":83,"spd":74,"spe":131},"moves":["thunderbolt"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Grass","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Bug"}],"side":{"name":"55ddee01-93f3-45d0-879b-af4ad3f2949c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a, L5, F","condition":"21/21","active":true,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""},{"ident":"p2: btfake:Testmon Ex","details":"btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F","condition":"20/20","active":false,"stats":{"atk":12,"def":10,"spa":12,"spd":9,"spe":15},"moves":["thundershock"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric","Fairy"],"types":["Electric","Fairy"],"ability":"static","commanding":false,"reviving":false,"teraType":"Psychic","terastallized":""}]},"noCancel":true}
+update
+|player|p2|55ddee01-93f3-45d0-879b-af4ad3f2949c||
+|teamsize|p1|1
+|teamsize|p2|2
+|gen|9
+|tier|
+|
+|t:|1794734848
+|start
+|split|p1
+|switch|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F|130/130
+|switch|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F|100/100
+|split|p2
+|switch|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|Caterpie, 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a, L5, F|21/21
+|switch|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|Caterpie, 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a, L5, F|100/100
+|turn|1
+|pp_update|p1: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|thunderbolt: 15
+|pp_update|p2: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|tackle: 35
+|pp_update|p2: 9d640e74-07f7-47a3-a433-c00cb5de77e9|thundershock: 30
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+update
+|-weather|Fog
+sideupdate
+p1
+|request|{"wait":true,"side":{"name":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":83,"spd":74,"spe":131},"moves":["thunderbolt"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Grass","terastallized":""}]}}
+sideupdate
+p2
+|request|{"forceSwitch":[true],"side":{"name":"55ddee01-93f3-45d0-879b-af4ad3f2949c","id":"p2","pokemon":[{"ident":"p2: Caterpie","details":"Caterpie, 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a, L5, F","condition":"0 fnt","active":true,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""},{"ident":"p2: btfake:Testmon Ex","details":"btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F","condition":"20/20","active":false,"stats":{"atk":12,"def":10,"spa":12,"spd":9,"spe":15},"moves":["thundershock"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric","Fairy"],"types":["Electric","Fairy"],"ability":"static","commanding":false,"reviving":false,"teraType":"Psychic","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794734851
+|move|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Thunderbolt|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a
+|-crit|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a
+|split|p2
+|-damage|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|0 fnt
+|-damage|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|0 fnt
+|faint|p2a: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a
+|
+|upkeep
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":14,"maxpp":15,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"}]},"canTerastallize":"Grass"}],"side":{"name":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, 32ff2e25-6f7d-4bca-9860-bb0abfc762a6, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":83,"spd":74,"spe":131},"moves":["thunderbolt"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Grass","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Thunder Shock","id":"thundershock","pp":30,"maxpp":30,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"}]},"canTerastallize":"Psychic"}],"side":{"name":"55ddee01-93f3-45d0-879b-af4ad3f2949c","id":"p2","pokemon":[{"ident":"p2: btfake:Testmon Ex","details":"btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F","condition":"20/20","active":true,"stats":{"atk":12,"def":10,"spa":12,"spd":9,"spe":15},"moves":["thundershock"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric","Fairy"],"types":["Electric","Fairy"],"ability":"static","commanding":false,"reviving":false,"teraType":"Psychic","terastallized":""},{"ident":"p2: Caterpie","details":"Caterpie, 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a, L5, F","condition":"0 fnt","active":false,"stats":{"atk":9,"def":10,"spa":7,"spd":8,"spe":11},"moves":["tackle"],"baseAbility":"shielddust","item":"","pokeball":"Poke Ball","baseTypes":["Bug"],"types":["Bug"],"ability":"shielddust","commanding":false,"reviving":false,"teraType":"Bug","terastallized":""}]},"noCancel":true}
+update
+|
+|t:|1794734859
+|split|p2
+|switch|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F|20/20
+|switch|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|btfake:Testmon Ex, 9d640e74-07f7-47a3-a433-c00cb5de77e9, L5, F|100/100
+|turn|2
+|pp_update|p1: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|thunderbolt: 14
+|pp_update|p2: 9d640e74-07f7-47a3-a433-c00cb5de77e9|thundershock: 30
+|pp_update|p2: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|tackle: 35
+update
+|
+|t:|1794734863
+|move|p1a: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|Thunderbolt|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9
+|-resisted|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9
+|split|p2
+|-damage|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|0 fnt
+|-damage|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9|0 fnt
+|faint|p2a: 9d640e74-07f7-47a3-a433-c00cb5de77e9
+|
+|win|b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8
+|pp_update|p1: 32ff2e25-6f7d-4bca-9860-bb0abfc762a6|thunderbolt: 13
+|pp_update|p2: 9d640e74-07f7-47a3-a433-c00cb5de77e9|thundershock: 30
+|pp_update|p2: 5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|tackle: 35
+end
+{"winner":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","seed":[36245,41004,1543,2508],"turns":2,"p1":"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8","p2":"55ddee01-93f3-45d0-879b-af4ad3f2949c","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"32ff2e25-6f7d-4bca-9860-bb0abfc762a6","currentHealth":130,"status":"","statusDuration":-1,"item":"","ability":"Static","moves":["Thunderbolt"],"movesInfo":[{"pp":15,"maxPp":15}],"nature":"Naughty","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"F","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":60,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Grass"}],"p2team":[{"name":"Caterpie","species":"caterpie","uuid":"5fc41e94-bfcb-4e79-ac58-ce3f1b24327a","currentHealth":21,"status":"","statusDuration":-1,"item":"","ability":"Shield Dust","moves":["Tackle"],"movesInfo":[{"pp":35,"maxPp":35}],"nature":"Adamant","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"F","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Bug"},{"name":"btfake:Testmon Ex","species":"btfaketestmonex","uuid":"9d640e74-07f7-47a3-a433-c00cb5de77e9","currentHealth":20,"status":"","statusDuration":-1,"item":"","ability":"Static","moves":["Thunder Shock"],"movesInfo":[{"pp":30,"maxPp":30}],"nature":"Rash","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"F","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Psychic"}],"score":[1,0],"inputLog":[">start {\"seed\":[36245,41004,1543,2508]}",">player p1 {\"name\":\"b1ee6c9c-e802-3a68-a1b5-5f13edfd5aa8\",\"team\":\"pikachu||32ff2e25-6f7d-4bca-9860-bb0abfc762a6|130||-1||static|thunderbolt|15/15|naughty|0,0,0,0,0,0|F|31,31,31,31,31,31||60|50,pokeball,,,0,Grass,\"}",">player p2 {\"name\":\"55ddee01-93f3-45d0-879b-af4ad3f2949c\",\"team\":\"caterpie||5fc41e94-bfcb-4e79-ac58-ce3f1b24327a|21||-1||shielddust|tackle|35/35|adamant|0,0,0,0,0,0|F|31,31,31,31,31,31||5|50,pokeball,,,0,Bug,]btfaketestmonex||9d640e74-07f7-47a3-a433-c00cb5de77e9|20||-1||static|thundershock|30/30|rash|0,0,0,0,0,0|F|31,31,31,31,31,31||5|50,pokeball,,,0,Psychic,\"}",">p1 move thunderbolt",">p2 move tackle",">p2 switch 2",">p1 move thunderbolt",">p2 move thundershock"]}
+##CHAT## It is now turn 1 | A thick fog covers the battlefield! | BTDaily's Pikachu used Thunderbolt on Boss Test's Caterpie! | It was a critical hit! | Boss Test's Caterpie fainted! | It is now turn 2 | BTDaily's Pikachu used Thunderbolt on Boss Test's btfake.species.testmonex.name! | It wasn't very effective.... | Boss Test's btfake.species.testmonex.name fainted! | BTDaily won!
+##AI## thundershock t-1 (degats [minimax -1.00])
+
+[09:31:12] [Server thread/INFO]: [Battletower][selftest] journal BTRunner#1 :
+update
+|t:|1794734748
+|gametype|singles
+update
+|player|p1|f8abfd0e-7658-3027-ae92-d17dd74fe0c6||
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":15,"maxpp":15,"target":"normal","disabled":false},{"move":"Quick Attack","id":"quickattack","pp":30,"maxpp":30,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxlightning","target":"adjacentFoe"},{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Electric"}],"side":{"name":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","id":"p1","pokemon":[{"ident":"p1: Pikachu","details":"Pikachu, b66febde-633a-4a75-b9c3-f86903edaaaf, L60, F","condition":"130/130","active":true,"stats":{"atk":97,"def":71,"spa":74,"spd":83,"spe":131},"moves":["thunderbolt","quickattack"],"baseAbility":"static","item":"","pokeball":"Poke Ball","baseTypes":["Electric"],"types":["Electric"],"ability":"static","commanding":false,"reviving":false,"teraType":"Electric","terastallized":""}]},"noCancel":true}
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Tackle","id":"tackle","pp":35,"maxpp":35,"target":"normal","disabled":false}],"canDynamax":true,"maxMoves":{"maxMoves":[{"move":"maxstrike","target":"adjacentFoe"}]},"canTerastallize":"Water"}],"side":{"name":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","id":"p2","pokemon":[{"ident":"p2: Magikarp","details":"Magikarp, 0245381f-54a0-49a1-8374-3ef4d044d448, L5, M","condition":"18/18","active":true,"stats":{"atk":7,"def":12,"spa":8,"spd":7,"spe":14},"moves":["tackle"],"baseAbility":"swiftswim","item":"","pokeball":"Poke Ball","baseTypes":["Water"],"types":["Water"],"ability":"swiftswim","commanding":false,"reviving":false,"teraType":"Water","terastallized":""}]},"noCancel":true}
+update
+|player|p2|f19bc043-b660-4d73-8d02-e1bda9dd21e4||
+|teamsize|p1|1
+|teamsize|p2|1
+|gen|9
+|tier|
+|rule|Inverse Mod: Weaknesses become resistances, while resistances and immunities become weaknesses.
+|
+|t:|1794734748
+|start
+|split|p1
+|switch|p1a: b66febde-633a-4a75-b9c3-f86903edaaaf|Pikachu, b66febde-633a-4a75-b9c3-f86903edaaaf, L60, F|130/130
+|switch|p1a: b66febde-633a-4a75-b9c3-f86903edaaaf|Pikachu, b66febde-633a-4a75-b9c3-f86903edaaaf, L60, F|100/100
+|split|p2
+|switch|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448|Magikarp, 0245381f-54a0-49a1-8374-3ef4d044d448, L5, M|18/18
+|switch|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448|Magikarp, 0245381f-54a0-49a1-8374-3ef4d044d448, L5, M|100/100
+|turn|1
+|pp_update|p1: b66febde-633a-4a75-b9c3-f86903edaaaf|thunderbolt: 15, quickattack: 30
+|pp_update|p2: 0245381f-54a0-49a1-8374-3ef4d044d448|tackle: 35
+sideupdate
+p1
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+sideupdate
+p2
+|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase
+update
+|-weather|RainDance
+|-fieldstart|move: Electric Terrain
+update
+|
+|t:|1794734752
+|move|p1a: b66febde-633a-4a75-b9c3-f86903edaaaf|Thunderbolt|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448
+|-resisted|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448
+|split|p2
+|-damage|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448|0 fnt
+|-damage|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448|0 fnt
+|faint|p2a: 0245381f-54a0-49a1-8374-3ef4d044d448
+|
+|win|f8abfd0e-7658-3027-ae92-d17dd74fe0c6
+|pp_update|p1: b66febde-633a-4a75-b9c3-f86903edaaaf|thunderbolt: 14, quickattack: 30
+|pp_update|p2: 0245381f-54a0-49a1-8374-3ef4d044d448|tackle: 35
+end
+{"winner":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","seed":[11733,56983,38201,58549],"turns":1,"p1":"f8abfd0e-7658-3027-ae92-d17dd74fe0c6","p2":"f19bc043-b660-4d73-8d02-e1bda9dd21e4","p1team":[{"name":"Pikachu","species":"pikachu","uuid":"b66febde-633a-4a75-b9c3-f86903edaaaf","currentHealth":130,"status":"","statusDuration":-1,"item":"","ability":"Static","moves":["Thunderbolt","Quick Attack"],"movesInfo":[{"pp":15,"maxPp":15},{"pp":30,"maxPp":30}],"nature":"Adamant","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"F","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":60,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Electric"}],"p2team":[{"name":"Magikarp","species":"magikarp","uuid":"0245381f-54a0-49a1-8374-3ef4d044d448","currentHealth":18,"status":"","statusDuration":-1,"item":"","ability":"Swift Swim","moves":["Tackle"],"movesInfo":[{"pp":35,"maxPp":35}],"nature":"Rash","evs":{"hp":0,"atk":0,"def":0,"spa":0,"spd":0,"spe":0},"gender":"M","ivs":{"hp":31,"atk":31,"def":31,"spa":31,"spd":31,"spe":31},"level":5,"happiness":50,"pokeball":"Poke Ball","hpType":"","gigantamax":false,"dynamaxLevel":0,"teraType":"Water"}],"score":[1,0],"inputLog":[">start {\"seed\":[11733,56983,38201,58549]}",">player p1 {\"name\":\"f8abfd0e-7658-3027-ae92-d17dd74fe0c6\",\"team\":\"pikachu||b66febde-633a-4a75-b9c3-f86903edaaaf|130||-1||static|thunderbolt,quickattack|15/15,30/30|adamant|0,0,0,0,0,0|F|31,31,31,31,31,31||60|50,pokeball,,,0,Electric,\"}",">player p2 {\"name\":\"f19bc043-b660-4d73-8d02-e1bda9dd21e4\",\"team\":\"magikarp||0245381f-54a0-49a1-8374-3ef4d044d448|18||-1||swiftswim|tackle|35/35|rash|0,0,0,0,0,0|M|31,31,31,31,31,31||5|50,pokeball,,,0,Water,\"}",">p1 move thunderbolt",">p2 move tackle"]}
+##CHAT## It is now turn 1 | It started to rain! | An electric current ran across the battlefield! | BTRunner's Pikachu used Thunderbolt on Testeur Inverse's Magikarp! | It wasn't very effective.... | Testeur Inverse's Magikarp fainted! | BTRunner won!
+##AI## tackle t-1 (degats)
+
+[09:33:59] [Server thread/INFO]: [Battletower][selftest] PASS resume.setup
+[09:33:59] [Server thread/INFO]: PASS resume.setup
+[09:34:04] [Server thread/INFO]: [Battletower][selftest] SELFTEST SUMMARY pass=50 fail=0
+[09:34:04] [Server thread/INFO]: SELFTEST SUMMARY pass=50 fail=0
+[09:34:11] [Server thread/INFO]: Stopping the server
+[09:34:11] [Server thread/INFO]: Starting shutdown process...
+[09:34:11] [Server thread/INFO]: Closing storage...
+[09:34:11] [Server thread/INFO]: Goodbye!
+[09:34:11] [Server thread/INFO]: Stopping server
+[09:34:11] [Server thread/INFO]: Saving players
+[09:34:11] [Server thread/INFO]: Saving worlds
+[09:34:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[09:34:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[09:34:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[09:34:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[09:34:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09:34:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09:34:11] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

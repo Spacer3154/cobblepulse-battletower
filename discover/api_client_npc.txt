@@ -1,0 +1,265 @@
+Compiled from "NPCClientDelegate.java"
+public final class com.cobblemon.mod.common.client.entity.NPCClientDelegate extends com.cobblemon.mod.common.client.render.models.blockbench.PosableState implements com.cobblemon.mod.common.api.entity.NPCSideDelegate {
+  public com.cobblemon.mod.common.entity.npc.NPCEntity npcEntity;
+  public com.cobblemon.mod.common.client.entity.NPCClientDelegate();
+  public final com.cobblemon.mod.common.entity.npc.NPCEntity getNpcEntity();
+  public final void setNpcEntity(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public com.cobblemon.mod.common.api.scheduling.SchedulingTracker getSchedulingTracker();
+  public void initialize(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public void tick(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public void onSyncedDataUpdated(net.minecraft.class_2940<?>);
+  public com.cobblemon.mod.common.entity.npc.NPCEntity getEntity();
+  public void updatePartialTicks(float);
+  public void addToStruct(com.bedrockk.molang.runtime.struct.QueryStruct);
+  public void initialize(net.minecraft.class_1297);
+  public void tick(net.minecraft.class_1297);
+  public net.minecraft.class_1297 getEntity();
+}
+Compiled from "NPCEditorButton.java"
+public final class com.cobblemon.mod.common.client.gui.npc.NPCEditorButton extends net.minecraft.class_4185 {
+  public static final com.cobblemon.mod.common.client.gui.npc.NPCEditorButton$Companion Companion;
+  private float buttonX;
+  private float buttonY;
+  private net.minecraft.class_5250 label;
+  private java.lang.Boolean cycleButtonState;
+  private int buttonWidth;
+  private net.minecraft.class_2960 buttonResource;
+  private net.minecraft.class_2960 buttonBorderResource;
+  private final boolean silent;
+  private final boolean alignRight;
+  private final net.minecraft.class_4185$class_4241 clickAction;
+  private boolean isWidgetActive;
+  private int startHoverX;
+  private static final int HEIGHT;
+  private static final int BORDER_WIDTH;
+  private static final int BUTTON_PADDING;
+  public com.cobblemon.mod.common.client.gui.npc.NPCEditorButton(float, float, net.minecraft.class_5250, java.lang.Boolean, int, net.minecraft.class_2960, net.minecraft.class_2960, boolean, boolean, net.minecraft.class_4185$class_4241);
+  public com.cobblemon.mod.common.client.gui.npc.NPCEditorButton(float, float, net.minecraft.class_5250, java.lang.Boolean, int, net.minecraft.class_2960, net.minecraft.class_2960, boolean, boolean, net.minecraft.class_4185$class_4241, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final float getButtonX();
+  public final void setButtonX(float);
+  public final float getButtonY();
+  public final void setButtonY(float);
+  public final net.minecraft.class_5250 getLabel();
+  public final void setLabel(net.minecraft.class_5250);
+  public final java.lang.Boolean getCycleButtonState();
+  public final void setCycleButtonState(java.lang.Boolean);
+  public final int getButtonWidth();
+  public final void setButtonWidth(int);
+  public final net.minecraft.class_2960 getButtonResource();
+  public final void setButtonResource(net.minecraft.class_2960);
+  public final net.minecraft.class_2960 getButtonBorderResource();
+  public final void setButtonBorderResource(net.minecraft.class_2960);
+  public final boolean getSilent();
+  public final boolean getAlignRight();
+  public final net.minecraft.class_4185$class_4241 getClickAction();
+  public final boolean isWidgetActive();
+  public final void setWidgetActive(boolean);
+  public final int getStartHoverX();
+  public final void setStartHoverX(int);
+  protected void method_48579(net.minecraft.class_332, int, int, float);
+  public boolean method_25402(double, double, int);
+  public void method_25354(net.minecraft.class_1144);
+  public static final int access$getHEIGHT$cp();
+  public static final int access$getBORDER_WIDTH$cp();
+  public static final int access$getBUTTON_PADDING$cp();
+  static {};
+}
+Compiled from "NPCEditorButton.java"
+public final class com.cobblemon.mod.common.client.gui.npc.NPCEditorButton$Companion {
+  private com.cobblemon.mod.common.client.gui.npc.NPCEditorButton$Companion();
+  public final int getHEIGHT();
+  public final int getBORDER_WIDTH();
+  public final int getBUTTON_PADDING();
+  public com.cobblemon.mod.common.client.gui.npc.NPCEditorButton$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "NPCEditorScreen.java"
+public final class com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen extends net.minecraft.class_437 implements com.cobblemon.mod.common.client.gui.CobblemonRenderable {
+  public static final com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen$Companion Companion;
+  private final int npcId;
+  private final com.cobblemon.mod.common.net.messages.client.npc.dto.NPCConfigurationDTO dto;
+  public static final int BASE_WIDTH;
+  public static final int BASE_HEIGHT;
+  private static final net.minecraft.class_2960 baseResource;
+  public com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen(int, com.cobblemon.mod.common.net.messages.client.npc.dto.NPCConfigurationDTO);
+  public final int getNpcId();
+  public final com.cobblemon.mod.common.net.messages.client.npc.dto.NPCConfigurationDTO getDto();
+  public final int getMiddleX();
+  public final int getMiddleY();
+  public final int getLeftX();
+  public final int getTopY();
+  protected void method_25426();
+  protected void method_57734(float);
+  protected void method_57735(net.minecraft.class_332);
+  public boolean method_25421();
+  public void method_25394(net.minecraft.class_332, int, int, float);
+  private static final java.lang.String init$lambda$0(com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen);
+  private static final kotlin.Unit init$lambda$1(com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen, java.lang.String);
+  private static final java.lang.String init$lambda$2(com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen);
+  private static final kotlin.Unit init$lambda$3(com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen, java.lang.String);
+  private static final void init$lambda$4(com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen, net.minecraft.class_4185);
+  private static final void init$lambda$5(com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen, net.minecraft.class_4185);
+  public static final net.minecraft.class_2960 access$getBaseResource$cp();
+  static {};
+}
+Compiled from "NPCEditorScreen.java"
+public final class com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen$Companion {
+  private com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen$Companion();
+  public final net.minecraft.class_2960 getBaseResource();
+  public com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "ConfigVariableList.java"
+public final class com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList extends net.minecraft.class_4265<com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable> implements com.cobblemon.mod.common.client.gui.CobblemonRenderable {
+  public static final com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$Companion Companion;
+  private final int listX;
+  private int listY;
+  private final com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen parent;
+  private boolean scrolling;
+  public static final int WIDTH;
+  public static final int HEIGHT;
+  public static final int SLOT_WIDTH;
+  public static final int SLOT_HEIGHT;
+  public static final int SLOT_SPACING;
+  private static final net.minecraft.class_2960 textInputBackground;
+  public com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList(int, int, com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen);
+  public final int getListX();
+  public final int getListY();
+  public final void setListY(int);
+  public final com.cobblemon.mod.common.client.gui.npc.NPCEditorScreen getParent();
+  public int method_25322();
+  protected int method_25329();
+  public int addEntry(com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable);
+  public boolean removeEntry(com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable);
+  protected void method_57713(net.minecraft.class_332);
+  public void method_48579(net.minecraft.class_332, int, int, float);
+  public boolean method_25402(double, double, int);
+  public boolean method_25403(double, double, int, double, double);
+  private final void updateScrollingState(double, double);
+  protected void method_57715(net.minecraft.class_332);
+  private final void correctSize();
+  public final boolean isHovered(double, double);
+  public int method_25321(net.minecraft.class_350$class_351);
+  public boolean method_25330(net.minecraft.class_350$class_351);
+  public static final net.minecraft.class_2960 access$getTextInputBackground$cp();
+  static {};
+}
+Compiled from "ConfigVariableList.java"
+public final class com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$Companion {
+  private com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$Companion();
+  public final net.minecraft.class_2960 getTextInputBackground();
+  public com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "ConfigVariableList.java"
+public final class com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable extends net.minecraft.class_4265$class_4266<com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable> {
+  private final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable variable;
+  private final java.lang.String value;
+  private final com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList parent;
+  private final net.minecraft.class_310 client;
+  private boolean _focused;
+  private java.util.List<net.minecraft.class_364> children;
+  private java.lang.String textValue;
+  private boolean booleanValue;
+  private final net.minecraft.class_7919 tooltip;
+  private final net.minecraft.class_9110 tooltipHolder;
+  private final net.minecraft.class_342 editBox;
+  private final com.cobblemon.mod.common.client.gui.npc.NPCEditorButton toggleButton;
+  public com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable(com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable, java.lang.String, com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList);
+  public final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable getVariable();
+  public final java.lang.String getValue();
+  public final net.minecraft.class_310 getClient();
+  public final boolean get_focused();
+  public final void set_focused(boolean);
+  public final java.util.List<net.minecraft.class_364> getChildren();
+  public final void setChildren(java.util.List<net.minecraft.class_364>);
+  public final java.lang.String getTextValue();
+  public final void setTextValue(java.lang.String);
+  public final boolean getBooleanValue();
+  public final void setBooleanValue(boolean);
+  public final net.minecraft.class_7919 getTooltip();
+  public final net.minecraft.class_9110 getTooltipHolder();
+  public final net.minecraft.class_342 getEditBox();
+  public final com.cobblemon.mod.common.client.gui.npc.NPCEditorButton getToggleButton();
+  public boolean method_25370();
+  public void method_25365(boolean);
+  public java.util.List<net.minecraft.class_364> method_25396();
+  public java.util.List<net.minecraft.class_6379> method_37025();
+  public void method_25343(net.minecraft.class_332, int, int, int, int, int, int, int, boolean, float);
+  private static final void editBox$lambda$0$0(com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable, java.lang.String);
+  private static final boolean editBox$lambda$0$1(java.lang.String);
+  private static final void toggleButton$lambda$0(com.cobblemon.mod.common.client.gui.npc.widgets.ConfigVariableList$ConfigVariable, net.minecraft.class_4185);
+}
+Compiled from "NPCRenderWidget.java"
+public final class com.cobblemon.mod.common.client.gui.npc.widgets.NPCRenderWidget implements com.cobblemon.mod.common.client.gui.CobblemonRenderable,net.minecraft.class_364 {
+  public static final com.cobblemon.mod.common.client.gui.npc.widgets.NPCRenderWidget$Companion Companion;
+  private final int x;
+  private final int y;
+  private final java.util.UUID entityId;
+  private net.minecraft.class_2960 identifier;
+  private final java.util.Set<java.lang.String> aspects;
+  private final com.cobblemon.mod.common.client.render.models.blockbench.FloatingState state;
+  public static final int WIDTH;
+  public static final int HEIGHT;
+  public com.cobblemon.mod.common.client.gui.npc.widgets.NPCRenderWidget(int, int, java.util.UUID, net.minecraft.class_2960, java.util.Set<java.lang.String>);
+  public final int getX();
+  public final int getY();
+  public final java.util.UUID getEntityId();
+  public final net.minecraft.class_2960 getIdentifier();
+  public final void setIdentifier(net.minecraft.class_2960);
+  public final java.util.Set<java.lang.String> getAspects();
+  public final com.cobblemon.mod.common.client.render.models.blockbench.FloatingState getState();
+  public boolean method_25370();
+  public void method_25365(boolean);
+  public void method_25394(net.minecraft.class_332, int, int, float);
+  static {};
+}
+Compiled from "NPCRenderWidget.java"
+public final class com.cobblemon.mod.common.client.gui.npc.widgets.NPCRenderWidget$Companion {
+  private com.cobblemon.mod.common.client.gui.npc.widgets.NPCRenderWidget$Companion();
+  public com.cobblemon.mod.common.client.gui.npc.widgets.NPCRenderWidget$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "SimpleNPCTextInputWidget.java"
+public final class com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget extends net.minecraft.class_342 implements com.cobblemon.mod.common.client.gui.CobblemonRenderable {
+  public static final com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget$Companion Companion;
+  private final net.minecraft.class_2960 texture;
+  private final kotlin.jvm.functions.Function1<java.lang.String, kotlin.Unit> setter;
+  private final boolean shadow;
+  private final boolean wrap;
+  private long focusedTime;
+  public static final int TEXT_PADDING;
+  public com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget(kotlin.jvm.functions.Function0<java.lang.String>, net.minecraft.class_2960, kotlin.jvm.functions.Function1<? super java.lang.String, kotlin.Unit>, int, int, int, int, int, boolean, boolean);
+  public com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget(kotlin.jvm.functions.Function0, net.minecraft.class_2960, kotlin.jvm.functions.Function1, int, int, int, int, int, boolean, boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final net.minecraft.class_2960 getTexture();
+  public final boolean getShadow();
+  public final boolean getWrap();
+  public final long getFocusedTime();
+  public final void setFocusedTime(long);
+  public void method_25365(boolean);
+  public boolean method_25402(double, double, int);
+  public void method_48579(net.minecraft.class_332, int, int, float);
+  private static final void _init_$lambda$0(com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget, java.lang.String);
+  static {};
+}
+Compiled from "SimpleNPCTextInputWidget.java"
+public final class com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget$Companion {
+  private com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget$Companion();
+  public com.cobblemon.mod.common.client.gui.npc.widgets.SimpleNPCTextInputWidget$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "PosableNPCModel.java"
+public final class com.cobblemon.mod.common.client.render.models.blockbench.npc.PosableNPCModel extends com.cobblemon.mod.common.client.render.models.blockbench.PosableEntityModel<com.cobblemon.mod.common.entity.npc.NPCEntity> {
+  public com.cobblemon.mod.common.client.render.models.blockbench.npc.PosableNPCModel();
+  public void setupEntityTypeContext(net.minecraft.class_1297);
+}
+Compiled from "NPCRenderer.java"
+public final class com.cobblemon.mod.common.client.render.npc.NPCRenderer extends net.minecraft.class_922<com.cobblemon.mod.common.entity.npc.NPCEntity, com.cobblemon.mod.common.client.render.models.blockbench.PosableEntityModel<com.cobblemon.mod.common.entity.npc.NPCEntity>> {
+  private final com.cobblemon.mod.common.client.render.item.HeldItemRenderer heldItemRenderer;
+  public com.cobblemon.mod.common.client.render.npc.NPCRenderer(net.minecraft.class_5617$class_5618);
+  public net.minecraft.class_2960 getTextureLocation(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  protected void scale(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_4587, float);
+  public void render(com.cobblemon.mod.common.entity.npc.NPCEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  protected boolean shouldShowName(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+  public void method_4042(net.minecraft.class_1309, net.minecraft.class_4587, float);
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+  public boolean method_4055(net.minecraft.class_1309);
+  public boolean method_3921(net.minecraft.class_1297);
+}

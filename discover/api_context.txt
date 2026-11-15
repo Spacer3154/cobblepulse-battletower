@@ -1,0 +1,116 @@
+Compiled from "BattleContext.java"
+public interface com.cobblemon.mod.common.api.battles.interpreter.BattleContext {
+  public abstract java.lang.String getId();
+  public abstract int getTurn();
+  public abstract com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type getType();
+  public abstract com.cobblemon.mod.common.battles.pokemon.BattlePokemon getOrigin();
+  public default com.bedrockk.molang.runtime.struct.QueryStruct getStruct();
+  private static com.bedrockk.molang.runtime.value.StringValue getStruct$lambda$0(com.cobblemon.mod.common.api.battles.interpreter.BattleContext, com.bedrockk.molang.runtime.MoParams);
+  private static com.bedrockk.molang.runtime.value.MoValue getStruct$lambda$1(com.cobblemon.mod.common.api.battles.interpreter.BattleContext, com.bedrockk.molang.runtime.MoParams);
+  private static com.bedrockk.molang.runtime.value.StringValue getStruct$lambda$2(com.cobblemon.mod.common.api.battles.interpreter.BattleContext, com.bedrockk.molang.runtime.MoParams);
+  private static com.bedrockk.molang.runtime.value.DoubleValue getStruct$lambda$3(com.cobblemon.mod.common.api.battles.interpreter.BattleContext, com.bedrockk.molang.runtime.MoParams);
+  public static com.bedrockk.molang.runtime.struct.QueryStruct access$getStruct$jd(com.cobblemon.mod.common.api.battles.interpreter.BattleContext);
+}
+Compiled from "BattleContext.java"
+public final class com.cobblemon.mod.common.api.battles.interpreter.BattleContext$DefaultImpls {
+  public static com.bedrockk.molang.runtime.struct.QueryStruct getStruct(com.cobblemon.mod.common.api.battles.interpreter.BattleContext);
+}
+Compiled from "BattleContext.java"
+public final class com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type extends java.lang.Enum<com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type> {
+  private final boolean damaging;
+  private final boolean exclusive;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type ITEM;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type STATUS;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type VOLATILE;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type HAZARD;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type WEATHER;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type ROOM;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type SPORT;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type TERRAIN;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type GRAVITY;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type TAILWIND;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type SCREEN;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type FAINT;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type BOOST;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type UNBOOST;
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type MISC;
+  private static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type[] $VALUES;
+  private static final kotlin.enums.EnumEntries $ENTRIES;
+  private com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type(boolean, boolean);
+  public final boolean getDamaging();
+  public final boolean getExclusive();
+  public static com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type[] values();
+  public static com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type> getEntries();
+  private static final com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type[] $values();
+  static {};
+}
+Compiled from "BattleMessage.java"
+public final class com.cobblemon.mod.common.api.battles.interpreter.BattleMessage {
+  public static final com.cobblemon.mod.common.api.battles.interpreter.BattleMessage$Companion Companion;
+  private java.lang.String id;
+  private java.lang.String rawMessage;
+  private final java.util.ArrayList<java.lang.String> args;
+  private final java.util.HashMap<java.lang.String, java.lang.String> optionalArguments;
+  private final kotlin.text.Regex optionalArgumentMatcher;
+  private static final java.lang.String SEPARATOR;
+  private static final java.lang.String OPTIONAL_ARG_START;
+  private static final java.lang.String OPTIONAL_ARG_END;
+  private static final kotlin.text.Regex PNX_MATCHER;
+  private static final kotlin.text.Regex PN_MATCHER;
+  public com.cobblemon.mod.common.api.battles.interpreter.BattleMessage(java.lang.String);
+  public final java.lang.String getId();
+  public final java.lang.String getRawMessage();
+  public final java.lang.String argumentAt(int);
+  public final java.lang.String optionalArgument(java.lang.String);
+  public final boolean hasOptionalArgument(java.lang.String);
+  public final com.cobblemon.mod.common.api.battles.interpreter.BattleMessage parse(java.lang.String);
+  public final com.cobblemon.mod.common.battles.pokemon.BattlePokemon pokemonByUuid(int, com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  public final kotlin.Pair<com.cobblemon.mod.common.api.battles.model.actor.BattleActor, com.cobblemon.mod.common.battles.ActiveBattlePokemon> actorAndActivePokemon(int, com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  public final com.cobblemon.mod.common.battles.pokemon.BattlePokemon battlePokemon(int, com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  public final com.cobblemon.mod.common.battles.pokemon.BattlePokemon battlePokemonFromOptional(com.cobblemon.mod.common.api.battles.model.PokemonBattle, java.lang.String);
+  public static com.cobblemon.mod.common.battles.pokemon.BattlePokemon battlePokemonFromOptional$default(com.cobblemon.mod.common.api.battles.interpreter.BattleMessage, com.cobblemon.mod.common.api.battles.model.PokemonBattle, java.lang.String, int, java.lang.Object);
+  public final kotlin.Pair<java.lang.String, java.lang.String> pnxAndUuid(int);
+  public final com.cobblemon.mod.common.api.battles.interpreter.Effect effectAt(int);
+  public final com.cobblemon.mod.common.api.battles.interpreter.Effect effect(java.lang.String);
+  public static com.cobblemon.mod.common.api.battles.interpreter.Effect effect$default(com.cobblemon.mod.common.api.battles.interpreter.BattleMessage, java.lang.String, int, java.lang.Object);
+  public final com.cobblemon.mod.common.api.moves.MoveTemplate moveAt(int);
+  public final kotlin.Pair<com.cobblemon.mod.common.api.battles.model.actor.BattleActor, com.cobblemon.mod.common.battles.ActiveBattlePokemon> actorAndActivePokemonFromOptional(com.cobblemon.mod.common.api.battles.model.PokemonBattle, java.lang.String);
+  public static kotlin.Pair actorAndActivePokemonFromOptional$default(com.cobblemon.mod.common.api.battles.interpreter.BattleMessage, com.cobblemon.mod.common.api.battles.model.PokemonBattle, java.lang.String, int, java.lang.Object);
+  private final java.lang.String push(java.lang.String);
+  private final kotlin.Pair<com.cobblemon.mod.common.api.battles.model.actor.BattleActor, com.cobblemon.mod.common.battles.ActiveBattlePokemon> actorAndActivePokemon(java.lang.String, com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  private final com.cobblemon.mod.common.battles.pokemon.BattlePokemon battlePokemon(java.lang.String, java.lang.String, com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  public static final kotlin.text.Regex access$getPNX_MATCHER$cp();
+  public static final kotlin.text.Regex access$getPN_MATCHER$cp();
+  static {};
+}
+Compiled from "BattleMessage.java"
+public final class com.cobblemon.mod.common.api.battles.interpreter.BattleMessage$Companion {
+  private com.cobblemon.mod.common.api.battles.interpreter.BattleMessage$Companion();
+  public final kotlin.text.Regex getPNX_MATCHER();
+  public final kotlin.text.Regex getPN_MATCHER();
+  public com.cobblemon.mod.common.api.battles.interpreter.BattleMessage$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "ContextManager.java"
+public final class com.cobblemon.mod.common.battles.interpreter.ContextManager {
+  public static final com.cobblemon.mod.common.battles.interpreter.ContextManager$Companion Companion;
+  private final java.util.HashMap<com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type, java.util.Collection<com.cobblemon.mod.common.api.battles.interpreter.BattleContext>> buckets;
+  public com.cobblemon.mod.common.battles.interpreter.ContextManager();
+  public final java.util.HashMap<com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type, java.util.Collection<com.cobblemon.mod.common.api.battles.interpreter.BattleContext>> getBuckets();
+  public final void add(com.cobblemon.mod.common.api.battles.interpreter.BattleContext...);
+  public final void addUnique(com.cobblemon.mod.common.api.battles.interpreter.BattleContext);
+  public final void remove(java.lang.String, com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type);
+  public final void clear(com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type...);
+  public final void swap(com.cobblemon.mod.common.battles.interpreter.ContextManager, com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type...);
+  public final void copy(com.cobblemon.mod.common.battles.interpreter.ContextManager, com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type...);
+  public final java.util.Collection<com.cobblemon.mod.common.api.battles.interpreter.BattleContext> get(com.cobblemon.mod.common.api.battles.interpreter.BattleContext$Type);
+  private static final boolean remove$lambda$0(java.lang.String, com.cobblemon.mod.common.api.battles.interpreter.BattleContext);
+  private static final boolean remove$lambda$1(kotlin.jvm.functions.Function1, java.lang.Object);
+  static {};
+}
+Compiled from "ContextManager.java"
+public final class com.cobblemon.mod.common.battles.interpreter.ContextManager$Companion {
+  private com.cobblemon.mod.common.battles.interpreter.ContextManager$Companion();
+  public final com.cobblemon.mod.common.api.battles.interpreter.BattleContext scoop(java.lang.String, java.util.Collection<? extends com.cobblemon.mod.common.api.battles.interpreter.BattleContext>...);
+  public com.cobblemon.mod.common.battles.interpreter.ContextManager$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}

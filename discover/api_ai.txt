@@ -1,0 +1,381 @@
+Compiled from "AIBattleActor.java"
+public abstract class com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor {
+  private final com.cobblemon.mod.common.api.battles.model.ai.BattleAI battleAI;
+  public com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor(java.util.UUID, java.util.List<? extends com.cobblemon.mod.common.battles.pokemon.BattlePokemon>, com.cobblemon.mod.common.api.battles.model.ai.BattleAI);
+  public final com.cobblemon.mod.common.api.battles.model.ai.BattleAI getBattleAI();
+  public void sendUpdate(com.cobblemon.mod.common.api.net.NetworkPacket<?>);
+  public void onChoiceRequested();
+  private static final com.cobblemon.mod.common.battles.ShowdownActionResponse onChoiceRequested$lambda$0$0(com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor, com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ShowdownMoveset, boolean);
+  private static final kotlin.Unit onChoiceRequested$lambda$1(com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor);
+  private static final com.cobblemon.mod.common.battles.PassActionResponse onChoiceRequested$lambda$2$0(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ShowdownMoveset, boolean);
+  private static final kotlin.Unit onChoiceRequested$lambda$3(com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor);
+}
+Compiled from "ActorType.java"
+public final class com.cobblemon.mod.common.api.battles.model.actor.ActorType extends java.lang.Enum<com.cobblemon.mod.common.api.battles.model.actor.ActorType> {
+  public static final com.cobblemon.mod.common.api.battles.model.actor.ActorType WILD;
+  public static final com.cobblemon.mod.common.api.battles.model.actor.ActorType PLAYER;
+  public static final com.cobblemon.mod.common.api.battles.model.actor.ActorType NPC;
+  private static final com.cobblemon.mod.common.api.battles.model.actor.ActorType[] $VALUES;
+  private static final kotlin.enums.EnumEntries $ENTRIES;
+  private com.cobblemon.mod.common.api.battles.model.actor.ActorType();
+  public static com.cobblemon.mod.common.api.battles.model.actor.ActorType[] values();
+  public static com.cobblemon.mod.common.api.battles.model.actor.ActorType valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.cobblemon.mod.common.api.battles.model.actor.ActorType> getEntries();
+  private static final com.cobblemon.mod.common.api.battles.model.actor.ActorType[] $values();
+  static {};
+}
+Compiled from "BattleActor.java"
+public abstract class com.cobblemon.mod.common.api.battles.model.actor.BattleActor {
+  private final java.util.UUID uuid;
+  private final java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> pokemonList;
+  private final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.battles.model.actor.BattleActor> struct;
+  public java.lang.String showdownId;
+  public com.cobblemon.mod.common.api.battles.model.PokemonBattle battle;
+  private final java.util.List<com.cobblemon.mod.common.battles.ActiveBattlePokemon> activePokemon;
+  private boolean canDynamax;
+  private com.cobblemon.mod.common.battles.ShowdownActionRequest request;
+  private java.util.List<com.cobblemon.mod.common.battles.ShowdownActionResponse> responses;
+  private final java.util.List<com.cobblemon.mod.common.battles.ShowdownActionResponse> expectingPassActions;
+  private boolean mustChoose;
+  private java.util.List<com.cobblemon.mod.common.item.battle.BagItem> itemsUsed;
+  private int stillSendingOutCount;
+  public com.cobblemon.mod.common.api.battles.model.actor.BattleActor(java.util.UUID, java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon>);
+  public final java.util.UUID getUuid();
+  public final java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> getPokemonList();
+  public final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.battles.model.actor.BattleActor> getStruct();
+  public final java.lang.String getShowdownId();
+  public final void setShowdownId(java.lang.String);
+  public final com.cobblemon.mod.common.api.battles.model.PokemonBattle getBattle();
+  public final void setBattle(com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  public final boolean isInitialized();
+  public final java.util.List<com.cobblemon.mod.common.battles.ActiveBattlePokemon> getActivePokemon();
+  public final boolean getCanDynamax();
+  public final void setCanDynamax(boolean);
+  public final com.cobblemon.mod.common.battles.ShowdownActionRequest getRequest();
+  public final void setRequest(com.cobblemon.mod.common.battles.ShowdownActionRequest);
+  public final java.util.List<com.cobblemon.mod.common.battles.ShowdownActionResponse> getResponses();
+  public final void setResponses(java.util.List<com.cobblemon.mod.common.battles.ShowdownActionResponse>);
+  public final java.util.List<com.cobblemon.mod.common.battles.ShowdownActionResponse> getExpectingPassActions();
+  public final boolean getMustChoose();
+  public final void setMustChoose(boolean);
+  public final java.util.List<com.cobblemon.mod.common.item.battle.BagItem> getItemsUsed();
+  public final void setItemsUsed(java.util.List<com.cobblemon.mod.common.item.battle.BagItem>);
+  public final int getStillSendingOutCount();
+  public final void setStillSendingOutCount(int);
+  public abstract com.cobblemon.mod.common.api.battles.model.actor.ActorType getType();
+  public final boolean canFitForcedAction();
+  public final void forceChoose(com.cobblemon.mod.common.battles.ShowdownActionResponse);
+  public final com.cobblemon.mod.common.battles.BattleSide getSide();
+  public java.lang.Iterable<java.util.UUID> getPlayerUUIDs();
+  public boolean isForPlayer(net.minecraft.class_3222);
+  public boolean isForPokemon(com.cobblemon.mod.common.entity.pokemon.PokemonEntity);
+  public final void turn();
+  public final void postUpdate();
+  public final void setActionResponses(java.util.List<? extends com.cobblemon.mod.common.battles.ShowdownActionResponse>);
+  public final void writeShowdownResponse();
+  public abstract net.minecraft.class_5250 getName();
+  public abstract net.minecraft.class_5250 nameOwned(java.lang.String);
+  public void sendMessage(net.minecraft.class_2561);
+  public void onUseMove(com.cobblemon.mod.common.battles.pokemon.BattlePokemon, com.cobblemon.mod.common.battles.pokemon.BattlePokemon);
+  public void awardExperience(com.cobblemon.mod.common.battles.pokemon.BattlePokemon, int);
+  public void sendUpdate(com.cobblemon.mod.common.api.net.NetworkPacket<?>);
+  public void win(java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>, java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>);
+  public void lose(java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>, java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>);
+  private static final int writeShowdownResponse$lambda$0(java.util.List, com.cobblemon.mod.common.api.battles.model.actor.BattleActor, kotlin.jvm.internal.Ref$IntRef, com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ShowdownMoveset, boolean);
+}
+Compiled from "EntityBackedBattleActor.java"
+public interface com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor<T extends net.minecraft.class_1309> {
+  public abstract T getEntity();
+  public abstract net.minecraft.class_243 getInitialPos();
+}
+Compiled from "FleeableBattleActor.java"
+public interface com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor {
+  public abstract float getFleeDistance();
+  public abstract kotlin.Pair<net.minecraft.class_3218, net.minecraft.class_243> getWorldAndPosition();
+}
+Compiled from "BattleAI.java"
+public interface com.cobblemon.mod.common.api.battles.model.ai.BattleAI {
+  public abstract com.cobblemon.mod.common.battles.ShowdownActionResponse choose(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.BattleSide, com.cobblemon.mod.common.battles.ShowdownMoveset, boolean);
+  public default void onHealthChange(com.cobblemon.mod.common.net.messages.client.battle.BattleHealthChangePacket);
+  public static void access$onHealthChange$jd(com.cobblemon.mod.common.api.battles.model.ai.BattleAI, com.cobblemon.mod.common.net.messages.client.battle.BattleHealthChangePacket);
+}
+Compiled from "BattleAI.java"
+public final class com.cobblemon.mod.common.api.battles.model.ai.BattleAI$DefaultImpls {
+  public static void onHealthChange(com.cobblemon.mod.common.api.battles.model.ai.BattleAI, com.cobblemon.mod.common.net.messages.client.battle.BattleHealthChangePacket);
+}
+Compiled from "MultiPokemonBattleActor.java"
+public class com.cobblemon.mod.common.battles.actor.MultiPokemonBattleActor extends com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor {
+  private final com.cobblemon.mod.common.api.battles.model.actor.ActorType type;
+  public com.cobblemon.mod.common.battles.actor.MultiPokemonBattleActor(java.util.List<? extends com.cobblemon.mod.common.battles.pokemon.BattlePokemon>, com.cobblemon.mod.common.api.battles.model.ai.BattleAI, java.util.UUID);
+  public com.cobblemon.mod.common.battles.actor.MultiPokemonBattleActor(java.util.List, com.cobblemon.mod.common.api.battles.model.ai.BattleAI, java.util.UUID, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public net.minecraft.class_5250 getName();
+  public net.minecraft.class_5250 nameOwned(java.lang.String);
+  public com.cobblemon.mod.common.api.battles.model.actor.ActorType getType();
+}
+Compiled from "PlayerBattleActor.java"
+public final class com.cobblemon.mod.common.battles.actor.PlayerBattleActor extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor implements com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor<net.minecraft.class_3222> {
+  private final net.minecraft.class_243 initialPos;
+  private net.minecraft.class_2960 battleTheme;
+  private final com.cobblemon.mod.common.api.battles.model.actor.ActorType type;
+  public com.cobblemon.mod.common.battles.actor.PlayerBattleActor(java.util.UUID, java.util.List<? extends com.cobblemon.mod.common.battles.pokemon.BattlePokemon>);
+  public net.minecraft.class_243 getInitialPos();
+  public net.minecraft.class_3222 getEntity();
+  public final net.minecraft.class_2960 getBattleTheme();
+  public final void setBattleTheme(net.minecraft.class_2960);
+  public net.minecraft.class_5250 getName();
+  public net.minecraft.class_5250 nameOwned(java.lang.String);
+  public com.cobblemon.mod.common.api.battles.model.actor.ActorType getType();
+  public java.util.Set<java.util.UUID> getPlayerUUIDs();
+  public void awardExperience(com.cobblemon.mod.common.battles.pokemon.BattlePokemon, int);
+  public void sendUpdate(com.cobblemon.mod.common.api.net.NetworkPacket<?>);
+  public net.minecraft.class_1309 getEntity();
+  public java.lang.Iterable getPlayerUUIDs();
+}
+Compiled from "PokemonBattleActor.java"
+public class com.cobblemon.mod.common.battles.actor.PokemonBattleActor extends com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor implements com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor<com.cobblemon.mod.common.entity.pokemon.PokemonEntity>, com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor {
+  private final com.cobblemon.mod.common.battles.pokemon.BattlePokemon pokemon;
+  private final float fleeDistance;
+  private final net.minecraft.class_243 initialPos;
+  private final com.cobblemon.mod.common.api.battles.model.actor.ActorType type;
+  public com.cobblemon.mod.common.battles.actor.PokemonBattleActor(java.util.UUID, com.cobblemon.mod.common.battles.pokemon.BattlePokemon, float, com.cobblemon.mod.common.api.battles.model.ai.BattleAI);
+  public com.cobblemon.mod.common.battles.actor.PokemonBattleActor(java.util.UUID, com.cobblemon.mod.common.battles.pokemon.BattlePokemon, float, com.cobblemon.mod.common.api.battles.model.ai.BattleAI, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.cobblemon.mod.common.battles.pokemon.BattlePokemon getPokemon();
+  public float getFleeDistance();
+  public net.minecraft.class_243 getInitialPos();
+  public net.minecraft.class_5250 getName();
+  public net.minecraft.class_5250 nameOwned(java.lang.String);
+  public kotlin.Pair<net.minecraft.class_3218, net.minecraft.class_243> getWorldAndPosition();
+  public void sendUpdate(com.cobblemon.mod.common.api.net.NetworkPacket<?>);
+  public com.cobblemon.mod.common.entity.pokemon.PokemonEntity getEntity();
+  public com.cobblemon.mod.common.api.battles.model.actor.ActorType getType();
+  public net.minecraft.class_1309 getEntity();
+}
+Compiled from "TrainerBattleActor.java"
+public class com.cobblemon.mod.common.battles.actor.TrainerBattleActor extends com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor {
+  private final java.lang.String trainerName;
+  private final com.cobblemon.mod.common.api.battles.model.actor.ActorType type;
+  public com.cobblemon.mod.common.battles.actor.TrainerBattleActor(java.lang.String, java.util.UUID, java.util.List<? extends com.cobblemon.mod.common.battles.pokemon.BattlePokemon>, com.cobblemon.mod.common.api.battles.model.ai.BattleAI);
+  public final java.lang.String getTrainerName();
+  public net.minecraft.class_5250 getName();
+  public net.minecraft.class_5250 nameOwned(java.lang.String);
+  public com.cobblemon.mod.common.api.battles.model.actor.ActorType getType();
+}
+Compiled from "RandomBattleAI.java"
+public final class com.cobblemon.mod.common.battles.ai.RandomBattleAI implements com.cobblemon.mod.common.api.battles.model.ai.BattleAI {
+  public com.cobblemon.mod.common.battles.ai.RandomBattleAI();
+  public com.cobblemon.mod.common.battles.ShowdownActionResponse choose(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.BattleSide, com.cobblemon.mod.common.battles.ShowdownMoveset, boolean);
+  public void onHealthChange(com.cobblemon.mod.common.net.messages.client.battle.BattleHealthChangePacket);
+}
+Compiled from "StrongBattleAI.java"
+public final class com.cobblemon.mod.common.battles.ai.StrongBattleAI implements com.cobblemon.mod.common.api.battles.model.ai.BattleAI {
+  private final int skill;
+  private final double speedTierCoefficient;
+  private double trickRoomCoefficient;
+  private final double typeMatchupWeightConsideration;
+  private final double moveDamageWeightConsideration;
+  private final int antiBoostWeightConsideration;
+  private final double hpWeightConsideration;
+  private final double hpFractionCoefficient;
+  private final int boostWeightCoefficient;
+  private final int switchOutMatchupThreshold;
+  private final double selfKoMoveMatchupThreshold;
+  private final int trickRoomThreshold;
+  private final double recoveryMoveThreshold;
+  private final int accuracySwitchThreshold;
+  private final double hpSwitchOutThreshold;
+  private final double randomProtectChance;
+  private final double statusDamageConsiderationThreshold;
+  private final com.cobblemon.mod.common.battles.ai.strongBattleAI.ActiveTracker activeTracker;
+  public com.cobblemon.mod.common.battles.ai.StrongBattleAI(int);
+  public final boolean checkSkillLevel();
+  public final boolean checkSwitchOutSkill();
+  public final kotlin.Pair<com.cobblemon.mod.common.battles.ActiveBattlePokemon, java.lang.Double> calculateDamage(kotlin.Pair<com.cobblemon.mod.common.battles.InBattleMove, ? extends com.cobblemon.mod.common.api.moves.MoveTemplate>, com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public final double calculateDamage(com.cobblemon.mod.common.battles.InBattleMove, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public final boolean mostDamagingMove(com.cobblemon.mod.common.battles.InBattleMove, com.cobblemon.mod.common.battles.ShowdownMoveset, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public com.cobblemon.mod.common.battles.ShowdownActionResponse choose(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.BattleSide, com.cobblemon.mod.common.battles.ShowdownMoveset, boolean);
+  public final double estimateMatchup(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.BattleSide, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public static double estimateMatchup$default(com.cobblemon.mod.common.battles.ai.StrongBattleAI, com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.BattleSide, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, int, java.lang.Object);
+  public final boolean hasMajorStatusImmunity(com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public final boolean shouldSwitchOut(com.cobblemon.mod.common.battles.BattleSide, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ShowdownMoveset);
+  public final double statEstimationActive(com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, com.cobblemon.mod.common.api.pokemon.stats.Stat);
+  public final double moveDamageMultiplier(com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, com.cobblemon.mod.common.api.moves.MoveTemplate, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public final double bestDamageMultiplier(com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public final double typeMatchup(com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon);
+  public final int expectedHits(com.cobblemon.mod.common.api.moves.MoveTemplate);
+  private final java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer> getNonZeroStats(java.lang.String);
+  private final void updateActiveTracker(com.cobblemon.mod.common.battles.BattleSide, com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  private final com.cobblemon.mod.common.battles.ShowdownActionResponse considerSwitching(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon>, java.util.List<? extends kotlin.Pair<com.cobblemon.mod.common.battles.InBattleMove, ? extends com.cobblemon.mod.common.api.moves.MoveTemplate>>, java.util.List<? extends kotlin.Pair<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, ? extends com.cobblemon.mod.common.battles.pokemon.BattlePokemon>>, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.BattleSide);
+  public final com.cobblemon.mod.common.battles.ShowdownActionResponse considerAntiBoost(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon>, java.util.List<? extends kotlin.Pair<com.cobblemon.mod.common.battles.InBattleMove, ? extends com.cobblemon.mod.common.api.moves.MoveTemplate>>);
+  public final com.cobblemon.mod.common.battles.ShowdownActionResponse considerInflictingStatus(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon>, java.util.List<? extends kotlin.Pair<com.cobblemon.mod.common.battles.InBattleMove, ? extends com.cobblemon.mod.common.api.moves.MoveTemplate>>, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.BattleSide);
+  public final com.cobblemon.mod.common.battles.ShowdownActionResponse findAndUseMostDamagingMove(com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon>, java.util.List<? extends kotlin.Pair<com.cobblemon.mod.common.battles.InBattleMove, ? extends com.cobblemon.mod.common.api.moves.MoveTemplate>>, com.cobblemon.mod.common.battles.ShowdownMoveset, com.cobblemon.mod.common.api.battles.model.PokemonBattle, com.cobblemon.mod.common.battles.BattleSide);
+  private final com.cobblemon.mod.common.battles.MoveActionResponse chooseMove(com.cobblemon.mod.common.battles.InBattleMove, com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ActiveBattlePokemon);
+  static com.cobblemon.mod.common.battles.MoveActionResponse chooseMove$default(com.cobblemon.mod.common.battles.ai.StrongBattleAI, com.cobblemon.mod.common.battles.InBattleMove, com.cobblemon.mod.common.battles.ActiveBattlePokemon, com.cobblemon.mod.common.battles.ActiveBattlePokemon, int, java.lang.Object);
+  public void onHealthChange(com.cobblemon.mod.common.net.messages.client.battle.BattleHealthChangePacket);
+}
+Compiled from "AIUtility.java"
+public final class com.cobblemon.mod.common.battles.ai.strongBattleAI.AIUtility {
+  public static final com.cobblemon.mod.common.battles.ai.strongBattleAI.AIUtility INSTANCE;
+  private static final java.util.Map<com.cobblemon.mod.common.api.types.ElementalType, java.util.Map<com.cobblemon.mod.common.api.types.ElementalType, java.lang.Double>> typeEffectiveness;
+  private static final java.util.Map<java.lang.String, kotlin.Pair<java.lang.Integer, java.lang.Integer>> multiHitMoves;
+  private static final java.util.Map<java.lang.String, java.lang.String> statusMoves;
+  private static final java.util.Map<java.lang.String, java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer>> boostFromMoves;
+  private static final java.util.List<java.lang.String> entryHazards;
+  private static final java.util.List<java.lang.String> antiHazardsMoves;
+  private static final java.util.List<java.lang.String> antiBoostMoves;
+  private static final java.util.List<java.lang.String> pivotMoves;
+  private static final java.util.Set<java.lang.String> setupMoves;
+  private static final java.util.List<java.lang.String> selfRecoveryMoves;
+  private static final java.util.Map<java.lang.String, java.lang.String> weatherSetupMoves;
+  private static final java.util.Set<java.lang.String> accuracyLoweringMoves;
+  private static final java.util.Set<java.lang.String> protectMoves;
+  private static final java.util.Map<java.lang.String, kotlin.Pair<java.util.Set<java.lang.String>, java.util.Set<java.lang.String>>> statusImmunityMap;
+  private static final java.util.Map<java.lang.String, com.cobblemon.mod.common.api.types.ElementalType> typeImmuneAbilities;
+  private com.cobblemon.mod.common.battles.ai.strongBattleAI.AIUtility();
+  public final double getDamageMultiplier(com.cobblemon.mod.common.api.types.ElementalType, com.cobblemon.mod.common.api.types.ElementalType);
+  public final java.util.Map<com.cobblemon.mod.common.api.types.ElementalType, java.util.Map<com.cobblemon.mod.common.api.types.ElementalType, java.lang.Double>> getTypeEffectiveness();
+  public final java.util.Map<java.lang.String, kotlin.Pair<java.lang.Integer, java.lang.Integer>> getMultiHitMoves();
+  public final java.util.Map<java.lang.String, java.lang.String> getStatusMoves();
+  public final java.util.Map<java.lang.String, java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer>> getBoostFromMoves();
+  public final java.util.List<java.lang.String> getEntryHazards();
+  public final java.util.List<java.lang.String> getAntiHazardsMoves();
+  public final java.util.List<java.lang.String> getAntiBoostMoves();
+  public final java.util.List<java.lang.String> getPivotMoves();
+  public final java.util.Set<java.lang.String> getSetupMoves();
+  public final java.util.List<java.lang.String> getSelfRecoveryMoves();
+  public final java.util.Map<java.lang.String, java.lang.String> getWeatherSetupMoves();
+  public final java.util.Set<java.lang.String> getAccuracyLoweringMoves();
+  public final java.util.Set<java.lang.String> getProtectMoves();
+  public final java.util.Map<java.lang.String, kotlin.Pair<java.util.Set<java.lang.String>, java.util.Set<java.lang.String>>> getStatusImmunityMap();
+  public final boolean canAffectWithStatus(java.lang.String, java.lang.Iterable<com.cobblemon.mod.common.api.types.ElementalType>, com.cobblemon.mod.common.api.abilities.Ability);
+  public static boolean canAffectWithStatus$default(com.cobblemon.mod.common.battles.ai.strongBattleAI.AIUtility, java.lang.String, java.lang.Iterable, com.cobblemon.mod.common.api.abilities.Ability, int, java.lang.Object);
+  public final java.util.Map<java.lang.String, com.cobblemon.mod.common.api.types.ElementalType> getTypeImmuneAbilities();
+  static {};
+}
+Compiled from "ActiveTracker.java"
+public final class com.cobblemon.mod.common.battles.ai.strongBattleAI.ActiveTracker {
+  private java.lang.String currentRoom;
+  private java.lang.String currentTerrain;
+  private java.lang.String currentWeather;
+  private final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerSide alliedSide;
+  private final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerSide opponentSide;
+  public com.cobblemon.mod.common.battles.ai.strongBattleAI.ActiveTracker();
+  public final java.lang.String getCurrentRoom();
+  public final void setCurrentRoom(java.lang.String);
+  public final java.lang.String getCurrentTerrain();
+  public final void setCurrentTerrain(java.lang.String);
+  public final java.lang.String getCurrentWeather();
+  public final void setCurrentWeather(java.lang.String);
+  public final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerSide getAlliedSide();
+  public final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerSide getOpponentSide();
+  public final boolean isInitialized();
+  public final void initialize(com.cobblemon.mod.common.battles.BattleSide);
+  public final void updateActiveState(com.cobblemon.mod.common.battles.BattleSide);
+}
+Compiled from "ActiveTrackerKt.java"
+public final class com.cobblemon.mod.common.battles.ai.strongBattleAI.ActiveTrackerKt {
+  public static final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon createAllied(com.cobblemon.mod.common.battles.pokemon.BattlePokemon);
+  public static final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon createOpposing(com.cobblemon.mod.common.battles.pokemon.BattlePokemon);
+}
+Compiled from "TrackerActor.java"
+public final class com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor {
+  public static final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor$Companion Companion;
+  private final java.util.UUID uuid;
+  private final java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon> party;
+  private final java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon> activePokemon;
+  public com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor(java.util.UUID);
+  public final java.util.UUID getUuid();
+  public final java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon> getParty();
+  public final java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon> getActivePokemon();
+  public final int getRemainingMons();
+  public final void updateAlliedActivePokemon(com.cobblemon.mod.common.api.battles.model.actor.BattleActor);
+  public final void updateOpponentActivePokemon(com.cobblemon.mod.common.api.battles.model.actor.BattleActor);
+  static {};
+}
+Compiled from "TrackerActor.java"
+public final class com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor$Companion {
+  private com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor$Companion();
+  public final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor initializeAlly(com.cobblemon.mod.common.api.battles.model.actor.BattleActor);
+  public final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor initializeOpponent(com.cobblemon.mod.common.api.battles.model.actor.BattleActor);
+  public com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "TrackerPokemon.java"
+public final class com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon {
+  private java.util.UUID id;
+  private com.cobblemon.mod.common.pokemon.Pokemon pokemon;
+  private com.cobblemon.mod.common.pokemon.Species species;
+  private com.cobblemon.mod.common.pokemon.FormData form;
+  private java.lang.Integer currentHp;
+  private double currentHpPercent;
+  private java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer> boosts;
+  private java.lang.String currentVolatile;
+  private java.lang.String currentStatus;
+  private com.cobblemon.mod.common.api.abilities.Ability currentAbility;
+  private java.util.List<? extends com.cobblemon.mod.common.api.moves.Move> moves;
+  private boolean firstTurn;
+  private int protectCount;
+  public com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon(java.util.UUID, com.cobblemon.mod.common.pokemon.Pokemon, com.cobblemon.mod.common.pokemon.Species, com.cobblemon.mod.common.pokemon.FormData, java.lang.Integer, double, java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer>, java.lang.String, java.lang.String, com.cobblemon.mod.common.api.abilities.Ability, java.util.List<? extends com.cobblemon.mod.common.api.moves.Move>, boolean, int);
+  public com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon(java.util.UUID, com.cobblemon.mod.common.pokemon.Pokemon, com.cobblemon.mod.common.pokemon.Species, com.cobblemon.mod.common.pokemon.FormData, java.lang.Integer, double, java.util.Map, java.lang.String, java.lang.String, com.cobblemon.mod.common.api.abilities.Ability, java.util.List, boolean, int, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.util.UUID getId();
+  public final void setId(java.util.UUID);
+  public final com.cobblemon.mod.common.pokemon.Pokemon getPokemon();
+  public final void setPokemon(com.cobblemon.mod.common.pokemon.Pokemon);
+  public final com.cobblemon.mod.common.pokemon.Species getSpecies();
+  public final void setSpecies(com.cobblemon.mod.common.pokemon.Species);
+  public final com.cobblemon.mod.common.pokemon.FormData getForm();
+  public final void setForm(com.cobblemon.mod.common.pokemon.FormData);
+  public final java.lang.Integer getCurrentHp();
+  public final void setCurrentHp(java.lang.Integer);
+  public final double getCurrentHpPercent();
+  public final void setCurrentHpPercent(double);
+  public final java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer> getBoosts();
+  public final void setBoosts(java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer>);
+  public final java.lang.String getCurrentVolatile();
+  public final void setCurrentVolatile(java.lang.String);
+  public final java.lang.String getCurrentStatus();
+  public final void setCurrentStatus(java.lang.String);
+  public final com.cobblemon.mod.common.api.abilities.Ability getCurrentAbility();
+  public final void setCurrentAbility(com.cobblemon.mod.common.api.abilities.Ability);
+  public final java.util.List<com.cobblemon.mod.common.api.moves.Move> getMoves();
+  public final void setMoves(java.util.List<? extends com.cobblemon.mod.common.api.moves.Move>);
+  public final boolean getFirstTurn();
+  public final void setFirstTurn(boolean);
+  public final int getProtectCount();
+  public final void setProtectCount(int);
+  public final java.util.UUID component1();
+  public final com.cobblemon.mod.common.pokemon.Pokemon component2();
+  public final com.cobblemon.mod.common.pokemon.Species component3();
+  public final com.cobblemon.mod.common.pokemon.FormData component4();
+  public final java.lang.Integer component5();
+  public final double component6();
+  public final java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer> component7();
+  public final java.lang.String component8();
+  public final java.lang.String component9();
+  public final com.cobblemon.mod.common.api.abilities.Ability component10();
+  public final java.util.List<com.cobblemon.mod.common.api.moves.Move> component11();
+  public final boolean component12();
+  public final int component13();
+  public final com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon copy(java.util.UUID, com.cobblemon.mod.common.pokemon.Pokemon, com.cobblemon.mod.common.pokemon.Species, com.cobblemon.mod.common.pokemon.FormData, java.lang.Integer, double, java.util.Map<com.cobblemon.mod.common.api.pokemon.stats.Stat, java.lang.Integer>, java.lang.String, java.lang.String, com.cobblemon.mod.common.api.abilities.Ability, java.util.List<? extends com.cobblemon.mod.common.api.moves.Move>, boolean, int);
+  public static com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon copy$default(com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon, java.util.UUID, com.cobblemon.mod.common.pokemon.Pokemon, com.cobblemon.mod.common.pokemon.Species, com.cobblemon.mod.common.pokemon.FormData, java.lang.Integer, double, java.util.Map, java.lang.String, java.lang.String, com.cobblemon.mod.common.api.abilities.Ability, java.util.List, boolean, int, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+  public com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon();
+}
+Compiled from "TrackerSide.java"
+public final class com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerSide {
+  private java.lang.String screenCondition;
+  private java.lang.String tailwindCondition;
+  private java.util.List<java.lang.String> sideHazards;
+  private final java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor> actors;
+  public com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerSide();
+  public final java.lang.String getScreenCondition();
+  public final void setScreenCondition(java.lang.String);
+  public final java.lang.String getTailwindCondition();
+  public final void setTailwindCondition(java.lang.String);
+  public final java.util.List<java.lang.String> getSideHazards();
+  public final void setSideHazards(java.util.List<java.lang.String>);
+  public final java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerActor> getActors();
+  public final java.util.List<com.cobblemon.mod.common.battles.ai.strongBattleAI.TrackerPokemon> getActivePokemon();
+  public final void updateAlliedActiveState(com.cobblemon.mod.common.battles.BattleSide);
+  public final void updateOpponentActiveState(com.cobblemon.mod.common.battles.BattleSide);
+}

@@ -1,0 +1,41 @@
+ aload         10
+     722: invokeinterface #99,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     727: astore        11
+     729: aload         10
+     731: invokeinterface #95,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+     736: ifeq          778
+     739: aload         11
+     741: aload         10
+     743: invokeinterface #99,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     748: checkcast     #155                // class net/minecraft/class_5250
+     751: astore        12
+     753: checkcast     #155                // class net/minecraft/class_5250
+     756: astore        13
+     758: iconst_0
+     759: istore        14
+     761: aload         13
+     763: ldc           #157                // String  &
+     765: invokestatic  #163                // Method com/cobblemon/mod/common/api/text/TextKt.plus:(Lnet/minecraft/class_5250;Ljava/lang/String;)Lnet/minecraft/class_5250;
+     768: aload         12
+     770: invokestatic  #166                // Method com/cobblemon/mod/common/api/text/TextKt.plus:(Lnet/minecraft/class_5250;Lnet/minecraft/class_5250;)Lnet/minecraft/class_5250;
+     773: astore        11
+     775: goto          729
+     778: aload         11
+     780: checkcast     #155                // class net/minecraft/class_5250
+     783: astore        7
+     785: aload_1
+     786: invokevirtual #170                // Method com/cobblemon/mod/common/api/battles/model/PokemonBattle.getShowdownMessages:()Ljava/util/List;
+     789: checkcast     #70                 // class java/lang/Iterable
+     792: astore        9
+     794: iconst_0
+     795: istore        10
+     797: aload         9
+     799: instanceof    #83                 // class java/util/Collection
+     802: ifeq          822
+     805: aload         9
+     807: checkcast     #83                 // class java/util/Collection
+     810: invokeinterface #173,  1          // InterfaceMethod java/util/Collection.isEmpty:()Z
+     815: ifeq          822
+     818: iconst_0
+     819: goto          884
+     822: aload   

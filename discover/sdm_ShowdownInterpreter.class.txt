@@ -1,0 +1,31 @@
+aload         4
+      30: ldc_w         #883                // String privateMessage
+      33: invokestatic  #101                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      36: aload         5
+      38: ldc_w         #629                // String <unused var>
+      41: invokestatic  #101                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      44: new           #905                // class com/cobblemon/mod/common/battles/interpreter/instructions/SwitchInstruction
+      47: dup
+      48: aload_2
+      49: aload_1
+      50: aload_3
+      51: aload         4
+      53: invokespecial #906                // Method com/cobblemon/mod/common/battles/interpreter/instructions/SwitchInstruction."<init>":(Lcom/cobblemon/mod/common/battles/dispatch/InstructionSet;Lcom/cobblemon/mod/common/api/battles/model/actor/BattleActor;Lcom/cobblemon/mod/common/api/battles/interpreter/BattleMessage;Lcom/cobblemon/mod/common/api/battles/interpreter/BattleMessage;)V
+      56: checkcast     #270                // class com/cobblemon/mod/common/battles/dispatch/InterpreterInstruction
+      59: areturn
+
+  private static final kotlin.Unit interpretMessage$lambda$0(com.cobblemon.mod.common.api.battles.model.PokemonBattle, java.lang.String);
+    Code:
+       0: aload_0
+       1: invokevirtual #911                // Method com/cobblemon/mod/common/api/battles/model/PokemonBattle.getShowdownMessages:()Ljava/util/List;
+       4: aload_1
+       5: invokeinterface #244,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+      10: pop
+      11: getstatic     #586                // Field INSTANCE:Lcom/cobblemon/mod/common/battles/ShowdownInterpreter;
+      14: aload_0
+      15: aload_1
+      16: invokevirtual #913                // Method interpret:(Lcom/cobblemon/mod/common/api/battles/model/PokemonBattle;Ljava/lang/String;)V
+      19: getstatic     #918                // Field kotlin/Unit.INSTANCE:Lkotlin/Unit;
+      22: areturn
+
+  private static fina

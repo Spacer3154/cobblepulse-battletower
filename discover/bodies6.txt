@@ -1,0 +1,3086 @@
+##### com.cobblemon.mod.common.client.render.npc.NPCRenderer
+Compiled from "NPCRenderer.java"
+public final class com.cobblemon.mod.common.client.render.npc.NPCRenderer extends net.minecraft.class_922<com.cobblemon.mod.common.entity.npc.NPCEntity, com.cobblemon.mod.common.client.render.models.blockbench.PosableEntityModel<com.cobblemon.mod.common.entity.npc.NPCEntity>> {
+  private final com.cobblemon.mod.common.client.render.item.HeldItemRenderer heldItemRenderer;
+
+  public com.cobblemon.mod.common.client.render.npc.NPCRenderer(net.minecraft.class_5617$class_5618);
+    Code:
+       0: aload_1
+       1: ldc           #64                 // String context
+       3: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: new           #72                 // class com/cobblemon/mod/common/client/render/models/blockbench/npc/PosableNPCModel
+      11: dup
+      12: invokespecial #75                 // Method com/cobblemon/mod/common/client/render/models/blockbench/npc/PosableNPCModel."<init>":()V
+      15: checkcast     #77                 // class net/minecraft/class_583
+      18: ldc           #78                 // float 0.5f
+      20: invokespecial #81                 // Method net/minecraft/class_922."<init>":(Lnet/minecraft/class_5617$class_5618;Lnet/minecraft/class_583;F)V
+      23: aload_0
+      24: new           #83                 // class com/cobblemon/mod/common/client/render/item/HeldItemRenderer
+      27: dup
+      28: invokespecial #84                 // Method com/cobblemon/mod/common/client/render/item/HeldItemRenderer."<init>":()V
+      31: putfield      #86                 // Field heldItemRenderer:Lcom/cobblemon/mod/common/client/render/item/HeldItemRenderer;
+      34: return
+
+  public net.minecraft.class_2960 getTextureLocation(com.cobblemon.mod.common.entity.npc.NPCEntity);
+    Code:
+       0: aload_1
+       1: ldc           #88                 // String entity
+       3: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: getstatic     #94                 // Field com/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository.INSTANCE:Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository;
+       9: aload_1
+      10: invokevirtual #100                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getResourceIdentifier:()Lnet/minecraft/class_2960;
+      13: aload_1
+      14: invokevirtual #104                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getDelegate:()Lcom/cobblemon/mod/common/api/entity/NPCSideDelegate;
+      17: dup
+      18: ldc           #106                // String null cannot be cast to non-null type com.cobblemon.mod.common.client.entity.NPCClientDelegate
+      20: invokestatic  #109                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+      23: checkcast     #111                // class com/cobblemon/mod/common/client/entity/NPCClientDelegate
+      26: checkcast     #113                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableState
+      29: invokevirtual #117                // Method com/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository.getTexture:(Lnet/minecraft/class_2960;Lcom/cobblemon/mod/common/client/render/models/blockbench/PosableState;)Lnet/minecraft/class_2960;
+      32: areturn
+
+  protected void scale(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_4587, float);
+    Code:
+       0: aload_1
+       1: ldc           #118                // String livingEntity
+       3: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc           #119                // String poseStack
+       9: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_2
+      13: aload_1
+      14: invokevirtual #123                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getRenderScale:()F
+      17: aload_1
+      18: invokevirtual #123                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getRenderScale:()F
+      21: aload_1
+      22: invokevirtual #123                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getRenderScale:()F
+      25: invokevirtual #129                // Method net/minecraft/class_4587.method_22905:(FFF)V
+      28: return
+
+  public void render(com.cobblemon.mod.common.entity.npc.NPCEntity, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+    Code:
+       0: aload_1
+       1: ldc           #88                 // String entity
+       3: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload         4
+       8: ldc           #131                // String poseMatrix
+      10: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      13: aload         5
+      15: ldc           #132                // String buffer
+      17: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      20: aload_1
+      21: invokevirtual #136                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getAspects:()Ljava/util/Set;
+      24: astore        7
+      26: aload_1
+      27: invokevirtual #104                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getDelegate:()Lcom/cobblemon/mod/common/api/entity/NPCSideDelegate;
+      30: dup
+      31: ldc           #106                // String null cannot be cast to non-null type com.cobblemon.mod.common.client.entity.NPCClientDelegate
+      33: invokestatic  #109                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+      36: checkcast     #111                // class com/cobblemon/mod/common/client/entity/NPCClientDelegate
+      39: astore        8
+      41: aload         8
+      43: aload         7
+      45: invokevirtual #140                // Method com/cobblemon/mod/common/client/entity/NPCClientDelegate.setCurrentAspects:(Ljava/util/Set;)V
+      48: aload_0
+      49: aload_1
+      50: invokevirtual #144                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5829:()Lnet/minecraft/class_238;
+      53: getfield      #150                // Field net/minecraft/class_238.field_1320:D
+      56: aload_1
+      57: invokevirtual #144                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5829:()Lnet/minecraft/class_238;
+      60: getfield      #153                // Field net/minecraft/class_238.field_1323:D
+      63: dsub
+      64: aload_1
+      65: invokevirtual #144                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5829:()Lnet/minecraft/class_238;
+      68: getfield      #156                // Field net/minecraft/class_238.field_1324:D
+      71: aload_1
+      72: invokevirtual #144                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5829:()Lnet/minecraft/class_238;
+      75: getfield      #159                // Field net/minecraft/class_238.field_1321:D
+      78: dsub
+      79: invokestatic  #165                // Method java/lang/Math.min:(DD)D
+      82: d2f
+      83: ldc           #166                // float 1.5f
+      85: fdiv
+      86: putfield      #169                // Field field_4673:F
+      89: getstatic     #94                 // Field com/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository.INSTANCE:Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository;
+      92: aload_1
+      93: invokevirtual #100                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getResourceIdentifier:()Lnet/minecraft/class_2960;
+      96: aload         8
+      98: checkcast     #113                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableState
+     101: invokevirtual #173                // Method com/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository.getPoser:(Lnet/minecraft/class_2960;Lcom/cobblemon/mod/common/client/render/models/blockbench/PosableState;)Lcom/cobblemon/mod/common/client/render/models/blockbench/PosableModel;
+     104: astore        9
+     106: aload_0
+     107: getfield      #177                // Field field_4737:Lnet/minecraft/class_583;
+     110: checkcast     #179                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel
+     113: aload         9
+     115: invokevirtual #183                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel.setPosableModel:(Lcom/cobblemon/mod/common/client/render/models/blockbench/PosableModel;)V
+     118: aload         9
+     120: aload_0
+     121: getfield      #177                // Field field_4737:Lnet/minecraft/class_583;
+     124: checkcast     #179                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel
+     127: invokevirtual #187                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel.getContext:()Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext;
+     130: invokevirtual #193                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.setContext:(Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext;)V
+     133: aload_0
+     134: getfield      #177                // Field field_4737:Lnet/minecraft/class_583;
+     137: checkcast     #179                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel
+     140: aload_1
+     141: checkcast     #195                // class net/minecraft/class_1297
+     144: invokevirtual #199                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel.setupEntityTypeContext:(Lnet/minecraft/class_1297;)V
+     147: aload_0
+     148: getfield      #177                // Field field_4737:Lnet/minecraft/class_583;
+     151: checkcast     #179                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel
+     154: invokevirtual #187                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableEntityModel.getContext:()Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext;
+     157: getstatic     #202                // Field com/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext.Companion:Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext$Companion;
+     160: invokevirtual #206                // Method com/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext$Companion.getTEXTURE:()Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext$Key;
+     163: aload_0
+     164: aload_1
+     165: invokevirtual #208                // Method getTextureLocation:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)Lnet/minecraft/class_2960;
+     168: invokevirtual #212                // Method com/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext.put:(Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/RenderContext$Key;Ljava/lang/Object;)V
+     171: aload         8
+     173: fload_3
+     174: invokevirtual #216                // Method com/cobblemon/mod/common/client/entity/NPCClientDelegate.updatePartialTicks:(F)V
+     177: aload         9
+     179: aload         5
+     181: aload         8
+     183: checkcast     #113                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableState
+     186: getstatic     #94                 // Field com/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository.INSTANCE:Lcom/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository;
+     189: aload_1
+     190: invokevirtual #100                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getResourceIdentifier:()Lnet/minecraft/class_2960;
+     193: aload         8
+     195: checkcast     #113                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableState
+     198: invokevirtual #220                // Method com/cobblemon/mod/common/client/render/models/blockbench/repository/VaryingModelRepository.getLayers:(Lnet/minecraft/class_2960;Lcom/cobblemon/mod/common/client/render/models/blockbench/PosableState;)Ljava/lang/Iterable;
+     201: invokevirtual #224                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.setLayerContext:(Lnet/minecraft/class_4597;Lcom/cobblemon/mod/common/client/render/models/blockbench/PosableState;Ljava/lang/Iterable;)V
+     204: aload         4
+     206: invokevirtual #227                // Method net/minecraft/class_4587.method_22903:()V
+     209: aload         4
+     211: aload_1
+     212: invokevirtual #231                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getNpc:()Lcom/cobblemon/mod/common/api/npc/NPCClass;
+     215: invokevirtual #236                // Method com/cobblemon/mod/common/api/npc/NPCClass.getModelScale:()F
+     218: aload_1
+     219: invokevirtual #231                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getNpc:()Lcom/cobblemon/mod/common/api/npc/NPCClass;
+     222: invokevirtual #236                // Method com/cobblemon/mod/common/api/npc/NPCClass.getModelScale:()F
+     225: aload_1
+     226: invokevirtual #231                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getNpc:()Lcom/cobblemon/mod/common/api/npc/NPCClass;
+     229: invokevirtual #236                // Method com/cobblemon/mod/common/api/npc/NPCClass.getModelScale:()F
+     232: invokevirtual #129                // Method net/minecraft/class_4587.method_22905:(FFF)V
+     235: aload_0
+     236: aload_1
+     237: checkcast     #238                // class net/minecraft/class_1309
+     240: fload_2
+     241: fload_3
+     242: aload         4
+     244: aload         5
+     246: iload         6
+     248: invokespecial #242                // Method net/minecraft/class_922.method_4054:(Lnet/minecraft/class_1309;FFLnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V
+     251: aload         4
+     253: invokevirtual #245                // Method net/minecraft/class_4587.method_22909:()V
+     256: aload         9
+     258: fconst_1
+     259: invokevirtual #248                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.setRed:(F)V
+     262: aload         9
+     264: fconst_1
+     265: invokevirtual #251                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.setGreen:(F)V
+     268: aload         9
+     270: fconst_1
+     271: invokevirtual #254                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.setBlue:(F)V
+     274: aload         9
+     276: invokevirtual #257                // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableModel.resetLayerContext:()V
+     279: aload_1
+     280: getfield      #261                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.field_6213:I
+     283: iconst_1
+     284: if_icmpge     321
+     287: aload_0
+     288: getfield      #86                 // Field heldItemRenderer:Lcom/cobblemon/mod/common/client/render/item/HeldItemRenderer;
+     291: aload_1
+     292: invokevirtual #265                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_6047:()Lnet/minecraft/class_1799;
+     295: dup
+     296: ldc_w         #267                // String getMainHandItem(...)
+     299: invokestatic  #270                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     302: aload         8
+     304: checkcast     #113                // class com/cobblemon/mod/common/client/render/models/blockbench/PosableState
+     307: aload         4
+     309: aload         5
+     311: iload         6
+     313: iconst_0
+     314: aload_1
+     315: checkcast     #238                // class net/minecraft/class_1309
+     318: invokevirtual #274                // Method com/cobblemon/mod/common/client/render/item/HeldItemRenderer.renderOnModel:(Lnet/minecraft/class_1799;Lcom/cobblemon/mod/common/client/render/models/blockbench/PosableState;Lnet/minecraft/class_4587;Lnet/minecraft/class_4597;IZLnet/minecraft/class_1309;)V
+     321: return
+
+  protected boolean shouldShowName(com.cobblemon.mod.common.entity.npc.NPCEntity);
+    Code:
+       0: aload_1
+       1: ldc           #88                 // String entity
+       3: invokestatic  #70                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_1
+       7: invokevirtual #286                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getHideNameTag:()Z
+      10: ifeq          15
+      13: iconst_0
+      14: ireturn
+      15: aload_0
+      16: aload_1
+      17: checkcast     #238                // class net/minecraft/class_1309
+      20: invokespecial #290                // Method net/minecraft/class_922.method_4055:(Lnet/minecraft/class_1309;)Z
+      23: ireturn
+
+  public net.minecraft.class_2960 method_3931(net.minecraft.class_1297);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #96                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: invokevirtual #208                // Method getTextureLocation:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)Lnet/minecraft/class_2960;
+       8: areturn
+
+  public void method_4042(net.minecraft.class_1309, net.minecraft.class_4587, float);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #96                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: aload_2
+       6: fload_3
+       7: invokevirtual #297                // Method scale:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;Lnet/minecraft/class_4587;F)V
+      10: return
+
+  public void method_4054(net.minecraft.class_1309, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #96                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: fload_2
+       6: fload_3
+       7: aload         4
+       9: aload         5
+      11: iload         6
+      13: invokevirtual #300                // Method render:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;FFLnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V
+      16: return
+
+  public void method_3936(net.minecraft.class_1297, float, float, net.minecraft.class_4587, net.minecraft.class_4597, int);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #96                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: fload_2
+       6: fload_3
+       7: aload         4
+       9: aload         5
+      11: iload         6
+      13: invokevirtual #300                // Method render:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;FFLnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V
+      16: return
+
+  public boolean method_4055(net.minecraft.class_1309);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #96                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: invokevirtual #306                // Method shouldShowName:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)Z
+       8: ireturn
+
+  public boolean method_3921(net.minecraft.class_1297);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #96                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: invokevirtual #306                // Method shouldShowName:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)Z
+       8: ireturn
+}
+
+##### com.cobblemon.mod.common.client.entity.NPCClientDelegate
+Compiled from "NPCClientDelegate.java"
+public final class com.cobblemon.mod.common.client.entity.NPCClientDelegate extends com.cobblemon.mod.common.client.render.models.blockbench.PosableState implements com.cobblemon.mod.common.api.entity.NPCSideDelegate {
+  public com.cobblemon.mod.common.entity.npc.NPCEntity npcEntity;
+
+  public com.cobblemon.mod.common.client.entity.NPCClientDelegate();
+    Code:
+       0: aload_0
+       1: invokespecial #57                 // Method com/cobblemon/mod/common/client/render/models/blockbench/PosableState."<init>":()V
+       4: return
+
+  public final com.cobblemon.mod.common.entity.npc.NPCEntity getNpcEntity();
+    Code:
+       0: aload_0
+       1: getfield      #61                 // Field npcEntity:Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+       4: dup
+       5: ifnull        9
+       8: areturn
+       9: pop
+      10: ldc           #62                 // String npcEntity
+      12: invokestatic  #68                 // Method kotlin/jvm/internal/Intrinsics.throwUninitializedPropertyAccessException:(Ljava/lang/String;)V
+      15: aconst_null
+      16: areturn
+
+  public final void setNpcEntity(com.cobblemon.mod.common.entity.npc.NPCEntity);
+    Code:
+       0: aload_1
+       1: ldc           #70                 // String <set-?>
+       3: invokestatic  #74                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #61                 // Field npcEntity:Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+      11: return
+
+  public com.cobblemon.mod.common.api.scheduling.SchedulingTracker getSchedulingTracker();
+    Code:
+       0: aload_0
+       1: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+       4: invokevirtual #78                 // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getSchedulingTracker:()Lcom/cobblemon/mod/common/api/scheduling/SchedulingTracker;
+       7: areturn
+
+  public void initialize(com.cobblemon.mod.common.entity.npc.NPCEntity);
+    Code:
+       0: aload_1
+       1: ldc           #79                 // String entity
+       3: invokestatic  #74                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: invokevirtual #81                 // Method setNpcEntity:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)V
+      11: aload_0
+      12: aload_1
+      13: getfield      #85                 // Field com/cobblemon/mod/common/entity/npc/NPCEntity.field_6012:I
+      16: invokevirtual #89                 // Method setAge:(I)V
+      19: return
+
+  public void tick(com.cobblemon.mod.common.entity.npc.NPCEntity);
+    Code:
+       0: aload_1
+       1: ldc           #79                 // String entity
+       3: invokestatic  #74                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: checkcast     #91                 // class net/minecraft/class_1297
+      11: invokespecial #94                 // InterfaceMethod com/cobblemon/mod/common/api/entity/NPCSideDelegate.tick:(Lnet/minecraft/class_1297;)V
+      14: aload_0
+      15: aload_1
+      16: checkcast     #91                 // class net/minecraft/class_1297
+      19: invokevirtual #97                 // Method incrementAge:(Lnet/minecraft/class_1297;)V
+      22: return
+
+  public void onSyncedDataUpdated(net.minecraft.class_2940<?>);
+    Code:
+       0: aload_1
+       1: ldc           #99                 // String data
+       3: invokestatic  #74                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: invokespecial #101                // InterfaceMethod com/cobblemon/mod/common/api/entity/NPCSideDelegate.onSyncedDataUpdated:(Lnet/minecraft/class_2940;)V
+      11: aload_1
+      12: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+      15: invokevirtual #108                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getASPECTS:()Lnet/minecraft/class_2940;
+      18: invokestatic  #112                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+      21: ifeq          56
+      24: aload_0
+      25: aload_0
+      26: invokevirtual #114                // Method getEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+      29: invokevirtual #118                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+      32: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+      35: invokevirtual #108                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getASPECTS:()Lnet/minecraft/class_2940;
+      38: invokevirtual #124                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      41: dup
+      42: ldc           #126                // String get(...)
+      44: invokestatic  #129                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      47: checkcast     #131                // class java/util/Set
+      50: invokevirtual #135                // Method setCurrentAspects:(Ljava/util/Set;)V
+      53: goto          348
+      56: aload_1
+      57: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+      60: invokevirtual #138                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getNPC_PLAYER_TEXTURE:()Lnet/minecraft/class_2940;
+      63: invokestatic  #112                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+      66: ifeq          175
+      69: aload_0
+      70: invokevirtual #114                // Method getEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+      73: invokevirtual #118                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+      76: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+      79: invokevirtual #138                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getNPC_PLAYER_TEXTURE:()Lnet/minecraft/class_2940;
+      82: invokevirtual #124                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      85: checkcast     #140                // class com/cobblemon/mod/common/entity/npc/NPCPlayerTexture
+      88: astore_2
+      89: aload_0
+      90: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+      93: invokevirtual #144                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5667:()Ljava/util/UUID;
+      96: invokevirtual #150                // Method java/util/UUID.toString:()Ljava/lang/String;
+      99: dup
+     100: ldc           #152                // String toString(...)
+     102: invokestatic  #129                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     105: invokestatic  #158                // Method com/cobblemon/mod/common/util/MiscUtilsKt.cobblemonResource:(Ljava/lang/String;)Lnet/minecraft/class_2960;
+     108: astore_3
+     109: aload_2
+     110: invokevirtual #162                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getModel:()Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+     113: getstatic     #168                // Field com/cobblemon/mod/common/entity/npc/NPCPlayerModelType.NONE:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+     116: if_acmpeq     348
+     119: invokestatic  #174                // Method net/minecraft/class_310.method_1551:()Lnet/minecraft/class_310;
+     122: getfield      #178                // Field net/minecraft/class_310.field_1764:Lnet/minecraft/class_1060;
+     125: aload_3
+     126: new           #180                // class net/minecraft/class_1043
+     129: dup
+     130: aload_2
+     131: invokevirtual #184                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getTexture:()[B
+     134: invokestatic  #190                // Method net/minecraft/class_1011.method_49277:([B)Lnet/minecraft/class_1011;
+     137: invokespecial #193                // Method net/minecraft/class_1043."<init>":(Lnet/minecraft/class_1011;)V
+     140: checkcast     #195                // class net/minecraft/class_1044
+     143: invokevirtual #201                // Method net/minecraft/class_1060.method_4616:(Lnet/minecraft/class_2960;Lnet/minecraft/class_1044;)V
+     146: aload_0
+     147: invokevirtual #205                // Method getRuntime:()Lcom/bedrockk/molang/runtime/MoLangRuntime;
+     150: invokevirtual #211                // Method com/bedrockk/molang/runtime/MoLangRuntime.getEnvironment:()Lcom/bedrockk/molang/runtime/MoLangEnvironment;
+     153: ldc           #213                // String texture
+     155: new           #215                // class com/bedrockk/molang/runtime/value/StringValue
+     158: dup
+     159: aload_3
+     160: invokevirtual #218                // Method net/minecraft/class_2960.toString:()Ljava/lang/String;
+     163: invokespecial #220                // Method com/bedrockk/molang/runtime/value/StringValue."<init>":(Ljava/lang/String;)V
+     166: checkcast     #222                // class com/bedrockk/molang/runtime/value/MoValue
+     169: invokevirtual #228                // Method com/bedrockk/molang/runtime/MoLangEnvironment.setSimpleVariable:(Ljava/lang/String;Lcom/bedrockk/molang/runtime/value/MoValue;)V
+     172: goto          348
+     175: aload_1
+     176: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     179: invokevirtual #231                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHITBOX_EYES_HEIGHT:()Lnet/minecraft/class_2940;
+     182: invokestatic  #112                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+     185: ifeq          226
+     188: aload_0
+     189: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+     192: aload_0
+     193: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+     196: invokevirtual #118                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     199: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     202: invokevirtual #231                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHITBOX_EYES_HEIGHT:()Lnet/minecraft/class_2940;
+     205: invokevirtual #124                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+     208: dup
+     209: ldc           #126                // String get(...)
+     211: invokestatic  #129                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     214: checkcast     #233                // class java/lang/Number
+     217: invokevirtual #237                // Method java/lang/Number.floatValue:()F
+     220: invokevirtual #240                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setHitboxEyesHeight:(F)V
+     223: goto          348
+     226: aload_1
+     227: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     230: invokevirtual #243                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHITBOX_HEIGHT:()Lnet/minecraft/class_2940;
+     233: invokestatic  #112                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+     236: ifeq          277
+     239: aload_0
+     240: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+     243: aload_0
+     244: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+     247: invokevirtual #118                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     250: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     253: invokevirtual #243                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHITBOX_HEIGHT:()Lnet/minecraft/class_2940;
+     256: invokevirtual #124                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+     259: dup
+     260: ldc           #126                // String get(...)
+     262: invokestatic  #129                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     265: checkcast     #233                // class java/lang/Number
+     268: invokevirtual #237                // Method java/lang/Number.floatValue:()F
+     271: invokevirtual #246                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setHitboxHeight:(F)V
+     274: goto          348
+     277: aload_1
+     278: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     281: invokevirtual #249                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHITBOX_WIDTH:()Lnet/minecraft/class_2940;
+     284: invokestatic  #112                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+     287: ifeq          328
+     290: aload_0
+     291: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+     294: aload_0
+     295: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+     298: invokevirtual #118                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     301: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     304: invokevirtual #249                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHITBOX_WIDTH:()Lnet/minecraft/class_2940;
+     307: invokevirtual #124                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+     310: dup
+     311: ldc           #126                // String get(...)
+     313: invokestatic  #129                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     316: checkcast     #233                // class java/lang/Number
+     319: invokevirtual #237                // Method java/lang/Number.floatValue:()F
+     322: invokevirtual #252                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setHitboxWidth:(F)V
+     325: goto          348
+     328: aload_1
+     329: getstatic     #104                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     332: invokevirtual #255                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHITBOX_SCALE:()Lnet/minecraft/class_2940;
+     335: invokestatic  #112                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+     338: ifeq          348
+     341: aload_0
+     342: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+     345: invokevirtual #258                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_18382:()V
+     348: return
+
+  public com.cobblemon.mod.common.entity.npc.NPCEntity getEntity();
+    Code:
+       0: aload_0
+       1: invokevirtual #76                 // Method getNpcEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+       4: areturn
+
+  public void updatePartialTicks(float);
+    Code:
+       0: aload_0
+       1: fload_1
+       2: invokevirtual #265                // Method setCurrentPartialTicks:(F)V
+       5: return
+
+  public void addToStruct(com.bedrockk.molang.runtime.struct.QueryStruct);
+    Code:
+       0: aload_1
+       1: ldc_w         #267                // String struct
+       4: invokestatic  #74                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: aload_1
+       9: invokespecial #269                // InterfaceMethod com/cobblemon/mod/common/api/entity/NPCSideDelegate.addToStruct:(Lcom/bedrockk/molang/runtime/struct/QueryStruct;)V
+      12: getstatic     #275                // Field com/cobblemon/mod/common/api/molang/MoLangFunctions.INSTANCE:Lcom/cobblemon/mod/common/api/molang/MoLangFunctions;
+      15: aload_1
+      16: getstatic     #280                // Field com/cobblemon/mod/common/client/ClientMoLangFunctions.INSTANCE:Lcom/cobblemon/mod/common/client/ClientMoLangFunctions;
+      19: invokevirtual #284                // Method com/cobblemon/mod/common/client/ClientMoLangFunctions.getClientFunctions:()Ljava/util/HashMap;
+      22: checkcast     #286                // class java/util/Map
+      25: invokevirtual #290                // Method com/cobblemon/mod/common/api/molang/MoLangFunctions.addFunctions:(Lcom/bedrockk/molang/runtime/struct/QueryStruct;Ljava/util/Map;)Lcom/bedrockk/molang/runtime/struct/QueryStruct;
+      28: pop
+      29: getstatic     #275                // Field com/cobblemon/mod/common/api/molang/MoLangFunctions.INSTANCE:Lcom/cobblemon/mod/common/api/molang/MoLangFunctions;
+      32: aload_1
+      33: aload_0
+      34: invokevirtual #294                // Method getFunctions:()Lcom/bedrockk/molang/runtime/struct/QueryStruct;
+      37: getfield      #300                // Field com/bedrockk/molang/runtime/struct/QueryStruct.functions:Ljava/util/HashMap;
+      40: dup
+      41: ldc_w         #301                // String functions
+      44: invokestatic  #129                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      47: checkcast     #286                // class java/util/Map
+      50: invokevirtual #290                // Method com/cobblemon/mod/common/api/molang/MoLangFunctions.addFunctions:(Lcom/bedrockk/molang/runtime/struct/QueryStruct;Ljava/util/Map;)Lcom/bedrockk/molang/runtime/struct/QueryStruct;
+      53: pop
+      54: getstatic     #275                // Field com/cobblemon/mod/common/api/molang/MoLangFunctions.INSTANCE:Lcom/cobblemon/mod/common/api/molang/MoLangFunctions;
+      57: aload_0
+      58: invokevirtual #205                // Method getRuntime:()Lcom/bedrockk/molang/runtime/MoLangRuntime;
+      61: invokevirtual #211                // Method com/bedrockk/molang/runtime/MoLangRuntime.getEnvironment:()Lcom/bedrockk/molang/runtime/MoLangEnvironment;
+      64: getfield      #304                // Field com/bedrockk/molang/runtime/MoLangEnvironment.query:Lcom/bedrockk/molang/runtime/struct/QueryStruct;
+      67: aload_1
+      68: getfield      #300                // Field com/bedrockk/molang/runtime/struct/QueryStruct.functions:Ljava/util/HashMap;
+      71: dup
+      72: ldc_w         #301                // String functions
+      75: invokestatic  #129                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      78: checkcast     #286                // class java/util/Map
+      81: invokevirtual #290                // Method com/cobblemon/mod/common/api/molang/MoLangFunctions.addFunctions:(Lcom/bedrockk/molang/runtime/struct/QueryStruct;Ljava/util/Map;)Lcom/bedrockk/molang/runtime/struct/QueryStruct;
+      84: pop
+      85: return
+
+  public void initialize(net.minecraft.class_1297);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #54                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: invokevirtual #306                // Method initialize:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)V
+       8: return
+
+  public void tick(net.minecraft.class_1297);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #54                 // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: invokevirtual #309                // Method tick:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)V
+       8: return
+
+  public net.minecraft.class_1297 getEntity();
+    Code:
+       0: aload_0
+       1: invokevirtual #114                // Method getEntity:()Lcom/cobblemon/mod/common/entity/npc/NPCEntity;
+       4: checkcast     #91                 // class net/minecraft/class_1297
+       7: areturn
+}
+
+##### com.cobblemon.mod.common.command.ApplyPlayerTextureCommand
+Compiled from "ApplyPlayerTextureCommand.java"
+public final class com.cobblemon.mod.common.command.ApplyPlayerTextureCommand {
+  public static final com.cobblemon.mod.common.command.ApplyPlayerTextureCommand INSTANCE;
+
+  private static final java.lang.String NAME;
+
+  private static final java.lang.String PLAYER;
+
+  private com.cobblemon.mod.common.command.ApplyPlayerTextureCommand();
+    Code:
+       0: aload_0
+       1: invokespecial #46                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public final void register(com.mojang.brigadier.CommandDispatcher<net.minecraft.class_2168>);
+    Code:
+       0: aload_1
+       1: ldc           #49                 // String dispatcher
+       3: invokestatic  #55                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: ldc           #42                 // String applyplayertexture
+       8: invokestatic  #61                 // Method net/minecraft/class_2170.method_9247:(Ljava/lang/String;)Lcom/mojang/brigadier/builder/LiteralArgumentBuilder;
+      11: dup
+      12: ldc           #63                 // String literal(...)
+      14: invokestatic  #66                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #68                 // class com/mojang/brigadier/builder/ArgumentBuilder
+      20: invokestatic  #74                 // Method com/cobblemon/mod/common/api/permission/CobblemonPermissions.getAPPLY_PLAYER_TEXTURE:()Lcom/cobblemon/mod/common/api/permission/Permission;
+      23: iconst_0
+      24: iconst_2
+      25: aconst_null
+      26: invokestatic  #80                 // Method com/cobblemon/mod/common/util/PermissionUtilsKt.permission$default:(Lcom/mojang/brigadier/builder/ArgumentBuilder;Lcom/cobblemon/mod/common/api/permission/Permission;ZILjava/lang/Object;)Lcom/mojang/brigadier/builder/ArgumentBuilder;
+      29: checkcast     #82                 // class com/mojang/brigadier/builder/LiteralArgumentBuilder
+      32: ldc           #44                 // String player
+      34: invokestatic  #88                 // Method com/mojang/brigadier/arguments/StringArgumentType.word:()Lcom/mojang/brigadier/arguments/StringArgumentType;
+      37: checkcast     #90                 // class com/mojang/brigadier/arguments/ArgumentType
+      40: invokestatic  #94                 // Method net/minecraft/class_2170.method_9244:(Ljava/lang/String;Lcom/mojang/brigadier/arguments/ArgumentType;)Lcom/mojang/brigadier/builder/RequiredArgumentBuilder;
+      43: aload_0
+      44: invokedynamic #109,  0            // InvokeDynamic #0:run:(Lcom/cobblemon/mod/common/command/ApplyPlayerTextureCommand;)Lcom/mojang/brigadier/Command;
+      49: invokevirtual #115                // Method com/mojang/brigadier/builder/RequiredArgumentBuilder.executes:(Lcom/mojang/brigadier/Command;)Lcom/mojang/brigadier/builder/ArgumentBuilder;
+      52: invokevirtual #119                // Method com/mojang/brigadier/builder/LiteralArgumentBuilder.then:(Lcom/mojang/brigadier/builder/ArgumentBuilder;)Lcom/mojang/brigadier/builder/ArgumentBuilder;
+      55: checkcast     #82                 // class com/mojang/brigadier/builder/LiteralArgumentBuilder
+      58: astore_2
+      59: aload_1
+      60: aload_2
+      61: invokevirtual #124                // Method com/mojang/brigadier/CommandDispatcher.register:(Lcom/mojang/brigadier/builder/LiteralArgumentBuilder;)Lcom/mojang/brigadier/tree/LiteralCommandNode;
+      64: pop
+      65: return
+
+  private final int execute(com.mojang.brigadier.context.CommandContext<net.minecraft.class_2168>);
+    Code:
+       0: aload_1
+       1: invokevirtual #133                // Method com/mojang/brigadier/context/CommandContext.getSource:()Ljava/lang/Object;
+       4: checkcast     #135                // class net/minecraft/class_2168
+       7: invokevirtual #139                // Method net/minecraft/class_2168.method_9207:()Lnet/minecraft/class_3222;
+      10: astore_2
+      11: aload_1
+      12: ldc           #44                 // String player
+      14: invokestatic  #143                // Method com/mojang/brigadier/arguments/StringArgumentType.getString:(Lcom/mojang/brigadier/context/CommandContext;Ljava/lang/String;)Ljava/lang/String;
+      17: astore_3
+      18: aload_2
+      19: invokestatic  #147                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;)V
+      22: aload_2
+      23: checkcast     #149                // class net/minecraft/class_1309
+      26: fconst_0
+      27: fconst_0
+      28: ldc           #151                // class com/cobblemon/mod/common/entity/npc/NPCEntity
+      30: aconst_null
+      31: aconst_null
+      32: bipush        27
+      34: aconst_null
+      35: invokestatic  #157                // Method com/cobblemon/mod/common/util/PlayerExtensionsKt.traceFirstEntityCollision$default:(Lnet/minecraft/class_1309;FFLjava/lang/Class;Lnet/minecraft/class_1297;Lnet/minecraft/class_3959$class_242;ILjava/lang/Object;)Lnet/minecraft/class_1297;
+      38: checkcast     #151                // class com/cobblemon/mod/common/entity/npc/NPCEntity
+      41: astore        4
+      43: aload         4
+      45: ifnonnull     75
+      48: aload_2
+      49: ldc           #159                // String npcedit.non_npc
+      51: iconst_0
+      52: anewarray     #4                  // class java/lang/Object
+      55: invokestatic  #165                // Method com/cobblemon/mod/common/util/LocalizationUtilsKt.commandLang:(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/class_5250;
+      58: dup
+      59: ldc           #167                // String commandLang(...)
+      61: invokestatic  #66                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      64: invokestatic  #173                // Method com/cobblemon/mod/common/api/text/TextKt.red:(Lnet/minecraft/class_5250;)Lnet/minecraft/class_5250;
+      67: checkcast     #175                // class net/minecraft/class_2561
+      70: invokevirtual #181                // Method net/minecraft/class_3222.method_43496:(Lnet/minecraft/class_2561;)V
+      73: iconst_0
+      74: ireturn
+      75: aload         4
+      77: aload_3
+      78: invokestatic  #147                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;)V
+      81: aload_3
+      82: invokevirtual #187                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.loadTextureFromGameProfileName:(Ljava/lang/String;)V
+      85: iconst_1
+      86: ireturn
+
+  static {};
+    Code:
+       0: new           #2                  // class com/cobblemon/mod/common/command/ApplyPlayerTextureCommand
+       3: dup
+       4: invokespecial #193                // Method "<init>":()V
+       7: putstatic     #195                // Field INSTANCE:Lcom/cobblemon/mod/common/command/ApplyPlayerTextureCommand;
+      10: return
+}
+
+##### com.cobblemon.mod.common.entity.npc.NPCPlayerTexture
+Compiled from "NPCPlayerTexture.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCPlayerTexture {
+  private final byte[] texture;
+
+  private final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType model;
+
+  public com.cobblemon.mod.common.entity.npc.NPCPlayerTexture(byte[], com.cobblemon.mod.common.entity.npc.NPCPlayerModelType);
+    Code:
+       0: aload_1
+       1: ldc           #31                 // String texture
+       3: invokestatic  #37                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc           #38                 // String model
+       9: invokestatic  #37                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_0
+      13: invokespecial #41                 // Method java/lang/Object."<init>":()V
+      16: aload_0
+      17: aload_1
+      18: putfield      #43                 // Field texture:[B
+      21: aload_0
+      22: aload_2
+      23: putfield      #45                 // Field model:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      26: return
+
+  public final byte[] getTexture();
+    Code:
+       0: aload_0
+       1: getfield      #43                 // Field texture:[B
+       4: areturn
+
+  public final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType getModel();
+    Code:
+       0: aload_0
+       1: getfield      #45                 // Field model:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+       4: areturn
+}
+
+##### com.cobblemon.mod.common.entity.npc.NPCPlayerModelType
+Compiled from "NPCPlayerModelType.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCPlayerModelType extends java.lang.Enum<com.cobblemon.mod.common.entity.npc.NPCPlayerModelType> {
+  public static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType DEFAULT;
+
+  public static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType SLIM;
+
+  public static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType NONE;
+
+  private static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType[] $VALUES;
+
+  private static final kotlin.enums.EnumEntries $ENTRIES;
+
+  private com.cobblemon.mod.common.entity.npc.NPCPlayerModelType();
+    Code:
+       0: aload_0
+       1: aload_1
+       2: iload_2
+       3: invokespecial #34                 // Method java/lang/Enum."<init>":(Ljava/lang/String;I)V
+       6: return
+
+  public static com.cobblemon.mod.common.entity.npc.NPCPlayerModelType[] values();
+    Code:
+       0: getstatic     #41                 // Field $VALUES:[Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+       3: invokevirtual #47                 // Method java/lang/Object.clone:()Ljava/lang/Object;
+       6: checkcast     #48                 // class "[Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;"
+       9: areturn
+
+  public static com.cobblemon.mod.common.entity.npc.NPCPlayerModelType valueOf(java.lang.String);
+    Code:
+       0: ldc           #2                  // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+       2: aload_0
+       3: invokestatic  #54                 // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+       6: checkcast     #2                  // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+       9: areturn
+
+  public static kotlin.enums.EnumEntries<com.cobblemon.mod.common.entity.npc.NPCPlayerModelType> getEntries();
+    Code:
+       0: getstatic     #60                 // Field $ENTRIES:Lkotlin/enums/EnumEntries;
+       3: areturn
+
+  private static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType[] $values();
+    Code:
+       0: iconst_3
+       1: anewarray     #2                  // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+       4: astore_0
+       5: aload_0
+       6: iconst_0
+       7: getstatic     #63                 // Field DEFAULT:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      10: aastore
+      11: aload_0
+      12: iconst_1
+      13: getstatic     #65                 // Field SLIM:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      16: aastore
+      17: aload_0
+      18: iconst_2
+      19: getstatic     #67                 // Field NONE:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      22: aastore
+      23: aload_0
+      24: areturn
+
+  static {};
+    Code:
+       0: new           #2                  // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+       3: dup
+       4: ldc           #69                 // String DEFAULT
+       6: iconst_0
+       7: invokespecial #70                 // Method "<init>":(Ljava/lang/String;I)V
+      10: putstatic     #63                 // Field DEFAULT:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      13: new           #2                  // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+      16: dup
+      17: ldc           #71                 // String SLIM
+      19: iconst_1
+      20: invokespecial #70                 // Method "<init>":(Ljava/lang/String;I)V
+      23: putstatic     #65                 // Field SLIM:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      26: new           #2                  // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+      29: dup
+      30: ldc           #72                 // String NONE
+      32: iconst_2
+      33: invokespecial #70                 // Method "<init>":(Ljava/lang/String;I)V
+      36: putstatic     #67                 // Field NONE:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      39: invokestatic  #74                 // Method $values:()[Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      42: putstatic     #41                 // Field $VALUES:[Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      45: getstatic     #41                 // Field $VALUES:[Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      48: checkcast     #76                 // class "[Ljava/lang/Enum;"
+      51: invokestatic  #82                 // Method kotlin/enums/EnumEntriesKt.enumEntries:([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+      54: putstatic     #60                 // Field $ENTRIES:Lkotlin/enums/EnumEntries;
+      57: return
+}
+
+##### com.cobblemon.mod.common.api.net.serializers.NPCPlayerTextureSerializer
+Compiled from "NPCPlayerTextureSerializer.java"
+public final class com.cobblemon.mod.common.api.net.serializers.NPCPlayerTextureSerializer implements net.minecraft.class_2941<com.cobblemon.mod.common.entity.npc.NPCPlayerTexture> {
+  public static final com.cobblemon.mod.common.api.net.serializers.NPCPlayerTextureSerializer INSTANCE;
+
+  private static final net.minecraft.class_2960 ID;
+
+  private com.cobblemon.mod.common.api.net.serializers.NPCPlayerTextureSerializer();
+    Code:
+       0: aload_0
+       1: invokespecial #49                 // Method java/lang/Object."<init>":()V
+       4: return
+
+  public final net.minecraft.class_2960 getID();
+    Code:
+       0: getstatic     #52                 // Field ID:Lnet/minecraft/class_2960;
+       3: areturn
+
+  public final void write(net.minecraft.class_9129, com.cobblemon.mod.common.entity.npc.NPCPlayerTexture);
+    Code:
+       0: aload_1
+       1: ldc           #53                 // String buffer
+       3: invokestatic  #59                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc           #60                 // String texture
+       9: invokestatic  #59                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_1
+      13: checkcast     #62                 // class io/netty/buffer/ByteBuf
+      16: aload_2
+      17: invokevirtual #68                 // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getModel:()Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      20: checkcast     #70                 // class java/lang/Enum
+      23: invokestatic  #76                 // Method com/cobblemon/mod/common/util/BufferUtilsKt.writeEnumConstant:(Lio/netty/buffer/ByteBuf;Ljava/lang/Enum;)V
+      26: aload_2
+      27: invokevirtual #68                 // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getModel:()Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      30: getstatic     #82                 // Field com/cobblemon/mod/common/entity/npc/NPCPlayerModelType.NONE:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      33: if_acmpne     37
+      36: return
+      37: aload_1
+      38: aload_2
+      39: invokevirtual #86                 // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getTexture:()[B
+      42: invokevirtual #92                 // Method net/minecraft/class_9129.method_10813:([B)Lnet/minecraft/class_2540;
+      45: pop
+      46: return
+
+  public final com.cobblemon.mod.common.entity.npc.NPCPlayerTexture read(net.minecraft.class_9129);
+    Code:
+       0: aload_1
+       1: ldc           #53                 // String buffer
+       3: invokestatic  #59                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_1
+       7: checkcast     #62                 // class io/netty/buffer/ByteBuf
+      10: ldc           #78                 // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+      12: invokestatic  #96                 // Method com/cobblemon/mod/common/util/BufferUtilsKt.readEnumConstant:(Lio/netty/buffer/ByteBuf;Ljava/lang/Class;)Ljava/lang/Enum;
+      15: checkcast     #78                 // class com/cobblemon/mod/common/entity/npc/NPCPlayerModelType
+      18: astore_2
+      19: aload_2
+      20: getstatic     #82                 // Field com/cobblemon/mod/common/entity/npc/NPCPlayerModelType.NONE:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      23: if_acmpne     32
+      26: iconst_1
+      27: newarray       byte
+      29: goto          36
+      32: aload_1
+      33: invokevirtual #99                 // Method net/minecraft/class_9129.method_10795:()[B
+      36: astore_3
+      37: new           #64                 // class com/cobblemon/mod/common/entity/npc/NPCPlayerTexture
+      40: dup
+      41: aload_3
+      42: invokestatic  #105                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;)V
+      45: aload_3
+      46: aload_2
+      47: invokespecial #108                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture."<init>":([BLcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;)V
+      50: areturn
+
+  public net.minecraft.class_9139<net.minecraft.class_9129, com.cobblemon.mod.common.entity.npc.NPCPlayerTexture> codec();
+    Code:
+       0: aload_0
+       1: invokedynamic #127,  0            // InvokeDynamic #0:encode:(Lcom/cobblemon/mod/common/api/net/serializers/NPCPlayerTextureSerializer;)Lnet/minecraft/class_9142;
+       6: aload_0
+       7: invokedynamic #137,  0            // InvokeDynamic #1:decode:(Lcom/cobblemon/mod/common/api/net/serializers/NPCPlayerTextureSerializer;)Lnet/minecraft/class_9141;
+      12: invokestatic  #143                // InterfaceMethod net/minecraft/class_9139.method_56437:(Lnet/minecraft/class_9142;Lnet/minecraft/class_9141;)Lnet/minecraft/class_9139;
+      15: areturn
+
+  public com.cobblemon.mod.common.entity.npc.NPCPlayerTexture copy(com.cobblemon.mod.common.entity.npc.NPCPlayerTexture);
+    Code:
+       0: aload_1
+       1: ldc           #60                 // String texture
+       3: invokestatic  #59                 // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: new           #64                 // class com/cobblemon/mod/common/entity/npc/NPCPlayerTexture
+       9: dup
+      10: aload_1
+      11: invokevirtual #86                 // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getTexture:()[B
+      14: aload_1
+      15: invokevirtual #68                 // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getModel:()Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+      18: invokespecial #108                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture."<init>":([BLcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;)V
+      21: areturn
+
+  public java.lang.Object method_12714(java.lang.Object);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #64                 // class com/cobblemon/mod/common/entity/npc/NPCPlayerTexture
+       5: invokevirtual #147                // Method copy:(Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;)Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+       8: areturn
+
+  static {};
+    Code:
+       0: new           #2                  // class com/cobblemon/mod/common/api/net/serializers/NPCPlayerTextureSerializer
+       3: dup
+       4: invokespecial #150                // Method "<init>":()V
+       7: putstatic     #152                // Field INSTANCE:Lcom/cobblemon/mod/common/api/net/serializers/NPCPlayerTextureSerializer;
+      10: ldc           #154                // String npcplayertexture
+      12: invokestatic  #160                // Method com/cobblemon/mod/common/util/MiscUtilsKt.cobblemonResource:(Ljava/lang/String;)Lnet/minecraft/class_2960;
+      15: putstatic     #52                 // Field ID:Lnet/minecraft/class_2960;
+      18: return
+}
+
+##### com.cobblemon.mod.common.net.messages.client.spawn.SpawnNPCPacket
+Compiled from "SpawnNPCPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.spawn.SpawnNPCPacket extends com.cobblemon.mod.common.net.messages.client.spawn.SpawnExtraDataEntityPacket<com.cobblemon.mod.common.net.messages.client.spawn.SpawnNPCPacket, com.cobblemon.mod.common.entity.npc.NPCEntity> {
+  public static final com.cobblemon.mod.common.net.messages.client.spawn.SpawnNPCPacket$Companion Companion;
+
+  private net.minecraft.class_2960 npcClass;
+
+  private net.minecraft.class_2960 resourceIdentifier;
+
+  private java.util.Set<java.lang.String> aspects;
+
+  private int level;
+
+  private java.util.Set<java.util.UUID> battleIds;
+
+  private net.minecraft.class_2561 name;
+
+  private com.cobblemon.mod.common.entity.PoseType poseType;
+
+  private com.cobblemon.mod.common.entity.npc.NPCPlayerTexture texture;
+
+  private boolean hideNameTag;
+
+  private float hitboxWidth;
+
+  private float hitboxHeight;
+
+  private float hitboxEyesHeight;
+
+  private float hitboxScale;
+
+  private float renderScale;
+
+  private final net.minecraft.class_2960 id;
+
+  private static final net.minecraft.class_2960 ID;
+
+  public com.cobblemon.mod.common.net.messages.client.spawn.SpawnNPCPacket(net.minecraft.class_2960, net.minecraft.class_2960, java.util.Set<java.lang.String>, int, java.util.Set<java.util.UUID>, net.minecraft.class_2561, com.cobblemon.mod.common.entity.PoseType, com.cobblemon.mod.common.entity.npc.NPCPlayerTexture, boolean, float, float, float, float, float, net.minecraft.class_2604);
+    Code:
+       0: aload_1
+       1: ldc           #121                // String npcClass
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc           #128                // String resourceIdentifier
+       9: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_3
+      13: ldc           #129                // String aspects
+      15: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      18: aload         5
+      20: ldc           #130                // String battleIds
+      22: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      25: aload         6
+      27: ldc           #131                // String name
+      29: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      32: aload         7
+      34: ldc           #132                // String poseType
+      36: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      39: aload         8
+      41: ldc           #133                // String texture
+      43: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      46: aload         15
+      48: ldc           #134                // String vanillaSpawnPacket
+      50: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      53: aload_0
+      54: aload         15
+      56: invokespecial #137                // Method com/cobblemon/mod/common/net/messages/client/spawn/SpawnExtraDataEntityPacket."<init>":(Lnet/minecraft/class_2604;)V
+      59: aload_0
+      60: aload_1
+      61: putfield      #139                // Field npcClass:Lnet/minecraft/class_2960;
+      64: aload_0
+      65: aload_2
+      66: putfield      #141                // Field resourceIdentifier:Lnet/minecraft/class_2960;
+      69: aload_0
+      70: aload_3
+      71: putfield      #143                // Field aspects:Ljava/util/Set;
+      74: aload_0
+      75: iload         4
+      77: putfield      #145                // Field level:I
+      80: aload_0
+      81: aload         5
+      83: putfield      #147                // Field battleIds:Ljava/util/Set;
+      86: aload_0
+      87: aload         6
+      89: putfield      #149                // Field name:Lnet/minecraft/class_2561;
+      92: aload_0
+      93: aload         7
+      95: putfield      #151                // Field poseType:Lcom/cobblemon/mod/common/entity/PoseType;
+      98: aload_0
+      99: aload         8
+     101: putfield      #153                // Field texture:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+     104: aload_0
+     105: iload         9
+     107: putfield      #155                // Field hideNameTag:Z
+     110: aload_0
+     111: fload         10
+     113: putfield      #157                // Field hitboxWidth:F
+     116: aload_0
+     117: fload         11
+     119: putfield      #159                // Field hitboxHeight:F
+     122: aload_0
+     123: fload         12
+     125: putfield      #161                // Field hitboxEyesHeight:F
+     128: aload_0
+     129: fload         13
+     131: putfield      #163                // Field hitboxScale:F
+     134: aload_0
+     135: fload         14
+     137: putfield      #165                // Field renderScale:F
+     140: aload_0
+     141: getstatic     #167                // Field ID:Lnet/minecraft/class_2960;
+     144: putfield      #169                // Field id:Lnet/minecraft/class_2960;
+     147: return
+
+  public com.cobblemon.mod.common.net.messages.client.spawn.SpawnNPCPacket(net.minecraft.class_2960, net.minecraft.class_2960, java.util.Set, int, java.util.Set, net.minecraft.class_2561, com.cobblemon.mod.common.entity.PoseType, com.cobblemon.mod.common.entity.npc.NPCPlayerTexture, boolean, float, float, float, float, float, net.minecraft.class_2604, int, kotlin.jvm.internal.DefaultConstructorMarker);
+    Code:
+       0: iload         16
+       2: sipush        512
+       5: iand
+       6: ifeq          13
+       9: ldc           #172                // float 0.6f
+      11: fstore        10
+      13: iload         16
+      15: sipush        1024
+      18: iand
+      19: ifeq          26
+      22: ldc           #173                // float 1.8f
+      24: fstore        11
+      26: iload         16
+      28: sipush        2048
+      31: iand
+      32: ifeq          39
+      35: ldc           #174                // float 1.62f
+      37: fstore        12
+      39: iload         16
+      41: sipush        4096
+      44: iand
+      45: ifeq          51
+      48: fconst_1
+      49: fstore        13
+      51: iload         16
+      53: sipush        8192
+      56: iand
+      57: ifeq          63
+      60: fconst_1
+      61: fstore        14
+      63: aload_0
+      64: aload_1
+      65: aload_2
+      66: aload_3
+      67: iload         4
+      69: aload         5
+      71: aload         6
+      73: aload         7
+      75: aload         8
+      77: iload         9
+      79: fload         10
+      81: fload         11
+      83: fload         12
+      85: fload         13
+      87: fload         14
+      89: aload         15
+      91: invokespecial #176                // Method "<init>":(Lnet/minecraft/class_2960;Lnet/minecraft/class_2960;Ljava/util/Set;ILjava/util/Set;Lnet/minecraft/class_2561;Lcom/cobblemon/mod/common/entity/PoseType;Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;ZFFFFFLnet/minecraft/class_2604;)V
+      94: return
+
+  public final net.minecraft.class_2960 getNpcClass();
+    Code:
+       0: aload_0
+       1: getfield      #139                // Field npcClass:Lnet/minecraft/class_2960;
+       4: areturn
+
+  public final void setNpcClass(net.minecraft.class_2960);
+    Code:
+       0: aload_1
+       1: ldc           #178                // String <set-?>
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #139                // Field npcClass:Lnet/minecraft/class_2960;
+      11: return
+
+  public final net.minecraft.class_2960 getResourceIdentifier();
+    Code:
+       0: aload_0
+       1: getfield      #141                // Field resourceIdentifier:Lnet/minecraft/class_2960;
+       4: areturn
+
+  public final void setResourceIdentifier(net.minecraft.class_2960);
+    Code:
+       0: aload_1
+       1: ldc           #178                // String <set-?>
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #141                // Field resourceIdentifier:Lnet/minecraft/class_2960;
+      11: return
+
+  public final java.util.Set<java.lang.String> getAspects();
+    Code:
+       0: aload_0
+       1: getfield      #143                // Field aspects:Ljava/util/Set;
+       4: areturn
+
+  public final void setAspects(java.util.Set<java.lang.String>);
+    Code:
+       0: aload_1
+       1: ldc           #178                // String <set-?>
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #143                // Field aspects:Ljava/util/Set;
+      11: return
+
+  public final int getLevel();
+    Code:
+       0: aload_0
+       1: getfield      #145                // Field level:I
+       4: ireturn
+
+  public final void setLevel(int);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: putfield      #145                // Field level:I
+       5: return
+
+  public final java.util.Set<java.util.UUID> getBattleIds();
+    Code:
+       0: aload_0
+       1: getfield      #147                // Field battleIds:Ljava/util/Set;
+       4: areturn
+
+  public final void setBattleIds(java.util.Set<java.util.UUID>);
+    Code:
+       0: aload_1
+       1: ldc           #178                // String <set-?>
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #147                // Field battleIds:Ljava/util/Set;
+      11: return
+
+  public final net.minecraft.class_2561 getName();
+    Code:
+       0: aload_0
+       1: getfield      #149                // Field name:Lnet/minecraft/class_2561;
+       4: areturn
+
+  public final void setName(net.minecraft.class_2561);
+    Code:
+       0: aload_1
+       1: ldc           #178                // String <set-?>
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #149                // Field name:Lnet/minecraft/class_2561;
+      11: return
+
+  public final com.cobblemon.mod.common.entity.PoseType getPoseType();
+    Code:
+       0: aload_0
+       1: getfield      #151                // Field poseType:Lcom/cobblemon/mod/common/entity/PoseType;
+       4: areturn
+
+  public final void setPoseType(com.cobblemon.mod.common.entity.PoseType);
+    Code:
+       0: aload_1
+       1: ldc           #178                // String <set-?>
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #151                // Field poseType:Lcom/cobblemon/mod/common/entity/PoseType;
+      11: return
+
+  public final com.cobblemon.mod.common.entity.npc.NPCPlayerTexture getTexture();
+    Code:
+       0: aload_0
+       1: getfield      #153                // Field texture:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+       4: areturn
+
+  public final void setTexture(com.cobblemon.mod.common.entity.npc.NPCPlayerTexture);
+    Code:
+       0: aload_1
+       1: ldc           #178                // String <set-?>
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_0
+       7: aload_1
+       8: putfield      #153                // Field texture:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+      11: return
+
+  public final boolean getHideNameTag();
+    Code:
+       0: aload_0
+       1: getfield      #155                // Field hideNameTag:Z
+       4: ireturn
+
+  public final void setHideNameTag(boolean);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: putfield      #155                // Field hideNameTag:Z
+       5: return
+
+  public final float getHitboxWidth();
+    Code:
+       0: aload_0
+       1: getfield      #157                // Field hitboxWidth:F
+       4: freturn
+
+  public final void setHitboxWidth(float);
+    Code:
+       0: aload_0
+       1: fload_1
+       2: putfield      #157                // Field hitboxWidth:F
+       5: return
+
+  public final float getHitboxHeight();
+    Code:
+       0: aload_0
+       1: getfield      #159                // Field hitboxHeight:F
+       4: freturn
+
+  public final void setHitboxHeight(float);
+    Code:
+       0: aload_0
+       1: fload_1
+       2: putfield      #159                // Field hitboxHeight:F
+       5: return
+
+  public final float getHitboxEyesHeight();
+    Code:
+       0: aload_0
+       1: getfield      #161                // Field hitboxEyesHeight:F
+       4: freturn
+
+  public final void setHitboxEyesHeight(float);
+    Code:
+       0: aload_0
+       1: fload_1
+       2: putfield      #161                // Field hitboxEyesHeight:F
+       5: return
+
+  public final float getHitboxScale();
+    Code:
+       0: aload_0
+       1: getfield      #163                // Field hitboxScale:F
+       4: freturn
+
+  public final void setHitboxScale(float);
+    Code:
+       0: aload_0
+       1: fload_1
+       2: putfield      #163                // Field hitboxScale:F
+       5: return
+
+  public final float getRenderScale();
+    Code:
+       0: aload_0
+       1: getfield      #165                // Field renderScale:F
+       4: freturn
+
+  public final void setRenderScale(float);
+    Code:
+       0: aload_0
+       1: fload_1
+       2: putfield      #165                // Field renderScale:F
+       5: return
+
+  public net.minecraft.class_2960 getId();
+    Code:
+       0: aload_0
+       1: getfield      #169                // Field id:Lnet/minecraft/class_2960;
+       4: areturn
+
+  public com.cobblemon.mod.common.net.messages.client.spawn.SpawnNPCPacket(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_2604);
+    Code:
+       0: aload_1
+       1: ldc           #183                // String entity
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc           #134                // String vanillaSpawnPacket
+       9: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      12: aload_0
+      13: aload_1
+      14: invokevirtual #187                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getNpc:()Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      17: invokevirtual #191                // Method com/cobblemon/mod/common/api/npc/NPCClass.getId:()Lnet/minecraft/class_2960;
+      20: aload_1
+      21: invokevirtual #193                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getResourceIdentifier:()Lnet/minecraft/class_2960;
+      24: aload_1
+      25: invokevirtual #195                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getAspects:()Ljava/util/Set;
+      28: aload_1
+      29: invokevirtual #197                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getLevel:()I
+      32: aload_1
+      33: invokevirtual #199                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getBattleIds:()Ljava/util/Set;
+      36: aload_1
+      37: invokevirtual #202                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5477:()Lnet/minecraft/class_2561;
+      40: dup
+      41: ldc           #204                // String getName(...)
+      43: invokestatic  #207                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      46: aload_1
+      47: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+      50: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+      53: invokevirtual #218                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getPOSE_TYPE:()Lnet/minecraft/class_2940;
+      56: invokevirtual #224                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      59: dup
+      60: ldc           #226                // String get(...)
+      62: invokestatic  #207                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      65: checkcast     #228                // class com/cobblemon/mod/common/entity/PoseType
+      68: aload_1
+      69: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+      72: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+      75: invokevirtual #231                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getNPC_PLAYER_TEXTURE:()Lnet/minecraft/class_2940;
+      78: invokevirtual #224                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      81: dup
+      82: ldc           #226                // String get(...)
+      84: invokestatic  #207                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      87: checkcast     #233                // class com/cobblemon/mod/common/entity/npc/NPCPlayerTexture
+      90: aload_1
+      91: invokevirtual #235                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getHideNameTag:()Z
+      94: aload_1
+      95: invokevirtual #237                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getHitboxWidth:()F
+      98: aload_1
+      99: invokevirtual #239                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getHitboxHeight:()F
+     102: aload_1
+     103: invokevirtual #241                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getHitboxEyesHeight:()F
+     106: aload_1
+     107: invokevirtual #243                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getHitboxScale:()F
+     110: aload_1
+     111: invokevirtual #245                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getRenderScale:()F
+     114: aload_2
+     115: invokespecial #176                // Method "<init>":(Lnet/minecraft/class_2960;Lnet/minecraft/class_2960;Ljava/util/Set;ILjava/util/Set;Lnet/minecraft/class_2561;Lcom/cobblemon/mod/common/entity/PoseType;Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;ZFFFFFLnet/minecraft/class_2604;)V
+     118: return
+
+  public void encodeEntityData(net.minecraft.class_9129);
+    Code:
+       0: aload_1
+       1: ldc           #246                // String buffer
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_1
+       7: checkcast     #248                // class io/netty/buffer/ByteBuf
+      10: aload_0
+      11: getfield      #139                // Field npcClass:Lnet/minecraft/class_2960;
+      14: invokestatic  #254                // Method com/cobblemon/mod/common/util/BufferUtilsKt.writeIdentifier:(Lio/netty/buffer/ByteBuf;Lnet/minecraft/class_2960;)V
+      17: aload_1
+      18: checkcast     #248                // class io/netty/buffer/ByteBuf
+      21: aload_0
+      22: getfield      #141                // Field resourceIdentifier:Lnet/minecraft/class_2960;
+      25: invokestatic  #254                // Method com/cobblemon/mod/common/util/BufferUtilsKt.writeIdentifier:(Lio/netty/buffer/ByteBuf;Lnet/minecraft/class_2960;)V
+      28: aload_1
+      29: aload_0
+      30: getfield      #143                // Field aspects:Ljava/util/Set;
+      33: checkcast     #256                // class java/util/Collection
+      36: invokedynamic #275,  0            // InvokeDynamic #0:invoke:()Lkotlin/jvm/functions/Function2;
+      41: invokedynamic #287,  0            // InvokeDynamic #1:encode:(Lkotlin/jvm/functions/Function2;)Lnet/minecraft/class_9142;
+      46: invokevirtual #293                // Method net/minecraft/class_9129.method_34062:(Ljava/util/Collection;Lnet/minecraft/class_9142;)V
+      49: aload_1
+      50: aload_0
+      51: getfield      #145                // Field level:I
+      54: invokevirtual #297                // Method net/minecraft/class_9129.method_53002:(I)Lnet/minecraft/class_2540;
+      57: pop
+      58: aload_1
+      59: aload_0
+      60: getfield      #147                // Field battleIds:Ljava/util/Set;
+      63: checkcast     #256                // class java/util/Collection
+      66: invokedynamic #304,  0            // InvokeDynamic #2:invoke:()Lkotlin/jvm/functions/Function2;
+      71: invokedynamic #312,  0            // InvokeDynamic #3:encode:(Lkotlin/jvm/functions/Function2;)Lnet/minecraft/class_9142;
+      76: invokevirtual #293                // Method net/minecraft/class_9129.method_34062:(Ljava/util/Collection;Lnet/minecraft/class_9142;)V
+      79: aload_1
+      80: aload_0
+      81: getfield      #149                // Field name:Lnet/minecraft/class_2561;
+      84: invokestatic  #316                // Method com/cobblemon/mod/common/util/BufferUtilsKt.writeText:(Lnet/minecraft/class_9129;Lnet/minecraft/class_2561;)V
+      87: aload_1
+      88: checkcast     #248                // class io/netty/buffer/ByteBuf
+      91: aload_0
+      92: getfield      #151                // Field poseType:Lcom/cobblemon/mod/common/entity/PoseType;
+      95: checkcast     #318                // class java/lang/Enum
+      98: invokestatic  #322                // Method com/cobblemon/mod/common/util/BufferUtilsKt.writeEnumConstant:(Lio/netty/buffer/ByteBuf;Ljava/lang/Enum;)V
+     101: aload_1
+     102: checkcast     #248                // class io/netty/buffer/ByteBuf
+     105: aload_0
+     106: getfield      #153                // Field texture:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+     109: invokevirtual #326                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getModel:()Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+     112: checkcast     #318                // class java/lang/Enum
+     115: invokestatic  #322                // Method com/cobblemon/mod/common/util/BufferUtilsKt.writeEnumConstant:(Lio/netty/buffer/ByteBuf;Ljava/lang/Enum;)V
+     118: aload_0
+     119: getfield      #153                // Field texture:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+     122: invokevirtual #326                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getModel:()Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+     125: getstatic     #332                // Field com/cobblemon/mod/common/entity/npc/NPCPlayerModelType.NONE:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+     128: if_acmpeq     143
+     131: aload_1
+     132: aload_0
+     133: getfield      #153                // Field texture:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+     136: invokevirtual #335                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture.getTexture:()[B
+     139: invokevirtual #339                // Method net/minecraft/class_9129.method_10813:([B)Lnet/minecraft/class_2540;
+     142: pop
+     143: aload_1
+     144: aload_0
+     145: getfield      #155                // Field hideNameTag:Z
+     148: invokevirtual #343                // Method net/minecraft/class_9129.method_52964:(Z)Lnet/minecraft/class_2540;
+     151: pop
+     152: aload_1
+     153: aload_0
+     154: getfield      #157                // Field hitboxWidth:F
+     157: invokevirtual #347                // Method net/minecraft/class_9129.method_52941:(F)Lnet/minecraft/class_2540;
+     160: pop
+     161: aload_1
+     162: aload_0
+     163: getfield      #159                // Field hitboxHeight:F
+     166: invokevirtual #347                // Method net/minecraft/class_9129.method_52941:(F)Lnet/minecraft/class_2540;
+     169: pop
+     170: aload_1
+     171: aload_0
+     172: getfield      #161                // Field hitboxEyesHeight:F
+     175: invokevirtual #347                // Method net/minecraft/class_9129.method_52941:(F)Lnet/minecraft/class_2540;
+     178: pop
+     179: aload_1
+     180: aload_0
+     181: getfield      #163                // Field hitboxScale:F
+     184: invokevirtual #347                // Method net/minecraft/class_9129.method_52941:(F)Lnet/minecraft/class_2540;
+     187: pop
+     188: aload_1
+     189: aload_0
+     190: getfield      #165                // Field renderScale:F
+     193: invokevirtual #347                // Method net/minecraft/class_9129.method_52941:(F)Lnet/minecraft/class_2540;
+     196: pop
+     197: return
+
+  public void applyData(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_638);
+    Code:
+       0: aload_1
+       1: ldc           #183                // String entity
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_2
+       7: ldc_w         #348                // String level
+      10: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      13: aload_1
+      14: aload_0
+      15: getfield      #139                // Field npcClass:Lnet/minecraft/class_2960;
+      18: invokestatic  #354                // Method com/cobblemon/mod/common/api/npc/NPCClasses.getByIdentifier:(Lnet/minecraft/class_2960;)Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      21: dup
+      22: ifnonnull     46
+      25: pop
+      26: new           #356                // class java/lang/IllegalStateException
+      29: dup
+      30: aload_0
+      31: getfield      #139                // Field npcClass:Lnet/minecraft/class_2960;
+      34: invokedynamic #368,  0            // InvokeDynamic #4:makeConcatWithConstants:(Lnet/minecraft/class_2960;)Ljava/lang/String;
+      39: invokevirtual #374                // Method java/lang/Object.toString:()Ljava/lang/String;
+      42: invokespecial #377                // Method java/lang/IllegalStateException."<init>":(Ljava/lang/String;)V
+      45: athrow
+      46: invokevirtual #383                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setNpc:(Lcom/cobblemon/mod/common/api/npc/NPCClass;)V
+      49: aload_1
+      50: invokevirtual #193                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.getResourceIdentifier:()Lnet/minecraft/class_2960;
+      53: aload_0
+      54: getfield      #141                // Field resourceIdentifier:Lnet/minecraft/class_2960;
+      57: invokestatic  #387                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+      60: ifne          71
+      63: aload_1
+      64: aload_0
+      65: getfield      #141                // Field resourceIdentifier:Lnet/minecraft/class_2960;
+      68: invokevirtual #390                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setForcedResourceIdentifier:(Lnet/minecraft/class_2960;)V
+      71: aload_1
+      72: aload_0
+      73: getfield      #149                // Field name:Lnet/minecraft/class_2561;
+      76: invokevirtual #393                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5665:(Lnet/minecraft/class_2561;)V
+      79: aload_1
+      80: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+      83: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+      86: invokevirtual #396                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getLEVEL:()Lnet/minecraft/class_2940;
+      89: aload_0
+      90: getfield      #145                // Field level:I
+      93: invokestatic  #402                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      96: invokevirtual #406                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      99: aload_1
+     100: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     103: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     106: invokevirtual #409                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getBATTLE_IDS:()Lnet/minecraft/class_2940;
+     109: aload_0
+     110: getfield      #147                // Field battleIds:Ljava/util/Set;
+     113: checkcast     #411                // class java/lang/Iterable
+     116: invokestatic  #417                // Method kotlin/collections/CollectionsKt.toMutableSet:(Ljava/lang/Iterable;)Ljava/util/Set;
+     119: invokevirtual #406                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+     122: aload_1
+     123: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     126: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     129: invokevirtual #420                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getASPECTS:()Lnet/minecraft/class_2940;
+     132: aload_0
+     133: getfield      #143                // Field aspects:Ljava/util/Set;
+     136: invokevirtual #406                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+     139: aload_1
+     140: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     143: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     146: invokevirtual #218                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getPOSE_TYPE:()Lnet/minecraft/class_2940;
+     149: aload_0
+     150: getfield      #151                // Field poseType:Lcom/cobblemon/mod/common/entity/PoseType;
+     153: invokevirtual #406                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+     156: aload_1
+     157: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     160: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     163: invokevirtual #231                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getNPC_PLAYER_TEXTURE:()Lnet/minecraft/class_2940;
+     166: aload_0
+     167: getfield      #153                // Field texture:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerTexture;
+     170: invokevirtual #406                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+     173: aload_1
+     174: invokevirtual #211                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.method_5841:()Lnet/minecraft/class_2945;
+     177: getstatic     #214                // Field com/cobblemon/mod/common/entity/npc/NPCEntity.Companion:Lcom/cobblemon/mod/common/entity/npc/NPCEntity$Companion;
+     180: invokevirtual #423                // Method com/cobblemon/mod/common/entity/npc/NPCEntity$Companion.getHIDE_NAME_TAG:()Lnet/minecraft/class_2940;
+     183: aload_0
+     184: getfield      #155                // Field hideNameTag:Z
+     187: invokestatic  #428                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     190: invokevirtual #406                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+     193: aload_1
+     194: aload_0
+     195: getfield      #157                // Field hitboxWidth:F
+     198: invokevirtual #430                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setHitboxWidth:(F)V
+     201: aload_1
+     202: aload_0
+     203: getfield      #159                // Field hitboxHeight:F
+     206: invokevirtual #432                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setHitboxHeight:(F)V
+     209: aload_1
+     210: aload_0
+     211: getfield      #161                // Field hitboxEyesHeight:F
+     214: invokevirtual #434                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setHitboxEyesHeight:(F)V
+     217: aload_1
+     218: aload_0
+     219: getfield      #163                // Field hitboxScale:F
+     222: invokevirtual #436                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setHitboxScale:(F)V
+     225: aload_1
+     226: aload_0
+     227: getfield      #165                // Field renderScale:F
+     230: invokevirtual #438                // Method com/cobblemon/mod/common/entity/npc/NPCEntity.setRenderScale:(F)V
+     233: return
+
+  public boolean checkType(net.minecraft.class_1297);
+    Code:
+       0: aload_1
+       1: ldc           #183                // String entity
+       3: invokestatic  #127                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       6: aload_1
+       7: instanceof    #112                // class com/cobblemon/mod/common/entity/npc/NPCEntity
+      10: ireturn
+
+  private static final kotlin.Unit encodeEntityData$lambda$0(net.minecraft.class_2540, java.lang.String);
+    Code:
+       0: aload_0
+       1: invokestatic  #444                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;)V
+       4: aload_0
+       5: checkcast     #248                // class io/netty/buffer/ByteBuf
+       8: aload_1
+       9: invokestatic  #444                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;)V
+      12: aload_1
+      13: invokestatic  #448                // Method com/cobblemon/mod/common/util/BufferUtilsKt.writeString:(Lio/netty/buffer/ByteBuf;Ljava/lang/String;)Lio/netty/buffer/ByteBuf;
+      16: pop
+      17: getstatic     #454                // Field kotlin/Unit.INSTANCE:Lkotlin/Unit;
+      20: areturn
+
+  private static final void encodeEntityData$lambda$1(kotlin.jvm.functions.Function2, java.lang.Object, java.lang.String);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokeinterface #463,  3          // InterfaceMethod kotlin/jvm/functions/Function2.invoke:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       8: pop
+       9: return
+
+  private static final kotlin.Unit encodeEntityData$lambda$2(net.minecraft.class_2540, java.util.UUID);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #471                // Method net/minecraft/class_2540.method_10797:(Ljava/util/UUID;)Lnet/minecraft/class_2540;
+       5: pop
+       6: getstatic     #454                // Field kotlin/Unit.INSTANCE:Lkotlin/Unit;
+       9: areturn
+
+  private static final void encodeEntityData$lambda$3(kotlin.jvm.functions.Function2, java.lang.Object, java.util.UUID);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: aload_2
+       3: invokeinterface #463,  3          // InterfaceMethod kotlin/jvm/functions/Function2.invoke:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       8: pop
+       9: return
+
+  public void applyData(net.minecraft.class_1297, net.minecraft.class_638);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: checkcast     #112                // class com/cobblemon/mod/common/entity/npc/NPCEntity
+       5: aload_2
+       6: invokevirtual #474                // Method applyData:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;Lnet/minecraft/class_638;)V
+       9: return
+
+  public static final net.minecraft.class_2960 access$getID$cp();
+    Code:
+       0: getstatic     #167                // Field ID:Lnet/minecraft/class_2960;
+       3: areturn
+
+  static {};
+    Code:
+       0: new           #114                // class com/cobblemon/mod/common/net/messages/client/spawn/SpawnNPCPacket$Companion
+       3: dup
+       4: aconst_null
+       5: invokespecial #480                // Method com/cobblemon/mod/common/net/messages/client/spawn/SpawnNPCPacket$Companion."<init>":(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+       8: putstatic     #482                // Field Companion:Lcom/cobblemon/mod/common/net/messages/client/spawn/SpawnNPCPacket$Companion;
+      11: ldc_w         #484                // String spawn_npc_entity
+      14: invokestatic  #490                // Method com/cobblemon/mod/common/util/MiscUtilsKt.cobblemonResource:(Ljava/lang/String;)Lnet/minecraft/class_2960;
+      17: putstatic     #167                // Field ID:Lnet/minecraft/class_2960;
+      20: return
+}
+
+##### com.cobblemon.mod.common.entity.npc.NPCEntity
+Compiled from "NPCEntity.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCEntity extends net.minecraft.class_1296 implements com.cobblemon.mod.common.entity.PosableEntity,com.cobblemon.mod.common.api.entity.PokemonSender,com.cobblemon.mod.common.api.scheduling.Schedulable,com.cobblemon.mod.common.entity.MoLangScriptingEntity,com.cobblemon.mod.common.entity.OmniPathingEntity {
+  public static final com.cobblemon.mod.common.entity.npc.NPCEntity$Companion Companion;
+
+  private final com.cobblemon.mod.common.api.scheduling.SchedulingTracker schedulingTracker;
+
+  private final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.entity.npc.NPCEntity> struct;
+
+  private final com.bedrockk.molang.runtime.MoLangRuntime runtime;
+
+  private com.cobblemon.mod.common.api.npc.NPCClass npc;
+
+  private net.minecraft.class_4048 hitbox;
+
+  private net.minecraft.class_2960 forcedResourceIdentifier;
+
+  private java.lang.Integer skill;
+
+  private com.cobblemon.mod.common.api.storage.party.NPCPartyStore party;
+
+  private java.lang.Boolean isMovable;
+
+  private java.lang.Boolean isInvulnerable;
+
+  private java.lang.Boolean isLeashable;
+
+  private java.lang.Boolean allowProjectileHits;
+
+  private final java.util.Set<java.lang.String> variationAspects;
+
+  private final java.util.Set<java.lang.String> appliedAspects;
+
+  private final com.cobblemon.mod.common.api.entity.NPCSideDelegate delegate;
+
+  private com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration battle;
+
+  private com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration behaviour;
+
+  private com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration interaction;
+
+  private boolean behavioursAreCustom;
+
+  private final java.util.List<net.minecraft.class_2960> behaviours;
+
+  private final java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> registeredVariables;
+
+  private com.bedrockk.molang.runtime.struct.VariableStruct data;
+
+  private com.bedrockk.molang.runtime.struct.VariableStruct config;
+
+  private com.cobblemon.mod.common.entity.EntityCallbacks callbacks;
+
+  private com.cobblemon.mod.common.api.moves.animations.ActionEffectContext actionEffect;
+
+  private com.mojang.serialization.Dynamic<?> brainDynamic;
+
+  private static final net.minecraft.class_2940<net.minecraft.class_2960> NPC_CLASS;
+
+  private static final net.minecraft.class_2940<net.minecraft.class_2960> RESOURCE_IDENTIFIER;
+
+  private static final net.minecraft.class_2940<java.util.Set<java.lang.String>> ASPECTS;
+
+  private static final net.minecraft.class_2940<com.cobblemon.mod.common.entity.PoseType> POSE_TYPE;
+
+  private static final net.minecraft.class_2940<java.util.Set<java.util.UUID>> BATTLE_IDS;
+
+  private static final net.minecraft.class_2940<com.cobblemon.mod.common.entity.npc.NPCPlayerTexture> NPC_PLAYER_TEXTURE;
+
+  private static final net.minecraft.class_2940<java.lang.Integer> LEVEL;
+
+  private static final net.minecraft.class_2940<java.lang.Boolean> HIDE_NAME_TAG;
+
+  private static final net.minecraft.class_2940<java.lang.Float> RENDER_SCALE;
+
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_SCALE;
+
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_WIDTH;
+
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_HEIGHT;
+
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_EYES_HEIGHT;
+
+  public static final java.lang.String SEND_OUT_ANIMATION;
+
+  public static final java.lang.String RECALL_ANIMATION;
+
+  public static final java.lang.String LOSE_ANIMATION;
+
+  public static final java.lang.String WIN_ANIMATION;
+
+  public static final java.lang.String COMMAND_ANIMATION;
+
+  public com.cobblemon.mod.common.entity.npc.NPCEntity(net.minecraft.class_1937);
+    Code:
+       0: aload_1
+       1: ldc_w         #394                // String world
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: getstatic     #406                // Field com/cobblemon/mod/common/CobblemonEntities.NPC:Lnet/minecraft/class_1299;
+      11: aload_1
+      12: invokespecial #409                // Method net/minecraft/class_1296."<init>":(Lnet/minecraft/class_1299;Lnet/minecraft/class_1937;)V
+      15: aload_0
+      16: new           #411                // class com/cobblemon/mod/common/api/scheduling/SchedulingTracker
+      19: dup
+      20: invokespecial #413                // Method com/cobblemon/mod/common/api/scheduling/SchedulingTracker."<init>":()V
+      23: putfield      #415                // Field schedulingTracker:Lcom/cobblemon/mod/common/api/scheduling/SchedulingTracker;
+      26: aload_0
+      27: getstatic     #421                // Field com/cobblemon/mod/common/api/molang/MoLangFunctions.INSTANCE:Lcom/cobblemon/mod/common/api/molang/MoLangFunctions;
+      30: aload_0
+      31: invokevirtual #425                // Method com/cobblemon/mod/common/api/molang/MoLangFunctions.asMoLangValue:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;)Lcom/cobblemon/mod/common/api/molang/ObjectValue;
+      34: putfield      #427                // Field struct:Lcom/cobblemon/mod/common/api/molang/ObjectValue;
+      37: aload_0
+      38: getstatic     #421                // Field com/cobblemon/mod/common/api/molang/MoLangFunctions.INSTANCE:Lcom/cobblemon/mod/common/api/molang/MoLangFunctions;
+      41: new           #429                // class com/bedrockk/molang/runtime/MoLangRuntime
+      44: dup
+      45: invokespecial #430                // Method com/bedrockk/molang/runtime/MoLangRuntime."<init>":()V
+      48: invokevirtual #434                // Method com/cobblemon/mod/common/api/molang/MoLangFunctions.setup:(Lcom/bedrockk/molang/runtime/MoLangRuntime;)Lcom/bedrockk/molang/runtime/MoLangRuntime;
+      51: aconst_null
+      52: aload_0
+      53: iconst_1
+      54: aconst_null
+      55: invokestatic  #440                // Method com/cobblemon/mod/common/util/MoLangExtensionsKt.withNPCValue$default:(Lcom/bedrockk/molang/runtime/MoLangRuntime;Ljava/lang/String;Lcom/cobblemon/mod/common/entity/npc/NPCEntity;ILjava/lang/Object;)Lcom/bedrockk/molang/runtime/MoLangRuntime;
+      58: putfield      #442                // Field runtime:Lcom/bedrockk/molang/runtime/MoLangRuntime;
+      61: aload_0
+      62: getstatic     #447                // Field com/cobblemon/mod/common/api/npc/NPCClasses.INSTANCE:Lcom/cobblemon/mod/common/api/npc/NPCClasses;
+      65: invokevirtual #450                // Method com/cobblemon/mod/common/api/npc/NPCClasses.dummy:()Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      68: putfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      71: aload_0
+      72: new           #454                // class java/util/LinkedHashSet
+      75: dup
+      76: invokespecial #455                // Method java/util/LinkedHashSet."<init>":()V
+      79: checkcast     #457                // class java/util/Set
+      82: putfield      #459                // Field variationAspects:Ljava/util/Set;
+      85: aload_0
+      86: new           #454                // class java/util/LinkedHashSet
+      89: dup
+      90: invokespecial #455                // Method java/util/LinkedHashSet."<init>":()V
+      93: checkcast     #457                // class java/util/Set
+      96: putfield      #461                // Field appliedAspects:Ljava/util/Set;
+      99: aload_0
+     100: aload_1
+     101: getfield      #466                // Field net/minecraft/class_1937.field_9236:Z
+     104: ifeq          120
+     107: new           #468                // class com/cobblemon/mod/common/client/entity/NPCClientDelegate
+     110: dup
+     111: invokespecial #469                // Method com/cobblemon/mod/common/client/entity/NPCClientDelegate."<init>":()V
+     114: checkcast     #471                // class com/cobblemon/mod/common/api/entity/NPCSideDelegate
+     117: goto          130
+     120: new           #473                // class com/cobblemon/mod/common/entity/npc/NPCServerDelegate
+     123: dup
+     124: invokespecial #474                // Method com/cobblemon/mod/common/entity/npc/NPCServerDelegate."<init>":()V
+     127: checkcast     #471                // class com/cobblemon/mod/common/api/entity/NPCSideDelegate
+     130: putfield      #476                // Field delegate:Lcom/cobblemon/mod/common/api/entity/NPCSideDelegate;
+     133: aload_0
+     134: new           #478                // class java/util/ArrayList
+     137: dup
+     138: invokespecial #479                // Method java/util/ArrayList."<init>":()V
+     141: checkcast     #481                // class java/util/List
+     144: putfield      #483                // Field behaviours:Ljava/util/List;
+     147: aload_0
+     148: new           #478                // class java/util/ArrayList
+     151: dup
+     152: invokespecial #479                // Method java/util/ArrayList."<init>":()V
+     155: checkcast     #481                // class java/util/List
+     158: putfield      #485                // Field registeredVariables:Ljava/util/List;
+     161: aload_0
+     162: new           #487                // class com/bedrockk/molang/runtime/struct/VariableStruct
+     165: dup
+     166: invokespecial #488                // Method com/bedrockk/molang/runtime/struct/VariableStruct."<init>":()V
+     169: putfield      #490                // Field data:Lcom/bedrockk/molang/runtime/struct/VariableStruct;
+     172: aload_0
+     173: new           #487                // class com/bedrockk/molang/runtime/struct/VariableStruct
+     176: dup
+     177: invokespecial #488                // Method com/bedrockk/molang/runtime/struct/VariableStruct."<init>":()V
+     180: putfield      #492                // Field config:Lcom/bedrockk/molang/runtime/struct/VariableStruct;
+     183: aload_0
+     184: new           #494                // class com/cobblemon/mod/common/entity/EntityCallbacks
+     187: dup
+     188: aload_0
+     189: checkcast     #496                // class net/minecraft/class_1297
+     192: invokespecial #499                // Method com/cobblemon/mod/common/entity/EntityCallbacks."<init>":(Lnet/minecraft/class_1297;)V
+     195: putfield      #501                // Field callbacks:Lcom/cobblemon/mod/common/entity/EntityCallbacks;
+     198: nop
+     199: aload_0
+     200: invokevirtual #503                // Method getDelegate:()Lcom/cobblemon/mod/common/api/entity/NPCSideDelegate;
+     203: aload_0
+     204: checkcast     #496                // class net/minecraft/class_1297
+     207: invokeinterface #505,  2          // InterfaceMethod com/cobblemon/mod/common/api/entity/NPCSideDelegate.initialize:(Lnet/minecraft/class_1297;)V
+     212: aload_0
+     213: aload_0
+     214: invokevirtual #507                // Method getStruct:()Lcom/cobblemon/mod/common/api/molang/ObjectValue;
+     217: checkcast     #509                // class com/bedrockk/molang/runtime/struct/QueryStruct
+     220: invokevirtual #513                // Method addPosableFunctions:(Lcom/bedrockk/molang/runtime/struct/QueryStruct;)V
+     223: getstatic     #421                // Field com/cobblemon/mod/common/api/molang/MoLangFunctions.INSTANCE:Lcom/cobblemon/mod/common/api/molang/MoLangFunctions;
+     226: aload_0
+     227: getfield      #442                // Field runtime:Lcom/bedrockk/molang/runtime/MoLangRuntime;
+     230: invokevirtual #517                // Method com/bedrockk/molang/runtime/MoLangRuntime.getEnvironment:()Lcom/bedrockk/molang/runtime/MoLangEnvironment;
+     233: getfield      #523                // Field com/bedrockk/molang/runtime/MoLangEnvironment.query:Lcom/bedrockk/molang/runtime/struct/QueryStruct;
+     236: aload_0
+     237: invokevirtual #507                // Method getStruct:()Lcom/cobblemon/mod/common/api/molang/ObjectValue;
+     240: getfield      #529                // Field com/cobblemon/mod/common/api/molang/ObjectValue.functions:Ljava/util/HashMap;
+     243: dup
+     244: ldc_w         #530                // String functions
+     247: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+     250: checkcast     #535                // class java/util/Map
+     253: invokevirtual #539                // Method com/cobblemon/mod/common/api/molang/MoLangFunctions.addFunctions:(Lcom/bedrockk/molang/runtime/struct/QueryStruct;Ljava/util/Map;)Lcom/bedrockk/molang/runtime/struct/QueryStruct;
+     256: pop
+     257: aload_0
+     258: invokevirtual #542                // Method method_18382:()V
+     261: aload_0
+     262: getfield      #546                // Field field_6189:Lnet/minecraft/class_1408;
+     265: iconst_0
+     266: invokevirtual #551                // Method net/minecraft/class_1408.method_6354:(Z)V
+     269: aload_1
+     270: getfield      #466                // Field net/minecraft/class_1937.field_9236:Z
+     273: ifne          280
+     276: aload_0
+     277: invokevirtual #553                // Method remakeBrain:()V
+     280: nop
+     281: return
+
+  public com.cobblemon.mod.common.api.scheduling.SchedulingTracker getSchedulingTracker();
+    Code:
+       0: aload_0
+       1: getfield      #415                // Field schedulingTracker:Lcom/cobblemon/mod/common/api/scheduling/SchedulingTracker;
+       4: areturn
+
+  public com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.entity.npc.NPCEntity> getStruct();
+    Code:
+       0: aload_0
+       1: getfield      #427                // Field struct:Lcom/cobblemon/mod/common/api/molang/ObjectValue;
+       4: areturn
+
+  public final com.bedrockk.molang.runtime.MoLangRuntime getRuntime();
+    Code:
+       0: aload_0
+       1: getfield      #442                // Field runtime:Lcom/bedrockk/molang/runtime/MoLangRuntime;
+       4: areturn
+
+  public final com.cobblemon.mod.common.api.npc.NPCClass getNpc();
+    Code:
+       0: aload_0
+       1: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+       4: areturn
+
+  public final void setNpc(com.cobblemon.mod.common.api.npc.NPCClass);
+    Code:
+       0: aload_1
+       1: ldc_w         #556                // String value
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      11: getstatic     #562                // Field NPC_CLASS:Lnet/minecraft/class_2940;
+      14: aload_1
+      15: invokevirtual #567                // Method com/cobblemon/mod/common/api/npc/NPCClass.getId:()Lnet/minecraft/class_2960;
+      18: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      21: aload_0
+      22: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      25: aload_1
+      26: invokestatic  #575                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Object;Ljava/lang/Object;)Z
+      29: ifne          36
+      32: iconst_1
+      33: goto          37
+      36: iconst_0
+      37: istore_2
+      38: aload_0
+      39: aload_1
+      40: putfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      43: iload_2
+      44: ifeq          121
+      47: aload_0
+      48: aload_1
+      49: invokevirtual #578                // Method com/cobblemon/mod/common/api/npc/NPCClass.getNames:()Ljava/util/List;
+      52: checkcast     #580                // class java/util/Collection
+      55: getstatic     #586                // Field kotlin/random/Random.Default:Lkotlin/random/Random$Default;
+      58: checkcast     #582                // class kotlin/random/Random
+      61: invokestatic  #592                // Method kotlin/collections/CollectionsKt.randomOrNull:(Ljava/util/Collection;Lkotlin/random/Random;)Ljava/lang/Object;
+      64: checkcast     #594                // class net/minecraft/class_2561
+      67: dup
+      68: ifnonnull     81
+      71: pop
+      72: ldc_w         #595                // String NPC
+      75: invokestatic  #601                // Method com/cobblemon/mod/common/api/text/TextKt.text:(Ljava/lang/String;)Lnet/minecraft/class_5250;
+      78: checkcast     #594                // class net/minecraft/class_2561
+      81: invokevirtual #605                // Method method_5665:(Lnet/minecraft/class_2561;)V
+      84: aload_0
+      85: invokevirtual #609                // Method method_37908:()Lnet/minecraft/class_1937;
+      88: getfield      #466                // Field net/minecraft/class_1937.field_9236:Z
+      91: ifne          121
+      94: aload_0
+      95: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      98: getstatic     #611                // Field RESOURCE_IDENTIFIER:Lnet/minecraft/class_2940;
+     101: aload_0
+     102: getfield      #613                // Field forcedResourceIdentifier:Lnet/minecraft/class_2960;
+     105: dup
+     106: ifnonnull     114
+     109: pop
+     110: aload_1
+     111: invokevirtual #615                // Method com/cobblemon/mod/common/api/npc/NPCClass.getResourceIdentifier:()Lnet/minecraft/class_2960;
+     114: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+     117: aload_0
+     118: invokevirtual #553                // Method remakeBrain:()V
+     121: aload_0
+     122: invokevirtual #542                // Method method_18382:()V
+     125: return
+
+  public final int getLevel();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #622                // Field LEVEL:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #630                // class java/lang/Number
+      20: invokevirtual #633                // Method java/lang/Number.intValue:()I
+      23: ireturn
+
+  public final boolean getHideNameTag();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #635                // Field HIDE_NAME_TAG:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #637                // class java/lang/Boolean
+      20: invokevirtual #640                // Method java/lang/Boolean.booleanValue:()Z
+      23: ireturn
+
+  public final void setHideNameTag(boolean);
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #635                // Field HIDE_NAME_TAG:Lnet/minecraft/class_2940;
+       7: iload_1
+       8: invokestatic  #644                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+      11: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      14: return
+
+  public final float getRenderScale();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #646                // Field RENDER_SCALE:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #630                // class java/lang/Number
+      20: invokevirtual #649                // Method java/lang/Number.floatValue:()F
+      23: freturn
+
+  public final void setRenderScale(float);
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #646                // Field RENDER_SCALE:Lnet/minecraft/class_2940;
+       7: fload_1
+       8: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      11: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      14: return
+
+  public final float getHitboxScale();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #657                // Field HITBOX_SCALE:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #630                // class java/lang/Number
+      20: invokevirtual #649                // Method java/lang/Number.floatValue:()F
+      23: freturn
+
+  public final void setHitboxScale(float);
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #657                // Field HITBOX_SCALE:Lnet/minecraft/class_2940;
+       7: fload_1
+       8: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      11: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      14: aload_0
+      15: invokevirtual #542                // Method method_18382:()V
+      18: return
+
+  public final float getHitboxEyesHeight();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #659                // Field HITBOX_EYES_HEIGHT:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #630                // class java/lang/Number
+      20: invokevirtual #649                // Method java/lang/Number.floatValue:()F
+      23: freturn
+
+  public final void setHitboxEyesHeight(float);
+    Code:
+       0: aload_0
+       1: invokevirtual #609                // Method method_37908:()Lnet/minecraft/class_1937;
+       4: getfield      #466                // Field net/minecraft/class_1937.field_9236:Z
+       7: ifne          31
+      10: aload_0
+      11: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      14: getstatic     #659                // Field HITBOX_EYES_HEIGHT:Lnet/minecraft/class_2940;
+      17: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      20: checkcast     #651                // class java/lang/Float
+      23: fload_1
+      24: invokestatic  #662                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Float;F)Z
+      27: ifeq          31
+      30: return
+      31: aload_0
+      32: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      35: getstatic     #659                // Field HITBOX_EYES_HEIGHT:Lnet/minecraft/class_2940;
+      38: fload_1
+      39: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      42: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      45: aload_0
+      46: aload_0
+      47: getfield      #664                // Field hitbox:Lnet/minecraft/class_4048;
+      50: dup
+      51: ifnonnull     62
+      54: pop
+      55: aload_0
+      56: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      59: invokevirtual #666                // Method com/cobblemon/mod/common/api/npc/NPCClass.getHitbox:()Lnet/minecraft/class_4048;
+      62: astore_2
+      63: astore        4
+      65: iconst_0
+      66: istore_3
+      67: aload_2
+      68: invokevirtual #671                // Method net/minecraft/class_4048.comp_2185:()F
+      71: aload_2
+      72: invokevirtual #674                // Method net/minecraft/class_4048.comp_2186:()F
+      75: invokestatic  #678                // Method net/minecraft/class_4048.method_18384:(FF)Lnet/minecraft/class_4048;
+      78: fload_1
+      79: invokevirtual #682                // Method net/minecraft/class_4048.method_55685:(F)Lnet/minecraft/class_4048;
+      82: aload         4
+      84: swap
+      85: nop
+      86: invokevirtual #684                // Method setHitbox:(Lnet/minecraft/class_4048;)V
+      89: aload_0
+      90: invokevirtual #542                // Method method_18382:()V
+      93: return
+
+  public final float getHitboxWidth();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #689                // Field HITBOX_WIDTH:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #630                // class java/lang/Number
+      20: invokevirtual #649                // Method java/lang/Number.floatValue:()F
+      23: freturn
+
+  public final void setHitboxWidth(float);
+    Code:
+       0: aload_0
+       1: invokevirtual #609                // Method method_37908:()Lnet/minecraft/class_1937;
+       4: getfield      #466                // Field net/minecraft/class_1937.field_9236:Z
+       7: ifne          31
+      10: aload_0
+      11: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      14: getstatic     #689                // Field HITBOX_WIDTH:Lnet/minecraft/class_2940;
+      17: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      20: checkcast     #651                // class java/lang/Float
+      23: fload_1
+      24: invokestatic  #662                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Float;F)Z
+      27: ifeq          31
+      30: return
+      31: aload_0
+      32: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      35: getstatic     #689                // Field HITBOX_WIDTH:Lnet/minecraft/class_2940;
+      38: fload_1
+      39: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      42: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      45: aload_0
+      46: aload_0
+      47: getfield      #664                // Field hitbox:Lnet/minecraft/class_4048;
+      50: dup
+      51: ifnonnull     62
+      54: pop
+      55: aload_0
+      56: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      59: invokevirtual #666                // Method com/cobblemon/mod/common/api/npc/NPCClass.getHitbox:()Lnet/minecraft/class_4048;
+      62: astore_2
+      63: astore        4
+      65: iconst_0
+      66: istore_3
+      67: fload_1
+      68: aload_2
+      69: invokevirtual #674                // Method net/minecraft/class_4048.comp_2186:()F
+      72: invokestatic  #678                // Method net/minecraft/class_4048.method_18384:(FF)Lnet/minecraft/class_4048;
+      75: aload_2
+      76: invokevirtual #692                // Method net/minecraft/class_4048.comp_2187:()F
+      79: invokevirtual #682                // Method net/minecraft/class_4048.method_55685:(F)Lnet/minecraft/class_4048;
+      82: aload         4
+      84: swap
+      85: nop
+      86: invokevirtual #684                // Method setHitbox:(Lnet/minecraft/class_4048;)V
+      89: aload_0
+      90: invokevirtual #542                // Method method_18382:()V
+      93: return
+
+  public final float getHitboxHeight();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #695                // Field HITBOX_HEIGHT:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #630                // class java/lang/Number
+      20: invokevirtual #649                // Method java/lang/Number.floatValue:()F
+      23: freturn
+
+  public final void setHitboxHeight(float);
+    Code:
+       0: aload_0
+       1: invokevirtual #609                // Method method_37908:()Lnet/minecraft/class_1937;
+       4: getfield      #466                // Field net/minecraft/class_1937.field_9236:Z
+       7: ifne          31
+      10: aload_0
+      11: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      14: getstatic     #695                // Field HITBOX_HEIGHT:Lnet/minecraft/class_2940;
+      17: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      20: checkcast     #651                // class java/lang/Float
+      23: fload_1
+      24: invokestatic  #662                // Method kotlin/jvm/internal/Intrinsics.areEqual:(Ljava/lang/Float;F)Z
+      27: ifeq          31
+      30: return
+      31: aload_0
+      32: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      35: getstatic     #695                // Field HITBOX_HEIGHT:Lnet/minecraft/class_2940;
+      38: fload_1
+      39: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      42: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      45: aload_0
+      46: aload_0
+      47: getfield      #664                // Field hitbox:Lnet/minecraft/class_4048;
+      50: dup
+      51: ifnonnull     62
+      54: pop
+      55: aload_0
+      56: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      59: invokevirtual #666                // Method com/cobblemon/mod/common/api/npc/NPCClass.getHitbox:()Lnet/minecraft/class_4048;
+      62: astore_2
+      63: astore        4
+      65: iconst_0
+      66: istore_3
+      67: aload_2
+      68: invokevirtual #671                // Method net/minecraft/class_4048.comp_2185:()F
+      71: fload_1
+      72: invokestatic  #678                // Method net/minecraft/class_4048.method_18384:(FF)Lnet/minecraft/class_4048;
+      75: aload_2
+      76: invokevirtual #692                // Method net/minecraft/class_4048.comp_2187:()F
+      79: invokevirtual #682                // Method net/minecraft/class_4048.method_55685:(F)Lnet/minecraft/class_4048;
+      82: aload         4
+      84: swap
+      85: nop
+      86: invokevirtual #684                // Method setHitbox:(Lnet/minecraft/class_4048;)V
+      89: aload_0
+      90: invokevirtual #542                // Method method_18382:()V
+      93: return
+
+  public final net.minecraft.class_4048 getHitbox();
+    Code:
+       0: aload_0
+       1: getfield      #664                // Field hitbox:Lnet/minecraft/class_4048;
+       4: areturn
+
+  public final void setHitbox(net.minecraft.class_4048);
+    Code:
+       0: aload_1
+       1: dup
+       2: ifnonnull     13
+       5: pop
+       6: aload_0
+       7: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      10: invokevirtual #666                // Method com/cobblemon/mod/common/api/npc/NPCClass.getHitbox:()Lnet/minecraft/class_4048;
+      13: astore_2
+      14: aload_0
+      15: aload_1
+      16: putfield      #664                // Field hitbox:Lnet/minecraft/class_4048;
+      19: aload_0
+      20: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      23: getstatic     #695                // Field HITBOX_HEIGHT:Lnet/minecraft/class_2940;
+      26: aload_2
+      27: invokevirtual #674                // Method net/minecraft/class_4048.comp_2186:()F
+      30: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      33: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      36: aload_0
+      37: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      40: getstatic     #689                // Field HITBOX_WIDTH:Lnet/minecraft/class_2940;
+      43: aload_2
+      44: invokevirtual #671                // Method net/minecraft/class_4048.comp_2185:()F
+      47: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      50: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      53: aload_0
+      54: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      57: getstatic     #659                // Field HITBOX_EYES_HEIGHT:Lnet/minecraft/class_2940;
+      60: aload_2
+      61: invokevirtual #692                // Method net/minecraft/class_4048.comp_2187:()F
+      64: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+      67: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      70: return
+
+  public final net.minecraft.class_2960 getResourceIdentifier();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #611                // Field RESOURCE_IDENTIFIER:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #619                // class net/minecraft/class_2960
+      20: areturn
+
+  private final void setResourceIdentifier(net.minecraft.class_2960);
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #611                // Field RESOURCE_IDENTIFIER:Lnet/minecraft/class_2940;
+       7: aload_1
+       8: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      11: return
+
+  public final net.minecraft.class_2960 getForcedResourceIdentifier();
+    Code:
+       0: aload_0
+       1: getfield      #613                // Field forcedResourceIdentifier:Lnet/minecraft/class_2960;
+       4: areturn
+
+  public final void setForcedResourceIdentifier(net.minecraft.class_2960);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #613                // Field forcedResourceIdentifier:Lnet/minecraft/class_2960;
+       5: aload_1
+       6: ifnull        23
+       9: aload_0
+      10: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      13: getstatic     #611                // Field RESOURCE_IDENTIFIER:Lnet/minecraft/class_2940;
+      16: aload_1
+      17: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      20: goto          40
+      23: aload_0
+      24: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+      27: getstatic     #611                // Field RESOURCE_IDENTIFIER:Lnet/minecraft/class_2940;
+      30: aload_0
+      31: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      34: invokevirtual #615                // Method com/cobblemon/mod/common/api/npc/NPCClass.getResourceIdentifier:()Lnet/minecraft/class_2960;
+      37: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      40: return
+
+  public final java.lang.Integer getSkill();
+    Code:
+       0: aload_0
+       1: getfield      #699                // Field skill:Ljava/lang/Integer;
+       4: areturn
+
+  public final void setSkill(java.lang.Integer);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #699                // Field skill:Ljava/lang/Integer;
+       5: return
+
+  public final com.cobblemon.mod.common.api.storage.party.NPCPartyStore getParty();
+    Code:
+       0: aload_0
+       1: getfield      #702                // Field party:Lcom/cobblemon/mod/common/api/storage/party/NPCPartyStore;
+       4: areturn
+
+  public final void setParty(com.cobblemon.mod.common.api.storage.party.NPCPartyStore);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #702                // Field party:Lcom/cobblemon/mod/common/api/storage/party/NPCPartyStore;
+       5: return
+
+  public final java.lang.Boolean isMovable();
+    Code:
+       0: aload_0
+       1: getfield      #704                // Field isMovable:Ljava/lang/Boolean;
+       4: areturn
+
+  public final void setMovable(java.lang.Boolean);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #704                // Field isMovable:Ljava/lang/Boolean;
+       5: return
+
+  public final java.lang.Boolean isInvulnerable();
+    Code:
+       0: aload_0
+       1: getfield      #706                // Field isInvulnerable:Ljava/lang/Boolean;
+       4: areturn
+
+  public final void setInvulnerable(java.lang.Boolean);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #706                // Field isInvulnerable:Ljava/lang/Boolean;
+       5: return
+
+  public final java.lang.Boolean isLeashable();
+    Code:
+       0: aload_0
+       1: getfield      #708                // Field isLeashable:Ljava/lang/Boolean;
+       4: areturn
+
+  public final void setLeashable(java.lang.Boolean);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #708                // Field isLeashable:Ljava/lang/Boolean;
+       5: return
+
+  public final java.lang.Boolean getAllowProjectileHits();
+    Code:
+       0: aload_0
+       1: getfield      #710                // Field allowProjectileHits:Ljava/lang/Boolean;
+       4: areturn
+
+  public final void setAllowProjectileHits(java.lang.Boolean);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #710                // Field allowProjectileHits:Ljava/lang/Boolean;
+       5: return
+
+  public final com.cobblemon.mod.common.api.storage.party.NPCPartyStore getPartyForChallenge(java.util.List<? extends net.minecraft.class_3222>);
+    Code:
+       0: aload_1
+       1: ldc_w         #712                // String players
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: getfield      #702                // Field party:Lcom/cobblemon/mod/common/api/storage/party/NPCPartyStore;
+      11: astore_2
+      12: aload_2
+      13: ifnull        20
+      16: aload_2
+      17: goto          83
+      20: aload_0
+      21: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      24: invokevirtual #717                // Method com/cobblemon/mod/common/api/npc/NPCClass.getParty:()Lcom/cobblemon/mod/common/api/npc/NPCPartyProvider;
+      27: dup
+      28: ifnull        47
+      31: invokeinterface #722,  1          // InterfaceMethod com/cobblemon/mod/common/api/npc/NPCPartyProvider.isStatic:()Z
+      36: ifne          43
+      39: iconst_1
+      40: goto          49
+      43: iconst_0
+      44: goto          49
+      47: pop
+      48: iconst_0
+      49: ifeq          82
+      52: aload_0
+      53: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      56: invokevirtual #717                // Method com/cobblemon/mod/common/api/npc/NPCClass.getParty:()Lcom/cobblemon/mod/common/api/npc/NPCPartyProvider;
+      59: dup
+      60: ifnull        77
+      63: aload_0
+      64: aload_0
+      65: invokevirtual #724                // Method getLevel:()I
+      68: aload_1
+      69: invokeinterface #728,  4          // InterfaceMethod com/cobblemon/mod/common/api/npc/NPCPartyProvider.provide:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;ILjava/util/List;)Lcom/cobblemon/mod/common/api/storage/party/NPCPartyStore;
+      74: goto          83
+      77: pop
+      78: aconst_null
+      79: goto          83
+      82: aconst_null
+      83: areturn
+
+  public final java.util.Set<java.lang.String> getVariationAspects();
+    Code:
+       0: aload_0
+       1: getfield      #459                // Field variationAspects:Ljava/util/Set;
+       4: areturn
+
+  public final java.util.Set<java.lang.String> getAppliedAspects();
+    Code:
+       0: aload_0
+       1: getfield      #461                // Field appliedAspects:Ljava/util/Set;
+       4: areturn
+
+  public com.cobblemon.mod.common.api.entity.NPCSideDelegate getDelegate();
+    Code:
+       0: aload_0
+       1: getfield      #476                // Field delegate:Lcom/cobblemon/mod/common/api/entity/NPCSideDelegate;
+       4: areturn
+
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration getBattle();
+    Code:
+       0: aload_0
+       1: getfield      #731                // Field battle:Lcom/cobblemon/mod/common/api/npc/configuration/NPCBattleConfiguration;
+       4: areturn
+
+  public final void setBattle(com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #731                // Field battle:Lcom/cobblemon/mod/common/api/npc/configuration/NPCBattleConfiguration;
+       5: return
+
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration getBehaviour();
+    Code:
+       0: aload_0
+       1: getfield      #733                // Field behaviour:Lcom/cobblemon/mod/common/api/npc/configuration/NPCBehaviourConfiguration;
+       4: areturn
+
+  public final void setBehaviour(com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #733                // Field behaviour:Lcom/cobblemon/mod/common/api/npc/configuration/NPCBehaviourConfiguration;
+       5: return
+
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration getInteraction();
+    Code:
+       0: aload_0
+       1: getfield      #735                // Field interaction:Lcom/cobblemon/mod/common/api/npc/configuration/NPCInteractConfiguration;
+       4: areturn
+
+  public final void setInteraction(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #735                // Field interaction:Lcom/cobblemon/mod/common/api/npc/configuration/NPCInteractConfiguration;
+       5: return
+
+  public boolean getBehavioursAreCustom();
+    Code:
+       0: aload_0
+       1: getfield      #737                // Field behavioursAreCustom:Z
+       4: ireturn
+
+  public void setBehavioursAreCustom(boolean);
+    Code:
+       0: aload_0
+       1: iload_1
+       2: putfield      #737                // Field behavioursAreCustom:Z
+       5: return
+
+  public java.util.List<net.minecraft.class_2960> getBehaviours();
+    Code:
+       0: aload_0
+       1: getfield      #483                // Field behaviours:Ljava/util/List;
+       4: areturn
+
+  public java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> getRegisteredVariables();
+    Code:
+       0: aload_0
+       1: getfield      #485                // Field registeredVariables:Ljava/util/List;
+       4: areturn
+
+  public com.bedrockk.molang.runtime.struct.VariableStruct getData();
+    Code:
+       0: aload_0
+       1: getfield      #490                // Field data:Lcom/bedrockk/molang/runtime/struct/VariableStruct;
+       4: areturn
+
+  public void setData(com.bedrockk.molang.runtime.struct.VariableStruct);
+    Code:
+       0: aload_1
+       1: ldc_w         #740                // String <set-?>
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: aload_1
+       9: putfield      #490                // Field data:Lcom/bedrockk/molang/runtime/struct/VariableStruct;
+      12: return
+
+  public com.bedrockk.molang.runtime.struct.VariableStruct getConfig();
+    Code:
+       0: aload_0
+       1: getfield      #492                // Field config:Lcom/bedrockk/molang/runtime/struct/VariableStruct;
+       4: areturn
+
+  public void setConfig(com.bedrockk.molang.runtime.struct.VariableStruct);
+    Code:
+       0: aload_1
+       1: ldc_w         #740                // String <set-?>
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: aload_1
+       9: putfield      #492                // Field config:Lcom/bedrockk/molang/runtime/struct/VariableStruct;
+      12: return
+
+  public com.cobblemon.mod.common.entity.EntityCallbacks getCallbacks();
+    Code:
+       0: aload_0
+       1: getfield      #501                // Field callbacks:Lcom/cobblemon/mod/common/entity/EntityCallbacks;
+       4: areturn
+
+  public void setCallbacks(com.cobblemon.mod.common.entity.EntityCallbacks);
+    Code:
+       0: aload_1
+       1: ldc_w         #740                // String <set-?>
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: aload_1
+       9: putfield      #501                // Field callbacks:Lcom/cobblemon/mod/common/entity/EntityCallbacks;
+      12: return
+
+  public final java.util.Set<java.lang.String> getAspects();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #742                // Field ASPECTS:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #457                // class java/util/Set
+      20: areturn
+
+  public final java.util.Set<java.util.UUID> getBattleIds();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #745                // Field BATTLE_IDS:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: dup
+      11: ldc_w         #628                // String get(...)
+      14: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      17: checkcast     #457                // class java/util/Set
+      20: areturn
+
+  public final com.cobblemon.mod.common.api.moves.animations.ActionEffectContext getActionEffect();
+    Code:
+       0: aload_0
+       1: getfield      #747                // Field actionEffect:Lcom/cobblemon/mod/common/api/moves/animations/ActionEffectContext;
+       4: areturn
+
+  public final void setActionEffect(com.cobblemon.mod.common.api.moves.animations.ActionEffectContext);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: putfield      #747                // Field actionEffect:Lcom/cobblemon/mod/common/api/moves/animations/ActionEffectContext;
+       5: return
+
+  protected net.minecraft.class_4095$class_5303<com.cobblemon.mod.common.entity.npc.NPCEntity> method_28306();
+    Code:
+       0: invokestatic  #754                // Method kotlin/collections/SetsKt.emptySet:()Ljava/util/Set;
+       3: checkcast     #580                // class java/util/Collection
+       6: invokestatic  #754                // Method kotlin/collections/SetsKt.emptySet:()Ljava/util/Set;
+       9: checkcast     #580                // class java/util/Collection
+      12: invokestatic  #758                // Method net/minecraft/class_4095.method_28311:(Ljava/util/Collection;Ljava/util/Collection;)Lnet/minecraft/class_4095$class_5303;
+      15: areturn
+
+  public java.lang.Void getBreedOffspring(net.minecraft.class_3218, net.minecraft.class_1296);
+    Code:
+       0: aload_1
+       1: ldc_w         #394                // String world
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_2
+       8: ldc_w         #759                // String entity
+      11: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      14: aconst_null
+      15: areturn
+
+  public com.cobblemon.mod.common.entity.PoseType getCurrentPoseType();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #761                // Field POSE_TYPE:Lnet/minecraft/class_2940;
+       7: invokevirtual #626                // Method net/minecraft/class_2945.method_12789:(Lnet/minecraft/class_2940;)Ljava/lang/Object;
+      10: checkcast     #763                // class com/cobblemon/mod/common/entity/PoseType
+      13: areturn
+
+  protected void method_5693(net.minecraft.class_2945$class_9222);
+    Code:
+       0: aload_1
+       1: ldc_w         #765                // String builder
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: aload_1
+       9: invokespecial #767                // Method net/minecraft/class_1296.method_5693:(Lnet/minecraft/class_2945$class_9222;)V
+      12: aload_1
+      13: getstatic     #562                // Field NPC_CLASS:Lnet/minecraft/class_2940;
+      16: invokestatic  #771                // Method com/cobblemon/mod/common/api/npc/NPCClasses.getClasses:()Ljava/util/Collection;
+      19: checkcast     #773                // class java/lang/Iterable
+      22: invokestatic  #777                // Method kotlin/collections/CollectionsKt.first:(Ljava/lang/Iterable;)Ljava/lang/Object;
+      25: checkcast     #564                // class com/cobblemon/mod/common/api/npc/NPCClass
+      28: invokevirtual #567                // Method com/cobblemon/mod/common/api/npc/NPCClass.getId:()Lnet/minecraft/class_2960;
+      31: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+      34: pop
+      35: aload_1
+      36: getstatic     #611                // Field RESOURCE_IDENTIFIER:Lnet/minecraft/class_2940;
+      39: invokestatic  #771                // Method com/cobblemon/mod/common/api/npc/NPCClasses.getClasses:()Ljava/util/Collection;
+      42: checkcast     #773                // class java/lang/Iterable
+      45: invokestatic  #777                // Method kotlin/collections/CollectionsKt.first:(Ljava/lang/Iterable;)Ljava/lang/Object;
+      48: checkcast     #564                // class com/cobblemon/mod/common/api/npc/NPCClass
+      51: invokevirtual #615                // Method com/cobblemon/mod/common/api/npc/NPCClass.getResourceIdentifier:()Lnet/minecraft/class_2960;
+      54: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+      57: pop
+      58: aload_1
+      59: getstatic     #742                // Field ASPECTS:Lnet/minecraft/class_2940;
+      62: invokestatic  #754                // Method kotlin/collections/SetsKt.emptySet:()Ljava/util/Set;
+      65: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+      68: pop
+      69: aload_1
+      70: getstatic     #761                // Field POSE_TYPE:Lnet/minecraft/class_2940;
+      73: getstatic     #784                // Field com/cobblemon/mod/common/entity/PoseType.STAND:Lcom/cobblemon/mod/common/entity/PoseType;
+      76: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+      79: pop
+      80: aload_1
+      81: getstatic     #745                // Field BATTLE_IDS:Lnet/minecraft/class_2940;
+      84: invokestatic  #754                // Method kotlin/collections/SetsKt.emptySet:()Ljava/util/Set;
+      87: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+      90: pop
+      91: aload_1
+      92: getstatic     #786                // Field NPC_PLAYER_TEXTURE:Lnet/minecraft/class_2940;
+      95: new           #788                // class com/cobblemon/mod/common/entity/npc/NPCPlayerTexture
+      98: dup
+      99: iconst_1
+     100: newarray       byte
+     102: getstatic     #793                // Field com/cobblemon/mod/common/entity/npc/NPCPlayerModelType.NONE:Lcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;
+     105: invokespecial #796                // Method com/cobblemon/mod/common/entity/npc/NPCPlayerTexture."<init>":([BLcom/cobblemon/mod/common/entity/npc/NPCPlayerModelType;)V
+     108: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     111: pop
+     112: aload_1
+     113: getstatic     #622                // Field LEVEL:Lnet/minecraft/class_2940;
+     116: iconst_1
+     117: invokestatic  #801                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     120: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     123: pop
+     124: aload_1
+     125: getstatic     #635                // Field HIDE_NAME_TAG:Lnet/minecraft/class_2940;
+     128: iconst_0
+     129: invokestatic  #644                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     132: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     135: pop
+     136: aload_1
+     137: getstatic     #646                // Field RENDER_SCALE:Lnet/minecraft/class_2940;
+     140: fconst_1
+     141: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+     144: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     147: pop
+     148: aload_1
+     149: getstatic     #657                // Field HITBOX_SCALE:Lnet/minecraft/class_2940;
+     152: fconst_1
+     153: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+     156: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     159: pop
+     160: aload_1
+     161: getstatic     #689                // Field HITBOX_WIDTH:Lnet/minecraft/class_2940;
+     164: ldc_w         #802                // float 0.6f
+     167: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+     170: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     173: pop
+     174: aload_1
+     175: getstatic     #695                // Field HITBOX_HEIGHT:Lnet/minecraft/class_2940;
+     178: ldc_w         #803                // float 1.8f
+     181: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+     184: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     187: pop
+     188: aload_1
+     189: getstatic     #659                // Field HITBOX_EYES_HEIGHT:Lnet/minecraft/class_2940;
+     192: ldc_w         #804                // float 1.7f
+     195: invokestatic  #654                // Method java/lang/Float.valueOf:(F)Ljava/lang/Float;
+     198: invokevirtual #781                // Method net/minecraft/class_2945$class_9222.method_56912:(Lnet/minecraft/class_2940;Ljava/lang/Object;)Lnet/minecraft/class_2945$class_9222;
+     201: pop
+     202: return
+
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002(net.minecraft.class_3231);
+    Code:
+       0: aload_1
+       1: ldc_w         #807                // String serverEntity
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: new           #809                // class net/minecraft/class_2658
+      10: dup
+      11: new           #811                // class com/cobblemon/mod/common/net/messages/client/spawn/SpawnNPCPacket
+      14: dup
+      15: aload_0
+      16: aload_0
+      17: aload_1
+      18: invokespecial #813                // Method net/minecraft/class_1296.method_18002:(Lnet/minecraft/class_3231;)Lnet/minecraft/class_2596;
+      21: dup
+      22: ldc_w         #815                // String null cannot be cast to non-null type net.minecraft.network.protocol.game.ClientboundAddEntityPacket
+      25: invokestatic  #818                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+      28: checkcast     #820                // class net/minecraft/class_2604
+      31: invokespecial #823                // Method com/cobblemon/mod/common/net/messages/client/spawn/SpawnNPCPacket."<init>":(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;Lnet/minecraft/class_2604;)V
+      34: checkcast     #825                // class net/minecraft/class_8710
+      37: invokespecial #828                // Method net/minecraft/class_2658."<init>":(Lnet/minecraft/class_8710;)V
+      40: checkcast     #830                // class net/minecraft/class_2596
+      43: areturn
+
+  public void remakeBrain();
+    Code:
+       0: aload_0
+       1: aload_0
+       2: getfield      #832                // Field brainDynamic:Lcom/mojang/serialization/Dynamic;
+       5: dup
+       6: ifnonnull     17
+       9: pop
+      10: aload_0
+      11: checkcast     #496                // class net/minecraft/class_1297
+      14: invokestatic  #838                // Method com/cobblemon/mod/common/util/EntityExtensionsKt.makeEmptyBrainDynamic:(Lnet/minecraft/class_1297;)Lcom/mojang/serialization/Dynamic;
+      17: invokevirtual #843                // Method method_18867:(Lcom/mojang/serialization/Dynamic;)Lnet/minecraft/class_4095;
+      20: pop
+      21: return
+
+  public net.minecraft.class_4095<? extends com.cobblemon.mod.common.entity.npc.NPCEntity> assignNewBrainWithMemoriesAndSensors(com.mojang.serialization.Dynamic<?>, java.util.Set<? extends net.minecraft.class_4140<?>>, java.util.Set<? extends net.minecraft.class_4149<?>>);
+    Code:
+       0: aload_1
+       1: ldc_w         #845                // String dynamic
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_2
+       8: ldc_w         #846                // String memories
+      11: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      14: aload_3
+      15: ldc_w         #847                // String sensors
+      18: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+      21: getstatic     #853                // Field net/minecraft/class_7923.field_41130:Lnet/minecraft/class_7922;
+      24: dup
+      25: ldc_w         #855                // String SENSOR_TYPE
+      28: invokestatic  #533                // Method kotlin/jvm/internal/Intrinsics.checkNotNullExpressionValue:(Ljava/lang/Object;Ljava/lang/String;)V
+      31: checkcast     #773                // class java/lang/Iterable
+      34: invokestatic  #859                // Method kotlin/collections/CollectionsKt.toSet:(Ljava/lang/Iterable;)Ljava/util/Set;
+      37: checkcast     #773                // class java/lang/Iterable
+      40: astore        5
+      42: iconst_0
+      43: istore        6
+      45: aload         5
+      47: astore        7
+      49: new           #478                // class java/util/ArrayList
+      52: dup
+      53: invokespecial #479                // Method java/util/ArrayList."<init>":()V
+      56: checkcast     #580                // class java/util/Collection
+      59: astore        8
+      61: iconst_0
+      62: istore        9
+      64: aload         7
+      66: invokeinterface #863,  1          // InterfaceMethod java/lang/Iterable.iterator:()Ljava/util/Iterator;
+      71: astore        10
+      73: aload         10
+      75: invokeinterface #868,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      80: ifeq          113
+      83: aload         10
+      85: invokeinterface #872,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      90: astore        11
+      92: aload         11
+      94: instanceof    #874                // class net/minecraft/class_4149
+      97: ifeq          73
+     100: aload         8
+     102: aload         11
+     104: invokeinterface #878,  2          // InterfaceMethod java/util/Collection.add:(Ljava/lang/Object;)Z
+     109: pop
+     110: goto          73
+     113: aload         8
+     115: checkcast     #481                // class java/util/List
+     118: nop
+     119: astore        4
+     121: aload_2
+     122: checkcast     #773                // class java/lang/Iterable
+     125: invokestatic  #859                // Method kotlin/collections/CollectionsKt.toSet:(Ljava/lang/Iterable;)Ljava/util/Set;
+     128: checkcast     #580                // class java/util/Collection
+     131: aload         4
+     133: checkcast     #773                // class java/lang/Iterable
+     136: astore        6
+     138: astore        15
+     140: iconst_0
+     141: istore        7
+     143: aload         6
+     145: astore        8
+     147: new           #478                // class java/util/ArrayList
+     150: dup
+     151: invokespecial #479                // Method java/util/ArrayList."<init>":()V
+     154: checkcast     #580                // class java/util/Collection
+     157: astore        9
+     159: iconst_0
+     160: istore        10
+     162: aload         8
+     164: invokeinterface #863,  1          // InterfaceMethod java/lang/Iterable.iterator:()Ljava/util/Iterator;
+     169: astore        11
+     171: aload         11
+     173: invokeinterface #868,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     178: ifeq          224
+     181: aload         11
+     183: invokeinterface #872,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     188: astore        12
+     190: aload         12
+     192: checkcast     #874                // class net/minecraft/class_4149
+     195: astore        13
+     197: iconst_0
+     198: istore        14
+     200: aload_3
+     201: aload         13
+     203: invokeinterface #881,  2          // InterfaceMethod java/util/Set.contains:(Ljava/lang/Object;)Z
+     208: ifeq          171
+     211: aload         9
+     213: aload         12
+     215: invokeinterface #878,  2          // InterfaceMethod java/util/Collection.add:(Ljava/lang/Object;)Z
+     220: pop
+     221: goto          171
+     224: aload         9
+     226: checkcast     #481                // class java/util/List
+     229: nop
+     230: aload         15
+     232: swap
+     233: checkcast     #773                // class java/lang/Iterable
+     236: invokestatic  #859                // Method kotlin/collections/CollectionsKt.toSet:(Ljava/lang/Iterable;)Ljava/util/Set;
+     239: checkcast     #580                // class java/util/Collection
+     242: invokestatic  #758                // Method net/minecraft/class_4095.method_28311:(Ljava/util/Collection;Ljava/util/Collection;)Lnet/minecraft/class_4095$class_5303;
+     245: aload_1
+     246: invokevirtual #884                // Method net/minecraft/class_4095$class_5303.method_28335:(Lcom/mojang/serialization/Dynamic;)Lnet/minecraft/class_4095;
+     249: astore        5
+     251: aload_0
+     252: aload         5
+     254: putfield      #887                // Field field_18321:Lnet/minecraft/class_4095;
+     257: aload         5
+     259: invokestatic  #890                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;)V
+     262: aload         5
+     264: areturn
+
+  protected net.minecraft.class_4095<? extends com.cobblemon.mod.common.entity.npc.NPCEntity> method_18867(com.mojang.serialization.Dynamic<?>);
+    Code:
+       0: aload_1
+       1: ldc_w         #845                // String dynamic
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: aload_1
+       9: putfield      #832                // Field brainDynamic:Lcom/mojang/serialization/Dynamic;
+      12: aload_0
+      13: invokevirtual #909                // Method method_28306:()Lnet/minecraft/class_4095$class_5303;
+      16: aload_1
+      17: invokevirtual #884                // Method net/minecraft/class_4095$class_5303.method_28335:(Lcom/mojang/serialization/Dynamic;)Lnet/minecraft/class_4095;
+      20: astore_2
+      21: aload_0
+      22: aload_2
+      23: putfield      #887                // Field field_18321:Lnet/minecraft/class_4095;
+      26: aload_0
+      27: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      30: ifnull        45
+      33: getstatic     #914                // Field com/cobblemon/mod/common/entity/npc/NPCBrain.INSTANCE:Lcom/cobblemon/mod/common/entity/npc/NPCBrain;
+      36: aload_0
+      37: aload_0
+      38: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      41: aload_1
+      42: invokevirtual #918                // Method com/cobblemon/mod/common/entity/npc/NPCBrain.configure:(Lcom/cobblemon/mod/common/entity/npc/NPCEntity;Lcom/cobblemon/mod/common/api/npc/NPCClass;Lcom/mojang/serialization/Dynamic;)V
+      45: aload_2
+      46: invokestatic  #890                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;)V
+      49: aload_2
+      50: areturn
+
+  public boolean method_6121(net.minecraft.class_1297);
+    Code:
+       0: aload_1
+       1: ldc_w         #920                // String target
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: invokevirtual #924                // Method method_48923:()Lnet/minecraft/class_8109;
+      11: aload_0
+      12: checkcast     #926                // class net/minecraft/class_1309
+      15: invokevirtual #932                // Method net/minecraft/class_8109.method_48812:(Lnet/minecraft/class_1309;)Lnet/minecraft/class_1282;
+      18: astore_2
+      19: aload_1
+      20: aload_2
+      21: aload_0
+      22: invokevirtual #936                // Method method_6127:()Lnet/minecraft/class_5131;
+      25: getstatic     #942                // Field net/minecraft/class_5134.field_23721:Lnet/minecraft/class_6880;
+      28: invokevirtual #948                // Method net/minecraft/class_5131.method_26852:(Lnet/minecraft/class_6880;)D
+      31: d2f
+      32: ldc_w         #949                // float 5.0f
+      35: fmul
+      36: invokevirtual #953                // Method net/minecraft/class_1297.method_5643:(Lnet/minecraft/class_1282;F)Z
+      39: istore_3
+      40: iload_3
+      41: ifeq          48
+      44: aload_0
+      45: invokevirtual #956                // Method method_59928:()V
+      48: iload_3
+      49: ireturn
+
+  public net.minecraft.class_4095<com.cobblemon.mod.common.entity.npc.NPCEntity> method_18868();
+    Code:
+       0: aload_0
+       1: invokespecial #963                // Method net/minecraft/class_1296.method_18868:()Lnet/minecraft/class_4095;
+       4: dup
+       5: ldc_w         #965                // String null cannot be cast to non-null type net.minecraft.world.entity.ai.Brain<com.cobblemon.mod.common.entity.npc.NPCEntity>
+       8: invokestatic  #818                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+      11: areturn
+
+  public final void updateAspects();
+    Code:
+       0: aload_0
+       1: getfield      #560                // Field field_6011:Lnet/minecraft/class_2945;
+       4: getstatic     #742                // Field ASPECTS:Lnet/minecraft/class_2940;
+       7: aload_0
+       8: getfield      #461                // Field appliedAspects:Ljava/util/Set;
+      11: aload_0
+      12: getfield      #459                // Field variationAspects:Ljava/util/Set;
+      15: checkcast     #773                // class java/lang/Iterable
+      18: invokestatic  #969                // Method kotlin/collections/SetsKt.plus:(Ljava/util/Set;Ljava/lang/Iterable;)Ljava/util/Set;
+      21: invokevirtual #571                // Method net/minecraft/class_2945.method_12778:(Lnet/minecraft/class_2940;Ljava/lang/Object;)V
+      24: return
+
+  public final boolean isInBattle();
+    Code:
+       0: aload_0
+       1: invokevirtual #971                // Method getBattleIds:()Ljava/util/Set;
+       4: checkcast     #580                // class java/util/Collection
+       7: invokeinterface #974,  1          // InterfaceMethod java/util/Collection.isEmpty:()Z
+      12: ifne          19
+      15: iconst_1
+      16: goto          20
+      19: iconst_0
+      20: ireturn
+
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration getBattleConfiguration();
+    Code:
+       0: aload_0
+       1: getfield      #731                // Field battle:Lcom/cobblemon/mod/common/api/npc/configuration/NPCBattleConfiguration;
+       4: dup
+       5: ifnonnull     16
+       8: pop
+       9: aload_0
+      10: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+      13: invokevirtual #976                // Method com/cobblemon/mod/common/api/npc/NPCClass.getBattleConfiguration:()Lcom/cobblemon/mod/common/api/npc/configuration/NPCBattleConfiguration;
+      16: areturn
+
+  public final net.minecraft.class_2960 getBattleTheme();
+    Code:
+       0: aload_0
+       1: getfield      #452                // Field npc:Lcom/cobblemon/mod/common/api/npc/NPCClass;
+       4: invokevirtual #980                // Method com/cobblemon/mod/common/api/npc/NPCClass.getBattleTheme:()Lnet/minecraft/class_2960;
+       7: dup
+       8: ifnonnull     18
+      11: pop
+      12: getstatic     #986                // Field com/cobblemon/mod/common/CobblemonSounds.PVN_BATTLE:Lnet/minecraft/class_3414;
+      15: invokevirtual #991                // Method net/minecraft/class_3414.method_14833:()Lnet/minecraft/class_2960;
+      18: areturn
+
+  public void method_5773();
+    Code:
+       0: aload_0
+       1: invokespecial #994                // Method net/minecraft/class_1296.method_5773:()V
+       4: aload_0
+       5: invokevirtual #503                // Method getDelegate:()Lcom/cobblemon/mod/common/api/entity/NPCSideDelegate;
+       8: aload_0
+       9: checkcast     #496                // class net/minecraft/class_1297
+      12: invokeinterface #996,  2          // InterfaceMethod com/cobblemon/mod/common/api/entity/NPCSideDelegate.tick:(Lnet/minecraft/class_1297;)V
+      17: aload_0
+      18: invokevirtual #998                // Method getSchedulingTracker:()Lcom/cobblemon/mod/common/api/scheduling/SchedulingTracker;
+      21: ldc_w         #999                // float 0.05f
+      24: invokevirtual #1002               // Method com/cobblemon/mod/common/api/scheduling/SchedulingTracker.update:(F)V
+      27: return
+
+  protected void method_5958();
+    Code:
+       0: aload_0
+       1: invokespecial #1005               // Method net/minecraft/class_1296.method_5958:()V
+       4: aload_0
+       5: invokevirtual #1006               // Method method_18868:()Lnet/minecraft/class_4095;
+       8: aload_0
+       9: invokevirtual #609                // Method method_37908:()Lnet/minecraft/class_1937;
+      12: dup
+      13: ldc_w         #1008               // String null cannot be cast to non-null type net.minecraft.server.level.ServerLevel
+      16: invokestatic  #818                // Method kotlin/jvm/internal/Intrinsics.checkNotNull:(Ljava/lang/Object;Ljava/lang/String;)V
+      19: checkcast     #1010               // class net/minecraft/class_3218
+      22: aload_0
+      23: checkcast     #926                // class net/minecraft/class_1309
+      26: invokevirtual #1014               // Method net/minecraft/class_4095.method_19542:(Lnet/minecraft/class_3218;Lnet/minecraft/class_1309;)V
+      29: return
+
+  protected void method_18409();
+    Code:
+       0: aload_0
+       1: invokespecial #1017               // Method net/minecraft/class_1296.method_18409:()V
+       4: aload_0
+       5: checkcast     #926                // class net/minecraft/class_1309
+       8: invokestatic  #1023               // Method net/minecraft/class_4209.method_19774:(Lnet/minecraft/class_1309;)V
+      11: aload_0
+      12: invokevirtual #609                // Method method_37908:()Lnet/minecraft/class_1937;
+      15: aload_0
+      16: checkcast     #1025               // class net/minecraft/class_1308
+      19: aload_0
+      20: getfield      #1029               // Field field_6201:Lnet/minecraft/class_1355;
+      23: invokestatic  #1033               // Method net/minecraft/class_4209.method_19469:(Lnet/minecraft/class_1937;Lnet/minecraft/class_1308;Lnet/minecraft/class_1355;)V
+      26: aload_0
+      27: invokevirtual #609                // Method method_37908:()Lnet/minecraft/class_1937;
+      30: aload_0
+      31: checkcast     #1025               // class net/minecraft/class_1308
+      34: aload_0
+      35: getfield      #546                // Field field_6189:Lnet/minecraft/class_1408;
+      38: invokevirtual #1037               // Method net/minecraft/class_1408.method_6345:()Lnet/minecraft/class_11;
+      41: aload_0
+      42: getfield      #546                // Field field_6189:Lnet/minecraft/class_1408;
+      45: invokevirtual #1037               // Method net/minecraft/class_1408.method_6345:()Lnet/minecraft/class_11;
+      48: dup
+      49: ifnull        58
+      52: invokevirtual #1042               // Method net/minecraft/class_11.method_21656:()F
+      55: goto          60
+      58: pop
+      59: fconst_0
+      60: invokestatic  #1046               // Method net/minecraft/class_4209.method_19470:(Lnet/minecraft/class_1937;Lnet/minecraft/class_1308;Lnet/minecraft/class_11;F)V
+      63: return
+
+  public boolean method_5680(net.minecraft.class_3222);
+    Code:
+       0: aload_1
+       1: ldc_w         #1048               // String player
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: aload_0
+       8: aload_1
+       9: invokevirtual #1050               // Method shouldHideFrom:(Lnet/minecraft/class_3222;)Z
+      12: ifeq          17
+      15: iconst_0
+      16: ireturn
+      17: aload_0
+      18: aload_1
+      19: invokespecial #1052               // Method net/minecraft/class_1296.method_5680:(Lnet/minecraft/class_3222;)Z
+      22: ireturn
+
+  public final boolean shouldHideFrom(net.minecraft.class_3222);
+    Code:
+       0: aload_1
+       1: ldc_w         #1048               // String player
+       4: invokestatic  #400                // Method kotlin/jvm/internal/Intrinsics.checkNotNullParameter:(Ljava/lang/Object;Ljava/lang/String;)V
+       7: getstatic     #1057               // Field com/cobblemon/mod/common/Cobblemon.INSTANCE:Lcom/cobblemon/mod/common/Cobblemon;
+      10: invokevirtual #1061               // Method com/cobblemon/mod/common/Cobblemon.getPermissionValidator:()Lcom/cobblemon/mod/common/api/permission/PermissionValidator;
+      13: aload_1
+      14: invokestatic  #1067               // Method com/cobblemon/mod/common/api/permission/CobblemonPermissions.getSEE_HIDDEN_NPCS:()Lcom/cobblemon/mod/common/api/permission/Permission;
+      17: invokeinterface #1073,  3         // InterfaceMethod com/cobblemon/mod/common/api/permission/PermissionValidator.hasPermission:(Lnet/minecraft/class_3222;Lcom/cobblemon/mod/common/api/permission/Permission;)Z
+      22: ifeq          27
+      25: iconst_0
+      26: ireturn
+      27: getstatic     #1057               // Field com/cobblemon/mod/common/Cobblemon.INSTANCE:Lcom/cobblemon/mod/common/Cobblemon;
+      30: invokevirtual #1077               // Method com/cobblemon/mod/common/Cobblemon.getMolangData:()Lcom/cobblemon/mod/common/api/storage/molang/NbtMoLangDataStoreFactory;
+      33: checkcast     #1079               // class com/cobblemon/mod/common/api/storage/molang/MoLangDataStoreFactory
+      36: aload_1
+      37: invokevirtu

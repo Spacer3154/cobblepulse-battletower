@@ -1,0 +1,2351 @@
+### assets/mega_showdown/showdown/abilities.js (184361 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if ((from && typeof from === "object") || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
+  }
+  return to;
+};
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var abilities_exports = {};
+__export(abilities_exports, {
+  Abilities: () => Abilities,
+});
+module.exports = __toCommonJS(abilities_exports);
+const Abilities = {
+  noability: {
+    isNonstandard: "Past",
+    flags: {},
+    name: "No Ability",
+    rating: 0.1,
+    num: 0,
+  },
+  adaptability: {
+    onModifySTAB(stab, source, target, move) {
+      if (move.forceSTAB || source.hasType(move.type)) {
+        if (stab === 2) {
+          return 2.25;
+        }
+        return 2;
+      }
+    },
+    flags: {},
+    name: "Adaptability",
+    rating: 4,
+    num: 91,
+  },
+  aerilate: {
+    onModifyTypePriority: -1,
+    onModifyType(move, pokemon) {
+      const noModifyType = [
+        "judgment",
+        "multiattack",
+        "naturalgift",
+        "revelationdance",
+        "technoblast",
+        "terrainpulse",
+        "weatherball",
+      ];
+      if (
+        move.type === "Normal" &&
+        !noModifyType.includes(move.id) &&
+        !(move.isZ && move.category !== "Status") &&
+        !(move.name === "Tera Blast" && pokemon.terastallized)
+      ) {
+        move.type = "Flying";
+        move.typeChangerBoosted = this.effect;
+      }
+    },
+    onBasePowerPriority: 23,
+    onBasePower(basePower, pokemon, target, move) {
+      if (move.typeChangerBoosted === this.effect)
+        return this.chainModify([4915, 4096]);
+    },
+    flags: {},
+    name: "Aerilate",
+    rating: 4,
+    num: 184,
+  },
+  aftermath: {
+    onDamagingHitOrder: 1,
+    onDamagingHit(damage, target, source, move) {
+      if (
+        !target.hp &&
+        this.checkMoveMakesContact(move, source, target, true)
+      ) {
+        this.damage(source.baseMaxhp / 4, source, target);
+      }
+    },
+    flags: {},
+    name: "Aftermath",
+    rating: 2,
+    num: 106,
+  },
+  airlock: {
+    onSwitchIn(pokemon) {
+      this.effectState.switchingIn = true;
+    },
+    onStart(pokemon) {
+      if (this.effectState.switchingIn) {
+        this.add("-ability", pokemon, "Air Lock");
+        this.effectState.switchingIn = false;
+      }
+      this.eachEvent("WeatherChange", this.effect);
+
+
+### assets/mega_showdown/showdown/battle-actions.js (79944 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if ((from && typeof from === "object") || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
+  }
+  return to;
+};
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var battle_actions_exports = {};
+__export(battle_actions_exports, {
+  BattleActions: () => BattleActions,
+  gmaxMap: () => gmaxMap,
+  MAX_MOVES: () => MAX_MOVES,
+  Z_MOVES: () => Z_MOVES
+});
+module.exports = __toCommonJS(battle_actions_exports);
+var import_dex = require("./dex");
+const CHOOSABLE_TARGETS = /* @__PURE__ */ new Set([
+  "normal",
+  "any",
+  "adjacentAlly",
+  "adjacentAllyOrSelf",
+  "adjacentFoe",
+]);
+const gmaxMap = {
+  venusaur: "gmaxvinelash",
+  charizard: "gmaxwildfire",
+  blastoise: "gmaxcannonade",
+  butterfree: "gmaxbefuddle",
+  pikachu: "gmaxvoltcrash",
+  meowth: "gmaxgoldrush",
+  machamp: "gmaxchistrike",
+  gengar: "gmaxterror",
+  kingler: "gmaxfoamburst",
+  lapras: "gmaxresonance",
+  eevee: "gmaxcuddle",
+  snorlax: "gmaxreplenish",
+  garbodor: "gmaxmalodor",
+  melmetal: "gmaxmeltdown",
+  copperajah: "gmaxsteelsurge",
+  duraludon: "gmaxdepletion",
+  corviknight: "gmaxwindrage",
+  orbeetle: "gmaxgravitas",
+  toxtricity: "gmaxstunshock",
+  toxtricitylowkey: "gmaxstunshock",
+  centiskorch: "gmaxcentiferno",
+  hatterene: "gmaxsmite",
+  grimmsnarl: "gmaxsnooze",
+  alcremie: "gmaxfinale",
+  alcremierubycream: "gmaxfinale",
+  alcremiematchacream: "gmaxfinale",
+  alcremiemintcream: "gmaxfinale",
+  alcremielemoncream: "gmaxfinale",
+  alcremiesaltedcream: "gmaxfinale",
+  alcremierubyswirl: "gmaxfinale",
+  alcremiecaramelswirl: "gmaxfinale",
+  alcremierainbowswirl: "gmaxfinale",
+  drednaw: "gmaxstonesurge",
+  coalossal: "gmaxvolcalith",
+  flapple: "gmaxtartness",
+  appletun: "gmaxsweetness",
+  sandaconda: "gmaxsandblast",
+  inteleon: "gmaxhydrosnipe",
+  cinderace: "gmaxfireball",
+  rillaboom: "gmaxdrumsolo",
+  urshifu: "gmaxoneblow",
+  urshifurapidstrike: "gmaxrapidflow",
+};
+const MAX_MOVES = {
+    Flying: "Max Airstream",
+    Dark: "Max Darkness",
+    Fire: "Max Flare",
+    Bug: "Max Flutterby",
+    Water: "Max Geyser",
+    Status: "Max Guard",
+    Ice: "Max Hailstorm",
+    Fighting: "Max Knuckle",
+    Electric: "Max Lightning",
+    Psychic: "Max Mindstorm",
+    Poison: "Max Ooze",
+    Grass: "Max Overgrowth",
+    Ghost: "Max 
+
+### assets/mega_showdown/showdown/battle.js (107287 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var battle_exports = {};
+__export(battle_exports, {
+  Battle: () => Battle,
+  extractChannelMessages: () => extractChannelMessages
+});
+module.exports = __toCommonJS(battle_exports);
+var import_dex_formats = require("./dex-formats");
+var import_dex = require("./dex");
+var import_teams = require("./teams");
+var import_field = require("./field");
+var import_pokemon = require("./pokemon");
+var import_prng = require("./prng");
+var import_side = require("./side");
+var import_state = require("./state");
+var import_battle_queue = require("./battle-queue");
+var import_battle_actions = require("./battle-actions");
+var import_lib = require("../lib");
+var import_cobblemon = require("./cobblemon/cobblemon");
+/**
+ * Simulator Battle
+ * Pokemon Showdown - http://pokemonshowdown.com/
+ *
+ * This file is where the battle simulation itself happens.
+ *
+ * The most important part of the simulation is the event system:
+ * see the `runEvent` function definition for details.
+ *
+ * General battle mechanics are in `battle-actions`; move-specific,
+ * item-specific, etc mechanics are in the corresponding file in
+ * `data`.
+ *
+ * @license MIT
+ */
+const splitRegex = /^\|split\|p([1234])\n(.*)\n(.*)|.+/gm;
+function extractChannelMessages(message, channelIds) {
+  const channelIdSet = new Set(channelIds);
+  const channelMessages = {
+    [-1]: [],
+    0: [],
+    1: [],
+    2: [],
+    3: [],
+    4: []
+  };
+  for (const [lineMatch, playerMatch, secretMessage, sharedMessage] of message.matchAll(splitRegex)) {
+    const player = playerMatch ? parseInt(playerMatch) : 0;
+    for (const channelId of channelIdSet) {
+      let line = lineMatch;
+      if (player) {
+        line = channelId === -1 || player === channelId ? secretMessage : sharedMessage;
+        if (!line)
+          continue;
+      }
+      channelMessages[channelId].push(line);
+    }
+  }
+  return channelMessages;
+}
+class Battle {
+  constructor(options) {
+    this.toID = import_dex.toID;
+    this.log = [];
+    this.add("t:", Math.floor(Date.now() / 1e3));
+    let format = void 0;
+    if (!!options.format && options.format.debug == void 0) {
+      format = new i
+
+### assets/mega_showdown/showdown/conditions.js (29032 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var conditions_exports = {};
+__export(conditions_exports, {
+  Conditions: () => Conditions
+});
+module.exports = __toCommonJS(conditions_exports);
+const Conditions = {
+  brn: {
+    name: "brn",
+    effectType: "Status",
+    onStart(target, source, sourceEffect) {
+      if (sourceEffect && sourceEffect.id === "flameorb") {
+        this.add("-status", target, "brn", "[from] item: Flame Orb");
+      } else if (sourceEffect && sourceEffect.effectType === "Ability") {
+        this.add("-status", target, "brn", "[from] ability: " + sourceEffect.name, "[of] " + source);
+      } else {
+        this.add("-status", target, "brn");
+      }
+    },
+    // Damage reduction is handled directly in the sim/battle.js damage function
+    onResidualOrder: 10,
+    onResidual(pokemon) {
+      this.damage(pokemon.baseMaxhp / 16);
+    }
+  },
+  par: {
+    name: "par",
+    effectType: "Status",
+    onStart(target, source, sourceEffect) {
+      if (sourceEffect && sourceEffect.effectType === "Ability") {
+        this.add("-status", target, "par", "[from] ability: " + sourceEffect.name, "[of] " + source);
+      } else {
+        this.add("-status", target, "par");
+      }
+    },
+    onModifySpe(spe, pokemon) {
+      spe = this.finalModify(spe);
+      if (!pokemon.hasAbility("quickfeet")) {
+        spe = Math.floor(spe * 50 / 100);
+      }
+      return spe;
+    },
+    onBeforeMovePriority: 1,
+    onBeforeMove(pokemon) {
+      if (this.randomChance(1, 4)) {
+        this.add("cant", pokemon, "par");
+        return false;
+      }
+    }
+  },
+  slp: {
+    name: "slp",
+    effectType: "Status",
+    onStart(target, source, sourceEffect) {
+      if (sourceEffect && sourceEffect.effectType === "Ability") {
+        this.add("-status", target, "slp", "[from] ability: " + sourceEffect.name, "[of] " + source);
+      } else if (sourceEffect && sourceEffect.effectType === "Move") {
+        this.add("-status", target, "slp", "[from] move: " + sourceEffect.name);
+      } else {
+        this.add("-status", target, "slp");
+      }
+      this.effectState.startTime = this.random(2, 5);
+      this.effectState.time = this.effectState.star
+
+### assets/mega_showdown/showdown/index.js (6018 o)
+/*
+ * Copyright (C) 2023 Cobblemon Contributors
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+/*-----------------------------------------------------------------------------------------------------------------
+NOTE: The functions in this file are used by GraalShowdownService, the default Showdown environment for Cobblemon.
+For the corresponding SocketShowdownService methods, see cobbled-debug-server.ts. For where the interface is 
+defined and configured, See ShowdownService.kt on the  main Cobblemon repo .
+-----------------------------------------------------------------------------------------------------------------*/
+
+// eslint-disable-next-line strict
+const BS = require("./sim/battle-stream");
+const Cobblemon = require("./sim/cobblemon/cobblemon").Cobblemon;
+const Dex = require("./sim/dex").Dex;
+
+const items = require("./data/mods/cobblemon/items");
+const battleActions = require("./sim/battle-actions");
+const conditions = require("./data/mods/cobblemon/conditions");
+const typechart = require("./data/mods/cobblemon/typechart");
+const scripts = require("./data/mods/cobblemon/scripts");
+const moves = require("./data/mods/cobblemon/moves");
+const abilities = require("./data/mods/cobblemon/abilities");
+
+const battleMap = new Map();
+const toID = Dex.toID;
+
+function startBattle(graalShowdown, battleId, requestMessages) {
+  const battleStream = new BS.BattleStream();
+  battleMap.set(battleId, battleStream);
+
+  // Join messages with new line
+  try {
+    for (const element of requestMessages) {
+      battleStream.write(element);
+    }
+  } catch (err) {
+    graalShowdown.log(err.stack);
+  }
+
+  // Any battle output then gets written to the execution helper logging mechanism
+  (async () => {
+    for await (const output of battleStream) {
+      graalShowdown.sendFromShowdown(battleId, output);
+    }
+  })();
+}
+
+function sendBattleMessage(battleId, messages) {
+  const battleStream = battleMap.get(battleId);
+  for (const element of messages) {
+    battleStream.write(element);
+  }
+}
+
+function endBattle(battleId) {
+  const battleStream = battleMap.get(battleId);
+
+  if (battleStream != null) {
+    battleStream._writeEnd();
+    battleMap.delete(battleId);
+  }
+}
+
+function getTypeChart() {
+  return JSON.stringify(Dex.data.TypeChart);
+}
+
+function getTypeChartData() {
+  return Dex.data.TypeChart;
+}
+
+function resetData(type) {
+  const registry = Cobblemon.getRegistry(type);
+  registry.reset();
+}
+
+function resetAll() {
+  for (const key of Cobblemon.registryKeys) {
+    Cobblemon.registries[key].reset();
+  }
+}
+
+function receiveData(data, type) {
+  const registry = Cobblemon.getRegistry(type);
+  const obj = () => {
+    try {
+      // at the moment we only (re)serialize Species on the mod side, but prefer neat JSON first
+
+
+### assets/mega_showdown/showdown/mods/abilities.js (1024 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if ((from && typeof from === "object") || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
+  }
+  return to;
+};
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var abilities_exports = {};
+__export(abilities_exports, {
+  Abilities: () => Abilities,
+});
+module.exports = __toCommonJS(abilities_exports);
+const Abilities = {};
+
+
+### assets/mega_showdown/showdown/mods/conditions.js (989 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var conditions_exports = {};
+__export(conditions_exports, {
+  Conditions: () => Conditions
+});
+module.exports = __toCommonJS(conditions_exports);
+const Conditions = {}
+
+### assets/mega_showdown/showdown/mods/items.js (1000 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if ((from && typeof from === "object") || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
+  }
+  return to;
+};
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var items_exports = {};
+__export(items_exports, {
+  Items: () => Items,
+});
+module.exports = __toCommonJS(items_exports);
+const Items = {};
+
+
+### assets/mega_showdown/showdown/mods/moves.js (1000 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if ((from && typeof from === "object") || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
+  }
+  return to;
+};
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var moves_exports = {};
+__export(moves_exports, {
+  Moves: () => Moves,
+});
+module.exports = __toCommonJS(moves_exports);
+const Moves = {};
+
+
+### assets/mega_showdown/showdown/mods/typechart.js (1063 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if ((from && typeof from === "object") || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
+  }
+  return to;
+};
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var typechart_exports = {};
+__export(typechart_exports, {
+  TypeChart: () => TypeChart,
+});
+module.exports = __toCommonJS(typechart_exports);
+const TypeChart = {};
+//# sourceMappingURL=typechart.js.map
+
+
+### assets/mega_showdown/showdown/moves.js (573382 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var moves_exports = {};
+__export(moves_exports, {
+  Moves: () => Moves
+});
+module.exports = __toCommonJS(moves_exports);
+const Moves = {
+  "10000000voltthunderbolt": {
+    num: 719,
+    accuracy: true,
+    basePower: 195,
+    category: "Special",
+    isNonstandard: "Past",
+    name: "10,000,000 Volt Thunderbolt",
+    pp: 1,
+    priority: 0,
+    flags: {},
+    isZ: "pikashuniumz",
+    critRatio: 3,
+    secondary: null,
+    target: "normal",
+    type: "Electric",
+    contestType: "Cool"
+  },
+  absorb: {
+    num: 71,
+    accuracy: 100,
+    basePower: 20,
+    category: "Special",
+    name: "Absorb",
+    pp: 25,
+    priority: 0,
+    flags: { protect: 1, mirror: 1, heal: 1, metronome: 1 },
+    drain: [1, 2],
+    secondary: null,
+    target: "normal",
+    type: "Grass",
+    contestType: "Clever"
+  },
+  accelerock: {
+    num: 709,
+    accuracy: 100,
+    basePower: 40,
+    category: "Physical",
+    name: "Accelerock",
+    pp: 20,
+    priority: 1,
+    flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+    secondary: null,
+    target: "normal",
+    type: "Rock",
+    contestType: "Cool"
+  },
+  acid: {
+    num: 51,
+    accuracy: 100,
+    basePower: 40,
+    category: "Special",
+    name: "Acid",
+    pp: 30,
+    priority: 0,
+    flags: { protect: 1, mirror: 1, metronome: 1 },
+    secondary: {
+      chance: 10,
+      boosts: {
+        spd: -1
+      }
+    },
+    target: "allAdjacentFoes",
+    type: "Poison",
+    contestType: "Clever"
+  },
+  acidarmor: {
+    num: 151,
+    accuracy: true,
+    basePower: 0,
+    category: "Status",
+    name: "Acid Armor",
+    pp: 20,
+    priority: 0,
+    flags: { snatch: 1, metronome: 1 },
+    boosts: {
+      def: 2
+    },
+    secondary: null,
+    target: "self",
+    type: "Poison",
+    zMove: { effect: "clearnegativeboost" },
+    contestType: "Tough"
+  },
+  aciddownpour: {
+    num: 628,
+    accuracy: true,
+    basePower: 1,
+    category: "Physical",
+    isNonstandard: "Past",
+    name: "Acid Downpour",
+    pp: 1,
+    priority: 0,
+    flags: {},
+    isZ: "poisoniumz",
+    secondary: null,
+    target: "normal",
+    type: "Po
+
+### assets/mega_showdown/showdown/pokemon.js (66361 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var pokemon_exports = {};
+__export(pokemon_exports, {
+  Pokemon: () => Pokemon,
+  RESTORATIVE_BERRIES: () => RESTORATIVE_BERRIES
+});
+module.exports = __toCommonJS(pokemon_exports);
+var import_state = require("./state");
+var import_dex = require("./dex");
+/**
+ * Simulator Pokemon
+ * Pokemon Showdown - http://pokemonshowdown.com/
+ *
+ * @license MIT license
+ */
+const RESTORATIVE_BERRIES = /* @__PURE__ */ new Set([
+  "leppaberry",
+  "aguavberry",
+  "enigmaberry",
+  "figyberry",
+  "iapapaberry",
+  "magoberry",
+  "sitrusberry",
+  "wikiberry",
+  "oranberry"
+]);
+class Pokemon {
+  constructor(set, side) {
+    this.getDetails = () => {
+      const health = this.getHealth();
+      let details = this.details;
+      if (this.illusion) {
+        const level = this.battle.ruleTable.has("illusionlevelmod") ? this.illusion.level : this.level;
+        let displayedSpeciesName = this.illusion.species.name;
+        if (displayedSpeciesName === "Greninja-Bond")
+          displayedSpeciesName = "Greninja";
+        const illusionDetails = displayedSpeciesName + "," + this.illusion.uuid + (level === 100 ? "" : ", L" + level) + (this.illusion.gender === "" ? "" : ", " + this.illusion.gender) + (this.illusion.set.shiny ? ", shiny" : "");
+        details = illusionDetails;
+      }
+      if (this.terastallized)
+        details += `, tera:${this.terastallized}`;
+      return { side: health.side, secret: `${details}|${health.secret}`, shared: `${details}|${health.shared}` };
+    };
+    this.getHealth = () => {
+      if (!this.hp)
+        return { side: this.side.id, secret: "0 fnt", shared: "0 fnt" };
+      let secret = `${this.hp}/${this.maxhp}`;
+      let shared;
+      const ratio = this.hp / this.maxhp;
+      if (this.battle.reportExactHP) {
+        shared = secret;
+      } else if (this.battle.reportPercentages || this.battle.gen >= 8) {
+        let percentage = Math.ceil(ratio * 100);
+        if (percentage === 100 && ratio < 1) {
+          percentage = 99;
+        }
+        shared = `${percentage}/100`;
+      } else {
+        const pixels = Math.floor(ratio * 48) || 1;
+        shared = `${pixels}/48`;
+        i
+
+### assets/mega_showdown/showdown/side.js (37333 o)
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var side_exports = {};
+__export(side_exports, {
+  Side: () => Side
+});
+module.exports = __toCommonJS(side_exports);
+var import_lib = require("../lib");
+var import_pokemon = require("./pokemon");
+var import_state = require("./state");
+var import_dex = require("./dex");
+/**
+ * Simulator Side
+ * Pokemon Showdown - http://pokemonshowdown.com/
+ *
+ * There's a lot of ambiguity between the terms "player", "side", "team",
+ * and "half-field", which I'll try to explain here:
+ *
+ * These terms usually all mean the same thing. The exceptions are:
+ *
+ * - Multi-battle: there are 2 half-fields, 2 teams, 4 sides
+ *
+ * - Free-for-all: there are 2 half-fields, 4 teams, 4 sides
+ *
+ * "Half-field" is usually abbreviated to "half".
+ *
+ * Function naming will be very careful about which term to use. Pay attention
+ * if it's relevant to your code.
+ *
+ * @license MIT
+ */
+class Side {
+  constructor(name, battle, sideNum, team) {
+    this.foe = null;
+    // set in battle.start()
+    /** Only exists in multi battle, for the allied side */
+    this.allySide = null;
+    /** only used by Gen 1 Counter */
+    this.lastSelectedMove = "";
+    const sideScripts = battle.dex.data.Scripts.side;
+    if (sideScripts)
+      Object.assign(this, sideScripts);
+    this.battle = battle;
+    this.id = ["p1", "p2", "p3", "p4"][sideNum];
+    this.n = sideNum;
+    this.name = name;
+    this.avatar = "";
+    this.team = team;
+    this.pokemon = [];
+    for (let i = 0; i < this.team.length && i < 24; i++) {
+      this.pokemon.push(new import_pokemon.Pokemon(this.team[i], this));
+      this.pokemon[i].position = i;
+    }
+    switch (this.battle.gameType) {
+      case "doubles":
+        this.active = [null, null];
+        break;
+      case "triples":
+      case "rotation":
+        this.active = [null, null, null];
+        break;
+      default:
+        this.active = [null];
+    }
+    this.pokemonLeft = this.pokemon.filter((pk) => !pk.fainted).length;
+    this.faintedLastTurn = null;
+    this.faintedThisTurn = null;
+    this.totalFainted = 0;
+    this.zMoveUsed = false;
+	this.dynamaxUsed = false;
+    this.sideConditions = {};
+ 
+
+### data/cobblemon/bag_items/max_honey.js (709 o)
+{
+    use(battle, pokemon, itemId, data) {
+        var healthRatio = parseFloat(1);
+        if (pokemon.fainted) {
+			if (pokemon.position < pokemon.side.active.length) {
+				battle.queue.addChoice({
+					choice: 'instaswitch',
+					pokemon: pokemon,
+					target: pokemon,
+				});
+			}
+            pokemon.fainted = false;
+            pokemon.side.pokemonLeft++;
+            pokemon.faintQueued = false;
+            pokemon.subFainted = false;
+            pokemon.hp = 1;
+            pokemon.cureStatus(false);
+            pokemon.sethp(Math.floor(healthRatio * pokemon.maxhp));
+            battle.add('-heal', pokemon, pokemon.getHealth, '[from] bagitem: ' + itemId);
+        }
+    }
+}
+
+
+### data/cobblemon/bag_items/max_mushroom.js (564 o)
+{
+    use(battle, pokemon, itemId, data) {
+    console.log(data);
+        var stat1 = data[0];
+        var stat2 = data[1];
+        var stat3 = data[2];
+        var stat4 = data[3];
+        var stat5 = data[4];
+
+        var boosts = {};
+        boosts[stat1] = parseInt(data[5]);
+        boosts[stat2] = parseInt(data[5]);
+        boosts[stat3] = parseInt(data[5]);
+        boosts[stat4] = parseInt(data[5]);
+        boosts[stat5] = parseInt(data[5]);
+        battle.boost(boosts, pokemon, null, { effectType: 'BagItem', name: itemId });
+    }
+}
+
+
+### data/mega_showdown/mega_showdown/showdown/abilities/auraguard.js (210 o)
+({
+  onSourceModifyDamage(damage, source, target, move) {
+    if (move.flags["contact"]) return this.chainModify(0.5);
+  },
+  flags: { breakable: 1 },
+  name: "Aura Guard",
+  rating: 3.5,
+  num: -218
+})
+
+### data/mega_showdown/mega_showdown/showdown/conditions/alphaboost.js (812 o)
+({
+    name: "alphaboost",
+    onStart(target, source, sourceEffect) {
+      const stats = ["atk", "def", "spa", "spd", "spe"];
+      const boost = { atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
+      const pool = stats.slice();
+      const count = Math.floor(target.level / 10) + 1;
+      for (let i = 0; i < count; i++) {
+        if (!pool.length)
+          break;
+        const idx = this.random(pool.length);
+        const stat = pool[idx];
+        boost[stat] = (boost[stat] ?? 0) + 1;
+        if ((boost[stat] ?? 0) >= 6) {
+          pool[idx] = pool[pool.length - 1];
+          pool.pop();
+        }
+      }
+      let boostName;
+      for (boostName in boost) {
+        target.alphaBoosts[boostName] = boost[boostName];
+      }
+      this.add("-start", target, "alphaboost");
+    }
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/abomasite.js (263 o)
+({
+  name: "Abomasite",
+	spritenum: 575,
+	megaStone: { "Abomasnow": "Abomasnow-Mega" },
+	itemUser: ["Abomasnow"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 674,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/absolite.js (250 o)
+({
+  name: "Absolite",
+	spritenum: 576,
+	megaStone: { "Absol": "Absol-Mega" },
+	itemUser: ["Absol"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 677,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/aerodactylite.js (270 o)
+({
+  name: "Aerodactylite",
+	spritenum: 577,
+	megaStone: { "Aerodactyl": "Aerodactyl-Mega" },
+	itemUser: ["Aerodactyl"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 672,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/aggronite.js (254 o)
+({
+  name: "Aggronite",
+	spritenum: 578,
+	megaStone: { "Aggron": "Aggron-Mega" },
+	itemUser: ["Aggron"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 667,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/alakazite.js (260 o)
+({
+  name: "Alakazite",
+	spritenum: 579,
+	megaStone: { "Alakazam": "Alakazam-Mega" },
+	itemUser: ["Alakazam"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 679,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/altarianite.js (259 o)
+({
+  name: "Altarianite",
+	spritenum: 615,
+	megaStone: { "Altaria": "Altaria-Mega" },
+	itemUser: ["Altaria"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 755,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/ampharosite.js (262 o)
+({
+  name: "Ampharosite",
+	spritenum: 580,
+	megaStone: { "Ampharos": "Ampharos-Mega" },
+	itemUser: ["Ampharos"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 658,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/audinite.js (253 o)
+({
+  name: "Audinite",
+	spritenum: 617,
+	megaStone: { "Audino": "Audino-Mega" },
+	itemUser: ["Audino"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 757,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/banettite.js (257 o)
+({
+  name: "Banettite",
+	spritenum: 582,
+	megaStone: { "Banette": "Banette-Mega" },
+	itemUser: ["Banette"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 668,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/beedrillite.js (262 o)
+({
+  name: "Beedrillite",
+	spritenum: 628,
+	megaStone: { "Beedrill": "Beedrill-Mega" },
+	itemUser: ["Beedrill"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 770,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/blastoisinite.js (267 o)
+({
+  name: "Blastoisinite",
+	spritenum: 583,
+	megaStone: { "Blastoise": "Blastoise-Mega" },
+	itemUser: ["Blastoise"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 661,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/blazikenite.js (262 o)
+({
+  name: "Blazikenite",
+	spritenum: 584,
+	megaStone: { "Blaziken": "Blaziken-Mega" },
+	itemUser: ["Blaziken"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 664,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/cameruptite.js (262 o)
+({
+  name: "Cameruptite",
+	spritenum: 625,
+	megaStone: { "Camerupt": "Camerupt-Mega" },
+	itemUser: ["Camerupt"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 767,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/charizarditex.js (270 o)
+({
+  name: "Charizardite X",
+	spritenum: 585,
+	megaStone: { "Charizard": "Charizard-Mega-X" },
+	itemUser: ["Charizard"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 660,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/charizarditey.js (270 o)
+({
+  name: "Charizardite Y",
+	spritenum: 586,
+	megaStone: { "Charizard": "Charizard-Mega-Y" },
+	itemUser: ["Charizard"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 678,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/diancite.js (256 o)
+({
+  name: "Diancite",
+	spritenum: 624,
+	megaStone: { "Diancie": "Diancie-Mega" },
+	itemUser: ["Diancie"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 764,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/galladite.js (257 o)
+({
+  name: "Galladite",
+	spritenum: 616,
+	megaStone: { "Gallade": "Gallade-Mega" },
+	itemUser: ["Gallade"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 756,
+	gen: 6,
+	isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/garchompite.js (271 o)
+({
+  name: "Garchompite",
+  spritenum: 573,
+  megaStone: { "Garchomp": "Garchomp-Mega" },
+  itemUser: ["Garchomp"],
+  onTakeItem(item, source) {
+  	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 683,
+  gen: 6,
+  isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/gardevoirite.js (275 o)
+({
+  name: "Gardevoirite",
+  spritenum: 587,
+  megaStone: { "Gardevoir": "Gardevoir-Mega" },
+  itemUser: ["Gardevoir"],
+  onTakeItem(item, source) {
+  	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 657,
+  gen: 6,
+  isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/gengarite.js (263 o)
+({
+  name: "Gengarite",
+  spritenum: 588,
+  megaStone: { "Gengar": "Gengar-Mega" },
+  itemUser: ["Gengar"],
+  onTakeItem(item, source) {
+  	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 656,
+  gen: 6,
+  isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/glalitite.js (283 o)
+({
+    name: "Glalitite",
+    spritenum: 623,
+    megaStone: { "Glalie": "Glalie-Mega" },
+    itemUser: ["Glalie"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 763,
+    gen: 6,
+    isNonstandard: "Past",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/gyaradosite.js (292 o)
+({
+    name: "Gyaradosite",
+    spritenum: 589,
+    megaStone: { "Gyarados": "Gyarados-Mega" },
+    itemUser: ["Gyarados"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 676,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/heracronite.js (295 o)
+({
+    name: "Heracronite",
+    spritenum: 590,
+    megaStone: { "Heracross": "Heracross-Mega" },
+    itemUser: ["Heracross"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 680,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/houndoominite.js (294 o)
+({
+    name: "Houndoominite",
+    spritenum: 591,
+    megaStone: { "Houndoom": "Houndoom-Mega" },
+    itemUser: ["Houndoom"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 666,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/kangaskhanite.js (300 o)
+({
+    name: "Kangaskhanite",
+    spritenum: 592,
+    megaStone: { "Kangaskhan": "Kangaskhan-Mega" },
+    itemUser: ["Kangaskhan"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 675,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/latiasite.js (284 o)
+({
+    name: "Latiasite",
+    spritenum: 629,
+    megaStone: { "Latias": "Latias-Mega" },
+    itemUser: ["Latias"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 684,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/latiosite.js (284 o)
+({
+    name: "Latiosite",
+    spritenum: 630,
+    megaStone: { "Latios": "Latios-Mega" },
+    itemUser: ["Latios"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 685,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/lopunnite.js (287 o)
+({
+    name: "Lopunnite",
+    spritenum: 626,
+    megaStone: { "Lopunny": "Lopunny-Mega" },
+    itemUser: ["Lopunny"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 768,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/lucarionite.js (289 o)
+({
+    name: "Lucarionite",
+    spritenum: 594,
+    megaStone: { "Lucario": "Lucario-Mega" },
+    itemUser: ["Lucario"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 673,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/manectite.js (293 o)
+({
+    name: "Manectite",
+    spritenum: 596,
+    megaStone: { "Manectric": "Manectric-Mega" },
+    itemUser: ["Manectric"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 682,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/mawilite.js (283 o)
+({
+    name: "Mawilite",
+    spritenum: 598,
+    megaStone: { "Mawile": "Mawile-Mega" },
+    itemUser: ["Mawile"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 681,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/medichamite.js (292 o)
+({
+    name: "Medichamite",
+    spritenum: 599,
+    megaStone: { "Medicham": "Medicham-Mega" },
+    itemUser: ["Medicham"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 665,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/metagrossite.js (296 o)
+({
+    name: "Metagrossite",
+    spritenum: 618,
+    megaStone: { "Metagross": "Metagross-Mega" },
+    itemUser: ["Metagross"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 758,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/mewtwonitex.js (289 o)
+({
+    name: "Mewtwonite X",
+    spritenum: 600,
+    megaStone: { "Mewtwo": "Mewtwo-Mega-X" },
+    itemUser: ["Mewtwo"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 662,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/mewtwonitey.js (289 o)
+({
+    name: "Mewtwonite Y",
+    spritenum: 601,
+    megaStone: { "Mewtwo": "Mewtwo-Mega-Y" },
+    itemUser: ["Mewtwo"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 663,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/pidgeotite.js (288 o)
+({
+    name: "Pidgeotite",
+    spritenum: 622,
+    megaStone: { "Pidgeot": "Pidgeot-Mega" },
+    itemUser: ["Pidgeot"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 762,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/pinsirite.js (284 o)
+({
+    name: "Pinsirite",
+    spritenum: 602,
+    megaStone: { "Pinsir": "Pinsir-Mega" },
+    itemUser: ["Pinsir"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 671,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/sablenite.js (287 o)
+({
+    name: "Sablenite",
+    spritenum: 614,
+    megaStone: { "Sableye": "Sableye-Mega" },
+    itemUser: ["Sableye"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 754,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/salamencite.js (295 o)
+({
+    name: "Salamencite",
+    spritenum: 627,
+    megaStone: { "Salamence": "Salamence-Mega" },
+    itemUser: ["Salamence"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 769,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/sceptilite.js (291 o)
+({
+    name: "Sceptilite",
+    spritenum: 613,
+    megaStone: { "Sceptile": "Sceptile-Mega" },
+    itemUser: ["Sceptile"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 753,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/scizorite.js (284 o)
+({
+    name: "Scizorite",
+    spritenum: 605,
+    megaStone: { "Scizor": "Scizor-Mega" },
+    itemUser: ["Scizor"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 670,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/sharpedonite.js (293 o)
+({
+    name: "Sharpedonite",
+    spritenum: 619,
+    megaStone: { "Sharpedo": "Sharpedo-Mega" },
+    itemUser: ["Sharpedo"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 759,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/slowbronite.js (289 o)
+({
+    name: "Slowbronite",
+    spritenum: 620,
+    megaStone: { "Slowbro": "Slowbro-Mega" },
+    itemUser: ["Slowbro"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 760,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/steelixite.js (288 o)
+({
+    name: "Steelixite",
+    spritenum: 621,
+    megaStone: { "Steelix": "Steelix-Mega" },
+    itemUser: ["Steelix"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 761,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/swampertite.js (292 o)
+({
+    name: "Swampertite",
+    spritenum: 612,
+    megaStone: { "Swampert": "Swampert-Mega" },
+    itemUser: ["Swampert"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 752,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/tyranitarite.js (296 o)
+({
+    name: "Tyranitarite",
+    spritenum: 607,
+    megaStone: { "Tyranitar": "Tyranitar-Mega" },
+    itemUser: ["Tyranitar"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 669,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/base_megastones/venusaurite.js (292 o)
+({
+    name: "Venusaurite",
+    spritenum: 608,
+    megaStone: { "Venusaur": "Venusaur-Mega" },
+    itemUser: ["Venusaur"],
+    onTakeItem(item, source) {
+    	return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 659,
+    gen: 6,
+    isNonstandard: "Past",
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/absolitez.js (266 o)
+({
+  name: "Absolite Z",
+  spritenum: 499,
+  megaStone: { "Absol": "Absol-Mega-Z" },
+  itemUser: ["Absol"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2638,
+	gen: 9,
+  isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/barbaracite.js (278 o)
+({
+  name: "Barbaracite",
+	spritenum: 564,
+  megaStone: { "Barbaracle": "Barbaracle-Mega" },
+  itemUser: ["Barbaracle"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2581,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/baxcalibrite.js (280 o)
+({
+  name: "Baxcalibrite",
+  spritenum: 514,
+  megaStone: { "Baxcalibur": "Baxcalibur-Mega" },
+  itemUser: ["Baxcalibur"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2648,
+	gen: 9,
+  isNonstandard: "Future"
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/chandelurite.js (293 o)
+({
+    name: "Chandelurite",
+	  spritenum: 557,
+	  megaStone: { "Chandelure": "Chandelure-Mega" },
+	  itemUser: ["Chandelure"],
+	  onTakeItem(item, source) {
+	    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	  },
+	  num: 2574,
+	  gen: 9,
+	  isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/chesnaughtite.js (273 o)
+({
+  name: "Chesnaughtite",
+	spritenum: 558,
+	megaStone: { "Chesnaught": "Chesnaught-Mega" },
+	itemUser: ["Chesnaught"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2575,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/chimechite.js (264 o)
+({
+  name: "Chimechite",
+	spritenum: 498,
+	megaStone: { "Chimecho": "Chimecho-Mega" },
+	itemUser: ["Chimecho"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2637,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/clefablite.js (264 o)
+({
+  name: "Clefablite",
+	spritenum: 544,
+	megaStone: { "Clefable": "Clefable-Mega" },
+	itemUser: ["Clefable"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2559,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/crabominite.js (277 o)
+({
+  name: "Crabominite",
+	spritenum: 507,
+	megaStone: { "Crabominable": "Crabominable-Mega" },
+	itemUser: ["Crabominable"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2644,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/delphoxite.js (261 o)
+({
+  name: "Delphoxite",
+	spritenum: 559,
+	megaStone: { "Delphox": "Delphox-Mega" },
+	itemUser: ["Delphox"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2576,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/dragalgite.js (271 o)
+({
+  name: "Dragalgite",
+	spritenum: 565,
+  megaStone: { "Dragalge": "Dragalge-Mega" },
+  itemUser: ["Dragalge"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2582,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/dragoninite.js (268 o)
+({
+  name: "Dragoninite",
+	spritenum: 547,
+	megaStone: { "Dragonite": "Dragonite-Mega" },
+	itemUser: ["Dragonite"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2562,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/drampanite.js (260 o)
+({
+  name: "Drampanite",
+	spritenum: 569,
+	megaStone: { "Drampa": "Drampa-Mega" },
+	itemUser: ["Drampa"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2585,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/eelektrossite.js (280 o)
+({
+  name: "Eelektrossite",
+	spritenum: 556,
+  megaStone: { "Eelektross": "Eelektross-Mega" },
+  itemUser: ["Eelektross"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2573,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/emboarite.js (257 o)
+({
+  name: "Emboarite",
+	spritenum: 552,
+	megaStone: { "Emboar": "Emboar-Mega" },
+	itemUser: ["Emboar"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2569,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/excadrite.js (266 o)
+({
+  name: "Excadrite",
+	spritenum: 553,
+	megaStone: { "Excadrill": "Excadrill-Mega" },
+	itemUser: ["Excadrill"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2570,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/falinksite.js (268 o)
+({
+  name: "Falinksite",
+	spritenum: 570,
+  megaStone: { "Falinks": "Falinks-Mega" },
+  itemUser: ["Falinks"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2587,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/feraligite.js (270 o)
+({
+  name: "Feraligite",
+	spritenum: 549,
+	megaStone: { "Feraligatr": "Feraligatr-Mega" },
+	itemUser: ["Feraligatr"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2564,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/floettite.js (276 o)
+({
+  name: "Floettite",
+	spritenum: 562,
+	megaStone: { "Floette-Eternal": "Floette-Mega" },
+	itemUser: ["Floette-Eternal"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2579,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/froslassite.js (265 o)
+({
+  name: "Froslassite",
+	spritenum: 551,
+	megaStone: { "Froslass": "Froslass-Mega" },
+	itemUser: ["Froslass"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2566,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/garchompitez.js (277 o)
+({
+  name: "Garchompite Z",
+  spritenum: 501,
+  megaStone: { "Garchomp": "Garchomp-Mega-Z" },
+  itemUser: ["Garchomp"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2640,
+	gen: 9,
+  isNonstandard: "Future"
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/glimmoranite.js (266 o)
+({
+  name: "Glimmoranite",
+	spritenum: 512,
+	megaStone: { "Glimmora": "Glimmora-Mega" },
+	itemUser: ["Glimmora"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2650,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/golisopite.js (274 o)
+({
+  name: "Golisopite",
+  spritenum: 508,
+  megaStone: { "Golisopod": "Golisopod-Mega" },
+  itemUser: ["Golisopod"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+	num: 2645,
+	gen: 9,
+  isNonstandard: "Future"
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/golurkite.js (257 o)
+({
+  name: "Golurkite",
+	spritenum: 505,
+	megaStone: { "Golurk": "Golurk-Mega" },
+	itemUser: ["Golurk"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2642,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/greninjite.js (264 o)
+({
+  name: "Greninjite",
+	spritenum: 560,
+	megaStone: { "Greninja": "Greninja-Mega" },
+	itemUser: ["Greninja"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2577,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/hawluchanite.js (266 o)
+({
+  name: "Hawluchanite",
+	spritenum: 566,
+	megaStone: { "Hawlucha": "Hawlucha-Mega" },
+	itemUser: ["Hawlucha"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2583,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/lucarionitez.js (272 o)
+({
+  name: "Lucarionite Z",
+	spritenum: 502,
+  megaStone: { "Lucario": "Lucario-Mega-Z" },
+  itemUser: ["Lucario"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+	num: 2641,
+	gen: 9,
+  isNonstandard: "Future"
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/malamarite.js (268 o)
+({
+  name: "Malamarite",
+	spritenum: 563,
+  megaStone: { "Malamar": "Malamar-Mega" },
+  itemUser: ["Malamar"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2580,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/meganiumite.js (265 o)
+({
+  name: "Meganiumite",
+	spritenum: 548,
+	megaStone: { "Meganium": "Meganium-Mega" },
+	itemUser: ["Meganium"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2563,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/meowsticite.js (369 o)
+({
+    name: "Meowsticite",
+    spritenum: 506,
+    megaStone: {
+        "Meowstic": "Meowstic-M-Mega",
+        "Meowstic-F": "Meowstic-F-Mega"
+    },
+    itemUser: ["Meowstic", "Meowstic-F"],
+    onTakeItem(item, source) {
+        return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 2643,
+    gen: 9,
+    isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/pyroarite.js (288 o)
+({
+    name: "Pyroarite",
+    spritenum: 561,
+    megaStone: { "Pyroar": "Pyroar-Mega" },
+    itemUser: ["Pyroar"],
+    onTakeItem(item, source) {
+       return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+    num: 2578,
+    gen: 9,
+    isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/raichunitex.js (272 o)
+({
+  name: "Raichunite X",
+	spritenum: 497,
+  megaStone: { "Raichu": "Raichu-Mega-X" },
+  itemUser: ["Raichu"],
+    onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+	num: 2636,
+	gen: 9,
+	isNonstandard: "Future"
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/raichunitey.js (272 o)
+({
+  name: "Raichunite Y",
+	spritenum: 496,
+  megaStone: { "Raichu": "Raichu-Mega-Y" },
+  itemUser: ["Raichu"],
+    onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+    },
+	num: 2635,
+	gen: 9,
+	isNonstandard: "Future"
+}) 
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/scolipite.js (273 o)
+({
+  name: "Scolipite",
+	spritenum: 554,
+  megaStone: { "Scolipede": "Scolipede-Mega" },
+  itemUser: ["Scolipede"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2571,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/scovillainite.js (273 o)
+({
+  name: "Scovillainite",
+	spritenum: 511,
+	megaStone: { "Scovillain": "Scovillain-Mega" },
+	itemUser: ["Scovillain"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2647,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/scraftinite.js (269 o)
+({
+  name: "Scraftinite",
+	spritenum: 555,
+  megaStone: { "Scrafty": "Scrafty-Mega" },
+  itemUser: ["Scrafty"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2572,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/skarmorite.js (264 o)
+({
+  name: "Skarmorite",
+	spritenum: 550,
+	megaStone: { "Skarmory": "Skarmory-Mega" },
+	itemUser: ["Skarmory"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2565,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/staraptite.js (274 o)
+({
+  name: "Staraptite",
+	spritenum: 500,
+  megaStone: { "Staraptor": "Staraptor-Mega" },
+  itemUser: ["Staraptor"],
+  onTakeItem(item, source) {
+    return !item.megaStone?.[source.baseSpecies.baseSpecies];
+  },
+  num: 2639,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/starminite.js (261 o)
+({
+  name: "Starminite",
+	spritenum: 546,
+	megaStone: { "Starmie": "Starmie-Mega" },
+	itemUser: ["Starmie"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2561,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/champions_megastones/victreebelite.js (273 o)
+({
+  name: "Victreebelite",
+	spritenum: 545,
+	megaStone: { "Victreebel": "Victreebel-Mega" },
+	itemUser: ["Victreebel"],
+	onTakeItem(item, source) {
+		return !item.megaStone?.[source.baseSpecies.baseSpecies];
+	},
+	num: 2560,
+	gen: 9,
+	isNonstandard: "Future",
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/eviolite.js (946 o)
+{
+    name: "Eviolite",
+    spritenum: 130,
+    fling: {
+      basePower: 40
+    },
+    onModifyDefPriority: 2,
+    onModifyDef(def, pokemon) {
+      const exceptions = ["Pikachu-Original", "Pikachu-Hoenn", "Pikachu-Sinnoh", "Pikachu-Unova", "Pikachu-Kalos", "Pikachu-Alola", "Pikachu-Partner", "Pikachu-World"];
+      if (pokemon.baseSpecies.nfe) {
+        if (exceptions.includes(pokemon.species.name)) {
+          return;
+        }
+        return this.chainModify(1.5);
+      }
+    },
+    onModifySpDPriority: 2,
+    onModifySpD(spd, pokemon) {
+      const exceptions = ["Pikachu-Original", "Pikachu-Hoenn", "Pikachu-Sinnoh", "Pikachu-Unova", "Pikachu-Kalos", "Pikachu-Alola", "Pikachu-Partner", "Pikachu-World"];
+      if (pokemon.baseSpecies.nfe) {
+        if (exceptions.includes(pokemon.species.name)) {
+          return;
+        }
+        return this.chainModify(1.5);
+      }
+    },
+    num: 538,
+    gen: 5
+}
+
+### data/mega_showdown/mega_showdown/showdown/held_items/legendplate.js (1035 o)
+{
+name: "Legend Plate",
+    onTryMove(p, t, m) {
+      if (!(p.hasItem('legendplate') && m.id === 'judgment')) return;
+      const tt = t.getTypes().length ? t.getTypes() : t.species.types, tn = this.dex.types.names();
+      let bt = [], hs = -Infinity;
+      for (const at of tn) {
+        if (tt.some(dt => !this.dex.getImmunity(at, dt))) continue;
+        const s = tt.reduce((a, dt) => a + (e = this.dex.getEffectiveness(at, dt), e === 2 ? 4 : e === 1 ? 2 : e === -1 ? -1 : e === -2 ? -2 : 0), 0);
+        if (s > hs) bt = [at], hs = s;
+        else if (s === hs) bt.push(at);
+      }
+      const btFinal = bt.includes('Normal') ? 'Normal' : this.sample(bt);
+      if (p.name !== 'Arceus') return;
+      const f = `Arceus-${btFinal}`, sp = this.dex.species.get(`arceus${btFinal.toLowerCase()}`);
+      if (sp.exists && this.dex.species.get(f).exists && p.species.name !== f) p.formeChange(f, null, true);
+      m.type = btFinal, m.ignoreAbility = true;
+    },
+	onTakeItem: false,
+    num: 2000,
+    gen: 9,
+  }
+
+### data/mega_showdown/mega_showdown/showdown/held_items/pikaniumz.js (211 o)
+{
+	name: "Pikanium Z",
+	spritenum: 649,
+	onTakeItem: false,
+	zMove: "Catastropika",
+	zMoveFrom: "Volt Tackle",
+	itemUser: ["Pikachu", "Pikachu-Alola-Bias"],
+	num: 794,
+	gen: 7,
+	isNonstandard: "Past"
+}
+
+### data/mega_showdown/mega_showdown/showdown/held_items/pikashuniumz.js (347 o)
+{
+  name: "Pikashunium Z",
+  spritenum: 659,
+  onTakeItem: false,
+  zMove: "10,000,000 Volt Thunderbolt",
+  zMoveFrom: "Thunderbolt",
+  itemUser: ["Pikachu-Original", "Pikachu-Hoenn", "Pikachu-Sinnoh", "Pikachu-Unova", "Pikachu-Kalos", "Pikachu-Alola", "Pikachu-Partner", "Pikachu-World"],
+  num: 836,
+  isNonstandard: "Past",
+  gen: 7
+}
+
+### data/mega_showdown/mega_showdown/showdown/held_items/rustedshield.js (1025 o)
+({
+  name: 'Rusted Shield',
+  spritenum: 699,
+  onSwitchIn(pokemon) {
+    if (!pokemon.isActive || pokemon.baseSpecies.baseSpecies !== "Zamazenta") return;
+    if (pokemon.species.name !== "Zamazenta-Crowned") {
+      pokemon.formeChange("Zamazenta-Crowned", this.effect, true);
+    }
+    for (const moveSlot of pokemon.moveSlots) {
+      if (moveSlot.id !== 'ironhead') continue;
+      const oldMove = this.dex.moves.get(moveSlot.id);
+      const newMove = this.dex.moves.get('behemothbash');
+      if (!newMove.exists) continue;
+      const ppRatio = oldMove.pp ? moveSlot.maxpp / oldMove.pp : 1;
+      const newMaxPP = Math.floor(newMove.pp * ppRatio);
+      moveSlot.id = newMove.id;
+      moveSlot.pp = newMaxPP;
+      moveSlot.maxpp = newMaxPP;
+    }
+  },
+  onTakeItem(item, pokemon, source) {
+    if (
+      (source && source.baseSpecies.num === 889) || pokemon.baseSpecies.num === 889) {
+      return false;
+    }
+    return true;
+  },
+  itemUser: ['Zamazenta'],
+  num: 1104,
+  gen: 8
+})
+
+### data/mega_showdown/mega_showdown/showdown/held_items/rustedsword.js (1013 o)
+({
+  name: 'Rusted Sword',
+  spritenum: 698,
+  onSwitchIn(pokemon) {
+    if (!pokemon.isActive || pokemon.baseSpecies.baseSpecies !== "Zacian") return;
+    if (pokemon.species.name !== "Zacian-Crowned") {
+      pokemon.formeChange("Zacian-Crowned", this.effect, true);
+    }
+    for (const moveSlot of pokemon.moveSlots) {
+      if (moveSlot.id !== 'ironhead') continue;
+      const oldMove = this.dex.moves.get(moveSlot.id);
+      const newMove = this.dex.moves.get('behemothblade');
+      if (!newMove.exists) continue;
+      const ppRatio = oldMove.pp ? moveSlot.maxpp / oldMove.pp : 1;
+      const newMaxPP = Math.floor(newMove.pp * ppRatio);
+      moveSlot.id = newMove.id;
+      moveSlot.pp = newMaxPP;
+      moveSlot.maxpp = newMaxPP;
+    }
+  },
+  onTakeItem(item, pokemon, source) {
+    if (
+      (source && source.baseSpecies.num === 888) || pokemon.baseSpecies.num === 888) {
+      return false;
+    }
+    return true;
+  },
+  itemUser: ['Zacian'],
+  num: 1103,
+  gen: 8
+})

@@ -1,0 +1,92 @@
+== cobblemon impactdev fabric
+1.7.3+1.21.1
+1.8.0+1.21.1-SNAPSHOT
+1.8.0+1.21.1
+1.8.1+1.21.1-SNAPSHOT
+1.8.1+1.21.1
+1.8.2+1.21.1-SNAPSHOT
+1.8.2+1.21.1
+1.8.3+1.21.1-SNAPSHOT
+1.8.3+1.21.1
+1.8.4+1.21.1-SNAPSHOT
+1.8.4+1.21.1
+1.8.5+1.21.1-SNAPSHOT
+== fabric-api 1.21.1
+0.116.16+1.21.1
+0.116.17+1.21.1
+0.116.18+1.21.1
+== placeholder-api
+2.6.0+1.21.5
+2.6.1+1.21.5
+2.6.2+1.21.5
+2.6.3+1.21.5
+2.6.4+1.21.5
+2.7.0+1.21.6
+2.7.1+1.21.6
+2.7.2+1.21.8
+2.8.0-rc.1+1.21.9
+2.8.0+1.21.9
+2.8.1+1.21.10
+2.8.2+1.21.10
+== modrinth cobblemon
+1.8.4F | id=PdOzYHKU | 2026-10-27T10:10:48.752181Z | Cobblemon-fabric-1.8.4+1.21.1.jar | deps=P7dR8mSH:required
+1.8.3F | id=IgUZQKm8 | 2026-10-25T00:36:25.825963Z | Cobblemon-fabric-1.8.3+1.21.1.jar | deps=P7dR8mSH:required
+1.8.2 | id=GJ2a1b8O | 2026-10-11T01:37:22.732220Z | Cobblemon-fabric-1.8.2+1.21.1.jar | deps=P7dR8mSH:required
+1.8.1 | id=gBW3vLC7 | 2026-09-12T23:52:35.907436Z | Cobblemon-fabric-1.8.1+1.21.1.jar | deps=P7dR8mSH:required
+1.8.0 | id=YgmyyFcs | 2026-09-06T01:30:57.678267Z | Cobblemon-fabric-1.8.0+1.21.1.jar | deps=P7dR8mSH:required
+1.7.3 | id=kF7CvxTo | 2026-01-31T01:14:51.955679Z | Cobblemon-fabric-1.7.3+1.21.1.jar | deps=P7dR8mSH:required
+1.7.2 | id=FcsopG0e | 2026-01-25T01:34:45.859657Z | Cobblemon-fabric-1.7.2+1.21.1.jar | deps=P7dR8mSH:required
+1.7.1 | id=s64m1opn | 2025-11-29T02:17:48.697474Z | Cobblemon-fabric-1.7.1+1.21.1.jar | deps=P7dR8mSH:required
+== modrinth fabric-api
+0.116.18+1.21.1 | id=5SwzqWUu | 2026-11-09T15:02:24.365327Z | fabric-api-0.116.18+1.21.1.jar | deps=
+0.116.17+1.21.1 | id=Mys3P7lK | 2026-09-01T16:40:04.373428Z | fabric-api-0.116.17+1.21.1.jar | deps=
+0.116.16+1.21.1 | id=fpB2VatZ | 2026-09-01T10:29:57.072338Z | fabric-api-0.116.16+1.21.1.jar | deps=
+0.116.15+1.21.1 | id=Nlt8gI9z | 2026-07-28T08:41:22.864336Z | fabric-api-0.116.15+1.21.1.jar | deps=
+0.116.14+1.21.1 | id=aUrTRV7H | 2026-07-16T10:23:29.937096Z | fabric-api-0.116.14+1.21.1.jar | deps=
+0.116.13+1.21.1 | id=FHknjVVa | 2026-07-01T12:16:45.241134Z | fabric-api-0.116.13+1.21.1.jar | deps=
+0.116.12+1.21.1 | id=Lwt6YYHL | 2026-05-11T12:22:21.766778Z | fabric-api-0.116.12+1.21.1.jar | deps=
+0.116.11+1.21.1 | id=IpaMcBLh | 2026-04-15T10:06:23.716321Z | fabric-api-0.116.11+1.21.1.jar | deps=
+== modrinth fabric-language-kotlin
+1.14.2+kotlin.2.4.21 | id=SKW1BTL3 | 2026-10-09T08:17:15.786208Z | fabric-language-kotlin-1.14.2+kotlin.2.4.21.jar | deps=
+1.14.1+kotlin.2.4.20 | id=eRRZzGMc | 2026-09-07T12:48:38.555893Z | fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar | deps=
+1.14.0+kotlin.2.4.20 | id=BKnpByHl | 2026-09-07T12:42:46.001553Z | fabric-language-kotlin-1.14.0+kotlin.2.4.20.jar | deps=
+1.13.14+kotlin.2.4.20 | id=KcCe0rZz | 2026-09-07T12:22:21.223836Z | fabric-language-kotlin-1.13.14+kotlin.2.4.20.jar | deps=
+1.13.13+kotlin.2.4.10 | id=bdhiINYC | 2026-07-15T20:14:45.530782Z | fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar | deps=
+1.13.12+kotlin.2.4.0 | id=Pd0xrHCw | 2026-06-03T10:40:44.954667Z | fabric-language-kotlin-1.13.12+kotlin.2.4.0.jar | deps=
+1.13.11+kotlin.2.3.21 | id=2i87JpYj | 2026-04-24T07:48:19.118369Z | fabric-language-kotlin-1.13.11+kotlin.2.3.21.jar | deps=
+1.13.10+kotlin.2.3.20 | id=21TRTKmh | 2026-03-26T08:54:12.652592Z | fabric-language-kotlin-1.13.10+kotlin.2.3.20.jar | deps=
+== modrinth luckperms
+v5.4.140-fabric | id=l47d4ZWk | 2024-08-22T21:33:40.834033Z | LuckPerms-Fabric-5.4.140.jar | deps=
+v5.4.139-fabric | id=oLykW1F8 | 2024-08-12T18:55:25.312627Z | LuckPerms-Fabric-5.4.139.jar | deps=
+== modrinth placeholder-api
+2.4.2+1.21 | id=U5bhVym2 | 2025-01-27T19:08:23.196696Z | placeholder-api-2.4.2+1.21.jar | deps=
+2.4.1+1.21 | id=cE5TczQr | 2024-07-15T13:08:02.625577Z | placeholder-api-2.4.1+1.21.jar | deps=
+== modrinth cobblemon-mega-showdown
+1.3.3+1.8.4+1.21.1-release | id=pToIDLtC | 2026-10-27T14:15:33.668710Z | mega_showdown-fabric-1.3.3+1.8.4+1.21.1-release.jar | deps=lhGA9TYQ:required,P7dR8mSH:required,ccKDOlHs:required,MdwFAVRL:required,jtmvUHXj:required
+1.3.2+1.8.2+1.21.1-release | id=RFWTLHyO | 2026-10-23T13:47:59.795349Z | mega_showdown-fabric-1.3.2+1.8.2+1.21.1-release.jar | deps=MdwFAVRL:required,lhGA9TYQ:required,jtmvUHXj:required,P7dR8mSH:required,ccKDOlHs:required
+1.3.1+1.8.2+1.21.1-release | id=aNO1eGQi | 2026-10-14T13:34:05.751789Z | mega_showdown-fabric-1.3.1+1.8.2+1.21.1-release.jar | deps=P7dR8mSH:required,ccKDOlHs:required,lhGA9TYQ:required,jtmvUHXj:required,MdwFAVRL:required
+1.3.1+1.8.2+1.21.1-release | id=Zmky5j93 | 2026-10-14T09:05:09.989625Z | mega_showdown-fabric-1.3.1+1.8.2+1.21.1-release.jar | deps=lhGA9TYQ:required,MdwFAVRL:required,P7dR8mSH:required,jtmvUHXj:required,ccKDOlHs:required
+1.3.1+1.8.2+1.21.1-release | id=fjbL00ng | 2026-10-14T08:54:28.426337Z | mega_showdown-fabric-1.3.1+1.8.2+1.21.1-release.jar | deps=jtmvUHXj:required,P7dR8mSH:required,ccKDOlHs:required,lhGA9TYQ:required,MdwFAVRL:required
+1.3.1+1.8.2+1.21.1-release | id=SymIA5nV | 2026-10-14T08:44:48.627052Z | mega_showdown-fabric-1.3.1+1.8.2+1.21.1-release.jar | deps=MdwFAVRL:required,ccKDOlHs:required,jtmvUHXj:required,P7dR8mSH:required,lhGA9TYQ:required
+1.3.0+1.8.2+1.21.1-hotfix | id=EAunp9Kz | 2026-10-12T14:23:48.721089Z | mega_showdown-fabric-1.3.0+1.8.2+1.21.1-hotfix.jar | deps=P7dR8mSH:required,jtmvUHXj:required,MdwFAVRL:required,lhGA9TYQ:required,ccKDOlHs:required
+1.3.0+1.8.2+1.21.1-release | id=i7CwMJFd | 2026-10-12T07:26:26.568958Z | mega_showdown-fabric-1.3.0+1.8.2+1.21.1-release.jar | deps=P7dR8mSH:required,jtmvUHXj:required,ccKDOlHs:required,lhGA9TYQ:required,MdwFAVRL:required
+== mega showdown dep architectury-api
+13.0.12+fabric
+13.0.11+fabric
+13.0.8+fabric
+== mega showdown dep fabric-api
+0.116.18+1.21.1
+0.116.17+1.21.1
+0.116.16+1.21.1
+== mega showdown dep owo-lib
+0.13.0-alpha.15+1.21
+0.12.15.4+1.21
+0.12.15.2+1.21
+== mega showdown dep cobblemon
+1.8.4F
+1.8.3F
+1.8.2
+== mega showdown dep accessories
+1.1.0-beta.54+1.21.1
+1.1.0-beta.53+1.21.1
+1.1.0-beta.52+1.21.1

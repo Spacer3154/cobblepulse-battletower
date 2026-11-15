@@ -1,0 +1,60 @@
+t:()Ljava/lang/Object;
+      49: astore        7
+      51: aload         7
+      53: checkcast     #352                // class com/cobblemon/mod/common/api/battles/model/actor/BattleActor
+      56: astore        8
+      58: iconst_0
+      59: istore        9
+      61: aload         8
+      63: invokevirtual #525                // Method com/cobblemon/mod/common/api/battles/model/actor/BattleActor.getPlayerUUIDs:()Ljava/lang/Iterable;
+      66: astore        8
+      68: aload         4
+      70: aload         8
+      72: invokestatic  #513                // Method kotlin/collections/CollectionsKt.addAll:(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+      75: pop
+      76: goto          32
+      79: aload         4
+      81: checkcast     #321                // class java/util/List
+      84: nop
+      85: checkcast     #335                // class java/lang/Iterable
+      88: areturn
+
+  public final java.util.List<net.minecraft.class_3222> getPlayers();
+    Code:
+       0: aload_0
+       1: getfield      #405                // Field players:Ljava/util/List;
+       4: areturn
+
+  public final java.util.Set<java.util.UUID> getSpectators();
+    Code:
+       0: aload_0
+       1: getfield      #412                // Field spectators:Ljava/util/Set;
+       4: areturn
+
+  public final java.util.UUID getBattleId();
+    Code:
+       0: aload_0
+       1: getfield      #417                // Field battleId:Ljava/util/UUID;
+       4: areturn
+
+  public final java.util.List<java.lang.String> getShowdownMessages();
+    Code:
+       0: aload_0
+       1: getfield      #419                // Field showdownMessages:Ljava/util/List;
+       4: areturn
+
+  public final java.util.List<java.lang.String> getBattleLog();
+    Code:
+       0: aload_0
+       1: getfield      #421                // Field battleLog:Ljava/util/List;
+       4: areturn
+
+  public final java.util.List<net.minecraft.class_2561> getChatLog();
+    Code:
+       0: aload_0
+       1: getfield      #423                // Field chatLog:Ljava/util/List;
+       4: areturn
+
+  public final boolean getStarted();
+    Code:
+       0: 

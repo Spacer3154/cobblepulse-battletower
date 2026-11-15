@@ -1,0 +1,697 @@
+Compiled from "PokemonStoreManager.java"
+public class com.cobblemon.mod.common.api.storage.PokemonStoreManager {
+  private final com.cobblemon.mod.common.api.PrioritizedList<com.cobblemon.mod.common.api.storage.factory.PokemonStoreFactory> factories;
+  public com.cobblemon.mod.common.api.storage.PokemonStoreManager();
+  public void registerFactory(com.cobblemon.mod.common.api.Priority, com.cobblemon.mod.common.api.storage.factory.PokemonStoreFactory);
+  public void unregisterFactory(com.cobblemon.mod.common.api.storage.factory.PokemonStoreFactory, net.minecraft.class_5455);
+  public void unregisterAll(net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.party.PlayerPartyStore getParty(net.minecraft.class_3222);
+  public com.cobblemon.mod.common.api.storage.party.PlayerPartyStore getParty(java.util.UUID, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.pc.PCStore getPC(net.minecraft.class_3222);
+  public com.cobblemon.mod.common.api.storage.pc.PCStore getPC(java.util.UUID, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.pc.PCStore getPCForPlayer(net.minecraft.class_3222, com.cobblemon.mod.common.block.entity.PCBlockEntity);
+  public java.lang.Iterable<com.cobblemon.mod.common.api.storage.party.PartyStore> getParties(java.util.UUID, net.minecraft.class_5455);
+  public java.lang.Iterable<com.cobblemon.mod.common.api.storage.pc.PCStore> getPCs(java.util.UUID, net.minecraft.class_5455);
+  public final <E extends com.cobblemon.mod.common.api.storage.StorePosition, T extends com.cobblemon.mod.common.api.storage.PokemonStore<E>> T getCustomStore(java.util.UUID, net.minecraft.class_5455);
+  public <E extends com.cobblemon.mod.common.api.storage.StorePosition, T extends com.cobblemon.mod.common.api.storage.PokemonStore<E>> T getCustomStore(java.lang.Class<T>, java.util.UUID, net.minecraft.class_5455);
+  public void onPlayerDataSync(net.minecraft.class_3222);
+  public void onPlayerDisconnect(net.minecraft.class_3222);
+}
+Compiled from "NPCPartyStore.java"
+public final class com.cobblemon.mod.common.api.storage.party.NPCPartyStore extends com.cobblemon.mod.common.api.storage.party.PartyStore {
+  private final com.cobblemon.mod.common.entity.npc.NPCEntity npc;
+  public com.cobblemon.mod.common.api.storage.party.NPCPartyStore(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public final com.cobblemon.mod.common.entity.npc.NPCEntity getNpc();
+}
+Compiled from "PartyPosition.java"
+public final class com.cobblemon.mod.common.api.storage.party.PartyPosition implements com.cobblemon.mod.common.api.storage.StorePosition {
+  private final int slot;
+  public com.cobblemon.mod.common.api.storage.party.PartyPosition(int);
+  public final int getSlot();
+  public final int component1();
+  public final com.cobblemon.mod.common.api.storage.party.PartyPosition copy(int);
+  public static com.cobblemon.mod.common.api.storage.party.PartyPosition copy$default(com.cobblemon.mod.common.api.storage.party.PartyPosition, int, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "PartyStore.java"
+public class com.cobblemon.mod.common.api.storage.party.PartyStore extends com.cobblemon.mod.common.api.storage.PokemonStore<com.cobblemon.mod.common.api.storage.party.PartyPosition> {
+  private final java.util.UUID uuid;
+  private final java.util.List<com.cobblemon.mod.common.pokemon.Pokemon> slots;
+  private final com.cobblemon.mod.common.api.reactive.SimpleObservable<kotlin.Unit> anyChangeObservable;
+  private java.util.List<java.util.UUID> observerUUIDs;
+  private final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.storage.party.PartyStore> struct;
+  public com.cobblemon.mod.common.api.storage.party.PartyStore(java.util.UUID);
+  public java.util.UUID getUuid();
+  protected final java.util.List<com.cobblemon.mod.common.pokemon.Pokemon> getSlots();
+  protected final com.cobblemon.mod.common.api.reactive.SimpleObservable<kotlin.Unit> getAnyChangeObservable();
+  public final java.util.List<java.util.UUID> getObserverUUIDs();
+  public final void setObserverUUIDs(java.util.List<java.util.UUID>);
+  public final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.storage.party.PartyStore> getStruct();
+  public java.util.Iterator<com.cobblemon.mod.common.pokemon.Pokemon> iterator();
+  public final com.cobblemon.mod.common.pokemon.Pokemon get(int);
+  public com.cobblemon.mod.common.pokemon.Pokemon get(com.cobblemon.mod.common.api.storage.party.PartyPosition);
+  public final void set(int, com.cobblemon.mod.common.pokemon.Pokemon);
+  protected void setAtPosition(com.cobblemon.mod.common.api.storage.party.PartyPosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public com.cobblemon.mod.common.api.storage.party.PartyPosition getFirstAvailablePosition();
+  public boolean isValidPosition(com.cobblemon.mod.common.api.storage.party.PartyPosition);
+  public java.util.List<net.minecraft.class_3222> getObservingPlayers();
+  public final int size();
+  public final int occupied();
+  public final boolean isEmpty();
+  public void sendTo(net.minecraft.class_3222);
+  public void set(com.cobblemon.mod.common.api.storage.party.PartyPosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public boolean remove(com.cobblemon.mod.common.pokemon.Pokemon);
+  public final void swap(int, int);
+  public void swap(com.cobblemon.mod.common.api.storage.party.PartyPosition, com.cobblemon.mod.common.api.storage.party.PartyPosition);
+  public void initialize();
+  public void onPokemonChanged(com.cobblemon.mod.common.pokemon.Pokemon);
+  public final java.util.List<com.cobblemon.mod.common.pokemon.Pokemon> toGappyList();
+  public final <T> java.util.List<T> mapNullPreserving(kotlin.jvm.functions.Function1<? super com.cobblemon.mod.common.pokemon.Pokemon, ? extends T>);
+  public net.minecraft.class_2487 saveToNBT(net.minecraft.class_2487, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.party.PartyStore loadFromNBT(net.minecraft.class_2487, net.minecraft.class_5455);
+  public com.google.gson.JsonObject saveToJSON(com.google.gson.JsonObject, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.party.PartyStore loadFromJSON(com.google.gson.JsonObject, net.minecraft.class_5455);
+  public final void removeDuplicates();
+  public com.cobblemon.mod.common.api.storage.StoreCoordinates<com.cobblemon.mod.common.api.storage.party.PartyPosition> loadPositionFromNBT(net.minecraft.class_2487);
+  public void savePositionToNBT(com.cobblemon.mod.common.api.storage.party.PartyPosition, net.minecraft.class_2487);
+  public com.cobblemon.mod.common.api.reactive.Observable<kotlin.Unit> getAnyChangeObservable();
+  public final void heal();
+  public final void didSleep();
+  public final float getHealingRemainderPercent();
+  public final java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> toBattleTeam(boolean, boolean, java.util.UUID);
+  public static java.util.List toBattleTeam$default(com.cobblemon.mod.common.api.storage.party.PartyStore, boolean, boolean, java.util.UUID, int, java.lang.Object);
+  public final void clearParty();
+  public final java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> toBattleTeam(boolean, boolean);
+  public final java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> toBattleTeam(boolean);
+  public final java.util.List<com.cobblemon.mod.common.battles.pokemon.BattlePokemon> toBattleTeam();
+  private static final com.cobblemon.mod.common.pokemon.Pokemon sendTo$lambda$0$0(com.cobblemon.mod.common.pokemon.Pokemon, net.minecraft.class_5455);
+  private static final com.cobblemon.mod.common.pokemon.Pokemon set$lambda$0(com.cobblemon.mod.common.pokemon.Pokemon, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.pokemon.Pokemon get(com.cobblemon.mod.common.api.storage.StorePosition);
+  public void setAtPosition(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public com.cobblemon.mod.common.api.storage.StorePosition getFirstAvailablePosition();
+  public boolean isValidPosition(com.cobblemon.mod.common.api.storage.StorePosition);
+  public java.lang.Iterable getObservingPlayers();
+  public void set(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public void swap(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.api.storage.StorePosition);
+  public com.cobblemon.mod.common.api.storage.PokemonStore loadFromNBT(net.minecraft.class_2487, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.PokemonStore loadFromJSON(com.google.gson.JsonObject, net.minecraft.class_5455);
+  public void savePositionToNBT(com.cobblemon.mod.common.api.storage.StorePosition, net.minecraft.class_2487);
+}
+Compiled from "PlayerPartyStore.java"
+public class com.cobblemon.mod.common.api.storage.party.PlayerPartyStore extends com.cobblemon.mod.common.api.storage.party.PartyStore {
+  private final java.util.UUID playerUUID;
+  private int secondsSinceFriendshipUpdate;
+  public com.cobblemon.mod.common.api.storage.party.PlayerPartyStore(java.util.UUID, java.util.UUID);
+  public com.cobblemon.mod.common.api.storage.party.PlayerPartyStore(java.util.UUID, java.util.UUID, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.util.UUID getPlayerUUID();
+  public com.cobblemon.mod.common.api.storage.party.PlayerPartyStore(java.util.UUID);
+  public void initialize();
+  public com.cobblemon.mod.common.api.storage.pc.PCStore getOverflowPC(net.minecraft.class_5455);
+  public boolean add(com.cobblemon.mod.common.pokemon.Pokemon);
+  public final void onSecondPassed(net.minecraft.class_3222);
+  private final boolean validateShoulder(net.minecraft.class_3222, boolean);
+  public void swap(com.cobblemon.mod.common.api.storage.party.PartyPosition, com.cobblemon.mod.common.api.storage.party.PartyPosition);
+  public void set(com.cobblemon.mod.common.api.storage.party.PartyPosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public void swap(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.api.storage.StorePosition);
+  public void set(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.pokemon.Pokemon);
+}
+Compiled from "ConstantsKt.java"
+public final class com.cobblemon.mod.common.api.storage.pc.ConstantsKt {
+  public static final int POKEMON_PER_BOX;
+}
+Compiled from "PCBox.java"
+public class com.cobblemon.mod.common.api.storage.pc.PCBox implements java.lang.Iterable<com.cobblemon.mod.common.pokemon.Pokemon>, kotlin.jvm.internal.markers.KMappedMarker {
+  private final com.cobblemon.mod.common.api.storage.pc.PCStore pc;
+  private final com.cobblemon.mod.common.api.reactive.SimpleObservable<kotlin.Unit> boxChangeEmitter;
+  private boolean emit;
+  private java.lang.String name;
+  private net.minecraft.class_2960 wallpaper;
+  private final com.cobblemon.mod.common.pokemon.Pokemon[] pokemon;
+  public com.cobblemon.mod.common.api.storage.pc.PCBox(com.cobblemon.mod.common.api.storage.pc.PCStore);
+  public final com.cobblemon.mod.common.api.storage.pc.PCStore getPc();
+  public java.util.Iterator<com.cobblemon.mod.common.pokemon.Pokemon> iterator();
+  public final com.cobblemon.mod.common.api.reactive.SimpleObservable<kotlin.Unit> getBoxChangeEmitter();
+  protected final boolean getEmit();
+  protected final void setEmit(boolean);
+  public final java.lang.String getName();
+  public final void setName(java.lang.String);
+  public final net.minecraft.class_2960 getWallpaper();
+  public final void setWallpaper(net.minecraft.class_2960);
+  protected final com.cobblemon.mod.common.pokemon.Pokemon[] getPokemon();
+  public com.cobblemon.mod.common.pokemon.Pokemon get(int);
+  public void set(int, com.cobblemon.mod.common.pokemon.Pokemon);
+  public final int getBoxNumber();
+  public final int getUnoccupiedSlots();
+  public final com.cobblemon.mod.common.api.storage.pc.PCPosition getFirstAvailablePosition();
+  public void initialize();
+  public final void sort(com.cobblemon.mod.common.api.pokemon.PokemonSortMode, boolean);
+  public final void sendTo(net.minecraft.class_3222);
+  public net.minecraft.class_2487 saveToNBT(net.minecraft.class_2487, net.minecraft.class_5455);
+  public com.google.gson.JsonObject saveToJSON(com.google.gson.JsonObject, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.pc.PCBox loadFromJSON(com.google.gson.JsonObject, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.pc.PCBox loadFromNBT(net.minecraft.class_2487, net.minecraft.class_5455);
+  public java.util.Map<java.lang.Integer, com.cobblemon.mod.common.pokemon.Pokemon> getNonEmptySlots();
+  public java.util.Map<java.lang.Integer, kotlin.jvm.functions.Function1<net.minecraft.class_5455, com.cobblemon.mod.common.pokemon.Pokemon>> getNonEmptySlotsForPackets();
+  private static final kotlin.Unit initialize$lambda$1(com.cobblemon.mod.common.api.storage.pc.PCBox, kotlin.Unit);
+  private static final com.cobblemon.mod.common.pokemon.Pokemon getNonEmptySlotsForPackets$lambda$0$0(com.cobblemon.mod.common.pokemon.Pokemon, net.minecraft.class_5455);
+}
+Compiled from "PCPosition.java"
+public final class com.cobblemon.mod.common.api.storage.pc.PCPosition implements com.cobblemon.mod.common.api.storage.StorePosition {
+  private final int box;
+  private final int slot;
+  public com.cobblemon.mod.common.api.storage.pc.PCPosition(int, int);
+  public final int getBox();
+  public final int getSlot();
+  public final int component1();
+  public final int component2();
+  public final com.cobblemon.mod.common.api.storage.pc.PCPosition copy(int, int);
+  public static com.cobblemon.mod.common.api.storage.pc.PCPosition copy$default(com.cobblemon.mod.common.api.storage.pc.PCPosition, int, int, int, java.lang.Object);
+  public java.lang.String toString();
+  public int hashCode();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "PCStore.java"
+public class com.cobblemon.mod.common.api.storage.pc.PCStore extends com.cobblemon.mod.common.api.storage.PokemonStore<com.cobblemon.mod.common.api.storage.pc.PCPosition> {
+  private final java.util.UUID uuid;
+  private final net.minecraft.class_5250 name;
+  private final java.util.List<com.cobblemon.mod.common.api.storage.pc.PCBox> boxes;
+  private boolean lockedSize;
+  private final com.cobblemon.mod.common.api.storage.BottomlessStore backupStore;
+  private final java.util.Set<java.util.UUID> observingUUIDs;
+  private final java.util.Set<net.minecraft.class_2960> unlockedWallpapers;
+  private final java.util.Set<net.minecraft.class_2960> unseenWallpapers;
+  private final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.storage.pc.PCStore> struct;
+  private final com.cobblemon.mod.common.api.reactive.SimpleObservable<kotlin.Unit> pcChangeObservable;
+  public com.cobblemon.mod.common.api.storage.pc.PCStore(java.util.UUID, net.minecraft.class_5250);
+  public final java.util.UUID getUuid();
+  public final net.minecraft.class_5250 getName();
+  public com.cobblemon.mod.common.api.storage.pc.PCStore(java.util.UUID);
+  public final java.util.List<com.cobblemon.mod.common.api.storage.pc.PCBox> getBoxes();
+  protected final boolean getLockedSize();
+  protected final void setLockedSize(boolean);
+  public final com.cobblemon.mod.common.api.storage.BottomlessStore getBackupStore();
+  public final java.util.Set<java.util.UUID> getObservingUUIDs();
+  public final java.util.Set<net.minecraft.class_2960> getUnlockedWallpapers();
+  public final java.util.Set<net.minecraft.class_2960> getUnseenWallpapers();
+  public java.util.Iterator<com.cobblemon.mod.common.pokemon.Pokemon> iterator();
+  public java.util.List<net.minecraft.class_3222> getObservingPlayers();
+  public final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.storage.pc.PCStore> getStruct();
+  public final void addObserver(net.minecraft.class_3222);
+  public final void removeObserver(java.util.UUID);
+  public final com.cobblemon.mod.common.api.reactive.SimpleObservable<kotlin.Unit> getPcChangeObservable();
+  public com.cobblemon.mod.common.api.storage.pc.PCPosition getFirstAvailablePosition();
+  public boolean isValidPosition(com.cobblemon.mod.common.api.storage.pc.PCPosition);
+  public void sendTo(net.minecraft.class_3222);
+  public void initialize();
+  public final void relocateEvictedBoxPokemon(com.cobblemon.mod.common.pokemon.Pokemon);
+  public final void resize(int, boolean, kotlin.jvm.functions.Function1<? super com.cobblemon.mod.common.pokemon.Pokemon, kotlin.Unit>);
+  public static void resize$default(com.cobblemon.mod.common.api.storage.pc.PCStore, int, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object);
+  public final void removeListOfBoxes(java.util.List<? extends com.cobblemon.mod.common.api.storage.pc.PCBox>, boolean, kotlin.jvm.functions.Function1<? super com.cobblemon.mod.common.pokemon.Pokemon, kotlin.Unit>);
+  public static void removeListOfBoxes$default(com.cobblemon.mod.common.api.storage.pc.PCStore, java.util.List, boolean, kotlin.jvm.functions.Function1, int, java.lang.Object);
+  public final void tryRestoreBackedUpPokemon();
+  public net.minecraft.class_2487 saveToNBT(net.minecraft.class_2487, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.PokemonStore<com.cobblemon.mod.common.api.storage.pc.PCPosition> loadFromNBT(net.minecraft.class_2487, net.minecraft.class_5455);
+  public final void removeDuplicates();
+  public com.google.gson.JsonObject saveToJSON(com.google.gson.JsonObject, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.api.storage.PokemonStore<com.cobblemon.mod.common.api.storage.pc.PCPosition> loadFromJSON(com.google.gson.JsonObject, net.minecraft.class_5455);
+  public void set(com.cobblemon.mod.common.api.storage.pc.PCPosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public boolean remove(com.cobblemon.mod.common.pokemon.Pokemon);
+  public void swap(com.cobblemon.mod.common.api.storage.pc.PCPosition, com.cobblemon.mod.common.api.storage.pc.PCPosition);
+  public com.cobblemon.mod.common.api.storage.StoreCoordinates<com.cobblemon.mod.common.api.storage.pc.PCPosition> loadPositionFromNBT(net.minecraft.class_2487);
+  public void savePositionToNBT(com.cobblemon.mod.common.api.storage.pc.PCPosition, net.minecraft.class_2487);
+  public com.cobblemon.mod.common.api.reactive.SimpleObservable<kotlin.Unit> getAnyChangeObservable();
+  protected void setAtPosition(com.cobblemon.mod.common.api.storage.pc.PCPosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public com.cobblemon.mod.common.pokemon.Pokemon get(com.cobblemon.mod.common.api.storage.pc.PCPosition);
+  public void onPokemonChanged(com.cobblemon.mod.common.pokemon.Pokemon);
+  public final void clearPC();
+  public final void markWallpapersSeen(java.util.Set<net.minecraft.class_2960>);
+  public final boolean unlockWallpaper(net.minecraft.class_2960, boolean);
+  public static boolean unlockWallpaper$default(com.cobblemon.mod.common.api.storage.pc.PCStore, net.minecraft.class_2960, boolean, int, java.lang.Object);
+  private static final com.cobblemon.mod.common.pokemon.Pokemon set$lambda$0(com.cobblemon.mod.common.pokemon.Pokemon, net.minecraft.class_5455);
+  public java.lang.Iterable getObservingPlayers();
+  public com.cobblemon.mod.common.api.storage.StorePosition getFirstAvailablePosition();
+  public boolean isValidPosition(com.cobblemon.mod.common.api.storage.StorePosition);
+  public void set(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public void swap(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.api.storage.StorePosition);
+  public void savePositionToNBT(com.cobblemon.mod.common.api.storage.StorePosition, net.minecraft.class_2487);
+  public com.cobblemon.mod.common.api.reactive.Observable getAnyChangeObservable();
+  public void setAtPosition(com.cobblemon.mod.common.api.storage.StorePosition, com.cobblemon.mod.common.pokemon.Pokemon);
+  public com.cobblemon.mod.common.pokemon.Pokemon get(com.cobblemon.mod.common.api.storage.StorePosition);
+}
+Compiled from "PCStore.java"
+final class com.cobblemon.mod.common.api.storage.pc.PCStore$removeListOfBoxes$1 extends kotlin.jvm.internal.FunctionReferenceImpl implements kotlin.jvm.functions.Function1<com.cobblemon.mod.common.pokemon.Pokemon, kotlin.Unit> {
+  com.cobblemon.mod.common.api.storage.pc.PCStore$removeListOfBoxes$1(java.lang.Object);
+  public final void invoke(com.cobblemon.mod.common.pokemon.Pokemon);
+  public java.lang.Object invoke(java.lang.Object);
+}
+Compiled from "PCStore.java"
+final class com.cobblemon.mod.common.api.storage.pc.PCStore$resize$1 extends kotlin.jvm.internal.FunctionReferenceImpl implements kotlin.jvm.functions.Function1<com.cobblemon.mod.common.pokemon.Pokemon, kotlin.Unit> {
+  com.cobblemon.mod.common.api.storage.pc.PCStore$resize$1(java.lang.Object);
+  public final void invoke(com.cobblemon.mod.common.pokemon.Pokemon);
+  public java.lang.Object invoke(java.lang.Object);
+}
+Compiled from "UnlockablePCWallpaper.java"
+public final class com.cobblemon.mod.common.api.storage.pc.UnlockablePCWallpaper {
+  public transient net.minecraft.class_2960 id;
+  private boolean enabled;
+  private java.lang.String displayName;
+  private net.minecraft.class_2960 texture;
+  private final transient com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.storage.pc.UnlockablePCWallpaper> struct;
+  public com.cobblemon.mod.common.api.storage.pc.UnlockablePCWallpaper();
+  public final net.minecraft.class_2960 getId();
+  public final void setId(net.minecraft.class_2960);
+  public final boolean getEnabled();
+  public final void setEnabled(boolean);
+  public final java.lang.String getDisplayName();
+  public final void setDisplayName(java.lang.String);
+  public final net.minecraft.class_2960 getTexture();
+  public final void setTexture(net.minecraft.class_2960);
+  public final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.storage.pc.UnlockablePCWallpaper> getStruct();
+  private static final java.lang.Object struct$lambda$0$0(com.cobblemon.mod.common.api.storage.pc.UnlockablePCWallpaper, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object struct$lambda$0$1(com.cobblemon.mod.common.api.storage.pc.UnlockablePCWallpaper, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object struct$lambda$0$2(com.cobblemon.mod.common.api.storage.pc.UnlockablePCWallpaper, com.bedrockk.molang.runtime.MoParams);
+}
+Compiled from "PCLink.java"
+public class com.cobblemon.mod.common.api.storage.pc.link.PCLink {
+  private final com.cobblemon.mod.common.api.storage.pc.PCStore pc;
+  private final java.util.UUID playerID;
+  public com.cobblemon.mod.common.api.storage.pc.link.PCLink(com.cobblemon.mod.common.api.storage.pc.PCStore, java.util.UUID);
+  public com.cobblemon.mod.common.api.storage.pc.PCStore getPc();
+  public java.util.UUID getPlayerID();
+  public boolean isPermitted(net.minecraft.class_3222);
+}
+Compiled from "PCLinkManager.java"
+public final class com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager {
+  public static final com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager INSTANCE;
+  private static final java.util.Map<java.util.UUID, com.cobblemon.mod.common.api.storage.pc.link.PCLink> links;
+  private com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager();
+  public final com.cobblemon.mod.common.api.storage.pc.link.PCLink getLink(java.util.UUID);
+  public final void addLink(com.cobblemon.mod.common.api.storage.pc.link.PCLink);
+  public final void addLink(java.util.UUID, com.cobblemon.mod.common.api.storage.pc.PCStore, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public static void addLink$default(com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager, java.util.UUID, com.cobblemon.mod.common.api.storage.pc.PCStore, kotlin.jvm.functions.Function1, int, java.lang.Object);
+  public final void removeLink(java.util.UUID);
+  public final com.cobblemon.mod.common.api.storage.pc.PCStore getPC(net.minecraft.class_3222);
+  private static final boolean addLink$lambda$0(net.minecraft.class_3222);
+  static {};
+}
+Compiled from "PCLinkManager.java"
+public final class com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager$addLink$2 extends com.cobblemon.mod.common.api.storage.pc.link.PCLink {
+  final kotlin.jvm.functions.Function1<net.minecraft.class_3222, java.lang.Boolean> $condition;
+  com.cobblemon.mod.common.api.storage.pc.link.PCLinkManager$addLink$2(com.cobblemon.mod.common.api.storage.pc.PCStore, java.util.UUID, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public boolean isPermitted(net.minecraft.class_3222);
+}
+Compiled from "PermissiblePcLink.java"
+public final class com.cobblemon.mod.common.api.storage.pc.link.PermissiblePcLink extends com.cobblemon.mod.common.api.storage.pc.link.PCLink {
+  private final com.cobblemon.mod.common.api.permission.Permission permission;
+  public com.cobblemon.mod.common.api.storage.pc.link.PermissiblePcLink(com.cobblemon.mod.common.api.storage.pc.PCStore, net.minecraft.class_3222, com.cobblemon.mod.common.api.permission.Permission);
+  public boolean isPermitted(net.minecraft.class_3222);
+}
+Compiled from "ProximityPCLink.java"
+public final class com.cobblemon.mod.common.api.storage.pc.link.ProximityPCLink extends com.cobblemon.mod.common.api.storage.pc.link.PCLink {
+  private final double maxDistance;
+  private final net.minecraft.class_1937 world;
+  private final net.minecraft.class_2338 pos;
+  public com.cobblemon.mod.common.api.storage.pc.link.ProximityPCLink(com.cobblemon.mod.common.api.storage.pc.PCStore, java.util.UUID, com.cobblemon.mod.common.block.entity.PCBlockEntity, double);
+  public com.cobblemon.mod.common.api.storage.pc.link.ProximityPCLink(com.cobblemon.mod.common.api.storage.pc.PCStore, java.util.UUID, com.cobblemon.mod.common.block.entity.PCBlockEntity, double, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final double getMaxDistance();
+  public final net.minecraft.class_1937 getWorld();
+  public final net.minecraft.class_2338 getPos();
+  public boolean isPermitted(net.minecraft.class_3222);
+}
+Compiled from "PokemonFilter.java"
+public interface com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter {
+  public abstract boolean test(com.cobblemon.mod.common.pokemon.Pokemon);
+  public default com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter inverted();
+  private static boolean inverted$lambda$0(com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter, com.cobblemon.mod.common.pokemon.Pokemon);
+  public static com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter access$inverted$jd(com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter);
+}
+Compiled from "PokemonFilter.java"
+public final class com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter$DefaultImpls {
+  public static com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter inverted(com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter);
+}
+Compiled from "Search.java"
+public final class com.cobblemon.mod.common.api.storage.pc.search.Search {
+  public static final com.cobblemon.mod.common.api.storage.pc.search.Search$Companion Companion;
+  private final java.util.Set<com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter> filters;
+  private final java.util.Set<java.util.UUID> passed;
+  private final java.util.Set<java.util.UUID> failed;
+  private static final com.cobblemon.mod.common.api.storage.pc.search.Search DEFAULT;
+  public com.cobblemon.mod.common.api.storage.pc.search.Search(java.util.Set<? extends com.cobblemon.mod.common.api.storage.pc.search.PokemonFilter>, java.util.Set<java.util.UUID>, java.util.Set<java.util.UUID>);
+  public com.cobblemon.mod.common.api.storage.pc.search.Search(java.util.Set, java.util.Set, java.util.Set, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final boolean passes(com.cobblemon.mod.common.pokemon.Pokemon);
+  public static final com.cobblemon.mod.common.api.storage.pc.search.Search access$getDEFAULT$cp();
+  static {};
+}
+Compiled from "Search.java"
+public final class com.cobblemon.mod.common.api.storage.pc.search.Search$Companion {
+  private com.cobblemon.mod.common.api.storage.pc.search.Search$Companion();
+  public final com.cobblemon.mod.common.api.storage.pc.search.Search getDEFAULT();
+  public final com.cobblemon.mod.common.api.storage.pc.search.Search of(java.lang.String);
+  private static final boolean of$lambda$0(com.cobblemon.mod.common.pokemon.Pokemon);
+  private static final boolean of$lambda$1(com.cobblemon.mod.common.pokemon.Pokemon);
+  private static final boolean of$lambda$2(com.cobblemon.mod.common.pokemon.Pokemon);
+  private static final boolean of$lambda$3(com.cobblemon.mod.common.pokemon.Pokemon);
+  private static final boolean of$lambda$4(com.cobblemon.mod.common.pokemon.Pokemon);
+  private static final boolean of$lambda$5(kotlin.jvm.internal.Ref$ObjectRef, com.cobblemon.mod.common.pokemon.Pokemon);
+  public com.cobblemon.mod.common.api.storage.pc.search.Search$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "ClosePCPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket> {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket$Companion Companion;
+  private final java.util.UUID storeID;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket(java.util.UUID);
+  public final java.util.UUID getStoreID();
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket> method_56479();
+  private static final kotlin.Unit encode$lambda$0(net.minecraft.class_2540, java.util.UUID);
+  private static final void encode$lambda$1(kotlin.jvm.functions.Function2, java.lang.Object, java.util.UUID);
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "ClosePCPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket decode(net.minecraft.class_9129);
+  private static final java.util.UUID decode$lambda$0(net.minecraft.class_2540);
+  private static final java.util.UUID decode$lambda$1(kotlin.jvm.functions.Function1, java.lang.Object);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.ClosePCPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "InitializePCPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket> {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket$Companion Companion;
+  private final java.util.UUID storeID;
+  private final int boxCount;
+  private final boolean hasOverflowed;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket(java.util.UUID, int, boolean);
+  public final java.util.UUID getStoreID();
+  public final int getBoxCount();
+  public final boolean getHasOverflowed();
+  public net.minecraft.class_2960 getId();
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket(com.cobblemon.mod.common.api.storage.pc.PCStore);
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket> method_56479();
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "InitializePCPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket decode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.InitializePCPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "MoveClientPCPokemonPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket extends com.cobblemon.mod.common.net.messages.client.storage.MoveClientPokemonPacket<com.cobblemon.mod.common.api.storage.pc.PCPosition, com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket> {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket$Companion Companion;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket(java.util.UUID, java.util.UUID, com.cobblemon.mod.common.api.storage.pc.PCPosition);
+  public net.minecraft.class_2960 getId();
+  public void encodePosition(net.minecraft.class_9129, com.cobblemon.mod.common.api.storage.pc.PCPosition);
+  public void encodePosition(net.minecraft.class_9129, com.cobblemon.mod.common.api.storage.StorePosition);
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "MoveClientPCPokemonPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket decode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.MoveClientPCPokemonPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "OpenPCPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket> {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket$Companion Companion;
+  private final java.util.UUID storeID;
+  private final java.lang.Integer box;
+  private final java.util.Set<net.minecraft.class_2960> unseenWallpapers;
+  private final boolean silent;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public final java.util.UUID getStoreID();
+  public final java.lang.Integer getBox();
+  public final java.util.Set<net.minecraft.class_2960> getUnseenWallpapers();
+  public final boolean getSilent();
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(java.util.UUID, java.lang.Integer, java.util.Set<net.minecraft.class_2960>, java.lang.Boolean);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(java.util.UUID, java.lang.Integer, java.util.Set, java.lang.Boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(com.cobblemon.mod.common.api.storage.pc.PCStore, java.lang.Integer, java.lang.Boolean);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(com.cobblemon.mod.common.api.storage.pc.PCStore, java.lang.Integer, java.lang.Boolean, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket> method_56479();
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(java.util.UUID, java.lang.Integer, java.util.Set<net.minecraft.class_2960>);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(java.util.UUID, java.lang.Integer);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(java.util.UUID);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(com.cobblemon.mod.common.api.storage.pc.PCStore, java.lang.Integer);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket(com.cobblemon.mod.common.api.storage.pc.PCStore);
+  private static final kotlin.Unit encode$lambda$0(net.minecraft.class_2540, java.lang.Integer);
+  private static final void encode$lambda$1(kotlin.jvm.functions.Function2, java.lang.Object, java.lang.Integer);
+  private static final kotlin.Unit encode$lambda$2(net.minecraft.class_9129, net.minecraft.class_2540, net.minecraft.class_2960);
+  private static final void encode$lambda$3(kotlin.jvm.functions.Function2, java.lang.Object, net.minecraft.class_2960);
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "OpenPCPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket decode(net.minecraft.class_9129);
+  private static final java.lang.Integer decode$lambda$0(net.minecraft.class_2540);
+  private static final java.lang.Integer decode$lambda$1(kotlin.jvm.functions.Function1, java.lang.Object);
+  private static final net.minecraft.class_2960 decode$lambda$2(net.minecraft.class_9129, net.minecraft.class_2540);
+  private static final net.minecraft.class_2960 decode$lambda$3(kotlin.jvm.functions.Function1, java.lang.Object);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.OpenPCPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "RenamePCBoxPacket.java"
+public class com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket>, com.cobblemon.mod.common.api.net.UnsplittablePacket {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket$Companion Companion;
+  private final java.util.UUID storeID;
+  private final int boxNumber;
+  private final java.lang.String name;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket(java.util.UUID, int, java.lang.String);
+  public final java.util.UUID getStoreID();
+  public final int getBoxNumber();
+  public final java.lang.String getName();
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket> method_56479();
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "RenamePCBoxPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket decode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.RenamePCBoxPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "SetPCBoxPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket>, com.cobblemon.mod.common.api.net.UnsplittablePacket {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket$Companion Companion;
+  private final java.util.UUID storeID;
+  private final int boxNumber;
+  private final java.lang.String name;
+  private final net.minecraft.class_2960 wallpaper;
+  private final java.util.Map<java.lang.Integer, kotlin.jvm.functions.Function1<net.minecraft.class_5455, com.cobblemon.mod.common.pokemon.Pokemon>> pokemon;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket(java.util.UUID, int, java.lang.String, net.minecraft.class_2960, java.util.Map<java.lang.Integer, ? extends kotlin.jvm.functions.Function1<? super net.minecraft.class_5455, ? extends com.cobblemon.mod.common.pokemon.Pokemon>>);
+  public final java.util.UUID getStoreID();
+  public final int getBoxNumber();
+  public final java.lang.String getName();
+  public final net.minecraft.class_2960 getWallpaper();
+  public final java.util.Map<java.lang.Integer, kotlin.jvm.functions.Function1<net.minecraft.class_5455, com.cobblemon.mod.common.pokemon.Pokemon>> getPokemon();
+  public net.minecraft.class_2960 getId();
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket(com.cobblemon.mod.common.api.storage.pc.PCBox);
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket> method_56479();
+  private static final kotlin.Unit encode$lambda$0(net.minecraft.class_9129, java.util.Map$Entry);
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "SetPCBoxPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket decode(net.minecraft.class_9129);
+  private static final kotlin.Pair decode$lambda$0(net.minecraft.class_9129);
+  private static final com.cobblemon.mod.common.pokemon.Pokemon decode$lambda$0$0(io.netty.buffer.ByteBuf, net.minecraft.class_9129, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCBoxPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "SetPCPokemonPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket>, com.cobblemon.mod.common.api.net.UnsplittablePacket {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket$Companion Companion;
+  private final java.util.UUID storeID;
+  private final com.cobblemon.mod.common.api.storage.pc.PCPosition storePosition;
+  private final kotlin.jvm.functions.Function1<net.minecraft.class_5455, com.cobblemon.mod.common.pokemon.Pokemon> pokemon;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket(java.util.UUID, com.cobblemon.mod.common.api.storage.pc.PCPosition, kotlin.jvm.functions.Function1<? super net.minecraft.class_5455, ? extends com.cobblemon.mod.common.pokemon.Pokemon>);
+  public final java.util.UUID getStoreID();
+  public final com.cobblemon.mod.common.api.storage.pc.PCPosition getStorePosition();
+  public final kotlin.jvm.functions.Function1<net.minecraft.class_5455, com.cobblemon.mod.common.pokemon.Pokemon> getPokemon();
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket> method_56479();
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "SetPCPokemonPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket decode(net.minecraft.class_9129);
+  private static final com.cobblemon.mod.common.pokemon.Pokemon decode$lambda$0(io.netty.buffer.ByteBuf, net.minecraft.class_5455);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.SetPCPokemonPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "ChangePCBoxWallpaperPacket.java"
+public class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket>, com.cobblemon.mod.common.api.net.UnsplittablePacket {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket$Companion Companion;
+  private final java.util.UUID storeID;
+  private final int boxNumber;
+  private final net.minecraft.class_2960 wallpaper;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket(java.util.UUID, int, net.minecraft.class_2960);
+  public final java.util.UUID getStoreID();
+  public final int getBoxNumber();
+  public final net.minecraft.class_2960 getWallpaper();
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket> method_56479();
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "ChangePCBoxWallpaperPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket decode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.ChangePCBoxWallpaperPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "RequestPCBoxWallpapersPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket>, com.cobblemon.mod.common.api.net.UnsplittablePacket {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket$Companion Companion;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket();
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket> method_56479();
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "RequestPCBoxWallpapersPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket decode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.RequestPCBoxWallpapersPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "SetPCBoxWallpapersPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket>, com.cobblemon.mod.common.api.net.UnsplittablePacket {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket$Companion Companion;
+  private final java.util.Set<net.minecraft.class_2960> wallpapers;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket(java.util.Set<net.minecraft.class_2960>);
+  public final java.util.Set<net.minecraft.class_2960> getWallpapers();
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket> method_56479();
+  private static final kotlin.Unit encode$lambda$0(net.minecraft.class_2540, net.minecraft.class_2960);
+  private static final void encode$lambda$1(kotlin.jvm.functions.Function2, java.lang.Object, net.minecraft.class_2960);
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+
+Compiled from "SetPCBoxWallpapersPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket decode(net.minecraft.class_9129);
+  private static final net.minecraft.class_2960 decode$lambda$0(net.minecraft.class_2540);
+  private static final net.minecraft.class_2960 decode$lambda$1(kotlin.jvm.functions.Function1, java.lang.Object);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.SetPCBoxWallpapersPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "UnlockPCBoxWallpaperPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket implements com.cobblemon.mod.common.api.net.NetworkPacket<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket> {
+  public static final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket$Companion Companion;
+  private final net.minecraft.class_2960 texture;
+  private final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_2960 ID;
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket(net.minecraft.class_2960);
+  public final net.minecraft.class_2960 getTexture();
+  public net.minecraft.class_2960 getId();
+  public void encode(net.minecraft.class_9129);
+  public void sendToPlayer(net.minecraft.class_3222);
+  public void sendToPlayers(java.lang.Iterable<? extends net.minecraft.class_3222>);
+  public void sendToAllPlayers();
+  public void sendToServer();
+  public void sendToPlayersAround(double, double, double, double, net.minecraft.class_5321<net.minecraft.class_1937>, kotlin.jvm.functions.Function1<? super net.minecraft.class_3222, java.lang.Boolean>);
+  public net.minecraft.class_8710$class_9154<com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket> method_56479();
+  public static final net.minecraft.class_2960 access$getID$cp();
+  static {};
+}
+Compiled from "UnlockPCBoxWallpaperPacket.java"
+public final class com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket$Companion {
+  private com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket$Companion();
+  public final net.minecraft.class_2960 getID();
+  public final com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket decode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.net.messages.client.storage.pc.wallpaper.UnlockPCBoxWallpaperPacket$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}

@@ -1,0 +1,1122 @@
+Compiled from "NPCClass.java"
+public final class com.cobblemon.mod.common.api.npc.NPCClass {
+  public transient net.minecraft.class_2960 id;
+  private net.minecraft.class_2960 resourceIdentifier;
+  private java.util.List<net.minecraft.class_2561> names;
+  private java.util.Set<java.lang.String> aspects;
+  private net.minecraft.class_4048 hitbox;
+  private float modelScale;
+  private com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration battleConfiguration;
+  private com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration interaction;
+  private boolean canDespawn;
+  private java.util.Map<java.lang.String, com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider> variations;
+  private java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> config;
+  private java.util.Map<java.lang.String, com.bedrockk.molang.runtime.value.MoValue> variables;
+  private com.cobblemon.mod.common.api.npc.NPCPartyProvider party;
+  private int skill;
+  private boolean autoHealParty;
+  private boolean randomizePartyOrder;
+  private net.minecraft.class_2960 battleTheme;
+  private java.util.List<com.cobblemon.mod.common.api.ai.config.BehaviourConfig> behaviours;
+  private boolean isMovable;
+  private boolean isInvulnerable;
+  private boolean isLeashable;
+  private boolean allowProjectileHits;
+  private boolean hideNameTag;
+  public com.cobblemon.mod.common.api.npc.NPCClass();
+  public final net.minecraft.class_2960 getId();
+  public final void setId(net.minecraft.class_2960);
+  public final net.minecraft.class_2960 getResourceIdentifier();
+  public final void setResourceIdentifier(net.minecraft.class_2960);
+  public final java.util.List<net.minecraft.class_2561> getNames();
+  public final void setNames(java.util.List<net.minecraft.class_2561>);
+  public final java.util.Set<java.lang.String> getAspects();
+  public final void setAspects(java.util.Set<java.lang.String>);
+  public final net.minecraft.class_4048 getHitbox();
+  public final void setHitbox(net.minecraft.class_4048);
+  public final float getModelScale();
+  public final void setModelScale(float);
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration getBattleConfiguration();
+  public final void setBattleConfiguration(com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration);
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration getInteraction();
+  public final void setInteraction(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  public final boolean getCanDespawn();
+  public final void setCanDespawn(boolean);
+  public final java.util.Map<java.lang.String, com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider> getVariations();
+  public final void setVariations(java.util.Map<java.lang.String, com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider>);
+  public final java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> getConfig();
+  public final void setConfig(java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable>);
+  public final java.util.Map<java.lang.String, com.bedrockk.molang.runtime.value.MoValue> getVariables();
+  public final void setVariables(java.util.Map<java.lang.String, com.bedrockk.molang.runtime.value.MoValue>);
+  public final com.cobblemon.mod.common.api.npc.NPCPartyProvider getParty();
+  public final void setParty(com.cobblemon.mod.common.api.npc.NPCPartyProvider);
+  public final int getSkill();
+  public final void setSkill(int);
+  public final boolean getAutoHealParty();
+  public final void setAutoHealParty(boolean);
+  public final boolean getRandomizePartyOrder();
+  public final void setRandomizePartyOrder(boolean);
+  public final net.minecraft.class_2960 getBattleTheme();
+  public final void setBattleTheme(net.minecraft.class_2960);
+  public final java.util.List<com.cobblemon.mod.common.api.ai.config.BehaviourConfig> getBehaviours();
+  public final void setBehaviours(java.util.List<com.cobblemon.mod.common.api.ai.config.BehaviourConfig>);
+  public final boolean isMovable();
+  public final void setMovable(boolean);
+  public final boolean isInvulnerable();
+  public final void setInvulnerable(boolean);
+  public final boolean isLeashable();
+  public final void setLeashable(boolean);
+  public final boolean getAllowProjectileHits();
+  public final void setAllowProjectileHits(boolean);
+  public final boolean getHideNameTag();
+  public final void setHideNameTag(boolean);
+  public final void encode(net.minecraft.class_9129);
+  public final void decode(net.minecraft.class_9129);
+  private static final kotlin.Unit encode$lambda$0(net.minecraft.class_9129, net.minecraft.class_2540, net.minecraft.class_2561);
+  private static final void encode$lambda$1(kotlin.jvm.functions.Function2, java.lang.Object, net.minecraft.class_2561);
+  private static final kotlin.Unit encode$lambda$2(net.minecraft.class_9129, net.minecraft.class_2540, com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  private static final void encode$lambda$3(kotlin.jvm.functions.Function2, java.lang.Object, com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  private static final kotlin.Unit encode$lambda$4(net.minecraft.class_9129, net.minecraft.class_2540, java.lang.String);
+  private static final void encode$lambda$5(kotlin.jvm.functions.Function2, java.lang.Object, java.lang.String);
+  private static final kotlin.Unit encode$lambda$6(net.minecraft.class_9129, net.minecraft.class_2540, com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable);
+  private static final void encode$lambda$7(kotlin.jvm.functions.Function2, java.lang.Object, com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable);
+  private static final kotlin.Unit encode$lambda$8(net.minecraft.class_9129, java.util.Map$Entry);
+  private static final kotlin.Unit encode$lambda$9(net.minecraft.class_9129, net.minecraft.class_2540, net.minecraft.class_2960);
+  private static final void encode$lambda$10(kotlin.jvm.functions.Function2, java.lang.Object, net.minecraft.class_2960);
+  private static final net.minecraft.class_5250 decode$lambda$0(net.minecraft.class_9129, net.minecraft.class_2540);
+  private static final net.minecraft.class_5250 decode$lambda$1(kotlin.jvm.functions.Function1, java.lang.Object);
+  private static final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration decode$lambda$2(net.minecraft.class_9129, net.minecraft.class_2540);
+  private static final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration decode$lambda$3(kotlin.jvm.functions.Function1, java.lang.Object);
+  private static final java.lang.String decode$lambda$4(net.minecraft.class_9129, net.minecraft.class_2540);
+  private static final java.lang.String decode$lambda$5(kotlin.jvm.functions.Function1, java.lang.Object);
+  private static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable decode$lambda$6(net.minecraft.class_9129, net.minecraft.class_2540);
+  private static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable decode$lambda$7(kotlin.jvm.functions.Function1, java.lang.Object);
+  private static final kotlin.Pair decode$lambda$8(net.minecraft.class_9129);
+  private static final net.minecraft.class_2960 decode$lambda$9(net.minecraft.class_9129, net.minecraft.class_2540);
+  private static final net.minecraft.class_2960 decode$lambda$10(kotlin.jvm.functions.Function1, java.lang.Object);
+}
+Compiled from "NPCClasses.java"
+public final class com.cobblemon.mod.common.api.npc.NPCClasses implements com.cobblemon.mod.common.api.data.JsonDataRegistry<com.cobblemon.mod.common.api.npc.NPCClass> {
+  public static final com.cobblemon.mod.common.api.npc.NPCClasses INSTANCE;
+  private static final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_3264 type;
+  private static final com.google.gson.Gson gson;
+  private static final com.google.gson.reflect.TypeToken<com.cobblemon.mod.common.api.npc.NPCClass> typeToken;
+  private static final java.lang.String resourcePath;
+  private static final com.cobblemon.mod.common.api.reactive.SimpleObservable<com.cobblemon.mod.common.api.npc.NPCClasses> observable;
+  private static final java.util.HashMap<net.minecraft.class_2960, com.cobblemon.mod.common.api.npc.NPCClass> npcClassesByIdentifier;
+  private com.cobblemon.mod.common.api.npc.NPCClasses();
+  public net.minecraft.class_2960 getId();
+  public net.minecraft.class_3264 getType();
+  public com.google.gson.Gson getGson();
+  public com.google.gson.reflect.TypeToken<com.cobblemon.mod.common.api.npc.NPCClass> getTypeToken();
+  public java.lang.String getResourcePath();
+  public com.cobblemon.mod.common.api.reactive.SimpleObservable<com.cobblemon.mod.common.api.npc.NPCClasses> getObservable();
+  public static final java.util.Collection<com.cobblemon.mod.common.api.npc.NPCClass> getClasses();
+  public static void getClasses$annotations();
+  public final com.cobblemon.mod.common.api.npc.NPCClass getByName(java.lang.String);
+  public static final com.cobblemon.mod.common.api.npc.NPCClass getByIdentifier(net.minecraft.class_2960);
+  public static final int count();
+  public static final com.cobblemon.mod.common.api.npc.NPCClass random();
+  public final com.cobblemon.mod.common.api.npc.NPCClass dummy();
+  public void reload(java.util.Map<net.minecraft.class_2960, com.cobblemon.mod.common.api.npc.NPCClass>);
+  public void sync(net.minecraft.class_3222);
+  public void reload(net.minecraft.class_3300);
+  public com.cobblemon.mod.common.api.npc.NPCClass parse(java.io.BufferedReader, net.minecraft.class_2960);
+  public java.lang.Object parse(java.io.BufferedReader, net.minecraft.class_2960);
+  static {};
+}
+Compiled from "NPCConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.NPCConfiguration {
+  private com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration battle;
+  public com.cobblemon.mod.common.api.npc.NPCConfiguration();
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration getBattle();
+  public final void setBattle(com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration);
+  public final void applyTo(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public final void loadFrom(com.cobblemon.mod.common.entity.npc.NPCEntity);
+}
+Compiled from "NPCPartyProvider.java"
+public interface com.cobblemon.mod.common.api.npc.NPCPartyProvider {
+  public static final com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion Companion;
+  public abstract net.minecraft.class_2960 getType();
+  public abstract boolean isStatic();
+  public abstract com.cobblemon.mod.common.api.storage.party.NPCPartyStore provide(com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List<? extends net.minecraft.class_3222>);
+  public static com.cobblemon.mod.common.api.storage.party.NPCPartyStore provide$default(com.cobblemon.mod.common.api.npc.NPCPartyProvider, com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List, int, java.lang.Object);
+  public abstract void loadFromJSON(com.google.gson.JsonElement);
+  static {};
+}
+Compiled from "NPCPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion {
+  static final com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion $$INSTANCE;
+  private static final java.util.Map<net.minecraft.class_2960, kotlin.reflect.KFunction<com.cobblemon.mod.common.api.npc.NPCPartyProvider>> types;
+  private com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion();
+  public final java.util.Map<net.minecraft.class_2960, kotlin.reflect.KFunction<com.cobblemon.mod.common.api.npc.NPCPartyProvider>> getTypes();
+  static {};
+}
+Compiled from "NPCPartyProvider.java"
+final class com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$1 extends kotlin.jvm.internal.FunctionReferenceImpl implements kotlin.jvm.functions.Function0<com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider> {
+  public static final com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$1 INSTANCE;
+  com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$1();
+  public final com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider invoke();
+  public java.lang.Object invoke();
+  static {};
+}
+Compiled from "NPCPartyProvider.java"
+final class com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$2 extends kotlin.jvm.internal.FunctionReferenceImpl implements kotlin.jvm.functions.Function0<com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider> {
+  public static final com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$2 INSTANCE;
+  com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$2();
+  public final com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider invoke();
+  public java.lang.Object invoke();
+  static {};
+}
+Compiled from "NPCPartyProvider.java"
+final class com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$3 extends kotlin.jvm.internal.FunctionReferenceImpl implements kotlin.jvm.functions.Function0<com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider> {
+  public static final com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$3 INSTANCE;
+  com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$3();
+  public final com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider invoke();
+  public java.lang.Object invoke();
+  static {};
+}
+Compiled from "NPCPartyProvider.java"
+final class com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$4 extends kotlin.jvm.internal.FunctionReferenceImpl implements kotlin.jvm.functions.Function0<com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider> {
+  public static final com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$4 INSTANCE;
+  com.cobblemon.mod.common.api.npc.NPCPartyProvider$Companion$types$4();
+  public final com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider invoke();
+  public java.lang.Object invoke();
+  static {};
+}
+Compiled from "NPCPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.NPCPartyProvider$DefaultImpls {
+  public static com.cobblemon.mod.common.api.storage.party.NPCPartyStore provide$default(com.cobblemon.mod.common.api.npc.NPCPartyProvider, com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List, int, java.lang.Object);
+}
+Compiled from "NPCPreset.java"
+public final class com.cobblemon.mod.common.api.npc.NPCPreset {
+  public net.minecraft.class_2960 id;
+  private net.minecraft.class_2960 resourceIdentifier;
+  private java.util.Set<java.lang.String> aspects;
+  private java.util.Map<java.lang.String, ? extends com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider> variations;
+  private java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> config;
+  private com.cobblemon.mod.common.api.npc.NPCPartyProvider party;
+  private java.lang.Boolean canDespawn;
+  private com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration interaction;
+  private java.util.Set<net.minecraft.class_2561> names;
+  private net.minecraft.class_4048 hitbox;
+  private java.util.List<? extends com.cobblemon.mod.common.api.ai.config.BehaviourConfig> behaviours;
+  private java.lang.Integer skill;
+  private java.lang.Boolean autoHealParty;
+  private java.lang.Boolean randomizePartyOrder;
+  private net.minecraft.class_2960 battleTheme;
+  private java.lang.Boolean isMovable;
+  private java.lang.Boolean isInvulnerable;
+  private java.lang.Boolean isLeashable;
+  private java.lang.Boolean allowProjectileHits;
+  private java.lang.Boolean hideNameTag;
+  public com.cobblemon.mod.common.api.npc.NPCPreset();
+  public final net.minecraft.class_2960 getId();
+  public final void setId(net.minecraft.class_2960);
+  public final net.minecraft.class_2960 getResourceIdentifier();
+  public final void setResourceIdentifier(net.minecraft.class_2960);
+  public final java.util.Set<java.lang.String> getAspects();
+  public final void setAspects(java.util.Set<java.lang.String>);
+  public final java.util.Map<java.lang.String, com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider> getVariations();
+  public final void setVariations(java.util.Map<java.lang.String, ? extends com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider>);
+  public final java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> getConfig();
+  public final void setConfig(java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable>);
+  public final com.cobblemon.mod.common.api.npc.NPCPartyProvider getParty();
+  public final void setParty(com.cobblemon.mod.common.api.npc.NPCPartyProvider);
+  public final java.lang.Boolean getCanDespawn();
+  public final void setCanDespawn(java.lang.Boolean);
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration getInteraction();
+  public final void setInteraction(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  public final java.util.Set<net.minecraft.class_2561> getNames();
+  public final void setNames(java.util.Set<net.minecraft.class_2561>);
+  public final net.minecraft.class_4048 getHitbox();
+  public final void setHitbox(net.minecraft.class_4048);
+  public final java.util.List<com.cobblemon.mod.common.api.ai.config.BehaviourConfig> getBehaviours();
+  public final void setBehaviours(java.util.List<? extends com.cobblemon.mod.common.api.ai.config.BehaviourConfig>);
+  public final java.lang.Integer getSkill();
+  public final void setSkill(java.lang.Integer);
+  public final java.lang.Boolean getAutoHealParty();
+  public final void setAutoHealParty(java.lang.Boolean);
+  public final java.lang.Boolean getRandomizePartyOrder();
+  public final void setRandomizePartyOrder(java.lang.Boolean);
+  public final net.minecraft.class_2960 getBattleTheme();
+  public final void setBattleTheme(net.minecraft.class_2960);
+  public final java.lang.Boolean isMovable();
+  public final void setMovable(java.lang.Boolean);
+  public final java.lang.Boolean isInvulnerable();
+  public final void setInvulnerable(java.lang.Boolean);
+  public final java.lang.Boolean isLeashable();
+  public final void setLeashable(java.lang.Boolean);
+  public final java.lang.Boolean getAllowProjectileHits();
+  public final void setAllowProjectileHits(java.lang.Boolean);
+  public final java.lang.Boolean getHideNameTag();
+  public final void setHideNameTag(java.lang.Boolean);
+  public final void applyTo(com.cobblemon.mod.common.api.npc.NPCClass);
+  private static final boolean applyTo$lambda$2$0(java.lang.String, com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable);
+  private static final boolean applyTo$lambda$2$1(kotlin.jvm.functions.Function1, java.lang.Object);
+}
+Compiled from "NPCPresets.java"
+public final class com.cobblemon.mod.common.api.npc.NPCPresets implements com.cobblemon.mod.common.api.data.JsonDataRegistry<com.cobblemon.mod.common.api.npc.NPCPreset> {
+  public static final com.cobblemon.mod.common.api.npc.NPCPresets INSTANCE;
+  private static final net.minecraft.class_2960 id;
+  private static final net.minecraft.class_3264 type;
+  private static final com.google.gson.Gson gson;
+  private static final com.google.gson.reflect.TypeToken<com.cobblemon.mod.common.api.npc.NPCPreset> typeToken;
+  private static final java.lang.String resourcePath;
+  private static final com.cobblemon.mod.common.api.reactive.SimpleObservable<com.cobblemon.mod.common.api.npc.NPCPresets> observable;
+  private static final java.util.Map<net.minecraft.class_2960, com.cobblemon.mod.common.api.npc.NPCPreset> npcPresetsByIdentifier;
+  private com.cobblemon.mod.common.api.npc.NPCPresets();
+  public net.minecraft.class_2960 getId();
+  public net.minecraft.class_3264 getType();
+  public com.google.gson.Gson getGson();
+  public com.google.gson.reflect.TypeToken<com.cobblemon.mod.common.api.npc.NPCPreset> getTypeToken();
+  public java.lang.String getResourcePath();
+  public com.cobblemon.mod.common.api.reactive.SimpleObservable<com.cobblemon.mod.common.api.npc.NPCPresets> getObservable();
+  public void sync(net.minecraft.class_3222);
+  public void reload(java.util.Map<net.minecraft.class_2960, com.cobblemon.mod.common.api.npc.NPCPreset>);
+  public static final com.cobblemon.mod.common.api.npc.NPCPreset getPreset(net.minecraft.class_2960);
+  public void reload(net.minecraft.class_3300);
+  public com.cobblemon.mod.common.api.npc.NPCPreset parse(java.io.BufferedReader, net.minecraft.class_2960);
+  public java.lang.Object parse(java.io.BufferedReader, net.minecraft.class_2960);
+  static {};
+}
+Compiled from "PartyComposition.java"
+public final class com.cobblemon.mod.common.api.npc.PartyComposition {
+  private net.minecraft.class_2960 id;
+  private final boolean scrambleOrder;
+  private final java.util.List<java.lang.String> slot1;
+  private final java.util.List<java.lang.String> slot2;
+  private final java.util.List<java.lang.String> slot3;
+  private final java.util.List<java.lang.String> slot4;
+  private final java.util.List<java.lang.String> slot5;
+  private final java.util.List<java.lang.String> slot6;
+  public com.cobblemon.mod.common.api.npc.PartyComposition();
+  public final net.minecraft.class_2960 getId();
+  public final void setId(net.minecraft.class_2960);
+  public final boolean getScrambleOrder();
+  public final java.util.List<java.lang.String> getSlot1();
+  public final java.util.List<java.lang.String> getSlot2();
+  public final java.util.List<java.lang.String> getSlot3();
+  public final java.util.List<java.lang.String> getSlot4();
+  public final java.util.List<java.lang.String> getSlot5();
+  public final java.util.List<java.lang.String> getSlot6();
+  public final java.util.List<com.cobblemon.mod.common.pokemon.Pokemon> compose(com.cobblemon.mod.common.api.npc.PartyPool, int, java.util.Set<java.lang.String>, int, com.bedrockk.molang.runtime.MoLangRuntime, kotlin.random.Random);
+  public static java.util.List compose$default(com.cobblemon.mod.common.api.npc.PartyComposition, com.cobblemon.mod.common.api.npc.PartyPool, int, java.util.Set, int, com.bedrockk.molang.runtime.MoLangRuntime, kotlin.random.Random, int, java.lang.Object);
+}
+Compiled from "PartyPool.java"
+public final class com.cobblemon.mod.common.api.npc.PartyPool {
+  private net.minecraft.class_2960 id;
+  private final java.lang.String displayName;
+  private final java.util.List<com.cobblemon.mod.common.api.npc.PartyPool$PoolEntry> entries;
+  public com.cobblemon.mod.common.api.npc.PartyPool();
+  public final net.minecraft.class_2960 getId();
+  public final void setId(net.minecraft.class_2960);
+  public final java.lang.String getDisplayName();
+  public final java.util.List<com.cobblemon.mod.common.api.npc.PartyPool$PoolEntry> getEntries();
+  public final void tryChoosingEntry(java.util.List<java.lang.String>, com.bedrockk.molang.runtime.MoLangRuntime, kotlin.random.Random, java.util.List<com.cobblemon.mod.common.api.npc.PartyPool$PoolEntry>, java.util.List<com.cobblemon.mod.common.api.npc.PartyPool$PoolEntry>);
+  private static final java.lang.Number tryChoosingEntry$lambda$2(com.bedrockk.molang.runtime.MoLangRuntime, com.cobblemon.mod.common.api.npc.PartyPool$PoolEntry);
+}
+Compiled from "PartyPool.java"
+public final class com.cobblemon.mod.common.api.npc.PartyPool$PoolEntry {
+  private final com.cobblemon.mod.common.api.pokemon.PokemonProperties pokemon;
+  private final java.util.List<java.lang.String> labels;
+  private final java.util.List<java.lang.String> npcAspects;
+  private final java.util.List<java.lang.String> required;
+  private final java.util.List<java.lang.String> excluded;
+  private final com.cobblemon.mod.common.api.molang.ExpressionLike maxSelectableTimes;
+  private final com.cobblemon.mod.common.util.ScriptableIntRange levelVariation;
+  private final com.cobblemon.mod.common.util.ScriptableIntRange npcLevels;
+  private final java.util.List<com.cobblemon.mod.common.api.moves.MovesetBuilder> movesetBuilders;
+  private final com.cobblemon.mod.common.api.molang.ExpressionLike weight;
+  public com.cobblemon.mod.common.api.npc.PartyPool$PoolEntry();
+  public final com.cobblemon.mod.common.api.pokemon.PokemonProperties getPokemon();
+  public final java.util.List<java.lang.String> getLabels();
+  public final java.util.List<java.lang.String> getNpcAspects();
+  public final java.util.List<java.lang.String> getRequired();
+  public final java.util.List<java.lang.String> getExcluded();
+  public final com.cobblemon.mod.common.api.molang.ExpressionLike getMaxSelectableTimes();
+  public final com.cobblemon.mod.common.util.ScriptableIntRange getLevelVariation();
+  public final com.cobblemon.mod.common.util.ScriptableIntRange getNpcLevels();
+  public final java.util.List<com.cobblemon.mod.common.api.moves.MovesetBuilder> getMovesetBuilders();
+  public final com.cobblemon.mod.common.api.molang.ExpressionLike getWeight();
+}
+Compiled from "MoLangConfigVariable.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable {
+  public static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$Companion Companion;
+  private final java.lang.String variableName;
+  private final net.minecraft.class_2561 category;
+  private final net.minecraft.class_2561 displayName;
+  private final net.minecraft.class_2561 description;
+  private final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType type;
+  private final java.lang.String defaultValue;
+  public com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable(java.lang.String, net.minecraft.class_2561, net.minecraft.class_2561, net.minecraft.class_2561, com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType, java.lang.String);
+  public com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable(java.lang.String, net.minecraft.class_2561, net.minecraft.class_2561, net.minecraft.class_2561, com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final java.lang.String getVariableName();
+  public final net.minecraft.class_2561 getCategory();
+  public final net.minecraft.class_2561 getDisplayName();
+  public final net.minecraft.class_2561 getDescription();
+  public final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType getType();
+  public final java.lang.String getDefaultValue();
+  public final com.mojang.datafixers.util.Either<com.bedrockk.molang.Expression, com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> asExpressible();
+  public final void encode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable();
+  static {};
+}
+Compiled from "MoLangConfigVariable.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$Companion {
+  private com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$Companion();
+  public final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable decode(net.minecraft.class_9129);
+  public com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "MoLangConfigVariable.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType extends java.lang.Enum<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType> {
+  public static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType NUMBER;
+  public static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType TEXT;
+  public static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType BOOLEAN;
+  private static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType[] $VALUES;
+  private static final kotlin.enums.EnumEntries $ENTRIES;
+  private com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType();
+  public final com.bedrockk.molang.runtime.value.MoValue toMoValue(java.lang.String);
+  public static com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType[] values();
+  public static com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType> getEntries();
+  private static final com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType[] $values();
+  static {};
+}
+Compiled from "MoLangConfigVariable.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable$MoLangVariableType$WhenMappings {
+  public static final int[] $EnumSwitchMapping$0;
+  static {};
+}
+Compiled from "NPCBattleConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration {
+  private boolean canChallenge;
+  private boolean simultaneousBattles;
+  private boolean healAfterwards;
+  public com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration();
+  public final boolean getCanChallenge();
+  public final void setCanChallenge(boolean);
+  public final boolean getSimultaneousBattles();
+  public final void setSimultaneousBattles(boolean);
+  public static void getSimultaneousBattles$annotations();
+  public final boolean getHealAfterwards();
+  public final void setHealAfterwards(boolean);
+  public static void getHealAfterwards$annotations();
+  public final void encode(net.minecraft.class_9129);
+  public final void decode(net.minecraft.class_9129);
+  public final void saveToNBT(net.minecraft.class_2487);
+  public final void loadFromNBT(net.minecraft.class_2487);
+}
+Compiled from "NPCBehaviourConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration {
+  private boolean canBeHurt;
+  public com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration();
+  public final boolean getCanBeHurt();
+  public final void setCanBeHurt(boolean);
+  public final void encode(net.minecraft.class_9129);
+  public final void decode(net.minecraft.class_9129);
+  public final void saveToNBT(net.minecraft.class_2487);
+  public final void loadFromNBT(net.minecraft.class_2487);
+}
+Compiled from "NPCInteractConfiguration.java"
+public interface com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration {
+  public static final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$Companion Companion;
+  public abstract java.lang.String getType();
+  public abstract boolean interact(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_3222);
+  public abstract void encode(net.minecraft.class_9129);
+  public abstract void decode(net.minecraft.class_9129);
+  public abstract void writeToNBT(net.minecraft.class_2487);
+  public abstract void readFromNBT(net.minecraft.class_2487);
+  public abstract boolean isDifferentTo(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  static {};
+}
+Compiled from "NPCInteractConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$Companion {
+  static final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$Companion $$INSTANCE;
+  private static final java.util.Map<java.lang.String, com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$NPCInteractConfigurationType<? extends com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration>> types;
+  private com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$Companion();
+  public final java.util.Map<java.lang.String, com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$NPCInteractConfigurationType<? extends com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration>> getTypes();
+  public final void register(java.lang.String, net.minecraft.class_5250, java.lang.Class<? extends com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration>);
+  static {};
+}
+Compiled from "NPCInteractConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$NPCInteractConfigurationType<T extends com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration> {
+  private final net.minecraft.class_5250 displayName;
+  private final java.lang.Class<T> clazz;
+  public com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration$NPCInteractConfigurationType(net.minecraft.class_5250, java.lang.Class<T>);
+  public final net.minecraft.class_5250 getDisplayName();
+  public final java.lang.Class<T> getClazz();
+}
+Compiled from "CustomScriptNPCInteractionConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.interaction.CustomScriptNPCInteractionConfiguration implements com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration {
+  private final java.lang.String type;
+  private com.cobblemon.mod.common.api.molang.ExpressionLike script;
+  public com.cobblemon.mod.common.api.npc.configuration.interaction.CustomScriptNPCInteractionConfiguration();
+  public java.lang.String getType();
+  public final com.cobblemon.mod.common.api.molang.ExpressionLike getScript();
+  public final void setScript(com.cobblemon.mod.common.api.molang.ExpressionLike);
+  public void encode(net.minecraft.class_9129);
+  public void decode(net.minecraft.class_9129);
+  public void writeToNBT(net.minecraft.class_2487);
+  public void readFromNBT(net.minecraft.class_2487);
+  public boolean interact(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_3222);
+  public boolean isDifferentTo(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+}
+Compiled from "DialogueNPCInteractionConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.interaction.DialogueNPCInteractionConfiguration implements com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration {
+  private final java.lang.String type;
+  private net.minecraft.class_2960 dialogue;
+  public com.cobblemon.mod.common.api.npc.configuration.interaction.DialogueNPCInteractionConfiguration();
+  public java.lang.String getType();
+  public final net.minecraft.class_2960 getDialogue();
+  public final void setDialogue(net.minecraft.class_2960);
+  public boolean interact(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_3222);
+  public final void onDialogueStopped(com.cobblemon.mod.common.entity.npc.NPCEntity, com.cobblemon.mod.common.api.dialogue.ActiveDialogue);
+  public void encode(net.minecraft.class_9129);
+  public void decode(net.minecraft.class_9129);
+  public void writeToNBT(net.minecraft.class_2487);
+  public void readFromNBT(net.minecraft.class_2487);
+  public boolean isDifferentTo(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  private static final void interact$lambda$0(com.cobblemon.mod.common.api.npc.configuration.interaction.DialogueNPCInteractionConfiguration, com.cobblemon.mod.common.entity.npc.NPCEntity, com.cobblemon.mod.common.api.dialogue.ActiveDialogue);
+}
+Compiled from "NoneNPCInteractionConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.interaction.NoneNPCInteractionConfiguration implements com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration {
+  private final java.lang.String type;
+  public com.cobblemon.mod.common.api.npc.configuration.interaction.NoneNPCInteractionConfiguration();
+  public java.lang.String getType();
+  public void encode(net.minecraft.class_9129);
+  public void decode(net.minecraft.class_9129);
+  public void writeToNBT(net.minecraft.class_2487);
+  public void readFromNBT(net.minecraft.class_2487);
+  public boolean interact(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_3222);
+  public boolean isDifferentTo(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+}
+Compiled from "ScriptNPCInteractionConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.interaction.ScriptNPCInteractionConfiguration implements com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration {
+  public static final com.cobblemon.mod.common.api.npc.configuration.interaction.ScriptNPCInteractionConfiguration$Companion Companion;
+  private final java.lang.String type;
+  private net.minecraft.class_2960 script;
+  private static final com.bedrockk.molang.runtime.MoLangRuntime runtime;
+  public com.cobblemon.mod.common.api.npc.configuration.interaction.ScriptNPCInteractionConfiguration();
+  public java.lang.String getType();
+  public final net.minecraft.class_2960 getScript();
+  public final void setScript(net.minecraft.class_2960);
+  public void encode(net.minecraft.class_9129);
+  public void decode(net.minecraft.class_9129);
+  public boolean interact(com.cobblemon.mod.common.entity.npc.NPCEntity, net.minecraft.class_3222);
+  public void writeToNBT(net.minecraft.class_2487);
+  public void readFromNBT(net.minecraft.class_2487);
+  public boolean isDifferentTo(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  public static final com.bedrockk.molang.runtime.MoLangRuntime access$getRuntime$cp();
+  static {};
+}
+Compiled from "ScriptNPCInteractionConfiguration.java"
+public final class com.cobblemon.mod.common.api.npc.configuration.interaction.ScriptNPCInteractionConfiguration$Companion {
+  private com.cobblemon.mod.common.api.npc.configuration.interaction.ScriptNPCInteractionConfiguration$Companion();
+  public final com.bedrockk.molang.runtime.MoLangRuntime getRuntime();
+  public com.cobblemon.mod.common.api.npc.configuration.interaction.ScriptNPCInteractionConfiguration$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "ComposedPoolPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider implements com.cobblemon.mod.common.api.npc.NPCPartyProvider {
+  public static final com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider$Companion Companion;
+  private final net.minecraft.class_2960 type;
+  private boolean isStatic;
+  private boolean useFixedRandom;
+  private com.bedrockk.molang.Expression minPokemon;
+  private com.bedrockk.molang.Expression maxPokemon;
+  public com.cobblemon.mod.common.api.npc.PartyPool pool;
+  public com.cobblemon.mod.common.api.npc.PartyComposition composition;
+  private static final net.minecraft.class_2960 TYPE;
+  public com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider();
+  public net.minecraft.class_2960 getType();
+  public boolean isStatic();
+  public void setStatic(boolean);
+  public final boolean getUseFixedRandom();
+  public final void setUseFixedRandom(boolean);
+  public final com.bedrockk.molang.Expression getMinPokemon();
+  public final void setMinPokemon(com.bedrockk.molang.Expression);
+  public final com.bedrockk.molang.Expression getMaxPokemon();
+  public final void setMaxPokemon(com.bedrockk.molang.Expression);
+  public final com.cobblemon.mod.common.api.npc.PartyPool getPool();
+  public final void setPool(com.cobblemon.mod.common.api.npc.PartyPool);
+  public final com.cobblemon.mod.common.api.npc.PartyComposition getComposition();
+  public final void setComposition(com.cobblemon.mod.common.api.npc.PartyComposition);
+  public void loadFromJSON(com.google.gson.JsonElement);
+  public com.cobblemon.mod.common.api.storage.party.NPCPartyStore provide(com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List<? extends net.minecraft.class_3222>);
+  private static final com.bedrockk.molang.runtime.value.MoValue provide$lambda$0(net.minecraft.class_3222);
+  public static final net.minecraft.class_2960 access$getTYPE$cp();
+  static {};
+}
+Compiled from "ComposedPoolPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider$Companion {
+  private com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider$Companion();
+  public final net.minecraft.class_2960 getTYPE();
+  public com.cobblemon.mod.common.api.npc.partyproviders.ComposedPoolPartyProvider$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "PoolPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider implements com.cobblemon.mod.common.api.npc.NPCPartyProvider {
+  public static final com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$Companion Companion;
+  private final transient net.minecraft.class_2960 type;
+  private boolean isStatic;
+  private boolean useFixedRandom;
+  private com.bedrockk.molang.Expression minPokemon;
+  private com.bedrockk.molang.Expression maxPokemon;
+  private java.util.List<com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$DynamicPokemon> pool;
+  private static final net.minecraft.class_2960 TYPE;
+  public com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider();
+  public net.minecraft.class_2960 getType();
+  public boolean isStatic();
+  public void setStatic(boolean);
+  public final boolean getUseFixedRandom();
+  public final void setUseFixedRandom(boolean);
+  public final com.bedrockk.molang.Expression getMinPokemon();
+  public final void setMinPokemon(com.bedrockk.molang.Expression);
+  public final com.bedrockk.molang.Expression getMaxPokemon();
+  public final void setMaxPokemon(com.bedrockk.molang.Expression);
+  public final java.util.List<com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$DynamicPokemon> getPool();
+  public final void setPool(java.util.List<com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$DynamicPokemon>);
+  public void loadFromJSON(com.google.gson.JsonElement);
+  public final void formulateParty(com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List<? extends net.minecraft.class_3222>, com.cobblemon.mod.common.api.storage.party.NPCPartyStore);
+  public com.cobblemon.mod.common.api.storage.party.NPCPartyStore provide(com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List<? extends net.minecraft.class_3222>);
+  private static final com.bedrockk.molang.runtime.value.MoValue formulateParty$lambda$0(net.minecraft.class_3222);
+  private static final java.lang.Number formulateParty$lambda$4(com.bedrockk.molang.runtime.MoLangRuntime, com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$DynamicPokemon);
+  public static final net.minecraft.class_2960 access$getTYPE$cp();
+  static {};
+}
+Compiled from "PoolPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$Companion {
+  private com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$Companion();
+  public final net.minecraft.class_2960 getTYPE();
+  public com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "PoolPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$DynamicPokemon {
+  private final com.cobblemon.mod.common.api.pokemon.PokemonProperties pokemon;
+  private final com.bedrockk.molang.Expression levelVariation;
+  private final com.bedrockk.molang.Expression level;
+  private final kotlin.ranges.IntRange npcLevels;
+  private final com.bedrockk.molang.Expression selectableTimes;
+  private final com.bedrockk.molang.Expression weight;
+  public com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$DynamicPokemon(com.cobblemon.mod.common.api.pokemon.PokemonProperties, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, kotlin.ranges.IntRange, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression);
+  public com.cobblemon.mod.common.api.npc.partyproviders.PoolPartyProvider$DynamicPokemon(com.cobblemon.mod.common.api.pokemon.PokemonProperties, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, kotlin.ranges.IntRange, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.cobblemon.mod.common.api.pokemon.PokemonProperties getPokemon();
+  public final com.bedrockk.molang.Expression getLevelVariation();
+  public final com.bedrockk.molang.Expression getLevel();
+  public final kotlin.ranges.IntRange getNpcLevels();
+  public final com.bedrockk.molang.Expression getSelectableTimes();
+  public final com.bedrockk.molang.Expression getWeight();
+  public final float getWeight(com.bedrockk.molang.runtime.MoLangRuntime);
+  public final boolean hasWeight(com.bedrockk.molang.runtime.MoLangRuntime);
+}
+Compiled from "ScriptPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider implements com.cobblemon.mod.common.api.npc.NPCPartyProvider {
+  public static final com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider$Companion Companion;
+  private final net.minecraft.class_2960 type;
+  private boolean isStatic;
+  private net.minecraft.class_2960 script;
+  private static final net.minecraft.class_2960 TYPE;
+  public com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider();
+  public net.minecraft.class_2960 getType();
+  public boolean isStatic();
+  public void setStatic(boolean);
+  public final net.minecraft.class_2960 getScript();
+  public final void setScript(net.minecraft.class_2960);
+  public void loadFromJSON(com.google.gson.JsonElement);
+  public com.cobblemon.mod.common.api.storage.party.NPCPartyStore provide(com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List<? extends net.minecraft.class_3222>);
+  private static final com.bedrockk.molang.runtime.value.MoValue provide$lambda$0(net.minecraft.class_3222);
+  public static final net.minecraft.class_2960 access$getTYPE$cp();
+  static {};
+}
+Compiled from "ScriptPartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider$Companion {
+  private com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider$Companion();
+  public final net.minecraft.class_2960 getTYPE();
+  public com.cobblemon.mod.common.api.npc.partyproviders.ScriptPartyProvider$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "SimplePartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider implements com.cobblemon.mod.common.api.npc.NPCPartyProvider {
+  public static final com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider$Companion Companion;
+  private final transient net.minecraft.class_2960 type;
+  private boolean isStatic;
+  private final java.util.List<com.cobblemon.mod.common.api.pokemon.PokemonProperties> pokemon;
+  private final transient com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider> struct;
+  private static final net.minecraft.class_2960 TYPE;
+  public com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider();
+  public net.minecraft.class_2960 getType();
+  public boolean isStatic();
+  public void setStatic(boolean);
+  public final java.util.List<com.cobblemon.mod.common.api.pokemon.PokemonProperties> getPokemon();
+  public final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider> getStruct();
+  public void loadFromJSON(com.google.gson.JsonElement);
+  public com.cobblemon.mod.common.api.storage.party.NPCPartyStore provide(com.cobblemon.mod.common.entity.npc.NPCEntity, int, java.util.List<? extends net.minecraft.class_3222>);
+  private static final java.lang.Object struct$lambda$0$0(com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object struct$lambda$0$1(com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object struct$lambda$0$2(com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object struct$lambda$0$3(com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object struct$lambda$0$4(com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider, com.bedrockk.molang.runtime.MoParams);
+  private static final com.bedrockk.molang.runtime.value.MoValue struct$lambda$0$4$0(com.cobblemon.mod.common.api.pokemon.PokemonProperties);
+  public static final net.minecraft.class_2960 access$getTYPE$cp();
+  static {};
+}
+Compiled from "SimplePartyProvider.java"
+public final class com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider$Companion {
+  private com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider$Companion();
+  public final net.minecraft.class_2960 getTYPE();
+  public com.cobblemon.mod.common.api.npc.partyproviders.SimplePartyProvider$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "NPCVariationProvider.java"
+public interface com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider {
+  public static final com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider$Companion Companion;
+  public abstract java.util.Set<java.lang.String> getAspects();
+  public abstract java.util.Set<java.lang.String> provideAspects(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  static {};
+}
+Compiled from "NPCVariationProvider.java"
+public final class com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider$Companion {
+  static final com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider$Companion $$INSTANCE;
+  private static final java.util.Map<java.lang.String, java.lang.Class<? extends com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider>> types;
+  private com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider$Companion();
+  public final java.util.Map<java.lang.String, java.lang.Class<? extends com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider>> getTypes();
+  public final void register(java.lang.String, java.lang.Class<? extends com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider>);
+  static {};
+}
+
+Compiled from "RandomNPCVariationProvider.java"
+public final class com.cobblemon.mod.common.api.npc.variation.RandomNPCVariationProvider implements com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider {
+  private final java.util.Set<java.lang.String> aspects;
+  public com.cobblemon.mod.common.api.npc.variation.RandomNPCVariationProvider(java.util.Set<java.lang.String>);
+  public com.cobblemon.mod.common.api.npc.variation.RandomNPCVariationProvider(java.util.Set, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public java.util.Set<java.lang.String> getAspects();
+  public java.util.Set<java.lang.String> provideAspects(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public com.cobblemon.mod.common.api.npc.variation.RandomNPCVariationProvider();
+}
+Compiled from "WeightedAspect.java"
+public final class com.cobblemon.mod.common.api.npc.variation.WeightedAspect {
+  private final java.util.Set<java.lang.String> aspects;
+  private final double weight;
+  public com.cobblemon.mod.common.api.npc.variation.WeightedAspect(java.util.Set<java.lang.String>, double);
+  public final java.util.Set<java.lang.String> getAspects();
+  public final double getWeight();
+}
+Compiled from "WeightedNPCVariationProvider.java"
+public final class com.cobblemon.mod.common.api.npc.variation.WeightedNPCVariationProvider implements com.cobblemon.mod.common.api.npc.variation.NPCVariationProvider {
+  private java.util.List<com.cobblemon.mod.common.api.npc.variation.WeightedAspect> options;
+  public com.cobblemon.mod.common.api.npc.variation.WeightedNPCVariationProvider();
+  public final java.util.List<com.cobblemon.mod.common.api.npc.variation.WeightedAspect> getOptions();
+  public final void setOptions(java.util.List<com.cobblemon.mod.common.api.npc.variation.WeightedAspect>);
+  public java.util.Set<java.lang.String> getAspects();
+  public java.util.Set<java.lang.String> provideAspects(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  private static final java.lang.Number provideAspects$lambda$0(com.cobblemon.mod.common.api.npc.variation.WeightedAspect);
+}
+Compiled from "NPCBattleActor.java"
+public class com.cobblemon.mod.common.entity.npc.NPCBattleActor extends com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor implements com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor<com.cobblemon.mod.common.entity.npc.NPCEntity> {
+  private final com.cobblemon.mod.common.entity.npc.NPCEntity npc;
+  private final int skill;
+  private final com.cobblemon.mod.common.entity.npc.NPCEntity entity;
+  private final com.cobblemon.mod.common.api.battles.model.actor.ActorType type;
+  private final net.minecraft.class_243 initialPos;
+  public com.cobblemon.mod.common.entity.npc.NPCBattleActor(com.cobblemon.mod.common.entity.npc.NPCEntity, java.util.List<? extends com.cobblemon.mod.common.battles.pokemon.BattlePokemon>, int, com.cobblemon.mod.common.api.battles.model.ai.BattleAI);
+  public com.cobblemon.mod.common.entity.npc.NPCBattleActor(com.cobblemon.mod.common.entity.npc.NPCEntity, java.util.List, int, com.cobblemon.mod.common.api.battles.model.ai.BattleAI, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.cobblemon.mod.common.entity.npc.NPCEntity getNpc();
+  public final int getSkill();
+  public com.cobblemon.mod.common.entity.npc.NPCEntity getEntity();
+  public com.cobblemon.mod.common.api.battles.model.actor.ActorType getType();
+  public net.minecraft.class_5250 getName();
+  public net.minecraft.class_5250 nameOwned(java.lang.String);
+  public net.minecraft.class_243 getInitialPos();
+  public com.cobblemon.mod.common.entity.npc.NPCBattleActor(com.cobblemon.mod.common.entity.npc.NPCEntity, com.cobblemon.mod.common.api.storage.party.PartyStore, int);
+  public void sendUpdate(com.cobblemon.mod.common.api.net.NetworkPacket<?>);
+  public void onUseMove(com.cobblemon.mod.common.battles.pokemon.BattlePokemon, com.cobblemon.mod.common.battles.pokemon.BattlePokemon);
+  public void win(java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>, java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>);
+  public void lose(java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>, java.util.List<? extends com.cobblemon.mod.common.api.battles.model.actor.BattleActor>);
+  private static final java.util.concurrent.CompletableFuture sendUpdate$lambda$1$0(com.cobblemon.mod.common.entity.pokemon.PokemonEntity);
+  private static final com.cobblemon.mod.common.api.scheduling.ScheduledTask sendUpdate$lambda$2(com.cobblemon.mod.common.entity.npc.NPCBattleActor, kotlin.Unit);
+  private static final kotlin.Unit sendUpdate$lambda$2$0(com.cobblemon.mod.common.entity.npc.NPCBattleActor);
+  private static final java.util.Set sendUpdate$lambda$2$0$0(com.cobblemon.mod.common.entity.npc.NPCBattleActor, java.util.Set);
+  private static final com.cobblemon.mod.common.api.scheduling.ScheduledTask sendUpdate$lambda$3(kotlin.jvm.functions.Function1, java.lang.Object);
+  private static final java.util.Set sendUpdate$lambda$4(com.cobblemon.mod.common.entity.npc.NPCBattleActor, java.util.Set);
+  public net.minecraft.class_1309 getEntity();
+}
+Compiled from "NPCBrain.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCBrain {
+  public static final com.cobblemon.mod.common.entity.npc.NPCBrain INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.NPCBrain();
+  public final void configure(com.cobblemon.mod.common.entity.npc.NPCEntity, com.cobblemon.mod.common.api.npc.NPCClass, com.mojang.serialization.Dynamic<?>);
+  static {};
+}
+Compiled from "NPCEntity.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCEntity extends net.minecraft.class_1296 implements com.cobblemon.mod.common.entity.PosableEntity,com.cobblemon.mod.common.api.entity.PokemonSender,com.cobblemon.mod.common.api.scheduling.Schedulable,com.cobblemon.mod.common.entity.MoLangScriptingEntity,com.cobblemon.mod.common.entity.OmniPathingEntity {
+  public static final com.cobblemon.mod.common.entity.npc.NPCEntity$Companion Companion;
+  private final com.cobblemon.mod.common.api.scheduling.SchedulingTracker schedulingTracker;
+  private final com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.entity.npc.NPCEntity> struct;
+  private final com.bedrockk.molang.runtime.MoLangRuntime runtime;
+  private com.cobblemon.mod.common.api.npc.NPCClass npc;
+  private net.minecraft.class_4048 hitbox;
+  private net.minecraft.class_2960 forcedResourceIdentifier;
+  private java.lang.Integer skill;
+  private com.cobblemon.mod.common.api.storage.party.NPCPartyStore party;
+  private java.lang.Boolean isMovable;
+  private java.lang.Boolean isInvulnerable;
+  private java.lang.Boolean isLeashable;
+  private java.lang.Boolean allowProjectileHits;
+  private final java.util.Set<java.lang.String> variationAspects;
+  private final java.util.Set<java.lang.String> appliedAspects;
+  private final com.cobblemon.mod.common.api.entity.NPCSideDelegate delegate;
+  private com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration battle;
+  private com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration behaviour;
+  private com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration interaction;
+  private boolean behavioursAreCustom;
+  private final java.util.List<net.minecraft.class_2960> behaviours;
+  private final java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> registeredVariables;
+  private com.bedrockk.molang.runtime.struct.VariableStruct data;
+  private com.bedrockk.molang.runtime.struct.VariableStruct config;
+  private com.cobblemon.mod.common.entity.EntityCallbacks callbacks;
+  private com.cobblemon.mod.common.api.moves.animations.ActionEffectContext actionEffect;
+  private com.mojang.serialization.Dynamic<?> brainDynamic;
+  private static final net.minecraft.class_2940<net.minecraft.class_2960> NPC_CLASS;
+  private static final net.minecraft.class_2940<net.minecraft.class_2960> RESOURCE_IDENTIFIER;
+  private static final net.minecraft.class_2940<java.util.Set<java.lang.String>> ASPECTS;
+  private static final net.minecraft.class_2940<com.cobblemon.mod.common.entity.PoseType> POSE_TYPE;
+  private static final net.minecraft.class_2940<java.util.Set<java.util.UUID>> BATTLE_IDS;
+  private static final net.minecraft.class_2940<com.cobblemon.mod.common.entity.npc.NPCPlayerTexture> NPC_PLAYER_TEXTURE;
+  private static final net.minecraft.class_2940<java.lang.Integer> LEVEL;
+  private static final net.minecraft.class_2940<java.lang.Boolean> HIDE_NAME_TAG;
+  private static final net.minecraft.class_2940<java.lang.Float> RENDER_SCALE;
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_SCALE;
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_WIDTH;
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_HEIGHT;
+  private static final net.minecraft.class_2940<java.lang.Float> HITBOX_EYES_HEIGHT;
+  public static final java.lang.String SEND_OUT_ANIMATION;
+  public static final java.lang.String RECALL_ANIMATION;
+  public static final java.lang.String LOSE_ANIMATION;
+  public static final java.lang.String WIN_ANIMATION;
+  public static final java.lang.String COMMAND_ANIMATION;
+  public com.cobblemon.mod.common.entity.npc.NPCEntity(net.minecraft.class_1937);
+  public com.cobblemon.mod.common.api.scheduling.SchedulingTracker getSchedulingTracker();
+  public com.cobblemon.mod.common.api.molang.ObjectValue<com.cobblemon.mod.common.entity.npc.NPCEntity> getStruct();
+  public final com.bedrockk.molang.runtime.MoLangRuntime getRuntime();
+  public final com.cobblemon.mod.common.api.npc.NPCClass getNpc();
+  public final void setNpc(com.cobblemon.mod.common.api.npc.NPCClass);
+  public final int getLevel();
+  public final boolean getHideNameTag();
+  public final void setHideNameTag(boolean);
+  public final float getRenderScale();
+  public final void setRenderScale(float);
+  public final float getHitboxScale();
+  public final void setHitboxScale(float);
+  public final float getHitboxEyesHeight();
+  public final void setHitboxEyesHeight(float);
+  public final float getHitboxWidth();
+  public final void setHitboxWidth(float);
+  public final float getHitboxHeight();
+  public final void setHitboxHeight(float);
+  public final net.minecraft.class_4048 getHitbox();
+  public final void setHitbox(net.minecraft.class_4048);
+  public final net.minecraft.class_2960 getResourceIdentifier();
+  private final void setResourceIdentifier(net.minecraft.class_2960);
+  public final net.minecraft.class_2960 getForcedResourceIdentifier();
+  public final void setForcedResourceIdentifier(net.minecraft.class_2960);
+  public final java.lang.Integer getSkill();
+  public final void setSkill(java.lang.Integer);
+  public final com.cobblemon.mod.common.api.storage.party.NPCPartyStore getParty();
+  public final void setParty(com.cobblemon.mod.common.api.storage.party.NPCPartyStore);
+  public final java.lang.Boolean isMovable();
+  public final void setMovable(java.lang.Boolean);
+  public final java.lang.Boolean isInvulnerable();
+  public final void setInvulnerable(java.lang.Boolean);
+  public final java.lang.Boolean isLeashable();
+  public final void setLeashable(java.lang.Boolean);
+  public final java.lang.Boolean getAllowProjectileHits();
+  public final void setAllowProjectileHits(java.lang.Boolean);
+  public final com.cobblemon.mod.common.api.storage.party.NPCPartyStore getPartyForChallenge(java.util.List<? extends net.minecraft.class_3222>);
+  public final java.util.Set<java.lang.String> getVariationAspects();
+  public final java.util.Set<java.lang.String> getAppliedAspects();
+  public com.cobblemon.mod.common.api.entity.NPCSideDelegate getDelegate();
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration getBattle();
+  public final void setBattle(com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration);
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration getBehaviour();
+  public final void setBehaviour(com.cobblemon.mod.common.api.npc.configuration.NPCBehaviourConfiguration);
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration getInteraction();
+  public final void setInteraction(com.cobblemon.mod.common.api.npc.configuration.NPCInteractConfiguration);
+  public boolean getBehavioursAreCustom();
+  public void setBehavioursAreCustom(boolean);
+  public java.util.List<net.minecraft.class_2960> getBehaviours();
+  public java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> getRegisteredVariables();
+  public com.bedrockk.molang.runtime.struct.VariableStruct getData();
+  public void setData(com.bedrockk.molang.runtime.struct.VariableStruct);
+  public com.bedrockk.molang.runtime.struct.VariableStruct getConfig();
+  public void setConfig(com.bedrockk.molang.runtime.struct.VariableStruct);
+  public com.cobblemon.mod.common.entity.EntityCallbacks getCallbacks();
+  public void setCallbacks(com.cobblemon.mod.common.entity.EntityCallbacks);
+  public final java.util.Set<java.lang.String> getAspects();
+  public final java.util.Set<java.util.UUID> getBattleIds();
+  public final com.cobblemon.mod.common.api.moves.animations.ActionEffectContext getActionEffect();
+  public final void setActionEffect(com.cobblemon.mod.common.api.moves.animations.ActionEffectContext);
+  protected net.minecraft.class_4095$class_5303<com.cobblemon.mod.common.entity.npc.NPCEntity> method_28306();
+  public java.lang.Void getBreedOffspring(net.minecraft.class_3218, net.minecraft.class_1296);
+  public com.cobblemon.mod.common.entity.PoseType getCurrentPoseType();
+  protected void method_5693(net.minecraft.class_2945$class_9222);
+  public net.minecraft.class_2596<net.minecraft.class_2602> method_18002(net.minecraft.class_3231);
+  public void remakeBrain();
+  public net.minecraft.class_4095<? extends com.cobblemon.mod.common.entity.npc.NPCEntity> assignNewBrainWithMemoriesAndSensors(com.mojang.serialization.Dynamic<?>, java.util.Set<? extends net.minecraft.class_4140<?>>, java.util.Set<? extends net.minecraft.class_4149<?>>);
+  protected net.minecraft.class_4095<? extends com.cobblemon.mod.common.entity.npc.NPCEntity> method_18867(com.mojang.serialization.Dynamic<?>);
+  public boolean method_6121(net.minecraft.class_1297);
+  public net.minecraft.class_4095<com.cobblemon.mod.common.entity.npc.NPCEntity> method_18868();
+  public final void updateAspects();
+  public final boolean isInBattle();
+  public final com.cobblemon.mod.common.api.npc.configuration.NPCBattleConfiguration getBattleConfiguration();
+  public final net.minecraft.class_2960 getBattleTheme();
+  public void method_5773();
+  protected void method_5958();
+  protected void method_18409();
+  public boolean method_5680(net.minecraft.class_3222);
+  public final boolean shouldHideFrom(net.minecraft.class_3222);
+  public net.minecraft.class_2487 method_5647(net.minecraft.class_2487);
+  public void method_5651(net.minecraft.class_2487);
+  public final void loadTextureFromGameProfileName(java.lang.String);
+  public final void loadTexture(java.net.URI, com.cobblemon.mod.common.entity.npc.NPCPlayerModelType);
+  public final void unloadTexture();
+  public boolean method_16914();
+  public boolean method_5807();
+  public boolean method_5947();
+  public float method_55693();
+  public net.minecraft.class_4048 method_18377(net.minecraft.class_4050);
+  public boolean method_5810();
+  public boolean method_5679(net.minecraft.class_1282);
+  public boolean method_5931();
+  public boolean method_49108();
+  public final void initialize(int);
+  protected net.minecraft.class_1269 method_5992(net.minecraft.class_1657, net.minecraft.class_1268);
+  public java.util.concurrent.CompletableFuture<kotlin.Unit> recalling(com.cobblemon.mod.common.entity.pokemon.PokemonEntity);
+  public java.util.concurrent.CompletableFuture<kotlin.Unit> sendingOut(com.cobblemon.mod.common.pokemon.Pokemon);
+  private final java.util.List<java.lang.String> pokemonExpressions(com.cobblemon.mod.common.pokemon.Pokemon);
+  public void method_5674(net.minecraft.class_2940<?>);
+  public final void edit(net.minecraft.class_3222);
+  public com.cobblemon.mod.common.entity.ai.OmniPathNavigation getNavigation();
+  protected com.cobblemon.mod.common.entity.ai.OmniPathNavigation createNavigation(net.minecraft.class_1937);
+  public boolean canWalk();
+  public boolean canSwimInWater();
+  public boolean canSwimInLava();
+  public boolean canWalkOnLava();
+  public boolean canSwimUnderFluid(net.minecraft.class_3610);
+  public boolean canWalkOnWater();
+  public boolean canPathThroughSaccLeaves();
+  public boolean canFly();
+  public boolean couldStopFlying();
+  public boolean isFlying();
+  public void setFlying(boolean);
+  public boolean entityOnGround();
+  public void addPosableFunctions(com.bedrockk.molang.runtime.struct.QueryStruct);
+  public void playAnimation(java.lang.String, java.util.List<java.lang.String>);
+  public com.cobblemon.mod.common.api.scheduling.ScheduledTask momentarily(kotlin.jvm.functions.Function0<kotlin.Unit>);
+  public com.cobblemon.mod.common.api.scheduling.ScheduledTask after(float, kotlin.jvm.functions.Function0<kotlin.Unit>);
+  public com.cobblemon.mod.common.api.scheduling.ScheduledTask lerp(float, kotlin.jvm.functions.Function1<? super java.lang.Float, kotlin.Unit>);
+  public java.util.concurrent.CompletableFuture<kotlin.Unit> delayedFuture(float);
+  public com.cobblemon.mod.common.api.scheduling.ScheduledTask$Builder taskBuilder();
+  public java.util.List<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable> getExtraVariables();
+  public void registerVariables(java.util.Collection<com.cobblemon.mod.common.api.npc.configuration.MoLangConfigVariable>);
+  public void initializeScripting();
+  public void saveScriptingToNBT(net.minecraft.class_2487);
+  public void loadScriptingFromNBT(net.minecraft.class_2487);
+  public void registerFunctionsForScripting(com.bedrockk.molang.runtime.struct.QueryStruct);
+  public void updateBehaviours(java.util.Collection<net.minecraft.class_2960>);
+  public com.bedrockk.molang.runtime.struct.QueryStruct getStruct();
+  public com.cobblemon.mod.common.api.entity.EntitySideDelegate getDelegate();
+  public net.minecraft.class_1296 method_5613(net.minecraft.class_3218, net.minecraft.class_1296);
+  public net.minecraft.class_1408 method_5942();
+  public net.minecraft.class_1408 method_5965(net.minecraft.class_1937);
+  public static final net.minecraft.class_2940 access$getNPC_CLASS$cp();
+  public static final net.minecraft.class_2940 access$getRESOURCE_IDENTIFIER$cp();
+  public static final net.minecraft.class_2940 access$getASPECTS$cp();
+  public static final net.minecraft.class_2940 access$getPOSE_TYPE$cp();
+  public static final net.minecraft.class_2940 access$getBATTLE_IDS$cp();
+  public static final net.minecraft.class_2940 access$getNPC_PLAYER_TEXTURE$cp();
+  public static final net.minecraft.class_2940 access$getLEVEL$cp();
+  public static final net.minecraft.class_2940 access$getHIDE_NAME_TAG$cp();
+  public static final net.minecraft.class_2940 access$getRENDER_SCALE$cp();
+  public static final net.minecraft.class_2940 access$getHITBOX_SCALE$cp();
+  public static final net.minecraft.class_2940 access$getHITBOX_WIDTH$cp();
+  public static final net.minecraft.class_2940 access$getHITBOX_HEIGHT$cp();
+  public static final net.minecraft.class_2940 access$getHITBOX_EYES_HEIGHT$cp();
+  static {};
+}
+Compiled from "NPCEntity.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCEntity$Companion {
+  private com.cobblemon.mod.common.entity.npc.NPCEntity$Companion();
+  public final net.minecraft.class_5132$class_5133 createAttributes();
+  public final net.minecraft.class_2940<net.minecraft.class_2960> getNPC_CLASS();
+  public final net.minecraft.class_2940<net.minecraft.class_2960> getRESOURCE_IDENTIFIER();
+  public final net.minecraft.class_2940<java.util.Set<java.lang.String>> getASPECTS();
+  public final net.minecraft.class_2940<com.cobblemon.mod.common.entity.PoseType> getPOSE_TYPE();
+  public final net.minecraft.class_2940<java.util.Set<java.util.UUID>> getBATTLE_IDS();
+  public final net.minecraft.class_2940<com.cobblemon.mod.common.entity.npc.NPCPlayerTexture> getNPC_PLAYER_TEXTURE();
+  public final net.minecraft.class_2940<java.lang.Integer> getLEVEL();
+  public final net.minecraft.class_2940<java.lang.Boolean> getHIDE_NAME_TAG();
+  public final net.minecraft.class_2940<java.lang.Float> getRENDER_SCALE();
+  public final net.minecraft.class_2940<java.lang.Float> getHITBOX_SCALE();
+  public final net.minecraft.class_2940<java.lang.Float> getHITBOX_WIDTH();
+  public final net.minecraft.class_2940<java.lang.Float> getHITBOX_HEIGHT();
+  public final net.minecraft.class_2940<java.lang.Float> getHITBOX_EYES_HEIGHT();
+  public com.cobblemon.mod.common.entity.npc.NPCEntity$Companion(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+Compiled from "NPCEntity.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCEntity$loadTextureFromGameProfileName$1 implements com.mojang.authlib.ProfileLookupCallback {
+  final net.minecraft.server.MinecraftServer $server;
+  final java.lang.String $username;
+  final com.cobblemon.mod.common.entity.npc.NPCEntity this$0;
+  com.cobblemon.mod.common.entity.npc.NPCEntity$loadTextureFromGameProfileName$1(net.minecraft.server.MinecraftServer, java.lang.String, com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public void onProfileLookupSucceeded(com.mojang.authlib.GameProfile);
+  public void onProfileLookupFailed(java.lang.String, java.lang.Exception);
+}
+Compiled from "NPCPlayerModelType.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCPlayerModelType extends java.lang.Enum<com.cobblemon.mod.common.entity.npc.NPCPlayerModelType> {
+  public static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType DEFAULT;
+  public static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType SLIM;
+  public static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType NONE;
+  private static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType[] $VALUES;
+  private static final kotlin.enums.EnumEntries $ENTRIES;
+  private com.cobblemon.mod.common.entity.npc.NPCPlayerModelType();
+  public static com.cobblemon.mod.common.entity.npc.NPCPlayerModelType[] values();
+  public static com.cobblemon.mod.common.entity.npc.NPCPlayerModelType valueOf(java.lang.String);
+  public static kotlin.enums.EnumEntries<com.cobblemon.mod.common.entity.npc.NPCPlayerModelType> getEntries();
+  private static final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType[] $values();
+  static {};
+}
+Compiled from "NPCPlayerTexture.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCPlayerTexture {
+  private final byte[] texture;
+  private final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType model;
+  public com.cobblemon.mod.common.entity.npc.NPCPlayerTexture(byte[], com.cobblemon.mod.common.entity.npc.NPCPlayerModelType);
+  public final byte[] getTexture();
+  public final com.cobblemon.mod.common.entity.npc.NPCPlayerModelType getModel();
+}
+Compiled from "NPCServerDelegate.java"
+public final class com.cobblemon.mod.common.entity.npc.NPCServerDelegate implements com.cobblemon.mod.common.api.entity.NPCSideDelegate {
+  public com.cobblemon.mod.common.entity.npc.NPCEntity entity;
+  public com.cobblemon.mod.common.entity.npc.NPCServerDelegate();
+  public final com.cobblemon.mod.common.entity.npc.NPCEntity getEntity();
+  public final void setEntity(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public void initialize(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public void addToStruct(com.bedrockk.molang.runtime.struct.QueryStruct);
+  public void tick(com.cobblemon.mod.common.entity.npc.NPCEntity);
+  public void onSyncedDataUpdated(net.minecraft.class_2940<?>);
+  private static final java.lang.Object addToStruct$lambda$0(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$1(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$2(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$3(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$4(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  private static final kotlin.Unit addToStruct$lambda$4$0(kotlin.jvm.internal.Ref$ObjectRef, com.cobblemon.mod.common.api.battles.model.PokemonBattle);
+  private static final java.lang.Object addToStruct$lambda$5(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.struct.QueryStruct, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$5$0$0(com.bedrockk.molang.runtime.struct.QueryStruct, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$6(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$7(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  private static final java.lang.Object addToStruct$lambda$8(com.cobblemon.mod.common.entity.npc.NPCServerDelegate, com.bedrockk.molang.runtime.MoParams);
+  public void initialize(net.minecraft.class_1297);
+  public void tick(net.minecraft.class_1297);
+}
+Compiled from "ChooseWanderTargetTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.ChooseWanderTargetTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.ChooseWanderTargetTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.ChooseWanderTargetTask();
+  public final net.minecraft.class_7894<? super net.minecraft.class_1309> create(int, int, float, int);
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(int, int, float, int, net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(int, int, float, int, net.minecraft.class_7906, net.minecraft.class_7906, net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(int, int, net.minecraft.class_7906, float, int, net.minecraft.class_7906, net.minecraft.class_3218, net.minecraft.class_1309, long);
+  static {};
+}
+Compiled from "ExitSpeakersActivityTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.ExitSpeakersActivityTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.ExitSpeakersActivityTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.ExitSpeakersActivityTask();
+  public final net.minecraft.class_7894<com.cobblemon.mod.common.entity.npc.NPCEntity> create();
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(net.minecraft.class_3218, com.cobblemon.mod.common.entity.npc.NPCEntity, long);
+  static {};
+}
+Compiled from "GoToHealingMachineTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.GoToHealingMachineTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.GoToHealingMachineTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.GoToHealingMachineTask();
+  public final net.minecraft.class_7894<? super net.minecraft.class_1309> create(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression);
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, net.minecraft.class_7906, net.minecraft.class_7906, net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, net.minecraft.class_7906, net.minecraft.class_7906, net.minecraft.class_3218, net.minecraft.class_1309, long);
+  static {};
+}
+Compiled from "HealUsingHealingMachineTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.HealUsingHealingMachineTask extends net.minecraft.class_4097<net.minecraft.class_1309> {
+  private final com.bedrockk.molang.Expression horizontalUseRange;
+  private final com.bedrockk.molang.Expression verticalUseRange;
+  private net.minecraft.class_2338 blockPos;
+  private com.cobblemon.mod.common.block.entity.HealingMachineBlockEntity nearestHealer;
+  public com.cobblemon.mod.common.entity.npc.ai.HealUsingHealingMachineTask(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression);
+  public com.cobblemon.mod.common.entity.npc.ai.HealUsingHealingMachineTask(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, int, kotlin.jvm.internal.DefaultConstructorMarker);
+  public final com.bedrockk.molang.Expression getHorizontalUseRange();
+  public final com.bedrockk.molang.Expression getVerticalUseRange();
+  public final net.minecraft.class_2338 getBlockPos();
+  public final void setBlockPos(net.minecraft.class_2338);
+  public final com.cobblemon.mod.common.block.entity.HealingMachineBlockEntity getNearestHealer();
+  public final void setNearestHealer(com.cobblemon.mod.common.block.entity.HealingMachineBlockEntity);
+  protected boolean method_18927(net.minecraft.class_3218, net.minecraft.class_1309, long);
+  protected boolean method_18919(net.minecraft.class_3218, net.minecraft.class_1309);
+  protected void method_18920(net.minecraft.class_3218, net.minecraft.class_1309, long);
+  public com.cobblemon.mod.common.entity.npc.ai.HealUsingHealingMachineTask();
+}
+Compiled from "LookAtBattlingPokemonTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.LookAtBattlingPokemonTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.LookAtBattlingPokemonTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.LookAtBattlingPokemonTask();
+  public final net.minecraft.class_7894<net.minecraft.class_1309> create(int, int);
+  public static net.minecraft.class_7894 create$default(com.cobblemon.mod.common.entity.npc.ai.LookAtBattlingPokemonTask, int, int, int, java.lang.Object);
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(int, int, net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(net.minecraft.class_7898$class_7900, int, int, net.minecraft.class_7906, net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(net.minecraft.class_7898$class_7900, net.minecraft.class_7906, net.minecraft.class_7906, int, int, net.minecraft.class_3218, net.minecraft.class_1309, long);
+  static {};
+}
+Compiled from "LookAtSpeakerTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.LookAtSpeakerTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.LookAtSpeakerTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.LookAtSpeakerTask();
+  public final net.minecraft.class_7894<net.minecraft.class_1309> create(float);
+  public static net.minecraft.class_7894 create$default(com.cobblemon.mod.common.entity.npc.ai.LookAtSpeakerTask, float, int, java.lang.Object);
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(float, net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(net.minecraft.class_7898$class_7900, float, net.minecraft.class_7906, net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(net.minecraft.class_7898$class_7900, net.minecraft.class_7906, net.minecraft.class_7906, float, net.minecraft.class_3218, net.minecraft.class_1309, long);
+  static {};
+}
+Compiled from "MeleeAttackTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.MeleeAttackTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.MeleeAttackTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.MeleeAttackTask();
+  public final net.minecraft.class_7894<net.minecraft.class_1309> create(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression);
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, net.minecraft.class_7898$class_7900, net.minecraft.class_7906, net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(com.bedrockk.molang.Expression, com.bedrockk.molang.Expression, net.minecraft.class_7898$class_7900, net.minecraft.class_7906, net.minecraft.class_7906, net.minecraft.class_3218, net.minecraft.class_1309, long);
+  static {};
+}
+Compiled from "MoveToTargetTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.MoveToTargetTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.MoveToTargetTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.MoveToTargetTask();
+  public final net.minecraft.class_7894<com.cobblemon.mod.common.entity.npc.NPCEntity> create();
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(net.minecraft.class_7898$class_7900, net.minecraft.class_7906, net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(net.minecraft.class_7898$class_7900, net.minecraft.class_7906, net.minecraft.class_7906, net.minecraft.class_3218, com.cobblemon.mod.common.entity.npc.NPCEntity, long);
+  static {};
+}
+Compiled from "SwitchToBattleTask.java"
+public final class com.cobblemon.mod.common.entity.npc.ai.SwitchToBattleTask {
+  public static final com.cobblemon.mod.common.entity.npc.ai.SwitchToBattleTask INSTANCE;
+  private com.cobblemon.mod.common.entity.npc.ai.SwitchToBattleTask();
+  public final net.minecraft.class_7894<net.minecraft.class_1309> create();
+  public final net.minecraft.class_7894<net.minecraft.class_1309> createForPokemon();
+  private static final com.mojang.datafixers.kinds.App create$lambda$0(net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 create$lambda$0$0(net.minecraft.class_7906);
+  private static final boolean create$lambda$0$0$0(net.minecraft.class_3218, net.minecraft.class_1309, long);
+  private static final com.mojang.datafixers.kinds.App createForPokemon$lambda$0(net.minecraft.class_7898$class_7900);
+  private static final net.minecraft.class_7911 createForPokemon$lambda$0$0(net.minecraft.class_7906);
+  private static final boolean createForPokemon$lambda$0$0$0(net.minecraft.class_3218, net.minecraft.class_1309, long);
+  static {};
+}
